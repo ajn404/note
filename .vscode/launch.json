@@ -8,6 +8,13 @@
             "request": "launch",
             "type": "node-terminal"
         },
+
+        {
+            "command": "yarn build",
+            "name": "build",
+            "request": "launch",
+            "type": "node-terminal"
+        },
         {
             "type": "chrome",
             "request": "launch",
