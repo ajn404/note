@@ -753,7 +753,7 @@ export const earthQuake = (_) => {
   const PI = _.PI;
 
   _.preload = () => {
-    earth = _.loadImage("/rengm/images/earth.jpg");
+    earth = _.loadImage("/note/images/earth.jpg");
     table = _.loadTable(
       "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_month.csv",
       "header"

@@ -1,0 +1,71 @@
+@import url('/fonts/iconfont.scss');
+@import url('/styles/animation.scss');
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: inline-block;
+}
+
+:root{
+  --font-family:'ag',-apple-system,Ubuntu ;
+}
+
+*{
+  font-family: var(--font-family);
+}
+
+
+
+::-webkit-scrollbar {
+  width: 1em;
+  width: 0;
+}
+
+::-webkit-scrollbar-track {
+  background: #dddddd;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--c-brand);
+}
+
+
+
+.page .theme-default-content {
+  max-width: 90vw;
+  padding: 0;
+table{
+  display: table;
+  overflow: scroll;
+  margin: 1em auto;
+}
+  .fullscreen {
+    height: calc(100vh - var(--navbar-height));
+    // height: auto;
+    overflow: hidden;
+    width: 100vw;
+    position: absolute;
+    top: var(--navbar-height);
+    left: 0;
+  }
+}
+
+.page-meta ,.back-to-top{
+  display: none!important;
+}
+
+@media screen and (max-width: 900px) {
+  .page .theme-default-content {
+    padding: 2em;
+  }
+}
+
+@media (max-width: 959px) {
+  .sidebar {
+    width: 100%;
+  }
+}

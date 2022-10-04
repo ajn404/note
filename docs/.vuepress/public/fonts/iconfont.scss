@@ -1,0 +1,493 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 3616492 */
+  src: url('/fonts/iconfont.woff2') format('woff2'),
+       url('/fonts/iconfont.woff') format('woff'),
+       url('/fonts/iconfont.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: "ag";
+  src: url('/fonts/ag.otf') format('woff'),
+  url('/fonts/ag.woff2') format('woff2'),
+       url('/fonts/ag.woff') format('woff');
+  ;
+}
+
+
+
+.icon-call:before {
+  content: "\e663";
+}
+
+.icon-voice:before {
+  content: "\e664";
+}
+
+.icon-user:before {
+  content: "\e665";
+}
+
+.icon-customer_service:before {
+  content: "\e666";
+}
+
+.icon-dislike:before {
+  content: "\e667";
+}
+
+.icon-search:before {
+  content: "\e668";
+}
+
+.icon-like:before {
+  content: "\e669";
+}
+
+.icon-chat:before {
+  content: "\e66a";
+}
+
+.icon-heart:before {
+  content: "\e66b";
+}
+
+.icon-location:before {
+  content: "\e66c";
+}
+
+.icon-camera:before {
+  content: "\e66d";
+}
+
+.icon-image:before {
+  content: "\e66e";
+}
+
+.icon-card:before {
+  content: "\e66f";
+}
+
+.icon-message:before {
+  content: "\e670";
+}
+
+.icon-calendar:before {
+  content: "\e671";
+}
+
+.icon-compass:before {
+  content: "\e672";
+}
+
+.icon-home:before {
+  content: "\e673";
+}
+
+.icon-trips:before {
+  content: "\e674";
+}
+
+.icon-wallet:before {
+  content: "\e675";
+}
+
+.icon-cart:before {
+  content: "\e676";
+}
+
+.icon-steeering_wheel:before {
+  content: "\e677";
+}
+
+.icon-secure_payment:before {
+  content: "\e678";
+}
+
+.icon-security:before {
+  content: "\e679";
+}
+
+.icon-shield:before {
+  content: "\e67a";
+}
+
+.icon-companion:before {
+  content: "\e67b";
+}
+
+.icon-benefits:before {
+  content: "\e67c";
+}
+
+.icon-more_services:before {
+  content: "\e67d";
+}
+
+.icon-star:before {
+  content: "\e67e";
+}
+
+.icon-my_account:before {
+  content: "\e67f";
+}
+
+.icon-timer:before {
+  content: "\e680";
+}
+
+.icon-driver:before {
+  content: "\e681";
+}
+
+.icon-elder:before {
+  content: "\e682";
+}
+
+.icon-share:before {
+  content: "\e683";
+}
+
+.icon-packet:before {
+  content: "\e684";
+}
+
+.icon-time:before {
+  content: "\e685";
+}
+
+.icon-seat:before {
+  content: "\e686";
+}
+
+.icon-clean:before {
+  content: "\e687";
+}
+
+.icon-bus:before {
+  content: "\e688";
+}
+
+.icon-edit:before {
+  content: "\e689";
+}
+
+.icon-car:before {
+  content: "\e68a";
+}
+
+.icon-lock:before {
+  content: "\e68b";
+}
+
+.icon-discount:before {
+  content: "\e68c";
+}
+
+.icon-qr:before {
+  content: "\e68d";
+}
+
+.icon-scan:before {
+  content: "\e68e";
+}
+
+.icon-train:before {
+  content: "\e68f";
+}
+
+.icon-unlock:before {
+  content: "\e690";
+}
+
+.icon-settings:before {
+  content: "\e691";
+}
+
+.icon-shuttle:before {
+  content: "\e692";
+}
+
+.icon-phone:before {
+  content: "\e693";
+}
+
+.icon-travel_card:before {
+  content: "\e694";
+}
+
+.icon-email:before {
+  content: "\e695";
+}
+
+.icon-balance:before {
+  content: "\e696";
+}
+
+.icon-trashcan:before {
+  content: "\e697";
+}
+
+.icon-fast:before {
+  content: "\e698";
+}
+
+.icon-receipt:before {
+  content: "\e699";
+}
+
+.icon-hot:before {
+  content: "\e69a";
+}
+
+.icon-hints:before {
+  content: "\e69b";
+}
+
+.icon-game:before {
+  content: "\e69c";
+}
+
+.icon-work:before {
+  content: "\e69d";
+}
+
+.icon-audio:before {
+  content: "\e69e";
+}
+
+.icon-danger:before {
+  content: "\e69f";
+}
+
+.icon-premium:before {
+  content: "\e6a0";
+}
+
+.icon-navigation:before {
+  content: "\e6a1";
+}
+
+.icon-traffic_light:before {
+  content: "\e6a2";
+}
+
+.icon-conversation:before {
+  content: "\e6a3";
+}
+
+.icon-money_bag:before {
+  content: "\e6a4";
+}
+
+.icon-reminder:before {
+  content: "\e6a5";
+}
+
+.icon-audio_mute:before {
+  content: "\e6a6";
+}
+
+.icon-locate:before {
+  content: "\e6a7";
+}
+
+.icon-keyboard:before {
+  content: "\e6a8";
+}
+
+.icon-report:before {
+  content: "\e6a9";
+}
+
+.icon-badge:before {
+  content: "\e6aa";
+}
+
+.icon-attachment:before {
+  content: "\e6ab";
+}
+
+.icon-document:before {
+  content: "\e6ac";
+}
+
+.icon-drinks:before {
+  content: "\e6ad";
+}
+
+.icon-face_happy:before {
+  content: "\e6ae";
+}
+
+.icon-flag:before {
+  content: "\e6af";
+}
+
+.icon-face_smile:before {
+  content: "\e6b0";
+}
+
+.icon-face_frown:before {
+  content: "\e6b1";
+}
+
+.icon-help:before {
+  content: "\e6b2";
+}
+
+.icon-nav_drawer:before {
+  content: "\e6b3";
+}
+
+.icon-building:before {
+  content: "\e6b4";
+}
+
+.icon-ticket_bus:before {
+  content: "\e6b5";
+}
+
+.icon-record:before {
+  content: "\e6b6";
+}
+
+.icon-notification:before {
+  content: "\e6b7";
+}
+
+.icon-cash_card:before {
+  content: "\e6b8";
+}
+
+.icon-signal:before {
+  content: "\e6b9";
+}
+
+.icon-ballons:before {
+  content: "\e6ba";
+}
+
+.icon-manual:before {
+  content: "\e6bb";
+}
+
+.icon-ticket:before {
+  content: "\e6bc";
+}
+
+.icon-wifi:before {
+  content: "\e6bd";
+}
+
+.icon-voucher_discount:before {
+  content: "\e6be";
+}
+
+.icon-voucher_merchant:before {
+  content: "\e6bf";
+}
+
+.icon-wifi_unstable:before {
+  content: "\e6c0";
+}
+
+.icon-path:before {
+  content: "\e6c1";
+}
+
+.icon-voucher:before {
+  content: "\e6c2";
+}
+
+.icon-arrow_up:before {
+  content: "\e6c3";
+}
+
+.icon-add:before {
+  content: "\e6c4";
+}
+
+.icon-back:before {
+  content: "\e6c5";
+}
+
+.icon-collapse:before {
+  content: "\e6c6";
+}
+
+.icon-close_window:before {
+  content: "\e6c7";
+}
+
+.icon-arriving:before {
+  content: "\e6c8";
+}
+
+.icon-close:before {
+  content: "\e6c9";
+}
+
+.icon-complain:before {
+  content: "\e6ca";
+}
+
+.icon-delete:before {
+  content: "\e6cb";
+}
+
+.icon-female:before {
+  content: "\e6cc";
+}
+
+.icon-arrow_down:before {
+  content: "\e6cd";
+}
+
+.icon-departure:before {
+  content: "\e6ce";
+}
+
+.icon-forward:before {
+  content: "\e6cf";
+}
+
+.icon-error:before {
+  content: "\e6d0";
+}
+
+.icon-info:before {
+  content: "\e6d1";
+}
+
+.icon-rising:before {
+  content: "\e6d2";
+}
+
+.icon-more:before {
+  content: "\e6d3";
+}
+
+.icon-invisible:before {
+  content: "\e6d4";
+}
+
+.icon-maps:before {
+  content: "\e6d5";
+}
+
+.icon-swap:before {
+  content: "\e6d6";
+}
+
+.icon-remove:before {
+  content: "\e6d7";
+}
+
+.icon-selected:before {
+  content: "\e6d8";
+}
+
+.icon-question:before {
+  content: "\e6d9";
+}
+

@@ -1,0 +1,27 @@
+.ClockWise {
+    animation: Clockwise 2s linear infinite;
+}
+
+@keyframes Clockwise {
+    0% {
+        transform: rotate(0turn);
+    }
+
+    100% {
+        transform: rotate(1turn);
+    }
+}
+
+.CounterClockWise {
+    animation: Counterclockwise 2s linear infinite;
+}
+
+@keyframes Counterclockwise {
+    0% {
+        transform: rotate(1turn);
+    }
+
+    100% {
+        transform: rotate(0turn);
+    }
+}
