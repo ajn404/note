@@ -3,5 +3,5 @@ title : primitives
 ---
 
 <ClientOnly>
-<example.wavePrint type='primitives'></example.wavePrint>
+<glsl-example type='primitives'></glsl-example>
 </ClientOnly>

@@ -5,6 +5,6 @@ title : 雪花
 
 
 <ClientOnly>
-<example.wavePrint></example.wavePrint>
+<glsl-example type="wave"></glsl-example>
 </ClientOnly>
 

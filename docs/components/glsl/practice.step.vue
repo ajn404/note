@@ -6,7 +6,7 @@
 <script lang="ts" setup>
 import Sketch from "@scripts/practice.setup.ts";
 import * as THREE from "three";
-import { ref, nextTick, onUnmounted,reactive } from "vue";
+import { ref, nextTick, onUnmounted, reactive } from "vue";
 
 // import shader
 import fs from '@shaders/practice/usingStepDrawCircle/fragment.glsl'
@@ -22,28 +22,26 @@ import tilingFs from '@shaders/practice/usingTiling/fragment.glsl'
 import tilingVs from '@shaders/practice/usingTiling/vertex.glsl'
 
 const props = defineProps({
-  type:String
+    type: String
 });
 
-let fragmentShader : string = fs,vertexShader:string  = vs;
-if(props.type){
-    switch(props.type){
-        case 'Square':{
-            fragmentShader = squareFs;
-            vertexShader = squareVs;
-            break;
-        } 
-        case 'utime':{
-            fragmentShader = uTimeFs;
-            break;
-        }
+let fragmentShader: string = fs, vertexShader: string = vs;
+switch (props.type) {
+    case 'Square': {
+        fragmentShader = squareFs;
+        vertexShader = squareVs;
+        break;
+    }
+    case 'utime': {
+        fragmentShader = uTimeFs;
+        break;
+    }
 
-        case 'tiling':{
-            fragmentShader = tilingFs;
-            vertexShader = tilingVs;
-            break;
-        }
-    }  
+    case 'tiling': {
+        fragmentShader = tilingFs;
+        vertexShader = tilingVs;
+        break;
+    }
 }
 
 const container = ref(null);
@@ -105,29 +103,29 @@ sketch.resize = function () {
     }
     uniforms.u_frame.value = 0;
     this.camera.aspect = this.container.clientWidth / this.container.clientHeight;
-        this.camera.updateProjectionMatrix();
-        this.renderer.setSize(this.container.clientWidth, this.container.clientHeight);
-        this.render();
+    this.camera.updateProjectionMatrix();
+    this.renderer.setSize(this.container.clientWidth, this.container.clientHeight);
+    this.render();
 }
 
 nextTick(() => {
     const options = {
-    container: container.value || document.body
+        container: container.value || document.body
     };
     sketch.addObject = function () {
-            this.geometry = new THREE.PlaneGeometry(2, 2);
-            this.material = new THREE.ShaderMaterial(
-                {
-                    uniforms: uniforms,
-                    side: THREE.DoubleSide,
+        this.geometry = new THREE.PlaneGeometry(2, 2);
+        this.material = new THREE.ShaderMaterial(
+            {
+                uniforms: uniforms,
+                side: THREE.DoubleSide,
 
-                    fragmentShader: fragmentShader,
-                    vertexShader: vertexShader,
-                }
-            );
-            this.mesh = new THREE.Mesh(this.geometry, this.material);
-            this.scene.add(this.mesh);
-        }
+                fragmentShader: fragmentShader,
+                vertexShader: vertexShader,
+            }
+        );
+        this.mesh = new THREE.Mesh(this.geometry, this.material);
+        this.scene.add(this.mesh);
+    }
     sketch.init(options);
     sketch.camera.position.z = 0.52;
 })

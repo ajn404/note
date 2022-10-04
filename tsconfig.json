@@ -11,13 +11,13 @@
         "baseUrl": "./",
         "paths": {
             "@/*": [
-                "src/*"
+                "docs/*"
             ],
             "public": [
-                "src/public/"
+                "docs/public/"
             ],
             "components": [
-                "src/components"
+                "docs/components"
             ]
         },
         "allowSyntheticDefaultImports": true,
@@ -30,11 +30,11 @@
         "node_modules"
     ],
     "include": [
-        "./src/.vuepress/**/*.ts",
-        "./src/.vuepress/**/*.mts",
-        "./src/.vuepress/**/*.d.ts",
-        "./src/.vuepress/**/*.tsx",
-        "./src/.vuepress/**/*.vue",
-        "./src/.vuepress/**/*.glsl",
+        "./docs/.vuepress/**/*.ts",
+        "./docs/.vuepress/**/*.mts",
+        "./docs/.vuepress/**/*.d.ts",
+        "./docs/.vuepress/**/*.tsx",
+        "./docs/.vuepress/**/*.vue",
+        "./docs/.vuepress/**/*.glsl",
     ]
 }

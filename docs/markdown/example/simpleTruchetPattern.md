@@ -3,5 +3,5 @@ title : simpleTruchetPattern
 ---
 
 <ClientOnly>
-<example.wavePrint type='simpleTruchetPattern'></example.wavePrint>
+<glsl-example type='simpleTruchetPattern'></glsl-example>
 </ClientOnly>

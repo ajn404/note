@@ -9,8 +9,86 @@
 import Sketch from "@scripts/practice.setup.ts";
 import * as THREE from "three";
 import { ref, nextTick, onUnmounted } from "vue";
-import fs from '@shaders/examples/shaderToy/lightSaberDuel/fragment.glsl'
-import vs from '@shaders/examples/shaderToy/lightSaberDuel/vertex.glsl'
+
+import ikunFs from '@shaders/examples/shaderToy/lightSaberDuel/fragment.glsl'
+import ikunVs from '@shaders/examples/shaderToy/lightSaberDuel/vertex.glsl'
+
+import waveFs from '@shaders/examples/shaderToy/wavePrint/fragment.glsl'
+import waveVs from '@shaders/examples/shaderToy/wavePrint/vertex.glsl'
+
+import cityFs from '@shaders/examples/shaderToy/fractalCity/fragment.glsl'
+import cityVs from '@shaders/examples/shaderToy/fractalCity/vertex.glsl'
+
+import priFs from '@shaders/examples/shaderToy/primitives/fragment.glsl'
+import priVs from '@shaders/examples/shaderToy/primitives/vertex.glsl'
+
+//simpleTruchetPattern
+import stpFs from '@shaders/examples/shaderToy/simpleTruchetPattern/fragment.glsl'
+import stpVs from '@shaders/examples/shaderToy/simpleTruchetPattern/vertex.glsl'
+
+//simpleTruchetPattern
+import edFs from '@shaders/examples/shaderToy/ed209/fragment.glsl'
+import edVs from '@shaders/examples/shaderToy/ed209/vertex.glsl'
+const props = defineProps({
+  type:String
+});
+
+let fragmentShader : string = '',vertexShader:string  = '';
+
+let doRotate  = true,geometryX = 6,geometryY=5;
+switch(props.type){
+        default:{
+            fragmentShader = ikunFs;
+            vertexShader = ikunVs;
+            break;
+        }
+        case 'ikun':{
+            fragmentShader = ikunFs;
+            vertexShader = ikunVs;
+            break;
+        }
+
+        case 'wave':{
+            fragmentShader = waveFs;
+            vertexShader = waveVs;
+            break;
+        }
+
+        case 'fractalCity':{
+            fragmentShader = cityFs;
+            vertexShader = cityVs;
+            doRotate = false;
+            geometryY=2;
+            break;
+        }
+        case 'primitives':{
+            fragmentShader = priFs;
+            vertexShader = priVs;
+            doRotate = false;
+            geometryX = 1.92;
+            geometryY = 1.08;
+            break;
+        }
+        case 'simpleTruchetPattern':{
+            fragmentShader = stpFs;
+            vertexShader = stpVs;
+            doRotate = false;
+            geometryX = 5.6;
+            geometryY = 3;
+            break;
+        }
+
+        case 'ed209':{
+            fragmentShader = edFs;
+            vertexShader = edVs;
+            doRotate = false;
+            geometryX = 5.12;
+            geometryY = 2.88;
+            break;
+        }
+
+    }  
+
 
 
 const loader = new THREE.TextureLoader();
@@ -84,14 +162,14 @@ sketch.resize = function () {
 }
 
 sketch.addObject = function () {
-    this.geometry = new THREE.PlaneGeometry(2, 2);
+    this.geometry = new THREE.PlaneGeometry(geometryX, geometryY);
     this.material = new THREE.ShaderMaterial(
         {
             uniforms: uniforms,
             side: THREE.DoubleSide,
 
-            fragmentShader: fs,
-            vertexShader: vs,
+            fragmentShader: fragmentShader,
+            vertexShader: vertexShader,
         }
     );
     this.mesh = new THREE.Mesh(this.geometry, this.material);
@@ -107,12 +185,8 @@ nextTick(() => {
         texture.wrapS = THREE.RepeatWrapping;
         texture.wrapT = THREE.RepeatWrapping;
         texture.minFilter = THREE.LinearFilter;
-
         uniforms.iChannel0.value = texture;
         uniforms.iChannel1.value = texture;
-
-
-
         try {
             sketch.init(options);
         } catch (err) {

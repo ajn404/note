@@ -3,5 +3,5 @@ title : city
 ---
 
 <ClientOnly>
-<example.wavePrint type='fractalCity'></example.wavePrint>
+<glsl-example type='fractalCity'></glsl-example>
 </ClientOnly>
