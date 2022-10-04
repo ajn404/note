@@ -17,7 +17,6 @@ const viteConfig = {
     },
     build: {
         rollupOptions: {
-            external: ["/rengm/images/js01.png"]
         },
         dynamicImportVarsOptions: {
         },
