@@ -1,0 +1,40 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es5",
+        "sourceMap": true,
+        "jsx": "preserve",
+        "lib": [
+            "es2015",
+            "dom"
+        ],
+        "baseUrl": "./",
+        "paths": {
+            "@/*": [
+                "src/*"
+            ],
+            "public": [
+                "src/public/"
+            ],
+            "components": [
+                "src/components"
+            ]
+        },
+        "allowSyntheticDefaultImports": true,
+        // Gives error if there are implied "<any>" types.
+        "noImplicitAny": true,
+        // Allows you to access non-constant properties, such as object[keyVar]
+        "suppressImplicitAnyIndexErrors": true
+    },
+    "exclude": [
+        "node_modules"
+    ],
+    "include": [
+        "./src/.vuepress/**/*.ts",
+        "./src/.vuepress/**/*.mts",
+        "./src/.vuepress/**/*.d.ts",
+        "./src/.vuepress/**/*.tsx",
+        "./src/.vuepress/**/*.vue",
+        "./src/.vuepress/**/*.glsl",
+    ]
+}

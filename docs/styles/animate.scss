@@ -1,0 +1,17 @@
+$duration:1s;
+$delay:1s;
+
+.animate{
+    animation-duration: $duration;
+    animation-delay: $delay;
+    animation-fill-mode: both;
+}
+
+@keyframes demo {
+    from{
+        margin-left: -20%;
+    }
+    to{
+        margin-left: 100%;
+    }
+}
