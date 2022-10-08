@@ -15,7 +15,7 @@
     </div>
   </template>
   <script lang="ts" setup>
-  import { ref, getCurrentInstance, onUnmounted, nextTick, readonly } from "vue";
+  import { ref, onUnmounted, nextTick, readonly } from "vue";
   import { ElMessage } from "element-plus";
   import { isClient } from "@vueuse/core";
   
@@ -44,7 +44,7 @@
       p5 = window['p5'];
       //本地开发，或者就这样？
       nextTick(() => {
-        defaultMethod = "rayCast";  
+        defaultMethod = "defaultFunc";  
         new p5(p5MainFunc[defaultMethod], "p5-start");
         window["p5DrawLoop"] = defaultMethod;
       });
@@ -62,8 +62,11 @@
         //新建计算和canvas 
         dom = document.querySelector("#p5-start")
         if (["quickSort", "bubbleSort","rayCast"].includes(funcName)&&dom) {
-          dom.requestFullscreen();
-        }
+          //requestFullscreen是promise
+          dom.requestFullscreen().then(()=>{
+            new p5(funcs[funcName] || p5MainFunc.defaultFunc, "p5-start");
+          });
+        }else
         new p5(funcs[funcName] || p5MainFunc.defaultFunc, "p5-start");
       }
     } catch (e) {
@@ -83,11 +86,12 @@
   }
   .p5-start {
     display: flex;
-    gap: 50px;
+    gap: 20px;
     flex-direction: column;
+    margin-top: 20px;
   }
     :deep(.cascader .el-cascader-menu__wrap ){
-      height: 40vh !important;
+      height: 30vh !important;
     }
     :deep(.cascader .el-cascader-menu){
       color: var(--c-text)!important;

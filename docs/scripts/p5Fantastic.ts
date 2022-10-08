@@ -1,6 +1,8 @@
+//所有方法都导出在p5.vue中，需要展示的放在allMethods里
+
 import { ElMessage } from "element-plus";
 
-export const main = (_p5) => {
+export const main = (_p5:any) => {
   const p5 = _p5;
   let xpos1;
   let xpos2;
@@ -63,7 +65,7 @@ export const main = (_p5) => {
   };
 };
 
-export const easing = (_) =>{
+export const easing = (_:any) =>{
   let x = 1;
 let y = 1;
 let easing = 0.05;
@@ -93,9 +95,9 @@ function draw() {
 _.setup = setup;
 _.draw = draw;
 
-}
+};
 
-export const LSystem = (_p5) => {
+export const LSystem = (_p5:any) => {
   interface rule {
     a: any;
     b: any;
@@ -205,7 +207,7 @@ export const LSystem = (_p5) => {
   };
 };
 
-export const angularMotion = (_p5) => {
+export const angularMotion = (_p5:any) => {
   let p5 = _p5;
   let angle = 0;
 
@@ -236,7 +238,7 @@ export const angularMotion = (_p5) => {
   };
 };
 
-export const slidePuzzle = (_p5) => {
+export const slidePuzzle = (_p5:any) => {
   let p5 = _p5;
 
   let width = 400;
@@ -453,7 +455,7 @@ export const slidePuzzle = (_p5) => {
   }
 };
 
-export const polarCoordinates = (_p5) => {
+export const polarCoordinates = (_p5:any) => {
   let p5 = _p5;
   let r = 150;
 
@@ -491,7 +493,7 @@ export const polarCoordinates = (_p5) => {
   };
 };
 
-export const geometries = (_p5) => {
+export const geometries = (_p5:any) => {
   let _ = _p5;
   _.setup = () => {
     _.createCanvas(710, 400, _.WEBGL);
@@ -559,7 +561,7 @@ export const geometries = (_p5) => {
   };
 };
 
-export const sinCos3D = (_p5) => {
+export const sinCos3D = (_p5:any) => {
   let _ = _p5;
   _.setup = () => {
     _.createCanvas(710, 400, _.WEBGL);
@@ -599,7 +601,7 @@ export const sinCos3D = (_p5) => {
   };
 };
 
-export const boxRef = (_p5) => {
+export const boxRef = (_p5:any) => {
   let _ = _p5;
   _.setup = () => {
     _.createCanvas(500, 200, _.WEBGL);
@@ -629,7 +631,7 @@ export const boxRef = (_p5) => {
   };
 };
 
-export const boxRef1 = (_p5) => {
+export const boxRef1 = (_p5:any) => {
   let _ = _p5;
   _.setup = () => {
     _.createCanvas(500, 200, _.WEBGL);
@@ -653,7 +655,7 @@ export const boxRef1 = (_p5) => {
   };
 };
 
-export const defaultFunc = (_p5) => {
+export const defaultFunc = (_p5:any) => {
   let _ = _p5;
   let slider;
   _.setup = () => {
@@ -680,73 +682,8 @@ export const defaultFunc = (_p5) => {
   };
 };
 
-export const mitosis = (_) => {
-  // https://www.youtube.com/watch?v=jxGS3fKPKJA
-  // 有丝分裂
-  const Cell = function (_, pos, r, c) {
-    this.r = r || 20;
-
-    if (pos) {
-      this.pos = pos.copy();
-    } else {
-      this.pos = _.createVector(_.random(this.r, 500), _.random(this.r, 200));
-    }
-
-    this.c =
-      c ||
-      _.color(_.random(100, 255), _.random(100, 255), _.random(100, 255), 255);
-    this.mitosis = () => new Cell(_, this.pos, this.r * 0.8, this.c);
-    this.click = (x, y) => {
-      let d = _.dist(this.pos.x, this.pos.y, x, y);
-      return d < this.r;
-    };
-    this.move = () => {
-      let vel = p5.Vector.random2D();
-      this.pos.add(vel);
-    };
-    this.show = () => {
-      _.ellipse(this.pos.x, this.pos.y, this.r, this.r);
-      _.noStroke();
-      _.fill(this.c);
-    };
-  };
-
-  const cells: any = [];
-  // let timer;
-  _.setup = () => {
-    _.createCanvas(500, 200);
-    for (let i = 0; i < 20; i++) {
-      cells.push(new Cell(_));
-    }
-  };
-  _.draw = () => {
-    _.background(0);
-    cells.forEach((cell) => {
-      cell.show();
-      cell.move();
-    });
-
-    if (window && window["p5DrawLoop"] !== "mitosis") {
-      _.noLoop();
-    }
-  };
-  _.doubleClicked = () => {
-    if (cells.length < 1000)
-      for (let i = 0; i < cells.length; i++) {
-        if (cells[i].click(_.mouseX, _.mouseY)) {
-          cells.push(cells[i].mitosis());
-          cells.push(cells[i].mitosis());
-          cells.splice(i, 1);
-        }
-      }
-    else {
-      ElMessage.warning("细胞数量超出上限1000");
-    }
-  };
-};
-
 // 地震震级分布
-export const earthQuake = (_) => {
+export const earthQuake = (_:any) => {
   let table;
   let r = 200;
   let earth;
@@ -819,7 +756,7 @@ export const earthQuake = (_) => {
   };
 };
 
-export const bubbleSort = (_) => {
+export const bubbleSort = (_:any) => {
   let i = 0,
     j = 0,
     values: any = [];
@@ -860,7 +797,7 @@ export const bubbleSort = (_) => {
   _.mousePressed = () => { };
 };
 
-export const quickSort = (_) => {
+export const quickSort = (_:any) => {
   let values: any[] = [];
   let w = 10;
 
@@ -944,7 +881,7 @@ export const quickSort = (_) => {
 };
 
 // 视错觉
-export const stepFeetIIIusion = (_) => {
+export const stepFeetIIIusion = (_:any) => {
   class Brick {
     brickColor: any;
     yPos: any;
@@ -1025,7 +962,7 @@ export const stepFeetIIIusion = (_) => {
   }
 };
 
-export const gridOutput = (_) => {
+export const gridOutput = (_:any) => {
   _.setup = () => {
     _.createCanvas(500, 300);
   };
@@ -1054,7 +991,7 @@ export const gridOutput = (_) => {
   };
 };
 
-export const genFuncDemo = (_) => {
+export const genFuncDemo = (_:any) => {
   function* gen() {
     let index = 1;
     while (index < 10) {
@@ -1099,7 +1036,7 @@ export const genFuncDemo = (_) => {
   };
 };
 
-export const minesweeper = (_) => {
+export const minesweeper = (_:any) => {
   let grid;
   const rows = 20,
     cols = 20;
@@ -1325,7 +1262,7 @@ export const minesweeper = (_) => {
 };
 
 //名字与功能未匹配
-export const rose = (_) => {
+export const rose = (_:any) => {
   let n = 0,
     d = 0;
   _.setup = () => {
@@ -1372,8 +1309,7 @@ export const rose = (_) => {
   };
 };
 
-
-export const rayCast = (_) => {
+export const rayCast = (_:any) => {
 
 
   let p5 = window['p5'];
@@ -1533,6 +1469,20 @@ export const rayCast = (_) => {
 
 
   };
+};
+
+//lorenz system
+//劳伦滋混沌系统
+export const lorenzSystem = (_:any)=>{
+  _.setup = ()=>{
+
+  }
+
+  _.draw = ()=>{
+    if (window && window["p5DrawLoop"] !== "lorenzSystem") {
+      _.noLoop();
+    }
+  }
 }
 
 export const allMethods = [
@@ -1566,7 +1516,7 @@ export const allMethods = [
         },
         {
           value:"rayCast",
-          label:"射线投影"
+          label:"射线投影[fullscreen]"
         }
       ],
     },
@@ -1619,13 +1569,13 @@ export const allMethods = [
       label: "场景5(算法可视)",
       children: [
         {
-          label: "冒泡排序",
+          label: "冒泡排序[fullscreen]",
           value: "bubbleSort",
         },
         {
-          label: "快速排序",
+          label: "快速排序[fullscreen]",
           value: "quickSort",
         },
       ],
     },
-  ];
+];
