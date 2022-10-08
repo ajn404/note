@@ -1474,14 +1474,39 @@ export const rayCast = (_:any) => {
 //lorenz system
 //劳伦滋混沌系统
 export const lorenzSystem = (_:any)=>{
+  let x=0.01,y=1,z=1;
+  let a=10;
+  let b = 28;
+  let c = 8/3;
+
+
+
   _.setup = ()=>{
+    _.createCanvas(800,600,_.P3D);
+    _.background(0);
+    _.fill(237, 34, 93);
+    _.strokeWeight(0.1);
 
   }
 
   _.draw = ()=>{
+
+
+
     if (window && window["p5DrawLoop"] !== "lorenzSystem") {
       _.noLoop();
     }
+    let dt = 0.01;
+    let dx = dt*(a*(y-x));
+    let dy = dt*(x*(b-z)-y);
+    let dz = dt*(x*y - c*z);
+    x+=dx;
+    y+=dy;
+    z+=dz;
+    _.translate(_.width/2,_.height/2, 0);
+    _.stroke(237, 34, 93);
+    _.scale(10);
+    _.point(x,y,z);
   }
 }
 
@@ -1542,6 +1567,9 @@ export const allMethods = [
           value: "sinCos3D",
         },
         { label: "震级", value: "earthQuake" },
+        {
+          label:'劳伦兹混沌系统',value:'lorenzSystem'
+        }
       ],
     },
     {

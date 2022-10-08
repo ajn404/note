@@ -61,7 +61,7 @@
         clearFunc();
         //新建计算和canvas 
         dom = document.querySelector("#p5-start")
-        if (["quickSort", "bubbleSort","rayCast"].includes(funcName)&&dom) {
+        if (["quickSort", "bubbleSort","rayCast","lorenzSystem"].includes(funcName)&&dom) {
           //requestFullscreen是promise
           dom.requestFullscreen().then(()=>{
             new p5(funcs[funcName] || p5MainFunc.defaultFunc, "p5-start");
