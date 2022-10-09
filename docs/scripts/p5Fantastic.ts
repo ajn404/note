@@ -120,7 +120,7 @@ export const LSystem = (_p5:any) => {
   // "[" p5.push();
   // "]" p5.pop();
 
-  function generate(canGene) {
+  function generate(canGene:any) {
     if (num < 4 || canGene) {
       num++;
       len *= 0.5;
@@ -176,7 +176,7 @@ export const LSystem = (_p5:any) => {
     }
   }
 
-  function addButton(label) {
+  function addButton(label:any) {
     let button = p5.createButton(label);
     let buttonStyle = button.elt.style;
 
@@ -1478,21 +1478,13 @@ export const lorenzSystem = (_:any)=>{
   let a=10;
   let b = 28;
   let c = 8/3;
-
-
-
   _.setup = ()=>{
     _.createCanvas(800,600,_.P3D);
     _.background(0);
     _.fill(237, 34, 93);
     _.strokeWeight(0.1);
-
   }
-
   _.draw = ()=>{
-
-
-
     if (window && window["p5DrawLoop"] !== "lorenzSystem") {
       _.noLoop();
     }
