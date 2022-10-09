@@ -2,12 +2,42 @@ import { NavbarConfig, NavbarGroup } from 'vuepress';
 
 
 const practiceBaseUrl: string = '/markdown/practice/'
-const practice: NavbarGroup[] = [
+const glslBaseUrl: string = '/markdown/example/'
+const examples: NavbarGroup[] = [
     {
-        text: 'practice',
+        text: 'glsl',
         children: [
             {
-                text: '刚开始',
+                text: 'shaderToy',
+                children: [
+                    {
+                        text: 'chicken behind window',
+                        link: `${glslBaseUrl}lightSaberDuel`
+                    },
+                    {
+                        text: '❄️❄️❄️❄️❄️ snow flake',
+                        link: `${glslBaseUrl}wavePrint`
+                    },
+                    {
+                        text: 'fractal city(⚠️ gpu)',
+                        link: `${glslBaseUrl}fractalCity`
+                    },
+                    {
+                        text: 'primitives(⚠️ gpu)',
+                        link: `${glslBaseUrl}primitives`
+                    },
+                    {
+                        text: 'simpleTruchetPattern',
+                        link: `${glslBaseUrl}simpleTruchetPattern`
+                    },
+                    {
+                        text: 'ed209',
+                        link: `${glslBaseUrl}ed209`
+                    }
+                ]
+            },
+            {
+                text: 'practice',
                 children: [
                     {
                         text: '第一个Shader练习',
@@ -36,12 +66,7 @@ const practice: NavbarGroup[] = [
                     {
                         text: '中心旋转',
                         link: `${practiceBaseUrl}rotatingTheShape`
-                    }
-                ]
-            },
-            {
-                text: 'glsl functions',
-                children: [
+                    },
                     {
                         text: 'clamp',
                         link: `${practiceBaseUrl}usingClamp`
@@ -65,45 +90,8 @@ const practice: NavbarGroup[] = [
                 ]
             }
         ]
-    }
-]
-
-const exampleBaseUrl: string = '/markdown/example/'
-const examples: NavbarGroup[] = [
-    {
-        text: 'example',
-        children: [
-            {
-                text: 'shaderToy',
-                children: [
-                    {
-                        text: 'chicken behind window',
-                        link: `${exampleBaseUrl}lightSaberDuel`
-                    },
-                    {
-                        text: '❄️❄️❄️❄️❄️ snow flake',
-                        link: `${exampleBaseUrl}wavePrint`
-                    },
-                    {
-                        text: 'fractal city(⚠️ gpu)',
-                        link: `${exampleBaseUrl}fractalCity`
-                    },
-                    {
-                        text: 'primitives(⚠️ gpu)',
-                        link: `${exampleBaseUrl}primitives`
-                    },
-                    {
-                        text: 'simpleTruchetPattern',
-                        link: `${exampleBaseUrl}simpleTruchetPattern`
-                    },
-                    {
-                        text: 'ed209',
-                        link: `${exampleBaseUrl}ed209`
-                    }
-                ]
-            }
-        ]
-    }
+    },
+    
 ]
 
 const noteBaseUrl: string = '/markdown/notes/'
@@ -197,7 +185,6 @@ const fantastic: NavbarGroup[] = [
 
 const navbar: NavbarConfig =
     [
-        ...practice,
         ...examples,
         ...note,
         ...fantastic

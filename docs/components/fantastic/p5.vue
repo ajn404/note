@@ -70,7 +70,6 @@
         new p5(funcs[funcName] || p5MainFunc.defaultFunc, "p5-start");
       }
     } catch (e) {
-      console.log(e);
       ElMessage.warning("可能cdn的p5还没有加载好");
     }
   };
@@ -83,16 +82,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    flex: 1;
   }
   .p5-start {
     display: flex;
     gap: 20px;
-    flex-direction: column;
     margin-top: 20px;
+    min-height: 80vh;
   }
-    :deep(.cascader .el-cascader-menu__wrap ){
-      height: 30vh !important;
-    }
     :deep(.cascader .el-cascader-menu){
       color: var(--c-text)!important;
     }
