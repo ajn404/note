@@ -1,7 +1,8 @@
 <template>
-    <h1 class="animate">
+    <h2>
         转眼如隔世，已是很多年   
-    </h1>
+    </h2>
+    
 </template>
 <script lang="ts" setup>
 //setup 执行时dom还不存在

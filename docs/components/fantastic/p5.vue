@@ -89,6 +89,7 @@
     gap: 20px;
     margin-top: 20px;
     min-height: 80vh;
+    max-height: 90vh;
   }
     :deep(.cascader .el-cascader-menu){
       color: var(--c-text)!important;

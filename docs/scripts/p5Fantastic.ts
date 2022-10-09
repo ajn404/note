@@ -4,10 +4,10 @@ import { ElMessage } from "element-plus";
 
 export const main = (_p5:any) => {
   const p5 = _p5;
-  let xpos1;
-  let xpos2;
-  let xpos3;
-  let xpos4;
+  let xpos1:any;
+  let xpos2:any;
+  let xpos3:any;
+  let xpos4:any;
   let thin = 8;
   let thick = 36;
   p5.setup = () => {
@@ -244,9 +244,9 @@ export const slidePuzzle = (_p5:any) => {
   let width = 400;
   let height = 400;
 
-  let source;
+  let source:any;
 
-  let w, h;
+  let w:any, h:any;
   let cols = 4;
   let rows = 4;
 
@@ -323,7 +323,7 @@ export const slidePuzzle = (_p5:any) => {
     }
   };
 
-  function simpleShuffle(arr) {
+  function simpleShuffle(arr:any) {
     for (let i = 0; i < 1000; i++) {
       randomMove(arr);
     }
@@ -340,13 +340,13 @@ export const slidePuzzle = (_p5:any) => {
     }
   }
 
-  function randomMove(arr) {
+  function randomMove(arr:any) {
     let r1 = p5.floor(p5.random(cols));
     let r2 = p5.floor(p5.random(rows));
     move(r1, r2, arr);
   }
 
-  function swap(i, j, arr) {
+  function swap(i:any, j:any, arr:any) {
     let temp = arr[i];
     arr[i] = arr[j];
     arr[j] = temp;
@@ -361,7 +361,7 @@ export const slidePuzzle = (_p5:any) => {
     return true;
   }
 
-  function move(i, j, arr) {
+  function move(i:any, j:any, arr:any) {
     let blank = findBlank() || 0;
     let blankCol = blank % cols;
     let blankRow = p5.floor(blank / rows);
@@ -371,7 +371,7 @@ export const slidePuzzle = (_p5:any) => {
     }
   }
 
-  function isNeighbor(i, j, x, y) {
+  function isNeighbor(i:any, j:any, x:any, y:any) {
     if (i !== x && j !== y) {
       return false;
     }
@@ -446,9 +446,9 @@ export const slidePuzzle = (_p5:any) => {
   }
 
   class Tile {
-    index: any;
+    index:any;
     img: any;
-    constructor(i, img) {
+    constructor(i:any, img:any) {
       this.index = i;
       this.img = img;
     }
@@ -657,7 +657,7 @@ export const boxRef1 = (_p5:any) => {
 
 export const defaultFunc = (_p5:any) => {
   let _ = _p5;
-  let slider;
+  let slider:any;
   _.setup = () => {
     _.createCanvas(500, 500, _.WEBGL);
     _.fill("red");
@@ -674,7 +674,7 @@ export const defaultFunc = (_p5:any) => {
     _.orbitControl();
 
     _.background(255);
-    let val = slider.value();
+    let val:any = slider.value();
     _.rotateZ(_.frameCount * 0.002);
     _.rotateX(_.frameCount * 0.002);
     _.rotateY(_.frameCount * 0.002);
@@ -684,9 +684,9 @@ export const defaultFunc = (_p5:any) => {
 
 // 地震震级分布
 export const earthQuake = (_:any) => {
-  let table;
+  let table:any;
   let r = 200;
-  let earth;
+  let earth:any;
   const PI = _.PI;
 
   _.preload = () => {
@@ -828,7 +828,7 @@ export const quickSort = (_:any) => {
     }
   };
 
-  async function quickSort(arr, start, end) {
+  async function quickSort(arr:any, start:any, end:any) {
     if (start >= end) {
       return;
     }
@@ -841,7 +841,7 @@ export const quickSort = (_:any) => {
     ]);
   }
 
-  async function partition(arr, start, end) {
+  async function partition(arr:any, start:any, end:any) {
     for (let i = start; i < end; i++) {
       states[i] = 1;
     }
@@ -868,14 +868,14 @@ export const quickSort = (_:any) => {
     return pivotIndex;
   }
 
-  async function swap(arr, a, b) {
+  async function swap(arr:any, a:any, b:any) {
     await sleep(50);
     let temp = arr[a];
     arr[a] = arr[b];
     arr[b] = temp;
   }
 
-  function sleep(ms) {
+  function sleep(ms:any) {
     return new Promise((resolve) => setTimeout(resolve, ms));
   }
 };
@@ -887,7 +887,7 @@ export const stepFeetIIIusion = (_:any) => {
     yPos: any;
     xPos: number;
     xSpeed: number;
-    constructor(bc, y) {
+    constructor(bc:any, y:any) {
       this.brickColor = bc;
       this.yPos = y;
       this.xPos = 0;
@@ -1005,20 +1005,20 @@ export const genFuncDemo = (_:any) => {
     _.frameRate(1);
   };
 
-  function sleep(duration) {
+  function sleep(duration:any) {
     return new Promise((resolve) => {
       setTimeout(resolve, duration);
     });
   }
 
-  async function drawRect(len, duration) {
+  async function drawRect(len:any, duration:any) {
     // _.fill(_.random(255),_.random(255),_.random(255))
     _.rect(0, 0, len * 50, len * 50);
     await sleep(duration);
   }
 
   let g = gen();
-  let x;
+  let x:any;
   x = g.next();
   _.draw = async () => {
     if (window && window["p5DrawLoop"] !== "genFuncDemo") {
@@ -1037,7 +1037,7 @@ export const genFuncDemo = (_:any) => {
 };
 
 export const minesweeper = (_:any) => {
-  let grid;
+  let grid:any;
   const rows = 20,
     cols = 20;
   const w = 20;
@@ -1084,7 +1084,7 @@ export const minesweeper = (_:any) => {
     }
   };
 
-  const make2DArray = (cols, rows) => {
+  const make2DArray = (cols:any, rows:any) => {
     const arr = new Array(cols);
     for (let i = 0; i < arr.length; i++) {
       arr[i] = new Array(rows);
@@ -1124,7 +1124,7 @@ export const minesweeper = (_:any) => {
     }
   };
 
-  let img;
+  let img:any;
   _.preload = () => {
     img = _.loadImage("/note/images/logo.jpg");
   };
@@ -1139,7 +1139,7 @@ export const minesweeper = (_:any) => {
     j: number;
     neighborCount: number;
 
-    constructor(x, y, w) {
+    constructor(x:any, y:any, w:any) {
       // 设置炸弹数量
       if (_.random(1) < 0.1) {
         this.bee = true;
@@ -1186,7 +1186,7 @@ export const minesweeper = (_:any) => {
       }
     }
 
-    containes(x, y) {
+    containes(x:any, y:any) {
       return (
         x > this.x && x < this.x + this.w && y > this.y && y < this.y + this.w
       );
@@ -1238,7 +1238,7 @@ export const minesweeper = (_:any) => {
     }
   }
 
-  function addButton(label) {
+  function addButton(label:any) {
     let button = _.createButton(label);
     let buttonStyle = button.elt.style;
 
@@ -1318,12 +1318,12 @@ export const rayCast = (_:any) => {
     pos: any;
     dir: any;
 
-    constructor(pos, angle) {
+    constructor(pos:any, angle:any) {
       this.pos = pos;
       this.dir = p5.Vector.fromAngle(angle);
     }
 
-    lookAt(x, y) {
+    lookAt(x:any, y:any) {
       this.dir.x = x - this.pos.x;
       this.dir.y = y - this.pos.y;
       this.dir.normalize();
@@ -1337,7 +1337,7 @@ export const rayCast = (_:any) => {
       _.pop();
     }
 
-    cast(wall) {
+    cast(wall:any) {
       const x1 = wall.a.x;
       const y1 = wall.a.y;
       const x2 = wall.b.x;
@@ -1380,11 +1380,11 @@ export const rayCast = (_:any) => {
       }
     }
 
-    update(x, y) {
+    update(x:any, y:any) {
       this.pos.set(x, y);
     }
 
-    look(walls) {
+    look(walls:any) {
       for (let i = 0; i < this.rays.length; i++) {
         const ray = this.rays[i];
         let closest = null;
@@ -1420,7 +1420,7 @@ export const rayCast = (_:any) => {
   class Boundary {
     a: any;
     b: any;
-    constructor(x1, y1, x2, y2) {
+    constructor(x1:any, y1:any, x2:any, y2:any) {
       this.a = _.createVector(x1, y1);
       this.b = _.createVector(x2, y2);
     }
@@ -1431,8 +1431,8 @@ export const rayCast = (_:any) => {
     }
   }
 
-  let walls: any = [];
-  let particle;
+  let walls:any = [];
+  let particle:any;
   let xoff = 0;
   let yoff = 10000;
   _.setup = () => {
@@ -1503,7 +1503,12 @@ export const lorenzSystem = (_:any)=>{
 }
 
 export const allMethods = [
-    { label: "默认", value: "defaultFunc" },
+    { label: "默认", children:[
+      {
+        label:'默认',
+        value: "defaultFunc"
+      }
+    ] },
     {
       label: "场景1（偏交互2D和生成艺术）",
       children: [
@@ -1544,23 +1549,23 @@ export const allMethods = [
           label: "移动拼图",
           value: "slidePuzzle",
         },
-        { label: "扫雷", value: "minesweeper" },
+        { label: "扫雷[kun true man's game]", value: "minesweeper" },
       ],
     },
     {
       label: "场景3（webgl）",
       children: [
         {
-          label: "geometries",
+          label: "geometries[basic]",
           value: "geometries",
         },
         {
           label: "sinCos3D",
           value: "sinCos3D",
         },
-        { label: "震级", value: "earthQuake" },
+        { label: "震级[promise]", value: "earthQuake" },
         {
-          label:'劳伦兹混沌系统',value:'lorenzSystem'
+          label:'劳伦兹混沌系统[fullscreen]',value:'lorenzSystem'
         }
       ],
     },

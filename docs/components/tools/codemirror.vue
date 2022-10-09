@@ -1,5 +1,6 @@
 <template>
   <div class="codemirror-tool-box">
+    <h2>playground</h2>
     <codemirror v-model="code" placeholder="在这里写代码" :style="{ padding: '10px 0' ,margin:'20px 0 0',maxHeight:'200px'}"
       :autofocus="true" :indent-with-tab="true" :tab-size="2" :extensions="extensions" @ready="handleReady"
       @change="handelChange" />

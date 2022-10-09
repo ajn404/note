@@ -173,6 +173,7 @@ const toggle = (item:HTMLElement)=>{
     overflow-y: scroll;
     max-height: 80vh;
     height: 80vh;
+    margin: 20px 0 0 20px;
     &:hover {
         outline: 1px dotted salmon;
     }

@@ -1,1 +1,3 @@
-## Home
+<ClientOnly>
+<home></home>
+</ClientOnly>
