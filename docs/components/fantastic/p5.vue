@@ -91,6 +91,12 @@
     min-height: 80vh;
     max-height: 90vh;
   }
+
+  @media screen and (max-width: 900px) {
+  .p5-start{
+    flex-direction: column;
+  }
+}
     :deep(.cascader .el-cascader-menu){
       color: var(--c-text)!important;
     }
