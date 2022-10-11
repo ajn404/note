@@ -64,7 +64,6 @@
         //新建计算和canvas 
         dom = document.querySelector("#p5-start")
         if (fullList.includes(funcName)&&dom) {
-          //requestFullscreen是promise
           dom.requestFullscreen().then(()=>{
             new p5(funcs[funcName] || p5MainFunc.defaultFunc, "p5-start");
           });
