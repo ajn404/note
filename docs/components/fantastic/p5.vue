@@ -32,6 +32,8 @@
   let defaultMethod = "defaultFunc";
   
   const methods = readonly(allMethods);
+  const fullList = ["quickSort", "bubbleSort","rayCast","lorenzSystem","chenShiSystem"];
+
   let dom:HTMLElement | null;
   const clearFunc = () => {
         dom = document.querySelector("#p5-start")
@@ -61,7 +63,7 @@
         clearFunc();
         //新建计算和canvas 
         dom = document.querySelector("#p5-start")
-        if (["quickSort", "bubbleSort","rayCast","lorenzSystem"].includes(funcName)&&dom) {
+        if (fullList.includes(funcName)&&dom) {
           //requestFullscreen是promise
           dom.requestFullscreen().then(()=>{
             new p5(funcs[funcName] || p5MainFunc.defaultFunc, "p5-start");
