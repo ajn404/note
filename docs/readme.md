@@ -1,3 +1,3 @@
 <ClientOnly>
-<vtkPdrReader></vtkPdrReader>
+<home></home>
 </ClientOnly>

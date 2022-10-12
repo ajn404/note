@@ -753,6 +753,8 @@ const obj = {
     name:'c'
   }
 }
+
+//emurable为false,for ... in 循环无法遍历
 Object.defineProperty(obj,'d',{
   value:'d',
   enumerable:false,
@@ -770,7 +772,38 @@ obj.sym = 'sym value'
 for(let item in obj){
   console.log(item,obj[item]);
 }
-
 ```
+
+
+##### 6.1.7.4 Well-Known Intrinsic Objects
+
+|  Intristic name |  Global name | ECMASript Language Association | 
+|  --- | --- | --- |
+| %[AggregateErro](#aggregateerror)r% | AggregateError | The AggregateError Constructor |
+| %Array% | Array | The Array Constructor |
+| %ArrayBuffer% | ArrayBuffer | The ArrayBuffer Constructor |
+
+
+###### AggregateError
+
+```js
+try {
+  throw new AggregateError([
+    new Error("the first error"),
+    new Error("the second error"),
+  ], 'all error is not error ');
+} catch (e) {
+  console.log(e instanceof AggregateError); 
+  console.log(e.message);                   
+  console.log(e.name);                      
+  console.log(e.errors);    
+  console.log(e.stack);
+  console.log(Object.getPrototypeOf(e));
+  console.log(Object.getOwnPropertyNames(e));
+}
+```
+
+
+
 
 

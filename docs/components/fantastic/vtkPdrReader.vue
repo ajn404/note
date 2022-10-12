@@ -138,7 +138,7 @@ import { ElLoading } from "element-plus";
       position: relative;
       & > div {
         position: fixed !important;
-        z-index: 1;
+        z-index: 1  ;
         top: 3.6rem!important;
       }
     }

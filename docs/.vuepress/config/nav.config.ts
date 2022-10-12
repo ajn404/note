@@ -178,6 +178,10 @@ const fantastic: NavbarGroup[] = [
                 text: 'p5',
                 link:`${fantasticUrl}p5`
             },
+            {
+                text: 'vtk',
+                link:`${fantasticUrl}vtkDemo`
+            },
         
         ]
     }
