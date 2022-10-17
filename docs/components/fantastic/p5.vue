@@ -4,6 +4,7 @@
         v-model="selectMethhod"
         :options="methods"
         @change="handleChange"
+        v-if="!singlePage"
         class="cascader"
       >
         <template #default="{ node, data }">
@@ -11,7 +12,7 @@
           <span v-if="!node.isLeaf">({{ data.children.length }})</span>
         </template>
       </el-cascader-panel>
-      <div id="p5-start"></div>
+      <div id="p5-start" :class="[singlePage?'singlepage':'container']"></div>
     </div>
   </template>
   <script lang="ts" setup>
@@ -23,12 +24,15 @@
   import * as p5MainFunc from "@scripts/p5Fantastic.ts";
   import { allMethods } from "@scripts/p5Fantastic.ts";
 
+  const props = defineProps({type:String});
+
   const funcs = {};
   for (let p5MainFuncItem in p5MainFunc) {
     funcs[`${p5MainFuncItem}`] = p5MainFunc[`${p5MainFuncItem}`];
   }
+
+  const singlePage = ref(props.type&&funcs[props.type]);
   const selectMethhod = ref([]);
-  
   let defaultMethod = "defaultFunc";
   
   const methods = readonly(allMethods);
@@ -46,7 +50,7 @@
       p5 = window['p5'];
       //本地开发，或者就这样？
       nextTick(() => {
-        defaultMethod = "defaultFunc";  
+        defaultMethod = props.type|| "defaultFunc";  
         new p5(p5MainFunc[defaultMethod], "p5-start");
         window["p5DrawLoop"] = defaultMethod;
       });
@@ -58,17 +62,18 @@
     try {
       if (p5 && typeof p5 === "function") {
         let funcName = arr[arr.length - 1];
-        window["p5DrawLoop"] = funcName;
+        window["p5DrawLoop"] = singlePage.value||funcName;
         //清除之前的
         clearFunc();
         //新建计算和canvas 
-        dom = document.querySelector("#p5-start")
+        dom = document.querySelector("#p5-start");
+
         if (fullList.includes(funcName)&&dom) {
           dom.requestFullscreen().then(()=>{
             new p5(funcs[funcName] || p5MainFunc.defaultFunc, "p5-start");
           });
         }else
-        new p5(funcs[funcName] || p5MainFunc.defaultFunc, "p5-start");
+        new p5(singlePage.value||funcs[funcName] || p5MainFunc.defaultFunc, "p5-start");
       }
     } catch (e) {
       ElMessage.warning("可能cdn的p5还没有加载好");

@@ -170,6 +170,9 @@ const beforeBlog: NavbarGroup[] = [
 
 
 const fantasticUrl: string = '/markdown/fantastic/'
+
+const p5SinglePageUrl:string = '/markdown/fantasticSinglePage/'
+
 const fantastic: NavbarGroup[] = [
     {
         text: 'fantastic',
@@ -178,6 +181,16 @@ const fantastic: NavbarGroup[] = [
                 text: 'p5',
                 link:`${fantasticUrl}p5`
             },
+            {
+                text:'p5 single',
+                children:[
+                    {
+                        text:'lorenzSystem',
+                        link:`${p5SinglePageUrl}lorenzSystem`
+                    }
+                ]
+            },
+
             {
                 text: 'vtk',
                 link:`${fantasticUrl}vtkDemo`
