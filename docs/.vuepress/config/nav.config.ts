@@ -1,5 +1,5 @@
 import { NavbarConfig, NavbarGroup } from 'vuepress';
-
+import { allMethods } from "../../scripts/p5Fantastic";
 
 const practiceBaseUrl: string = '/markdown/practice/'
 const glslBaseUrl: string = '/markdown/example/'
@@ -172,13 +172,28 @@ const beforeBlog: NavbarGroup[] = [
 const fantasticUrl: string = '/markdown/fantastic/'
 
 const p5SinglePageUrl:string = '/markdown/fantasticSinglePage/'
-const p5SinglePageList = ["main","easing","LSystem","angularMotion","slidePuzzle","polarCoordinates",
-                            "geometries","sinCos3D","boxRef","boxref1","defaultFunc","earthQuake"];
+// const p5SinglePageList = ["main","easing","LSystem","angularMotion","slidePuzzle","polarCoordinates",
+//                             "geometries","sinCos3D","boxRef","boxref1","defaultFunc","earthQuake","bubbleSort",
+//                             "quickSort","stepFeetIIIusion","gridOutput","genFuncDemo","minesweeper","rose",
+//                             "rayCast","lorenzSystem","chenShiSystem"
+//                         ];
+const p5SinglePageList: any [] = [];
+    allMethods.forEach(item=>{
+        if(item.children){
+            item.children.forEach(child=>{
+                p5SinglePageList.push({
+                    text:child.label,
+                    value:child.value
+                })
+            })
+        }
+    })
+
 const p5SingleNavPageList = [];
 for(let i = 0;i<p5SinglePageList.length;i++){
     p5SingleNavPageList.push({
-        text:p5SinglePageList[i],
-        link:`${p5SinglePageUrl}${p5SinglePageList[i]}`
+        text:p5SinglePageList[i].text,
+        link:`${p5SinglePageUrl}${p5SinglePageList[i].value}`
     })
 }
 
@@ -213,8 +228,8 @@ const fantastic: NavbarGroup[] = [
 
 const navbar: NavbarConfig =
     [
-        ...examples,
         ...note,
+        ...examples,
         ...fantastic
     ]
 
