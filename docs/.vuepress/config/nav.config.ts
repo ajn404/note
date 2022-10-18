@@ -172,6 +172,14 @@ const beforeBlog: NavbarGroup[] = [
 const fantasticUrl: string = '/markdown/fantastic/'
 
 const p5SinglePageUrl:string = '/markdown/fantasticSinglePage/'
+const p5SinglePageList = ["main","easing"];
+const p5SingleNavPageList = [];
+for(let i = 0;i<p5SinglePageList.length;i++){
+    p5SingleNavPageList.push({
+        text:p5SinglePageList[i],
+        link:`${p5SinglePageUrl}${p5SinglePageList[i]}`
+    })
+}
 
 const fantastic: NavbarGroup[] = [
     {
@@ -184,10 +192,7 @@ const fantastic: NavbarGroup[] = [
             {
                 text:'p5 single',
                 children:[
-                    {
-                        text:'lorenzSystem',
-                        link:`${p5SinglePageUrl}lorenzSystem`
-                    }
+                   ...p5SingleNavPageList
                 ]
             },
 

@@ -134,6 +134,8 @@ import { ElLoading } from "element-plus";
   <style lang="scss" scoped>
   .pdr-reader {
     overflow: hidden;
+    min-width: 100%;
+    min-height: calc(100vh - 3.6rem);
     :deep(.vtk-container) {
       position: relative;
       & > div {
