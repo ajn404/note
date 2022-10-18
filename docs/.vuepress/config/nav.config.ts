@@ -172,7 +172,8 @@ const beforeBlog: NavbarGroup[] = [
 const fantasticUrl: string = '/markdown/fantastic/'
 
 const p5SinglePageUrl:string = '/markdown/fantasticSinglePage/'
-const p5SinglePageList = ["main","easing"];
+const p5SinglePageList = ["main","easing","LSystem","angularMotion","slidePuzzle","polarCoordinates",
+                            "geometries","sinCos3D","boxRef","boxref1","defaultFunc","earthQuake"];
 const p5SingleNavPageList = [];
 for(let i = 0;i<p5SinglePageList.length;i++){
     p5SingleNavPageList.push({
@@ -198,7 +199,12 @@ const fantastic: NavbarGroup[] = [
 
             {
                 text: 'vtk',
-                link:`${fantasticUrl}vtkDemo`
+                children:[
+                    {
+                        text:'pdr reader',
+                        link:`${fantasticUrl}vtkDemo`
+                    }
+                ]
             },
         
         ]
