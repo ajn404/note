@@ -3,6 +3,29 @@ import { allMethods } from "../../scripts/p5Fantastic";
 
 const practiceBaseUrl: string = '/markdown/practice/'
 const glslBaseUrl: string = '/markdown/example/'
+const noteBaseUrl: string = '/markdown/notes/'
+const fantasticUrl: string = '/markdown/fantastic/'
+const p5SinglePageUrl: string = '/markdown/fantasticSinglePage/'
+const p5SinglePageList: any[] = [];
+allMethods.forEach(item => {
+    if (item.children) {
+        item.children.forEach(child => {
+            p5SinglePageList.push({
+                text: child.label,
+                value: child.value
+            })
+        })
+    }
+})
+const p5SingleNavPageList = [];
+for (let i = 0; i < p5SinglePageList.length; i++) {
+    p5SingleNavPageList.push({
+        text: p5SinglePageList[i].text,
+        link: `${p5SinglePageUrl}${p5SinglePageList[i].value}`
+    })
+}
+
+
 const examples: NavbarGroup[] = [
     {
         text: 'glsl',
@@ -88,26 +111,6 @@ const examples: NavbarGroup[] = [
                         link: `${practiceBaseUrl}usingTiling`
                     }
                 ]
-            }
-        ]
-    },
-    
-]
-
-const noteBaseUrl: string = '/markdown/notes/'
-const note: NavbarGroup[] = [
-    {
-        text: 'note',
-        children: [
-            {
-                text: 'glsl基础注解',
-                link: `${noteBaseUrl}basic`
-            }, {
-                text: 'js基础（ecma）',
-                link: `${noteBaseUrl}js`
-            }, {
-                text: '命令行注释',
-                link: `${noteBaseUrl}shell`
             },
             {
                 text: 'example analyze',
@@ -121,6 +124,25 @@ const note: NavbarGroup[] = [
                         link: `${noteBaseUrl}practiceGlslCollect`
                     }
                 ]
+            }
+        ]
+    },
+
+]
+
+const note: NavbarGroup[] = [
+    {
+        text: 'note',
+        children: [
+            {
+                text: 'glsl基础注解',
+                link: `${noteBaseUrl}basic`
+            }, {
+                text: 'js基础（ecma）',
+                link: `${noteBaseUrl}js`
+            }, {
+                text: '命令行注释',
+                link: `${noteBaseUrl}shell`
             }
         ]
     }
@@ -169,54 +191,31 @@ const beforeBlog: NavbarGroup[] = [
 ]
 
 
-const fantasticUrl: string = '/markdown/fantastic/'
-
-const p5SinglePageUrl:string = '/markdown/fantasticSinglePage/'
-const p5SinglePageList: any [] = [];
-    allMethods.forEach(item=>{
-        if(item.children){
-            item.children.forEach(child=>{
-                p5SinglePageList.push({
-                    text:child.label,
-                    value:child.value
-                })
-            })
-        }
-    })
-
-const p5SingleNavPageList = [];
-for(let i = 0;i<p5SinglePageList.length;i++){
-    p5SingleNavPageList.push({
-        text:p5SinglePageList[i].text,
-        link:`${p5SinglePageUrl}${p5SinglePageList[i].value}`
-    })
-}
-
 const fantastic: NavbarGroup[] = [
     {
         text: 'fantastic',
         children: [
             {
                 text: 'p5',
-                link:`${fantasticUrl}p5`
+                link: `${fantasticUrl}p5`
             },
             {
-                text:'p5 single',
-                children:[
-                   ...p5SingleNavPageList
+                text: 'p5 single',
+                children: [
+                    ...p5SingleNavPageList
                 ]
             },
 
             {
                 text: 'vtk',
-                children:[
+                children: [
                     {
-                        text:'pdr reader',
-                        link:`${fantasticUrl}vtkDemo`
+                        text: 'pdr reader',
+                        link: `${fantasticUrl}vtkDemo`
                     }
                 ]
             },
-        
+
         ]
     }
 ]
