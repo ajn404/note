@@ -1635,7 +1635,6 @@ export const pointHandle = (_:any) => {
 }
 
 export const textureDemo = (_:any) => {
-  let p5DrawLoop = window["p5DrawLoop"];
   _.setup = () => {
       _.createCanvas(500, 500, _.WEBGL)
   }
@@ -1648,28 +1647,14 @@ export const textureDemo = (_:any) => {
   _.draw = () => {
       _.background(255);
       _.orbitControl();
-
       angle = _.PI * _.frameCount * 0.001
       _.rotateX(angle)
       _.rotateY(angle)
       _.rotateZ(angle)
-
       _.texture(img)
       _.box(100)
-
-
-
-      if (window && window["p5DrawLoop"] !== p5DrawLoop) {
+      if (window && window["p5DrawLoop"] !== "textureDemo") {
           _.noLoop()
-      }
-  }
-  _.mousePressed = () => {
-      if (isClickCanvas(_)) {
-          window["p5DrawLoop"] = p5DrawLoop
-          if (!(_.isLooping())) {
-              _.redraw()
-              _.loop()
-          }
       }
   }
 }
