@@ -10,10 +10,12 @@ const p5SinglePageList: any[] = [];
 allMethods.forEach(item => {
     if (item.children) {
         item.children.forEach(child => {
-            p5SinglePageList.push({
-                text: child.label,
-                value: child.value
-            })
+            if(!child.notSinglePage){
+                p5SinglePageList.push({
+                    text: child.label,
+                    value: child.value
+                })
+            }
         })
     }
 })

@@ -1,5 +1,3 @@
-
-
 ---
 title :  p5 is fantastic
 ---

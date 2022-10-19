@@ -1,18 +1,18 @@
 //所有方法都导出在p5.vue中，需要展示的放在allMethods里
 
 import { ElMessage } from "element-plus";
-const isClickCanvas = (_:any) => {
+const isClickCanvas = (_: any) => {
   let mx = _.mouseX, my = _.mouseY;
   let mw = _.width, mh = _.height;
   return mx > 0 && mx < mw && my > 0 && my < mh
 }
 
-export const main = (_p5:any) => {
+export const main = (_p5: any) => {
   const p5 = _p5;
-  let xpos1:any;
-  let xpos2:any;
-  let xpos3:any;
-  let xpos4:any;
+  let xpos1: any;
+  let xpos2: any;
+  let xpos3: any;
+  let xpos4: any;
   let thin = 8;
   let thick = 36;
   p5.setup = () => {
@@ -70,39 +70,39 @@ export const main = (_p5:any) => {
   };
 };
 
-export const easing = (_:any) =>{
+export const easing = (_: any) => {
   let x = 1;
-let y = 1;
-let easing = 0.05;
+  let y = 1;
+  let easing = 0.05;
 
-function setup() {
-  _.createCanvas(720, 400);
-  _.noStroke();
-}
-
-function draw() {
-
-  if (window && window["p5DrawLoop"] !== "easing") {
-    _.noLoop();
+  function setup() {
+    _.createCanvas(720, 400);
+    _.noStroke();
   }
-  _.background(237, 34, 93);
-  let targetX = _.mouseX;
-  let dx = targetX - x;
-  x += dx * easing;
 
-  let targetY = _.mouseY;
-  let dy = targetY - y;
-  y += dy * easing;
+  function draw() {
 
-  _.ellipse(x, y, 66, 66);
-}
+    if (window && window["p5DrawLoop"] !== "easing") {
+      _.noLoop();
+    }
+    _.background(237, 34, 93);
+    let targetX = _.mouseX;
+    let dx = targetX - x;
+    x += dx * easing;
 
-_.setup = setup;
-_.draw = draw;
+    let targetY = _.mouseY;
+    let dy = targetY - y;
+    y += dy * easing;
+
+    _.ellipse(x, y, 66, 66);
+  }
+
+  _.setup = setup;
+  _.draw = draw;
 
 };
 
-export const LSystem = (_p5:any) => {
+export const LSystem = (_p5: any) => {
   interface rule {
     a: any;
     b: any;
@@ -125,7 +125,7 @@ export const LSystem = (_p5:any) => {
   // "[" p5.push();
   // "]" p5.pop();
 
-  function generate(canGene:any) {
+  function generate(canGene: any) {
     if (num < 4 || canGene) {
       num++;
       len *= 0.5;
@@ -181,7 +181,7 @@ export const LSystem = (_p5:any) => {
     }
   }
 
-  function addButton(label:any) {
+  function addButton(label: any) {
     let button = p5.createButton(label);
     let buttonStyle = button.elt.style;
 
@@ -212,7 +212,7 @@ export const LSystem = (_p5:any) => {
   };
 };
 
-export const angularMotion = (_p5:any) => {
+export const angularMotion = (_p5: any) => {
   let p5 = _p5;
   let angle = 0;
 
@@ -243,15 +243,15 @@ export const angularMotion = (_p5:any) => {
   };
 };
 
-export const slidePuzzle = (_p5:any) => {
+export const slidePuzzle = (_p5: any) => {
   let p5 = _p5;
 
   let width = 400;
   let height = 400;
 
-  let source:any;
+  let source: any;
 
-  let w:any, h:any;
+  let w: any, h: any;
   let cols = 4;
   let rows = 4;
 
@@ -328,7 +328,7 @@ export const slidePuzzle = (_p5:any) => {
     }
   };
 
-  function simpleShuffle(arr:any) {
+  function simpleShuffle(arr: any) {
     for (let i = 0; i < 1000; i++) {
       randomMove(arr);
     }
@@ -345,13 +345,13 @@ export const slidePuzzle = (_p5:any) => {
     }
   }
 
-  function randomMove(arr:any) {
+  function randomMove(arr: any) {
     let r1 = p5.floor(p5.random(cols));
     let r2 = p5.floor(p5.random(rows));
     move(r1, r2, arr);
   }
 
-  function swap(i:any, j:any, arr:any) {
+  function swap(i: any, j: any, arr: any) {
     let temp = arr[i];
     arr[i] = arr[j];
     arr[j] = temp;
@@ -366,7 +366,7 @@ export const slidePuzzle = (_p5:any) => {
     return true;
   }
 
-  function move(i:any, j:any, arr:any) {
+  function move(i: any, j: any, arr: any) {
     let blank = findBlank() || 0;
     let blankCol = blank % cols;
     let blankRow = p5.floor(blank / rows);
@@ -376,7 +376,7 @@ export const slidePuzzle = (_p5:any) => {
     }
   }
 
-  function isNeighbor(i:any, j:any, x:any, y:any) {
+  function isNeighbor(i: any, j: any, x: any, y: any) {
     if (i !== x && j !== y) {
       return false;
     }
@@ -451,16 +451,16 @@ export const slidePuzzle = (_p5:any) => {
   }
 
   class Tile {
-    index:any;
+    index: any;
     img: any;
-    constructor(i:any, img:any) {
+    constructor(i: any, img: any) {
       this.index = i;
       this.img = img;
     }
   }
 };
 
-export const polarCoordinates = (_p5:any) => {
+export const polarCoordinates = (_p5: any) => {
   let p5 = _p5;
   let r = 150;
 
@@ -498,7 +498,7 @@ export const polarCoordinates = (_p5:any) => {
   };
 };
 
-export const geometries = (_p5:any) => {
+export const geometries = (_p5: any) => {
   let _ = _p5;
   _.setup = () => {
     _.createCanvas(710, 400, _.WEBGL);
@@ -566,7 +566,7 @@ export const geometries = (_p5:any) => {
   };
 };
 
-export const sinCos3D = (_p5:any) => {
+export const sinCos3D = (_p5: any) => {
   let _ = _p5;
   _.setup = () => {
     _.createCanvas(710, 400, _.WEBGL);
@@ -606,7 +606,7 @@ export const sinCos3D = (_p5:any) => {
   };
 };
 
-export const boxRef = (_p5:any) => {
+export const boxRef = (_p5: any) => {
   let _ = _p5;
   _.setup = () => {
     _.createCanvas(500, 200, _.WEBGL);
@@ -636,7 +636,7 @@ export const boxRef = (_p5:any) => {
   };
 };
 
-export const boxRef1 = (_p5:any) => {
+export const boxRef1 = (_p5: any) => {
   let _ = _p5;
   _.setup = () => {
     _.createCanvas(500, 200, _.WEBGL);
@@ -660,9 +660,9 @@ export const boxRef1 = (_p5:any) => {
   };
 };
 
-export const defaultFunc = (_p5:any) => {
+export const defaultFunc = (_p5: any) => {
   let _ = _p5;
-  let slider:any;
+  let slider: any;
   _.setup = () => {
     _.createCanvas(500, 500, _.WEBGL);
     _.fill("red");
@@ -679,7 +679,7 @@ export const defaultFunc = (_p5:any) => {
     _.orbitControl();
 
     _.background(255);
-    let val:any = slider.value();
+    let val: any = slider.value();
     _.rotateZ(_.frameCount * 0.002);
     _.rotateX(_.frameCount * 0.002);
     _.rotateY(_.frameCount * 0.002);
@@ -688,10 +688,10 @@ export const defaultFunc = (_p5:any) => {
 };
 
 // 地震震级分布
-export const earthQuake = (_:any) => {
-  let table:any;
+export const earthQuake = (_: any) => {
+  let table: any;
   let r = 200;
-  let earth:any;
+  let earth: any;
   const PI = _.PI;
 
   _.preload = () => {
@@ -761,7 +761,7 @@ export const earthQuake = (_:any) => {
   };
 };
 
-export const bubbleSort = (_:any) => {
+export const bubbleSort = (_: any) => {
   let i = 0,
     j = 0,
     values: any = [];
@@ -802,7 +802,7 @@ export const bubbleSort = (_:any) => {
   _.mousePressed = () => { };
 };
 
-export const quickSort = (_:any) => {
+export const quickSort = (_: any) => {
   let values: any[] = [];
   let w = 10;
 
@@ -833,7 +833,7 @@ export const quickSort = (_:any) => {
     }
   };
 
-  async function quickSort(arr:any, start:any, end:any) {
+  async function quickSort(arr: any, start: any, end: any) {
     if (start >= end) {
       return;
     }
@@ -846,7 +846,7 @@ export const quickSort = (_:any) => {
     ]);
   }
 
-  async function partition(arr:any, start:any, end:any) {
+  async function partition(arr: any, start: any, end: any) {
     for (let i = start; i < end; i++) {
       states[i] = 1;
     }
@@ -873,26 +873,26 @@ export const quickSort = (_:any) => {
     return pivotIndex;
   }
 
-  async function swap(arr:any, a:any, b:any) {
+  async function swap(arr: any, a: any, b: any) {
     await sleep(50);
     let temp = arr[a];
     arr[a] = arr[b];
     arr[b] = temp;
   }
 
-  function sleep(ms:any) {
+  function sleep(ms: any) {
     return new Promise((resolve) => setTimeout(resolve, ms));
   }
 };
 
 // 视错觉
-export const stepFeetIIIusion = (_:any) => {
+export const stepFeetIIIusion = (_: any) => {
   class Brick {
     brickColor: any;
     yPos: any;
     xPos: number;
     xSpeed: number;
-    constructor(bc:any, y:any) {
+    constructor(bc: any, y: any) {
       this.brickColor = bc;
       this.yPos = y;
       this.xPos = 0;
@@ -967,7 +967,7 @@ export const stepFeetIIIusion = (_:any) => {
   }
 };
 
-export const gridOutput = (_:any) => {
+export const gridOutput = (_: any) => {
   _.setup = () => {
     _.createCanvas(500, 300);
   };
@@ -996,7 +996,7 @@ export const gridOutput = (_:any) => {
   };
 };
 
-export const genFuncDemo = (_:any) => {
+export const genFuncDemo = (_: any) => {
   function* gen() {
     let index = 1;
     while (index < 10) {
@@ -1010,20 +1010,20 @@ export const genFuncDemo = (_:any) => {
     _.frameRate(1);
   };
 
-  function sleep(duration:any) {
+  function sleep(duration: any) {
     return new Promise((resolve) => {
       setTimeout(resolve, duration);
     });
   }
 
-  async function drawRect(len:any, duration:any) {
+  async function drawRect(len: any, duration: any) {
     // _.fill(_.random(255),_.random(255),_.random(255))
     _.rect(0, 0, len * 50, len * 50);
     await sleep(duration);
   }
 
   let g = gen();
-  let x:any;
+  let x: any;
   x = g.next();
   _.draw = async () => {
     if (window && window["p5DrawLoop"] !== "genFuncDemo") {
@@ -1041,8 +1041,8 @@ export const genFuncDemo = (_:any) => {
   };
 };
 
-export const minesweeper = (_:any) => {
-  let grid:any;
+export const minesweeper = (_: any) => {
+  let grid: any;
   const rows = 20,
     cols = 20;
   const w = 20;
@@ -1089,7 +1089,7 @@ export const minesweeper = (_:any) => {
     }
   };
 
-  const make2DArray = (cols:any, rows:any) => {
+  const make2DArray = (cols: any, rows: any) => {
     const arr = new Array(cols);
     for (let i = 0; i < arr.length; i++) {
       arr[i] = new Array(rows);
@@ -1129,7 +1129,7 @@ export const minesweeper = (_:any) => {
     }
   };
 
-  let img:any;
+  let img: any;
   _.preload = () => {
     img = _.loadImage("/note/images/logo.jpg");
   };
@@ -1144,7 +1144,7 @@ export const minesweeper = (_:any) => {
     j: number;
     neighborCount: number;
 
-    constructor(x:any, y:any, w:any) {
+    constructor(x: any, y: any, w: any) {
       // 设置炸弹数量
       if (_.random(1) < 0.1) {
         this.bee = true;
@@ -1191,7 +1191,7 @@ export const minesweeper = (_:any) => {
       }
     }
 
-    containes(x:any, y:any) {
+    containes(x: any, y: any) {
       return (
         x > this.x && x < this.x + this.w && y > this.y && y < this.y + this.w
       );
@@ -1243,7 +1243,7 @@ export const minesweeper = (_:any) => {
     }
   }
 
-  function addButton(label:any) {
+  function addButton(label: any) {
     let button = _.createButton(label);
     let buttonStyle = button.elt.style;
 
@@ -1267,7 +1267,7 @@ export const minesweeper = (_:any) => {
 };
 
 //名字与功能未匹配
-export const rose = (_:any) => {
+export const rose = (_: any) => {
   let n = 0,
     d = 0;
   _.setup = () => {
@@ -1314,7 +1314,7 @@ export const rose = (_:any) => {
   };
 };
 
-export const rayCast = (_:any) => {
+export const rayCast = (_: any) => {
 
 
   let p5 = window['p5'];
@@ -1323,12 +1323,12 @@ export const rayCast = (_:any) => {
     pos: any;
     dir: any;
 
-    constructor(pos:any, angle:any) {
+    constructor(pos: any, angle: any) {
       this.pos = pos;
       this.dir = p5.Vector.fromAngle(angle);
     }
 
-    lookAt(x:any, y:any) {
+    lookAt(x: any, y: any) {
       this.dir.x = x - this.pos.x;
       this.dir.y = y - this.pos.y;
       this.dir.normalize();
@@ -1342,7 +1342,7 @@ export const rayCast = (_:any) => {
       _.pop();
     }
 
-    cast(wall:any) {
+    cast(wall: any) {
       const x1 = wall.a.x;
       const y1 = wall.a.y;
       const x2 = wall.b.x;
@@ -1385,11 +1385,11 @@ export const rayCast = (_:any) => {
       }
     }
 
-    update(x:any, y:any) {
+    update(x: any, y: any) {
       this.pos.set(x, y);
     }
 
-    look(walls:any) {
+    look(walls: any) {
       for (let i = 0; i < this.rays.length; i++) {
         const ray = this.rays[i];
         let closest = null;
@@ -1425,7 +1425,7 @@ export const rayCast = (_:any) => {
   class Boundary {
     a: any;
     b: any;
-    constructor(x1:any, y1:any, x2:any, y2:any) {
+    constructor(x1: any, y1: any, x2: any, y2: any) {
       this.a = _.createVector(x1, y1);
       this.b = _.createVector(x2, y2);
     }
@@ -1436,8 +1436,8 @@ export const rayCast = (_:any) => {
     }
   }
 
-  let walls:any = [];
-  let particle:any;
+  let walls: any = [];
+  let particle: any;
   let xoff = 0;
   let yoff = 10000;
   _.setup = () => {
@@ -1478,464 +1478,505 @@ export const rayCast = (_:any) => {
 
 //lorenz system
 //劳伦滋混沌系统
-export const lorenzSystem = (_:any)=>{
-  let x=1,y=1,z=1;
-  let a=10;
+export const lorenzSystem = (_: any) => {
+  let x = 1, y = 1, z = 1;
+  let a = 10;
   let b = 28;
-  let c = 8/3;
+  let c = 8 / 3;
 
-  _.setup = ()=>{
-    _.createCanvas(800,600,_.P3D);
+  _.setup = () => {
+    _.createCanvas(800, 600, _.P3D);
     _.background(0);
     _.strokeWeight(0.2);
   }
-  _.draw = ()=>{
+  _.draw = () => {
     if (window && window["p5DrawLoop"] !== "lorenzSystem") {
       _.noLoop();
     }
     let dt = 0.01;
-    let dx = dt*(a*(y-x));
-    let dy = dt*(x*(b-z)-y);
-    let dz = dt*(x*y - c*z);
-    x+=dx;
-    y+=dy;
-    z+=dz;
-    _.translate(_.width/2,_.height/2, 0);
-    _.stroke((x<0?-x:x)*10%255,(y<0?-y:y)*10%255,(z<0?-z:z)*10%255);
+    let dx = dt * (a * (y - x));
+    let dy = dt * (x * (b - z) - y);
+    let dz = dt * (x * y - c * z);
+    x += dx;
+    y += dy;
+    z += dz;
+    _.translate(_.width / 2, _.height / 2, 0);
+    _.stroke((x < 0 ? -x : x) * 10 % 255, (y < 0 ? -y : y) * 10 % 255, (z < 0 ? -z : z) * 10 % 255);
     _.scale(10);
-    _.point(x,y,z);
+    _.point(x, y, z);
   }
 }
 //陈氏混沌
-export const chenShiSystem = (_:any)=>{
-  let x=1,y=1,z=1;
-  let a=35;
+export const chenShiSystem = (_: any) => {
+  let x = 1, y = 1, z = 1;
+  let a = 35;
   let b = 3;
   let c = 28;
 
   const colorSize = 8;
 
-  _.setup = ()=>{
-    _.createCanvas(800,600,_.P3D);
+  _.setup = () => {
+    _.createCanvas(800, 600, _.P3D);
     _.background(0);
     _.strokeWeight(0.2);
   }
-  _.draw = ()=>{
+  _.draw = () => {
     if (window && window["p5DrawLoop"] !== "chenShiSystem") {
       _.noLoop();
     }
     let dt = 0.001;
-    let dx = dt*(a*(y-x));
-    let dy = dt*(x*(c-a)-x*z+c*y);
-    let dz = dt*(x*y - b*z);
-    x+=dx;
-    y+=dy;
-    z+=dz;
-    _.translate(_.width/2,_.height/2, 0);
-    _.stroke((x<0?-x:x)*colorSize%255,(y<0?-y:y)*colorSize%255,(z<0?-z:z)*colorSize%255);
+    let dx = dt * (a * (y - x));
+    let dy = dt * (x * (c - a) - x * z + c * y);
+    let dz = dt * (x * y - b * z);
+    x += dx;
+    y += dy;
+    z += dz;
+    _.translate(_.width / 2, _.height / 2, 0);
+    _.stroke((x < 0 ? -x : x) * colorSize % 255, (y < 0 ? -y : y) * colorSize % 255, (z < 0 ? -z : z) * colorSize % 255);
     _.scale(8);
-    _.point(x,y,z);
+    _.point(x, y, z);
   }
 }
 
-export const coordinate = (_p5:any) => {
+export const coordinate = (_p5: any) => {
   let _ = _p5;
   let p5DrawLoop = window["p5DrawLoop"];
   _.setup = () => {
-      _.createCanvas(500, 200, _.WEBGL)
-      _.normalMaterial()
+    _.createCanvas(500, 200, _.WEBGL)
+    _.normalMaterial()
 
   }
   _.draw = () => {
-      _.background(250)
+    _.background(250)
 
-      _.orbitControl()
-      _.rotateY(0.003 * _.PI * _.frameCount);
-      _.box(100)
+    _.orbitControl()
+    _.rotateY(0.003 * _.PI * _.frameCount);
+    _.box(100)
 
-      if (window && window["p5DrawLoop"] !== p5DrawLoop) {
-          _.noLoop()
-      }
+    if (window && window["p5DrawLoop"] !== p5DrawLoop) {
+      _.noLoop()
+    }
   }
   _.mousePressed = () => {
-      if (isClickCanvas(_)) {
-          window["p5DrawLoop"] = p5DrawLoop
-          if (!(_.isLooping())) {
-              _.redraw()
-              _.loop()
-          }
+    if (isClickCanvas(_)) {
+      window["p5DrawLoop"] = p5DrawLoop
+      if (!(_.isLooping())) {
+        _.redraw()
+        _.loop()
       }
+    }
   }
 }
 
-export const renderSteps = (_:any) => {
+export const renderSteps = (_: any) => {
   let p5DrawLoop = window["p5DrawLoop"];
   _.setup = () => {
-      _.createCanvas(500, 500, _.WEBGL)
-      _.normalMaterial()
+    _.createCanvas(500, 500, _.WEBGL)
+    _.normalMaterial()
 
   }
 
-  let teaBox:any;
+  let teaBox: any;
   _.preload = () => {
-      teaBox = _.loadModel('/note/model/teapot.obj', true)
+    teaBox = _.loadModel('/note/model/teapot.obj', true)
   }
 
   _.draw = () => {
-      _.background(255)
+    _.background(255)
 
 
-      _.orbitControl()
-      _.rotateZ(_.PI)
+    _.orbitControl()
+    _.rotateZ(_.PI)
 
-      _.rotateX(_.frameCount * _.PI * 0.01)
-      _.model(teaBox)
-      if (window && window["p5DrawLoop"] !== p5DrawLoop) {
-          _.redraw()
-          _.noLoop()
-      }
+    _.rotateX(_.frameCount * _.PI * 0.01)
+    _.model(teaBox)
+    if (window && window["p5DrawLoop"] !== p5DrawLoop) {
+      _.redraw()
+      _.noLoop()
+    }
   }
 
   _.mousePressed = () => {
-      if (isClickCanvas(_)) {
-          window["p5DrawLoop"] = p5DrawLoop
-          if (!(_.isLooping())) {
-              _.loop()
-          }
+    if (isClickCanvas(_)) {
+      window["p5DrawLoop"] = p5DrawLoop
+      if (!(_.isLooping())) {
+        _.loop()
       }
+    }
   }
 }
 
-export const pointHandle = (_:any) => {
+export const pointHandle = (_: any) => {
   let p5DrawLoop = window["p5DrawLoop"];
   _.setup = () => {
-      _.createCanvas(500, 200, _.WEBGL)
+    _.createCanvas(500, 200, _.WEBGL)
   }
 
   _.draw = () => {
-      _.background(255)
+    _.background(255)
 
 
-      _.camera(0, 0, 160 + _.sin(_.frameCount * 0.01) * 100, 0, 0, 0, 0, 1, 0)
-      _.rotateX(_.PI / 3)
-      _.torus(30, 10)
-      if (window && window["p5DrawLoop"] !== p5DrawLoop) {
-          _.noLoop()
-      }
+    _.camera(0, 0, 160 + _.sin(_.frameCount * 0.01) * 100, 0, 0, 0, 0, 1, 0)
+    _.rotateX(_.PI / 3)
+    _.torus(30, 10)
+    if (window && window["p5DrawLoop"] !== p5DrawLoop) {
+      _.noLoop()
+    }
   }
   _.mousePressed = () => {
-      if (isClickCanvas(_)) {
-          window["p5DrawLoop"] = p5DrawLoop
-          if (!(_.isLooping())) {
-              _.redraw()
-              _.loop()
-          }
+    if (isClickCanvas(_)) {
+      window["p5DrawLoop"] = p5DrawLoop
+      if (!(_.isLooping())) {
+        _.redraw()
+        _.loop()
       }
+    }
   }
 }
 
-export const textureDemo = (_:any) => {
+export const textureDemo = (_: any) => {
   _.setup = () => {
-      _.createCanvas(500, 500, _.WEBGL)
+    _.createCanvas(500, 500, _.WEBGL)
   }
 
-  let img:any, angle;
+  let img: any, angle;
   _.preload = () => {
-      img = _.loadImage('/note/images/logo.jpg')
+    img = _.loadImage('/note/images/logo.jpg')
   }
 
   _.draw = () => {
-      _.background(255);
-      _.orbitControl();
-      angle = _.PI * _.frameCount * 0.001
-      _.rotateX(angle)
-      _.rotateY(angle)
-      _.rotateZ(angle)
-      _.texture(img)
-      _.box(100)
-      if (window && window["p5DrawLoop"] !== "textureDemo") {
-          _.noLoop()
-      }
+    _.background(255);
+    _.orbitControl();
+    angle = _.PI * _.frameCount * 0.001
+    _.rotateX(angle)
+    _.rotateY(angle)
+    _.rotateZ(angle)
+    _.texture(img)
+    _.box(100)
+    if (window && window["p5DrawLoop"] !== "textureDemo") {
+      _.noLoop()
+    }
   }
 }
 
-export const ambientLight = (_:any) => {
+export const ambientLight = (_: any) => {
   let p5DrawLoop = window["p5DrawLoop"];
   let angle;
-  let lightColor:any, materialColor:any;
+  let lightColor: any, materialColor: any;
   _.setup = () => {
-      _.createCanvas(500, 500, _.WEBGL)
-      lightColor = _.createColorPicker('#ffffff')
-      materialColor = _.createColorPicker('#ff00ff')
-      lightColor.style('margin-top', '1em')
-      materialColor.style('margin-top', '1em')
+    _.createCanvas(500, 500, _.WEBGL)
+    lightColor = _.createColorPicker('#ffffff')
+    materialColor = _.createColorPicker('#ff00ff')
+    lightColor.style('margin-top', '1em')
+    materialColor.style('margin-top', '1em')
   }
 
 
   _.draw = () => {
-      _.background(255)
-      angle = _.PI * _.frameCount * 0.001
-      _.rotateX(angle)
-      _.rotateY(angle)
-      _.rotateZ(angle)
-      _.ambientLight(lightColor.color())
-      _.ambientMaterial(materialColor.color());
-      _.cone(30, 70)
-      _.translate(0, 0, -100)
-      _.box(50)
+    _.background(255)
+    angle = _.PI * _.frameCount * 0.001
+    _.rotateX(angle)
+    _.rotateY(angle)
+    _.rotateZ(angle)
+    _.ambientLight(lightColor.color())
+    _.ambientMaterial(materialColor.color());
+    _.cone(30, 70)
+    _.translate(0, 0, -100)
+    _.box(50)
 
 
-      if (window && window["p5DrawLoop"] !== p5DrawLoop) {
-          _.noLoop()
-      }
+    if (window && window["p5DrawLoop"] !== p5DrawLoop) {
+      _.noLoop()
+    }
   }
   _.mousePressed = () => {
-      if (isClickCanvas(_)) {
-          window["p5DrawLoop"] = p5DrawLoop
-          if (!(_.isLooping())) {
-              _.redraw()
-              _.loop()
-          }
+    if (isClickCanvas(_)) {
+      window["p5DrawLoop"] = p5DrawLoop
+      if (!(_.isLooping())) {
+        _.redraw()
+        _.loop()
       }
+    }
   }
 }
 
-export const directionalLight = (_:any) => {
+export const directionalLight = (_: any) => {
   let p5DrawLoop = window["p5DrawLoop"];
   _.setup = () => {
-      _.createCanvas(500,500, _.WEBGL)
+    _.createCanvas(500, 500, _.WEBGL)
   }
 
   let dirX, dirY;
   _.draw = () => {
-      _.background(0)
+    _.background(0)
 
-      dirX = (_.mouseX / _.width - 0.5) * 2;
-      dirY = (_.mouseY / _.height - 0.5) * 2
+    dirX = (_.mouseX / _.width - 0.5) * 2;
+    dirY = (_.mouseY / _.height - 0.5) * 2
 
-      _.directionalLight(255, 255, 255, -dirX, -dirY, -1)
-      _.noStroke()
-      _.sphere(80)
+    _.directionalLight(255, 255, 255, -dirX, -dirY, -1)
+    _.noStroke()
+    _.sphere(80)
 
 
 
-      if (window && window["p5DrawLoop"] !== p5DrawLoop) {
-          _.noLoop()
-      }
+    if (window && window["p5DrawLoop"] !== p5DrawLoop) {
+      _.noLoop()
+    }
   }
   _.mousePressed = () => {
-      if (isClickCanvas(_)) {
-          window["p5DrawLoop"] = p5DrawLoop
-          if (!(_.isLooping())) {
-              _.redraw()
-              _.loop()
-          }
+    if (isClickCanvas(_)) {
+      window["p5DrawLoop"] = p5DrawLoop
+      if (!(_.isLooping())) {
+        _.redraw()
+        _.loop()
       }
+    }
   }
 }
 
-export const pointLight = (_:any) => {
+export const pointLight = (_: any) => {
   let p5DrawLoop = window["p5DrawLoop"];
   _.setup = () => {
-      _.createCanvas(500, 500, _.WEBGL)
+    _.createCanvas(500, 500, _.WEBGL)
   }
 
 
   _.draw = () => {
-      _.background(0)
-      let locX = _.mouseX - _.width / 2;
-      let locY = _.mouseY - _.height / 2;
-      _.pointLight(250, 250, 250, locX, locY, 100);
-      _.noStroke();
-      _.sphere(80);
-      if (window && window["p5DrawLoop"] !== p5DrawLoop) {
-          _.noLoop()
-      }
+    _.background(0)
+    let locX = _.mouseX - _.width / 2;
+    let locY = _.mouseY - _.height / 2;
+    _.pointLight(250, 250, 250, locX, locY, 100);
+    _.noStroke();
+    _.sphere(80);
+    if (window && window["p5DrawLoop"] !== p5DrawLoop) {
+      _.noLoop()
+    }
   }
   _.mousePressed = () => {
-      if (isClickCanvas(_)) {
-          window["p5DrawLoop"] = p5DrawLoop
-          if (!(_.isLooping())) {
-              _.redraw()
-              _.loop()
-          }
+    if (isClickCanvas(_)) {
+      window["p5DrawLoop"] = p5DrawLoop
+      if (!(_.isLooping())) {
+        _.redraw()
+        _.loop()
       }
+    }
   }
 }
 
-export const spotLight = (_:any) => {
+export const spotLight = (_: any) => {
   let p5DrawLoop = window["p5DrawLoop"];
-  let colorPicker:any;
+  let colorPicker: any;
   _.setup = () => {
-      _.createCanvas(200, 200, _.WEBGL)
-      _.noStroke()
-      colorPicker = _.createColorPicker('#00ff00')
+    _.createCanvas(200, 200, _.WEBGL)
+    _.noStroke()
+    colorPicker = _.createColorPicker('#00ff00')
   }
 
-  let locX,locY;
+  let locX, locY;
   _.draw = () => {
-      _.background(0)
+    _.background(0)
 
-      locX = _.mouseX - _.width/2;
-      locY = _.mouseY - _.height/2
+    locX = _.mouseX - _.width / 2;
+    locY = _.mouseY - _.height / 2
 
-      _.ambientLight(50)
-      _.spotLight(colorPicker.color(), locX, locY, 200, 0, 0, -1, Math.PI / 16);
-      _.sphere(80)
+    _.ambientLight(50)
+    _.spotLight(colorPicker.color(), locX, locY, 200, 0, 0, -1, Math.PI / 16);
+    _.sphere(80)
 
-      if (window && window["p5DrawLoop"] !== p5DrawLoop) {
-          _.noLoop()
-      }
+    if (window && window["p5DrawLoop"] !== p5DrawLoop) {
+      _.noLoop()
+    }
   }
   _.mousePressed = () => {
-      if (isClickCanvas(_)) {
-          window["p5DrawLoop"] = p5DrawLoop
-          if (!(_.isLooping())) {
-              _.redraw()
-              _.loop()
-          }
+    if (isClickCanvas(_)) {
+      window["p5DrawLoop"] = p5DrawLoop
+      if (!(_.isLooping())) {
+        _.redraw()
+        _.loop()
       }
+    }
+  }
+}
+
+export const spring = (_: any) => {
+  let springHeight = 32,
+    left,
+    right,
+    maxHeight = 200,
+    minHeight = 100,
+    over = false,
+    move = false;
+
+  const M = 0.8,  // Mass
+    K = 0.2,  // Spring constant
+    D = 0.92, // Damping
+    R = 150;  // Rest position
+
+  const ps = R,   // Position
+    vs = 0.0, // Velocity
+    as = 0,   // Acceleration
+    f = 0;    // Force
+
+  _.setup = () => {
+    _.createCanvas(600, 600);
+    _.rectMode(_.CORNERS);
+    _.noStroke();
+    left =  _.width/2 - 100;
+    right = _.width/2 +100;
+  }
+
+  _.draw = () => {
+    if (window && window["p5DrawLoop"] !== "spring") {
+      _.noLoop();
+    }
+    _.background(102);
+  }
+
+  const drawSpring = () => {
+    _.fill(0.2);
   }
 }
 
 export const allMethods = [
-    { label: "基础", children:[
+  {
+    label: "基础", children: [
       {
-        label:'默认',
+        label: '默认',
         value: "defaultFunc"
       },
       {
-        label:'坐标',
+        label: '坐标',
         value: "coordinate"
       },
       {
-        label:'茶壶',
-        value:'renderSteps'
+        label: '茶壶',
+        value: 'renderSteps'
       },
 
       {
-        label:'圆环',
-        value:'pointHandle'
+        label: '圆环',
+        value: 'pointHandle'
       },
       {
-        label:'texture',
-        value:'textureDemo'
+        label: 'texture',
+        value: 'textureDemo'
       },
       {
-        label:'ambientLight',
-        value:'ambientLight'
+        label: 'ambientLight',
+        value: 'ambientLight'
       },
 
       {
-        label:'directionalLight',
-        value:'directionalLight',
+        label: 'directionalLight',
+        value: 'directionalLight',
       },
       {
-        label:'pointLight',
-        value:'pointLight'
+        label: 'pointLight',
+        value: 'pointLight'
       },
       {
-        label:'spotLight',
-        value:'spotLight'
+        label: 'spotLight',
+        value: 'spotLight'
       }
 
-    ] },
-    {
-      label: "交互生成艺术",
-      children: [
-        {
-          value: "main",
-          label: "两根分裂的线段",
-        },
-        {
-          value: "LSystem",
-          label: "LSystem",
-        },
-        {
-          value: "angularMotion",
-          label: "angularMotion",
-        },
-        {
-          value: "polarCoordinates",
-          label: "polarCoordinates",
-        },
-        {
-          value: "stepFeetIIIusion",
-          label: "视错觉",
-        },
-        {
-          value:"rose",
-          label:"旋转玫瑰"
-        },
-        {
-          value:"rayCast",
-          label:"射线投影[fullscreen]"
-        }
-      ],
-    },
-    {
-      label: "游戏向",
-      children: [
-        {
-          label: "移动拼图",
-          value: "slidePuzzle",
-        },
-        { label: "ikun [true man's game]", value: "minesweeper" },
-      ],
-    },
-    {
-      label: "webgl",
-      children: [
-        {
-          label: "geometries[basic]",
-          value: "geometries",
-        },
-        {
-          label: "3D sin cos应用",
-          value: "sinCos3D",
-        },
-        { label: "实时震级可视化", value: "earthQuake" },
-        {
-          label:'劳伦兹混沌[fullscreen]',value:'lorenzSystem'
-        },
+    ]
+  },
+  {
+    label: "交互生成艺术",
+    children: [
+      {
+        value: "main",
+        label: "两根分裂的线段",
+      },
+      {
+        value: "LSystem",
+        label: "LSystem",
+      },
+      {
+        value: "angularMotion",
+        label: "angularMotion",
+      },
+      {
+        value: "polarCoordinates",
+        label: "polarCoordinates",
+      },
+      {
+        value: "stepFeetIIIusion",
+        label: "视错觉",
+      },
+      {
+        value: "rose",
+        label: "旋转玫瑰"
+      },
+      {
+        value: "rayCast",
+        label: "射线投影[fullscreen]"
+      }
+    ],
+  },
+  {
+    label: "游戏向",
+    children: [
+      { label: "移动拼图", value: "slidePuzzle", },
+      { label: "ikun [true man's game]", value: "minesweeper" },
+      { label: '弹簧', value: 'spring' }
+    ],
+  },
+  {
+    label: "webgl",
+    children: [
+      {
+        label: "geometries[basic]",
+        value: "geometries",
+      },
+      {
+        label: "3D sin cos应用",
+        value: "sinCos3D",
+      },
+      { label: "实时震级可视化", value: "earthQuake" },
+      {
+        label: '劳伦兹混沌[fullscreen]', value: 'lorenzSystem'
+      },
 
-        {
-          label:'陈氏混沌[fullscreen]',value:'chenShiSystem'
-        }
-      ],
-    },
-    {
-      label: "非演示场景(熟悉api)",
-      children: [
-        {
-          label: "3d box",
-          value: "boxRef",
-        },
-        {
-          label: "3d box 旋转",
-          value: "boxRef1",
-        },
-        {
-          value: "gridOutput",
-          label: "输出为grid",
-        },
-        {
-          value:'easing',
-          label:'easing'
-        }
-      ],
-    },
-    {
-      label: "算法可视",
-      children: [
-        {
-          label: "冒泡排序[fullscreen]",
-          value: "bubbleSort",
-        },
-        {
-          label: "快速排序[fullscreen]",
-          value: "quickSort",
-        },
-      ],
-    },
+      {
+        label: '陈氏混沌[fullscreen]', value: 'chenShiSystem'
+      }
+    ],
+  },
+  {
+    label: "熟悉api",
+    children: [
+      {
+        label: "3d box",
+        value: "boxRef",
+        notSinglePage: true,
+      },
+      {
+        label: "3d box 旋转",
+        value: "boxRef1",
+        notSinglePage: true,
+      },
+      {
+        value: "gridOutput",
+        label: "输出为grid",
+      },
+      {
+        value: 'easing',
+        label: 'easing'
+      }
+    ],
+  },
+  {
+    label: "算法可视",
+    children: [
+      {
+        label: "冒泡排序[fullscreen]",
+        value: "bubbleSort",
+      },
+      {
+        label: "快速排序[fullscreen]",
+        value: "quickSort",
+      },
+    ],
+  },
 ];

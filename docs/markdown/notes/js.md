@@ -779,10 +779,10 @@ for(let item in obj){
 
 |  Intristic name |  Global name | ECMASript Language Association | 
 |  --- | --- | --- |
-| %[AggregateErro](#aggregateerror)r% | AggregateError | The AggregateError Constructor |
+| [%AggregateError%](#aggregateerror) | AggregateError | The AggregateError Constructor |
 | %Array% | Array | The Array Constructor |
-| %ArrayBuffer% | ArrayBuffer | The ArrayBuffer Constructor |
-
+| [%ArrayBuffer%](#arraybuffer) | ArrayBuffer | The ArrayBuffer Constructor |
+| [%ArrayIteratorPrototype%] | | The prototype of Array Iterator objects |
 
 ###### AggregateError
 
@@ -802,6 +802,39 @@ try {
   console.log(Object.getOwnPropertyNames(e));
 }
 ```
+
+###### ArrayBuffer
+
+```js
+const buffer = new ArrayBuffer(8);
+const view = new Int32Array(buffer);
+```
+
+应用
+```js
+const xhr = new XMLHttpRequest();
+xhr.open('GET', '/note/images/logo.jpg', true);
+xhr.responseType = 'arraybuffer';
+xhr.onload = function(e) {
+    const uInt8Array = new Uint8Array(this.response);
+    console.log(this.response)
+    console.log(uInt8Array)
+};
+xhr.send();
+```
+
+###### ArrayIteratorPrototype
+
+```js
+const arr = ["array", "iterator", "prototype"];
+const letterResult = document.getElementById("arrayiteratorprototype");
+for (const letter of arr) {
+  const li = document.createElement("li");
+  li.textContent = letter;
+  letterResult.appendChild(li);
+}
+```
+
 
 
 
