@@ -1538,7 +1538,6 @@ export const chenShiSystem = (_:any)=>{
   }
 }
 
-//from rengm
 export const coordinate = (_p5:any) => {
   let _ = _p5;
   let p5DrawLoop = window["p5DrawLoop"];
@@ -1579,7 +1578,7 @@ export const renderSteps = (_:any) => {
 
   let teaBox:any;
   _.preload = () => {
-      teaBox = _.loadModel('/rengm/model/teapot.obj', true)
+      teaBox = _.loadModel('/note/model/teapot.obj', true)
   }
 
   _.draw = () => {
@@ -1638,16 +1637,18 @@ export const pointHandle = (_:any) => {
 export const textureDemo = (_:any) => {
   let p5DrawLoop = window["p5DrawLoop"];
   _.setup = () => {
-      _.createCanvas(500, 200, _.WEBGL)
+      _.createCanvas(500, 500, _.WEBGL)
   }
 
   let img:any, angle;
   _.preload = () => {
-      img = _.loadImage('/rengm/images/logo.png')
+      img = _.loadImage('/note/images/logo.jpg')
   }
 
   _.draw = () => {
-      _.background(255)
+      _.background(255);
+      _.orbitControl();
+
       angle = _.PI * _.frameCount * 0.001
       _.rotateX(angle)
       _.rotateY(angle)
@@ -1678,7 +1679,7 @@ export const ambientLight = (_:any) => {
   let angle;
   let lightColor:any, materialColor:any;
   _.setup = () => {
-      _.createCanvas(500, 200, _.WEBGL)
+      _.createCanvas(500, 500, _.WEBGL)
       lightColor = _.createColorPicker('#ffffff')
       materialColor = _.createColorPicker('#ff00ff')
       lightColor.style('margin-top', '1em')
@@ -1717,7 +1718,7 @@ export const ambientLight = (_:any) => {
 export const directionalLight = (_:any) => {
   let p5DrawLoop = window["p5DrawLoop"];
   _.setup = () => {
-      _.createCanvas(200, 200, _.WEBGL)
+      _.createCanvas(500,500, _.WEBGL)
   }
 
   let dirX, dirY;
@@ -1751,7 +1752,7 @@ export const directionalLight = (_:any) => {
 export const pointLight = (_:any) => {
   let p5DrawLoop = window["p5DrawLoop"];
   _.setup = () => {
-      _.createCanvas(200, 200, _.WEBGL)
+      _.createCanvas(500, 500, _.WEBGL)
   }
 
 
@@ -1812,39 +1813,50 @@ export const spotLight = (_:any) => {
   }
 }
 
-export const demo = (_:any) => {
-  let p5DrawLoop = window["p5DrawLoop"];
-  _.setup = () => {
-      _.createCanvas(200, 200, _.WEBGL)
-  }
-
-  _.draw = () => {
-      _.background(255)
-
-      if (window && window["p5DrawLoop"] !== p5DrawLoop) {
-          _.noLoop()
-      }
-  }
-  _.mousePressed = () => {
-      if (isClickCanvas(_)) {
-          window["p5DrawLoop"] = p5DrawLoop
-          if (!(_.isLooping())) {
-              _.redraw()
-              _.loop()
-          }
-      }
-  }
-}
-
 export const allMethods = [
-    { label: "默认", children:[
+    { label: "基础", children:[
       {
         label:'默认',
         value: "defaultFunc"
+      },
+      {
+        label:'坐标',
+        value: "coordinate"
+      },
+      {
+        label:'茶壶',
+        value:'renderSteps'
+      },
+
+      {
+        label:'圆环',
+        value:'pointHandle'
+      },
+      {
+        label:'texture',
+        value:'textureDemo'
+      },
+      {
+        label:'ambientLight',
+        value:'ambientLight'
+      },
+
+      {
+        label:'directionalLight',
+        value:'directionalLight',
+      },
+      {
+        label:'pointLight',
+        value:'pointLight'
+      },
+      {
+        label:'spotLight',
+        value:'spotLight'
       }
+
     ] },
     {
-      label: "场景1（偏交互2D和生成艺术）",
+      label: "交互生成艺术",
       children: [
         {
           value: "main",
@@ -1877,33 +1889,33 @@ export const allMethods = [
       ],
     },
     {
-      label: "场景2（偏游戏）",
+      label: "游戏向",
       children: [
         {
           label: "移动拼图",
           value: "slidePuzzle",
         },
-        { label: "扫雷[kun true man's game]", value: "minesweeper" },
+        { label: "ikun [true man's game]", value: "minesweeper" },
       ],
     },
     {
-      label: "场景3（webgl）",
+      label: "webgl",
       children: [
         {
           label: "geometries[basic]",
           value: "geometries",
         },
         {
-          label: "sinCos3D",
+          label: "3D sin cos应用",
           value: "sinCos3D",
         },
-        { label: "震级[promise]", value: "earthQuake" },
+        { label: "实时震级可视化", value: "earthQuake" },
         {
-          label:'劳伦兹混沌系统[fullscreen]',value:'lorenzSystem'
+          label:'劳伦兹混沌[fullscreen]',value:'lorenzSystem'
         },
 
         {
-          label:'陈氏混沌系统[fullscreen]',value:'chenShiSystem'
+          label:'陈氏混沌[fullscreen]',value:'chenShiSystem'
         }
       ],
     },
@@ -1929,7 +1941,7 @@ export const allMethods = [
       ],
     },
     {
-      label: "场景5(算法可视)",
+      label: "算法可视",
       children: [
         {
           label: "冒泡排序[fullscreen]",
