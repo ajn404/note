@@ -1571,7 +1571,7 @@ export const coordinate = (_p5:any) => {
 export const renderSteps = (_:any) => {
   let p5DrawLoop = window["p5DrawLoop"];
   _.setup = () => {
-      _.createCanvas(500, 200, _.WEBGL)
+      _.createCanvas(500, 500, _.WEBGL)
       _.normalMaterial()
 
   }
@@ -1582,7 +1582,7 @@ export const renderSteps = (_:any) => {
   }
 
   _.draw = () => {
-      _.background(250)
+      _.background(255)
 
 
       _.orbitControl()
