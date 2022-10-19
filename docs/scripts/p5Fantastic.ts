@@ -1800,19 +1800,19 @@ export const spotLight = (_: any) => {
 
 export const spring = (_: any) => {
   let springHeight = 32,
-    left,
-    right,
+    left:any,
+    right:any,
     maxHeight = 200,
     minHeight = 100,
     over = false,
     move = false;
 
-  const M = 0.8,  // Mass
-    K = 0.2,  // Spring constant
-    D = 0.92, // Damping
+  let M = 0.8,  // Mass
+    K = 0.2,  // 弹簧系数
+    D = 0.92, // 阻尼
     R = 150;  // Rest position
 
-  const ps = R,   // Position
+  let ps = R,   // Position
     vs = 0.0, // Velocity
     as = 0,   // Acceleration
     f = 0;    // Force
@@ -1830,153 +1830,50 @@ export const spring = (_: any) => {
       _.noLoop();
     }
     _.background(102);
+    updateSpring()
+    drawSpring();
   }
-
   const drawSpring = () => {
     _.fill(0.2);
+    let baseWidth = 0.5 * ps + -8;
+    _.rect(_.width / 2 - baseWidth, ps + springHeight, _.width / 2 + baseWidth, _.height);
+    if (over || move) {
+      _.fill(255);
+    } else {
+      _.fill(204);
+    }
+    _.rect(left, ps, right, ps + springHeight);
+  }
+
+  const updateSpring=()=>{
+    if (_.mouseX > left && _.mouseX < right && _.mouseY > ps && _.mouseY < ps + springHeight) {
+      over = true;
+    } else {
+      over = false;
+    }
+
+    if(!move){
+      f = -K * (ps - R);//力
+      as = f/M;//加速度
+      vs = D*(vs+as);//速度
+      ps = ps+vs;
+    }
+    if (_.abs(vs) < 0.1) {
+      vs = 0.0;
+    }
+    if (move) {
+      ps = _.mouseY - springHeight / 2;
+      ps = _.constrain(ps, minHeight, maxHeight);
+    } 
+  }
+
+  _.mousePressed = ()=>{
+    if(over){
+      move = true
+    }
+  }
+
+  _.mouseReleased = ()=>{
+    move = false
   }
 }
-
-export const allMethods = [
-  {
-    label: "基础", children: [
-      {
-        label: '默认',
-        value: "defaultFunc"
-      },
-      {
-        label: '坐标',
-        value: "coordinate"
-      },
-      {
-        label: '茶壶',
-        value: 'renderSteps'
-      },
-
-      {
-        label: '圆环',
-        value: 'pointHandle'
-      },
-      {
-        label: 'texture',
-        value: 'textureDemo'
-      },
-      {
-        label: 'ambientLight',
-        value: 'ambientLight'
-      },
-
-      {
-        label: 'directionalLight',
-        value: 'directionalLight',
-      },
-      {
-        label: 'pointLight',
-        value: 'pointLight'
-      },
-      {
-        label: 'spotLight',
-        value: 'spotLight'
-      }
-
-    ]
-  },
-  {
-    label: "交互生成艺术",
-    children: [
-      {
-        value: "main",
-        label: "两根分裂的线段",
-      },
-      {
-        value: "LSystem",
-        label: "LSystem",
-      },
-      {
-        value: "angularMotion",
-        label: "angularMotion",
-      },
-      {
-        value: "polarCoordinates",
-        label: "polarCoordinates",
-      },
-      {
-        value: "stepFeetIIIusion",
-        label: "视错觉",
-      },
-      {
-        value: "rose",
-        label: "旋转玫瑰"
-      },
-      {
-        value: "rayCast",
-        label: "射线投影[fullscreen]"
-      }
-    ],
-  },
-  {
-    label: "游戏向",
-    children: [
-      { label: "移动拼图", value: "slidePuzzle", },
-      { label: "ikun [true man's game]", value: "minesweeper" },
-      { label: '弹簧', value: 'spring' }
-    ],
-  },
-  {
-    label: "webgl",
-    children: [
-      {
-        label: "geometries[basic]",
-        value: "geometries",
-      },
-      {
-        label: "3D sin cos应用",
-        value: "sinCos3D",
-      },
-      { label: "实时震级可视化", value: "earthQuake" },
-      {
-        label: '劳伦兹混沌[fullscreen]', value: 'lorenzSystem'
-      },
-
-      {
-        label: '陈氏混沌[fullscreen]', value: 'chenShiSystem'
-      }
-    ],
-  },
-  {
-    label: "熟悉api",
-    children: [
-      {
-        label: "3d box",
-        value: "boxRef",
-        notSinglePage: true,
-      },
-      {
-        label: "3d box 旋转",
-        value: "boxRef1",
-        notSinglePage: true,
-      },
-      {
-        value: "gridOutput",
-        label: "输出为grid",
-      },
-      {
-        value: 'easing',
-        label: 'easing'
-      }
-    ],
-  },
-  {
-    label: "算法可视",
-    children: [
-      {
-        label: "冒泡排序[fullscreen]",
-        value: "bubbleSort",
-      },
-      {
-        label: "快速排序[fullscreen]",
-        value: "quickSort",
-      },
-    ],
-  },
-];

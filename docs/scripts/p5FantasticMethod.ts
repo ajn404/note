@@ -1,0 +1,143 @@
+export const allMethods = [
+    {
+      label: "基础", children: [
+        {
+          label: '默认',
+          value: "defaultFunc"
+        },
+        {
+          label: '坐标',
+          value: "coordinate"
+        },
+        {
+          label: '茶壶',
+          value: 'renderSteps'
+        },
+  
+        {
+          label: '圆环',
+          value: 'pointHandle'
+        },
+        {
+          label: 'texture',
+          value: 'textureDemo'
+        },
+        {
+          label: 'ambientLight',
+          value: 'ambientLight'
+        },
+  
+        {
+          label: 'directionalLight',
+          value: 'directionalLight',
+        },
+        {
+          label: 'pointLight',
+          value: 'pointLight'
+        },
+        {
+          label: 'spotLight',
+          value: 'spotLight'
+        }
+  
+      ]
+    },
+    {
+      label: "交互生成艺术",
+      children: [
+        {
+          value: "main",
+          label: "两根分裂的线段",
+        },
+        {
+          value: "LSystem",
+          label: "LSystem",
+        },
+        {
+          value: "angularMotion",
+          label: "angularMotion",
+        },
+        {
+          value: "polarCoordinates",
+          label: "polarCoordinates",
+        },
+        {
+          value: "stepFeetIIIusion",
+          label: "视错觉",
+        },
+        {
+          value: "rose",
+          label: "旋转玫瑰"
+        },
+        {
+          value: "rayCast",
+          label: "射线投影[fullscreen]"
+        }
+      ],
+    },
+    {
+      label: "游戏向",
+      children: [
+        { label: "移动拼图", value: "slidePuzzle", },
+        { label: "ikun [true man's game]", value: "minesweeper" },
+        { label: '弹簧', value: 'spring' }
+      ],
+    },
+    {
+      label: "webgl",
+      children: [
+        {
+          label: "geometries[basic]",
+          value: "geometries",
+        },
+        {
+          label: "3D sin cos应用",
+          value: "sinCos3D",
+        },
+        { label: "实时震级可视化", value: "earthQuake" },
+        {
+          label: '劳伦兹混沌[fullscreen]', value: 'lorenzSystem'
+        },
+  
+        {
+          label: '陈氏混沌[fullscreen]', value: 'chenShiSystem'
+        }
+      ],
+    },
+    {
+      label: "熟悉api",
+      children: [
+        {
+          label: "3d box",
+          value: "boxRef",
+          notSinglePage: true,
+        },
+        {
+          label: "3d box 旋转",
+          value: "boxRef1",
+          notSinglePage: true,
+        },
+        {
+          value: "gridOutput",
+          label: "输出为grid",
+        },
+        {
+          value: 'easing',
+          label: 'easing'
+        }
+      ],
+    },
+    {
+      label: "算法可视",
+      children: [
+        {
+          label: "冒泡排序[fullscreen]",
+          value: "bubbleSort",
+        },
+        {
+          label: "快速排序[fullscreen]",
+          value: "quickSort",
+        },
+      ],
+    },
+  ];

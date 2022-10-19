@@ -17,7 +17,7 @@ import { isClient } from "@vueuse/core";
 
 //vue中使用P5的方式
 import * as p5MainFunc from "@scripts/p5Fantastic.ts";
-import { allMethods } from "@scripts/p5Fantastic.ts";
+import { allMethods } from "@scripts/p5FantasticMethod.ts";
 
 const props = defineProps({ type: String });
 
