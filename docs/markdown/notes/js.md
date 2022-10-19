@@ -16,6 +16,7 @@ title: ecma翻译
 }
 </style>
 [[toc]]
+# javascript
 ## 1. scope 范围
 标准定义 ECMA2021 普遍性编程语言
 ## 2. conformance 一致性声明
@@ -835,6 +836,8 @@ for (const letter of arr) {
 }
 ```
 
+
+# typescript
 
 
 

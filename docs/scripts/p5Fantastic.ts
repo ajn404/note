@@ -1818,7 +1818,7 @@ export const spring = (_: any) => {
     f = 0;    // Force
 
   _.setup = () => {
-    _.createCanvas(600, 600);
+    _.createCanvas(_.windowWidth*3/4, _.windowHeight*3/4);
     _.rectMode(_.CORNERS);
     _.noStroke();
     left =  _.width/2 - 100;
@@ -1877,3 +1877,4 @@ export const spring = (_: any) => {
     move = false
   }
 }
+
