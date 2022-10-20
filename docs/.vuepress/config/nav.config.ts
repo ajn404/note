@@ -137,13 +137,15 @@ const note: NavbarGroup[] = [
         text: 'note',
         children: [
             {
-                text: 'glsl基础注解',
-                link: `${noteBaseUrl}basic`
-            }, {
-                text: 'js基础（ecma）',
+                text: 'js&ts',
                 link: `${noteBaseUrl}js`
-            }, {
-                text: '命令行注释',
+            }, 
+            {
+                text: 'glsl',
+                link: `${noteBaseUrl}glsl`
+            }, 
+            {
+                text: 'shell',
                 link: `${noteBaseUrl}shell`
             }
         ]
