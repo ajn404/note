@@ -59,6 +59,23 @@ table{
     left: 0;
   }
 }
+html{
+  --c-bg: #BCAAA4!important;
+  --c-border:pink!important;
+  
+  --c-text-accent:#2BFA00!important;
+
+  &.dark{
+    --c-bg:#22272e!important;
+  --c-border: #3e4c5a!important;
+
+   
+  }
+}
+
+
+
+
 
 .page-meta ,.back-to-top{
   display: none!important;

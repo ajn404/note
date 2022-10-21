@@ -76,16 +76,16 @@ export const easing = (_: any) => {
   let easing = 0.05;
 
   function setup() {
-    _.createCanvas(720, 400);
+    _.createCanvas(_.windowWidth, 400);
     _.noStroke();
+    _.textSize(20);
   }
 
   function draw() {
-
+    _.background(189,233,189)
     if (window && window["p5DrawLoop"] !== "easing") {
       _.noLoop();
     }
-    _.background(237, 34, 93);
     let targetX = _.mouseX;
     let dx = targetX - x;
     x += dx * easing;
@@ -93,8 +93,8 @@ export const easing = (_: any) => {
     let targetY = _.mouseY;
     let dy = targetY - y;
     y += dy * easing;
-
-    _.ellipse(x, y, 66, 66);
+    _.fill(0,0,189)
+    _.text('note',x, y, 66, 66);
   }
 
   _.setup = setup;
@@ -1392,7 +1392,7 @@ export const rayCast = (_: any) => {
     look(walls: any) {
       for (let i = 0; i < this.rays.length; i++) {
         const ray = this.rays[i];
-        let closest = null;
+        let closest:any = null;
         let record = Infinity;
         for (let wall of walls) {
           const pt = ray.cast(wall);
@@ -1877,4 +1877,6 @@ export const spring = (_: any) => {
     move = false
   }
 }
+
+
 

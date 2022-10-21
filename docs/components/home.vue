@@ -1,9 +1,8 @@
 <template>
-    <h2>
-        转眼如隔世，已是很多年   
-    </h2>
-    
+    <cards></cards>   
 </template>
+
+
 <script lang="ts" setup>
 //setup 执行时dom还不存在
 import {
