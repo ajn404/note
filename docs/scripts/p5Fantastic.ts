@@ -1612,7 +1612,7 @@ export const diaona = (_: any) => {
 
   _.draw = () => {
     _.background(150)
-
+    _.applyMatrix(4, 0, 0, 4, 0, 0);
 
     _.orbitControl()
     _.rotateZ(_.PI)
