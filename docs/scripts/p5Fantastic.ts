@@ -1571,7 +1571,7 @@ export const coordinate = (_p5: any) => {
 export const renderSteps = (_: any) => {
   let p5DrawLoop = window["p5DrawLoop"];
   _.setup = () => {
-    _.createCanvas(500, 500, _.WEBGL)
+    _.createCanvas(_.windowWidth, _.windowHeight, _.WEBGL)
     _.normalMaterial()
 
   }
@@ -1582,26 +1582,46 @@ export const renderSteps = (_: any) => {
   }
 
   _.draw = () => {
-    _.background(255)
+    _.background(200)
 
 
     _.orbitControl()
     _.rotateZ(_.PI)
 
-    _.rotateX(_.frameCount * _.PI * 0.01)
+    _.rotateY(_.frameCount * _.PI * 0.01)
     _.model(teaBox)
-    if (window && window["p5DrawLoop"] !== p5DrawLoop) {
+    if (window && window["p5DrawLoop"] !== "renderSteps") {
       _.redraw()
       _.noLoop()
     }
   }
+}
 
-  _.mousePressed = () => {
-    if (isClickCanvas(_)) {
-      window["p5DrawLoop"] = p5DrawLoop
-      if (!(_.isLooping())) {
-        _.loop()
-      }
+export const diaona = (_: any) => {
+  let p5DrawLoop = window["p5DrawLoop"];
+  _.setup = () => {
+    _.createCanvas(_.windowWidth, _.windowHeight, _.WEBGL)
+    _.normalMaterial()
+
+  }
+
+  let teaBox: any;
+  _.preload = () => {
+    teaBox = _.loadModel('/note/model/diaona.obj', true)
+  }
+
+  _.draw = () => {
+    _.background(150)
+
+
+    _.orbitControl()
+    _.rotateZ(_.PI)
+
+    _.rotateY(_.frameCount * _.PI * 0.01)
+    _.model(teaBox)
+    if (window && window["p5DrawLoop"] !== "diaona") {
+      _.redraw()
+      _.noLoop()
     }
   }
 }

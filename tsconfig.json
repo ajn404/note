@@ -4,6 +4,7 @@
         "target": "es5",
         "sourceMap": true,
         "jsx": "preserve",
+        "allowJs": true,
         "lib": [
             "es2015",
             "dom"
@@ -30,11 +31,12 @@
         "node_modules"
     ],
     "include": [
-        "./docs/.vuepress/**/*.ts",
-        "./docs/.vuepress/**/*.mts",
-        "./docs/.vuepress/**/*.d.ts",
-        "./docs/.vuepress/**/*.tsx",
-        "./docs/.vuepress/**/*.vue",
-        "./docs/.vuepress/**/*.glsl",
+        "docs/.vuepress/**/*.ts",
+        "docs/.vuepress/**/*.mts",
+        "docs/.vuepress/**/*.d.ts",
+        "docs/.vuepress/**/*.tsx",
+        "docs/.vuepress/**/*.vue",
+        "docs/.vuepress/**/*.glsl",
+        "docs/scripts"
     ]
 }

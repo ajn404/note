@@ -10,15 +10,13 @@
   display: inline-block;
 }
 
-:root{
-  --font-family:'ag',-apple-system,Ubuntu ;
+:root {
+  --font-family: 'ag', -apple-system, Ubuntu;
 }
 
-*{
+* {
   font-family: var(--font-family);
 }
-
-
 
 ::-webkit-scrollbar {
   width: 1em;
@@ -33,22 +31,22 @@
   background: var(--c-brand);
 }
 
-h4.navbar-dropdown-subtitle{
-  span{
+h4.navbar-dropdown-subtitle {
+  span {
     font-size: 1.2em;
   }
 }
 
-
-
 .page .theme-default-content {
   max-width: 90vw;
   padding: 0;
-table{
-  display: table;
-  overflow: scroll;
-  margin: 1em auto;
-}
+
+  table {
+    display: table;
+    overflow: scroll;
+    margin: 1em auto;
+  }
+
   .fullscreen {
     height: calc(100vh - var(--navbar-height));
     // height: auto;
@@ -59,26 +57,10 @@ table{
     left: 0;
   }
 }
-html{
-  --c-bg: #BCAAA4!important;
-  --c-border:pink!important;
-  
-  --c-text-accent:#2BFA00!important;
 
-  &.dark{
-    --c-bg:#22272e!important;
-  --c-border: #3e4c5a!important;
-
-   
-  }
-}
-
-
-
-
-
-.page-meta ,.back-to-top{
-  display: none!important;
+.page-meta,
+.back-to-top {
+  display: none !important;
 }
 
 @media screen and (max-width: 900px) {

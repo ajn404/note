@@ -15,6 +15,8 @@
 </template>
 
 <script>
+
+
 export default ({
     mounted() {
         this.width = this.$refs.card.offsetWidth;

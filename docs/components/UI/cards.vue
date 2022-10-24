@@ -1,17 +1,40 @@
 <template>
     <div class="cards">
+        <div class="container" v-if="showContainer">
+            <div class="card" @click="goUrl('markdown/notes/js')">
+                <card data-image="/note/images/hutao1.png">
+                    <template v-slot:header>
+                        <h1>javascript</h1>
+                    </template>
+                    <template v-slot:content>
+                        <p>2022简单翻译ECMA</p>
+                    </template>
+                </card>
+            </div>
 
-        <div class="container">
-            <card data-image="/note/images/hutao1.png" @click="goUrl('note/markdown/notes/js')">
-                <template v-slot:header>
-                    <h1>note</h1>
-                </template>
-                <template v-slot:content>
-                    <p>包含ecma,typescript,glsl,shell的学习笔记</p>
-                </template>
-            </card>
-            <card data-image="/note/images/hutao2.jpg"></card>
-            <card data-image="/note/images/hutao3.png"></card>
+            <div class="card" @click="goUrl('markdown/notes/glsl')">
+                <card data-image="/note/images/hutao1.png">
+                    <template v-slot:header>
+                        <h1>glsl</h1>
+                    </template>
+                    <template v-slot:content>
+                        <p>glsl的基本语法</p>
+                    </template>
+                </card>
+            </div>
+
+            <div class="card" @click="goUrl('markdown/notes/shell')">
+                <card data-image="/note/images/hutao3.png">
+                    <template v-slot:header>
+                        <h1>shell</h1>
+                    </template>
+                    <template v-slot:content>
+                        <p>基础脚本操作总结</p>
+                    </template>
+                </card>
+            </div>
+
+
             <card data-image="/note/images/hutao4.jpg"></card>
             <card data-image="/note/images/hutao5.png"></card>
             <card data-image="/note/images/hutao6.jpg"></card>
@@ -29,15 +52,23 @@ import { useRouter } from 'vue-router'
 export default {
     name: "NoteCards",
     data() {
-        return {};
+        return {
+            showContainer:true
+        };
     },
     mounted() {
     },
+
+    setup() {
+        const router = useRouter();
+        return {
+            router: router
+        }
+    },
     methods: {
         goUrl(url) {
-            const router = useRouter();
-            console.log(router)
-
+            this.showContainer = false;
+            this.router.push(url)
         }
     },
     components: { Card }
@@ -51,10 +82,16 @@ export default {
 }
 
 .container {
-    padding: 0 80px;
+    padding: 20px 80px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+
+    .card{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }
 
 p {

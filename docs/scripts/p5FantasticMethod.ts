@@ -13,6 +13,10 @@ export const allMethods = [
           label: '茶壶',
           value: 'renderSteps'
         },
+        {
+          label: '迪奥娜',
+          value: 'diaona'
+        },
   
         {
           label: '圆环',

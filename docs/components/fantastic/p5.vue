@@ -16,8 +16,8 @@ import { ElMessage } from "element-plus";
 import { isClient } from "@vueuse/core";
 
 //vue中使用P5的方式
-import * as p5MainFunc from "@scripts/p5Fantastic.ts";
-import { allMethods } from "@scripts/p5FantasticMethod.ts";
+import * as p5MainFunc from "@scripts/p5Fantastic";
+import { allMethods } from "@scripts/p5FantasticMethod";
 
 const props = defineProps({ type: String });
 
