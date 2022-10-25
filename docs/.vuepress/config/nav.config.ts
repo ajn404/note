@@ -137,8 +137,12 @@ const note: NavbarGroup[] = [
         text: 'note',
         children: [
             {
-                text: 'js&ts',
+                text: 'js',
                 link: `${noteBaseUrl}js`
+            }, 
+            {
+                text: 'ts',
+                link: `${noteBaseUrl}ts`
             }, 
             {
                 text: 'glsl',

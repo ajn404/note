@@ -13,7 +13,7 @@
             </div>
 
             <div class="card" @click="goUrl('markdown/notes/glsl')">
-                <card data-image="/note/images/hutao1.png">
+                <card data-image="/note/images/hutao2.jpg">
                     <template v-slot:header>
                         <h1>glsl</h1>
                     </template>
