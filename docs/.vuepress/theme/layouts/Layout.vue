@@ -1,6 +1,9 @@
 
 <template>
-    <transition name="fade" mode="out-in" appear>
+    <transition 
+        name="fade" 
+        mode="in-out" 
+        appear>
         <ParentLayout class="parent-layout" @click="closeAll">
             <template #navbar-before>
 
@@ -161,6 +164,18 @@ const toggle = (item:HTMLElement)=>{
 
 </script>
 <style lang="scss" scoped>
+
+//pure happiness
+// .parent-layout{
+//     :deep(.page){
+//         transition: all 1s;
+//         transform: scale(1);
+//     }
+
+//     :deep(.fade-slide-y-enter-active){
+//         transform: scale(0.5) translate(-50%,-100%) !important;
+//     }
+// }
 .fixed-dialog {
     min-width: 90vw;
     width: 90vw;
