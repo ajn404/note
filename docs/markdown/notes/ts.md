@@ -1,4 +1,5 @@
 # typescript
+## typescript in vue
 props type
 ```vue
 <script>
@@ -22,7 +23,16 @@ export default defineComponent({
 })
 
 </script>
-
 ```
 
+## advanced ttypescript
 
+::: tip 
+tsc ts.ts && node ts.js
+:::
+
+可选链
+
+@[code](../../codeReference/ts01.ts)
+编译后
+@[code](../../codeReference/ts01.js)
