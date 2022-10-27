@@ -314,8 +314,11 @@ console.log('foobar'.search(new caseInsensitiveSearch('BaR')));
 ECMAScript has two built-in types : Number and BigInt.
 The following abstract operations are defined over these numeric types.
 The "Result" column shows the return type, along with an indication if it is possible for some invocations of the operation to return an abrupt completion.
-|  Operation |  Example source | Invoked by the Evaluation semantics of ... | Result |
-|  --- | --- | --- | ---|
+
+<div style="display:flex;max-width:100%;overflow:scroll">
+
+|  Operation | Example source | Invoked by the Evaluation semantics of ... | Result |
+|  --- | --- | --- | --- |
 | Number::unaryMinus(单数减法) | -x | Unary - Operator | Number |
 | BigInt::unaryMinus | -x | Unary - Operator | BigInt |
 ｜ Number::bitwiseNOT(位运算非) | ~x | Bitwise NOT Operator (~) | Number |
@@ -354,6 +357,10 @@ The "Result" column shows the return type, along with an indication if it is pos
 | BigInt::bitwiseOR | x|y | Binary bitwise operators | BigInt|
 | Number::toString | String(x) | many expression and built-in functions,via ToString(argument) | String |
 | BigInt::toString | String(x) | many expression and built-in functions,via ToString(argument) | BigInt|
+
+
+</div>
+
 ```js
 14n/12n===1n//true
 let x = 1;
