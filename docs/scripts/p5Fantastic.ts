@@ -241,6 +241,7 @@ export const angularMotion = (_p5: any) => {
     angle += angleV;
     angleV += angleA;
   };
+
 };
 
 export const slidePuzzle = (_p5: any) => {
@@ -1536,6 +1537,10 @@ export const chenShiSystem = (_: any) => {
     _.scale(8);
     _.point(x, y, z);
   }
+
+  _.keyPressed= ()=> {
+    _.saveGif('defaultCanvas0', 20);
+}
 }
 
 export const coordinate = (_p5: any) => {
@@ -1807,6 +1812,7 @@ export const spotLight = (_: any) => {
       _.noLoop()
     }
   }
+
   _.mousePressed = () => {
     if (isClickCanvas(_)) {
       window["p5DrawLoop"] = p5DrawLoop
