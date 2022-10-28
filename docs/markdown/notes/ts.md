@@ -1,3 +1,4 @@
+[[toc]]
 # typescript
 ## typescript in vue
 props type
@@ -47,3 +48,23 @@ tsc ts.ts && node ts.js
 @[code](../../codeReference/ts03.ts)
 编译后
 @[code](../../codeReference/ts03.js)
+
+### private 
+
+@[code](../../codeReference/ts04.ts)
+编译后
+::: warning tsc ts04.ts报错
+ts04.ts:7:9 - error TS1056: Accessors are only available when targeting ECMAScript 5 and higher.
+
+7     get count(){
+          ~~~~~
+
+Found 1 error in ts04.ts:7
+:::
+
+
+::: tip 使用tsc ts04 -t es5
+:::
+
+  编译后
+@[code](../../codeReference/ts04.js)

@@ -228,8 +228,8 @@ const fantastic: NavbarGroup[] = [
                 text: 'kaboom',
                 children: [
                     {
-                        text: 'kaboom',
-                        link: `${fantasticUrl}kaboom`
+                        text: 'dialog',
+                        link: `${fantasticUrl}dialog`
                     }
                 ]
             },
