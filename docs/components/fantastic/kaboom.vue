@@ -1,95 +1,100 @@
 <template>
     <div class="kaboom-box" ref="kaboomBox">
-        <el-button @click="start"> 
-            打开对话
-        </el-button>
+        <canvas ref="kaboomCanvas" height="250"></canvas>
     </div>
 </template>
 
 <script lang="ts" setup>
 import kaboom from "kaboom";
-import {ref} from 'vue';
-const kaboomBox = ref(null)
-
-
+import { ref, nextTick  } from 'vue';
+const kaboomBox = ref(null);
+const kaboomCanvas = ref(null);
 function assertIsNonNullish<T>(
-    value:T,
-    message:string
-):asserts value is NonNullable<T>{
-    if(value===null||value===undefined){
+    value: T,
+    message: string
+): asserts value is NonNullable<T> {
+    if (value === null || value === undefined) {
         throw Error(message);
     }
 }
-const start = ()=>{
-    assertIsNonNullish(kaboomBox?.value,"找不到dom元素")
+const start = () => {
+
+    // assertIsNonNullish(kaboomBox?.value, "找不到dom元素")
+    assertIsNonNullish(kaboomCanvas?.value, "找不到canvas元素")
     kaboom(
         {
-            root:kaboomBox.value,
-            height:1845,
+            canvas:kaboomCanvas.value
         }
     )
-
-    loadSprite("bean", "/note/images/sun.svg")
-    loadSprite("mark", "/note/images/logo.jpg")
+    loadSprite("bean", "/note/images/boy.svg")
+    loadSprite("mark", "/note/images/girl.svg")
     const dialogs = [
-	[ "bean", "hi my butterfly" ],
-	[ "mark", "i love u" ],
-	[ "bean", "you love me? pretty baby" ],
-	[ "bean", "mark is a stupid" ],
-	[ "bean", "he did not know how to take care of you..." ],
-	[ "mark", "you don't know me ..." ],
-	[ "bean", "what! mark???" ],
-	[ "mark", "oh...hi " ],
-]
+        ["bean", "hi my butterfly"],
+        ["mark", "i love u"],
+        ["bean", "you love me? pretty baby"],
+        ["bean", "mark is a stupid"],
+        ["bean", "he did not know how to take care of you..."],
+        ["mark", "you don't know me ..."],
+        ["bean", "what! mark???"],
+        ["mark", "oh...hi "],
+    ]
 
-let curDialog = 0
+    let curDialog = 0
 
-// Text bubble
-const textbox = add([
-	rect(width() - 200, 120, { radius: 32 }),
-	origin("center"),
-	pos(center().x, height() - 100),
-	outline(2),
-])
+    // Text bubble
+    const textbox = add([
+        rect(width() / 3 * 2, 60),
+        origin("center"),
+        pos(center().x, height() - 100),
+        outline(2),
+    ])
 
-// Text
-const txt = add([
-	text("", { size: 32, width: width() - 230 }),
-	pos(textbox.pos),
-	origin("center")
-])
+    // Text
+    const txt = add([
+        text("", { size: 32, width: width() - 230 }),
+        pos(textbox.pos),
+        origin("center")
+    ])
 
-// Character avatar
-const avatar = add([
-	sprite("bean"),
-	scale(3),
-	origin("center"),
-	pos(center().sub(0, 50))
-])
+    // Character avatar
+    const avatar = add([
+        sprite("bean"),
+        scale(1),
+        origin("center"),
+        pos(center().sub(-200, 30))
+    ])
 
-onKeyPress("space", () => {
-	curDialog = (curDialog + 1) % dialogs.length
-	updateDialog()
+    onKeyPress("space", () => {
+        curDialog = (curDialog + 1) % dialogs.length
+        updateDialog()
+    })
+
+    function updateDialog() {
+        const [char, dialog] = dialogs[curDialog]
+        avatar.use(sprite(char))
+        txt.text = dialog
+    }
+    updateDialog()
+}
+
+nextTick(()=>{
+    start()
 })
 
-function updateDialog() {
-	const [ char, dialog ] = dialogs[curDialog]
-	avatar.use(sprite(char))
-	txt.text = dialog
 
-}
-
-updateDialog()
-
-}
 
 </script>
 
 <style lang="scss" scoped>
-.kaboom-box{
+.kaboom-box {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 2em;
+    margin-top: 2em;
+    canvas{
+        width: 100%;
+        height: 100%;
+    }
 }
 </style>
