@@ -14,9 +14,6 @@ import { MTLLoader } from 'three/examples/jsm/loaders/MTLLoader.js';
 
 const container = ref(null);
 const canvasItem = ref(null);
-const options = {
-        container: container.value || document.body
-    };
 
 function main() {
   const canvas =  canvasItem.value;
@@ -28,20 +25,20 @@ function main() {
   const near = 0.1;
   const far = 100;
   const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
-  camera.position.set(0, 10, 20);
+  camera.position.set(10, 10, 20);
 
   const controls = new OrbitControls(camera, canvas);
   controls.target.set(0, 5, 0);
   controls.update();
 
   const scene = new THREE.Scene();
-  scene.background = new THREE.Color('black');
+  scene.background = new THREE.Color('pink');
 
   {
-    const planeSize = 40;
+    const planeSize = 50;
 
     const loader = new THREE.TextureLoader();
-    const texture = loader.load('https://threejs.org/manual/examples/resources/images/checker.png');
+    const texture = loader.load('/note/images/logo.jpg');
     texture.encoding = THREE.sRGBEncoding;
     texture.wrapS = THREE.RepeatWrapping;
     texture.wrapT = THREE.RepeatWrapping;
@@ -83,6 +80,10 @@ function main() {
       const objLoader = new OBJLoader();
       objLoader.setMaterials(mtl);
       objLoader.load('/note/model/diaona.obj', (root) => {
+
+        root.scale.set(0.1,0.1,0.1)
+        console.log(root)
+        root.rotateY(3)
         scene.add(root);
       });
     });
