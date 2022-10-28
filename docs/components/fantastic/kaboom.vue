@@ -39,6 +39,8 @@ const start = () => {
         ["mark", "oh...hi "],
     ]
 
+    const origin = window['origin']
+
     let curDialog = 0
 
     // Text bubble
@@ -74,6 +76,13 @@ const start = () => {
         avatar.use(sprite(char))
         txt.text = dialog
     }
+
+    onClick(() => {
+	// Use toWorld() to transform a screen-space coordinate (like mousePos()) to the world-space coordinate, which has the camera transform applied
+	const worldMousePos = toWorld(mousePos())
+	addKaboom(worldMousePos)
+})
+
     updateDialog()
 }
 
