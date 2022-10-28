@@ -233,6 +233,16 @@ const fantastic: NavbarGroup[] = [
                     }
                 ]
             },
+
+            {
+                text: 'three',
+                children: [
+                    {
+                        text: 'threeLoadModel',
+                        link: `${fantasticUrl}threeLoadModel`
+                    }
+                ]
+            },
         ]
     }
 ]

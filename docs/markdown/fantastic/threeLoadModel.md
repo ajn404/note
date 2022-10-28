@@ -1,0 +1,3 @@
+<ClientOnly>
+<threeLoadModel></threeLoadModel>
+</ClientOnly>
