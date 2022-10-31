@@ -1538,9 +1538,9 @@ export const chenShiSystem = (_: any) => {
     _.point(x, y, z);
   }
 
-  _.keyPressed= ()=> {
-    _.saveGif('defaultCanvas0', 20);
-}
+//   _.keyPressed= ()=> {
+//     _.saveGif('defaultCanvas0', 20);
+// }
 }
 
 export const coordinate = (_p5: any) => {
@@ -1609,6 +1609,7 @@ export const diaona = (_: any) => {
     _.normalMaterial()
 
   }
+ 
 
   let teaBox: any;
   _.preload = () => {

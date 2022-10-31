@@ -1,8 +1,9 @@
 <template>
+    <cards></cards>   
+
     <div class="box">
         <h3>太阳出来我晒太阳，月亮出来我晒月亮喽！</h3>
     </div>
-    <cards></cards>   
 </template>
 
 

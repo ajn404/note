@@ -34,8 +34,19 @@
                 </card>
             </div>
 
+            <div class="card" @click="goUrl('markdown/notes/ts')">
+                <card data-image="/note/images/hutao4.jpg">
+                    <template v-slot:header>
+                        <h1>ts</h1>
+                    </template>
+                    <template v-slot:content>
+                        <p>typescript基础与技巧</p>
+                    </template>
+                </card>
+            </div>
 
-            <card data-image="/note/images/hutao4.jpg"></card>
+
+
             <card data-image="/note/images/hutao5.png"></card>
             <card data-image="/note/images/hutao6.jpg"></card>
             <card data-image="/note/images/hutao7.png"></card>
