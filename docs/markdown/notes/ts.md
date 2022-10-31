@@ -34,24 +34,24 @@ tsc ts.ts && node ts.js
 
 ### 可选链
 
-@[code](../../codeReference/ts01.ts)
+@[code](../../codeReference/typescript/ts01.ts)
 编译后
-@[code](../../codeReference/ts01.js)
+@[code](../../codeReference/typescript/ts01.js)
 
 ### 断言和谓词
 
-@[code](../../codeReference/ts02.ts)
+@[code](../../codeReference/typescript/ts02.ts)
 编译后
-@[code](../../codeReference/ts02.js)
+@[code](../../codeReference/typescript/ts02.js)
 
 ### NonNullable
-@[code](../../codeReference/ts03.ts)
+@[code](../../codeReference/typescript/ts03.ts)
 编译后
-@[code](../../codeReference/ts03.js)
+@[code](../../codeReference/typescript/ts03.js)
 
 ### private 
 
-@[code](../../codeReference/ts04.ts)
+@[code](../../codeReference/typescript/ts04.ts)
 编译后
 ::: warning tsc ts04.ts报错
 ts04.ts:7:9 - error TS1056: Accessors are only available when targeting ECMAScript 5 and higher.
@@ -67,16 +67,22 @@ Found 1 error in ts04.ts:7
 :::
 
   编译后
-@[code](../../codeReference/ts04.js)
+@[code](../../codeReference/typescript/ts04.js)
 
 ### closure闭包
 
-@[code](../../codeReference/ts05.ts)
+@[code](../../codeReference/typescript/ts05.ts)
 编译后
-@[code](../../codeReference/ts05.js)
+@[code](../../codeReference/typescript/ts05.js)
 
 ### readonly array type
 
-@[code](../../codeReference/ts06.ts)
+@[code](../../codeReference/typescript/ts06.ts)
 编译后
-@[code](../../codeReference/ts06.js)
+@[code](../../codeReference/typescript/ts06.js)
+
+### readonly tuple type
+
+@[code](../../codeReference/typescript/ts07.ts)
+编译后
+@[code](../../codeReference/typescript/ts07.js)

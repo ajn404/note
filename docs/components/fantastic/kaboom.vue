@@ -53,7 +53,10 @@ const start = () => {
 
     // Text
     const txt = add([
-        text("", { size: 32, width: width() - 230 }),
+        text("", { 
+            size: 32, 
+            width: width() - 230,            
+        }),
         pos(textbox.pos),
         origin("center")
     ])
