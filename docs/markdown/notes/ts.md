@@ -68,3 +68,15 @@ Found 1 error in ts04.ts:7
 
   编译后
 @[code](../../codeReference/ts04.js)
+
+### closure闭包
+
+@[code](../../codeReference/ts05.ts)
+编译后
+@[code](../../codeReference/ts05.js)
+
+### readonly array type
+
+@[code](../../codeReference/ts06.ts)
+编译后
+@[code](../../codeReference/ts06.js)

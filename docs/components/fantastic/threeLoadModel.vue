@@ -6,7 +6,7 @@
 
 <script lang="ts" setup>
 //@ts-ignore
-import { ref, nextTick, onUnmounted } from "vue";
+import { ref, nextTick } from "vue";
 import * as THREE from "three";
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader.js';
@@ -111,10 +111,6 @@ function main() {
   }
   requestAnimationFrame(render);
 }
-
-
-
-
 
 nextTick(() => {
     main();

@@ -1,4 +1,7 @@
 <template>
+    <div class="box">
+        <h3>太阳出来我晒太阳，月亮出来我晒月亮喽！</h3>
+    </div>
     <cards></cards>   
 </template>
 
@@ -91,3 +94,32 @@
 // console.log('setup')
 
 </script>
+
+<style lang="scss" scoped>
+.box{
+    width: 236.4px * 4;
+    height:184.5px * 4;
+    margin: 0 auto;
+    background-image: url("/note/images/hutao1.png");
+    background-size: cover;
+
+}
+
+h3 {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	align-content: center;
+	height: 100%;
+	width: 100%;
+    padding: 0;
+	margin: 0;
+	font-size: 6em;
+	font-family: 'Luckiest Guy', cursive;
+    background-color: #111;
+	color: white;
+	letter-spacing: 0.625rem;
+	mix-blend-mode: multiply;
+	text-shadow: 3px 3px 3px rgba(0, 0, 0, 1), 2px 2px 40px rgba(255, 255, 255, 0.7);
+}
+</style>
