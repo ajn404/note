@@ -5,3 +5,11 @@
 
 .vscode 文件夹的launch.json包含vscode调试配置
 .github文件夹workflow包含gitpage的配置
+
+### 网站
+[noteUs](https://ajn404.github.io/note)
+[noteCn](https://ajn404.gitee.io/note)
+
+### contributors
+ 
+ ajn404
