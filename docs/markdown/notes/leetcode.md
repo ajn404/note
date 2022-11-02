@@ -14,3 +14,13 @@ Accepted
 Your runtime beats 7.49 % of javascript submissions
 Your memory usage beats 5.01 % of javascript submissions (47.2 MB)
 :::
+### 有效的括号
+@[code](../../codeReference/leetcode/20.有效的括号.js)
+:::tip
+time 86.76% memory 32.67%
+:::
+### 合并两个有序链表
+@[code](../../codeReference/leetcode/21.合并两个有序链表.js)
+:::tip
+js sort方法默认按字母顺序排，排序数字需要传递方法
+:::
