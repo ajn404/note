@@ -82,7 +82,7 @@ export const easing = (_: any) => {
   }
 
   function draw() {
-    _.background(189,233,189)
+    _.background(189, 233, 189)
     if (window && window["p5DrawLoop"] !== "easing") {
       _.noLoop();
     }
@@ -93,8 +93,8 @@ export const easing = (_: any) => {
     let targetY = _.mouseY;
     let dy = targetY - y;
     y += dy * easing;
-    _.fill(0,0,189)
-    _.text('note',x, y, 66, 66);
+    _.fill(0, 0, 189)
+    _.text('note', x, y, 66, 66);
   }
 
   _.setup = setup;
@@ -1393,7 +1393,7 @@ export const rayCast = (_: any) => {
     look(walls: any) {
       for (let i = 0; i < this.rays.length; i++) {
         const ray = this.rays[i];
-        let closest:any = null;
+        let closest: any = null;
         let record = Infinity;
         for (let wall of walls) {
           const pt = ray.cast(wall);
@@ -1538,9 +1538,9 @@ export const chenShiSystem = (_: any) => {
     _.point(x, y, z);
   }
 
-//   _.keyPressed= ()=> {
-//     _.saveGif('defaultCanvas0', 20);
-// }
+  //   _.keyPressed= ()=> {
+  //     _.saveGif('defaultCanvas0', 20);
+  // }
 }
 
 export const coordinate = (_p5: any) => {
@@ -1609,7 +1609,7 @@ export const diaona = (_: any) => {
     _.normalMaterial()
 
   }
- 
+
 
   let teaBox: any;
   _.preload = () => {
@@ -1827,8 +1827,8 @@ export const spotLight = (_: any) => {
 
 export const spring = (_: any) => {
   let springHeight = 32,
-    left:any,
-    right:any,
+    left: any,
+    right: any,
     maxHeight = 200,
     minHeight = 100,
     over = false,
@@ -1845,11 +1845,11 @@ export const spring = (_: any) => {
     f = 0;    // Force
 
   _.setup = () => {
-    _.createCanvas(_.windowWidth*3/4, _.windowHeight*3/4);
+    _.createCanvas(_.windowWidth * 3 / 4, _.windowHeight * 3 / 4);
     _.rectMode(_.CORNERS);
     _.noStroke();
-    left =  _.width/2 - 100;
-    right = _.width/2 +100;
+    left = _.width / 2 - 100;
+    right = _.width / 2 + 100;
   }
 
   _.draw = () => {
@@ -1872,18 +1872,18 @@ export const spring = (_: any) => {
     _.rect(left, ps, right, ps + springHeight);
   }
 
-  const updateSpring=()=>{
+  const updateSpring = () => {
     if (_.mouseX > left && _.mouseX < right && _.mouseY > ps && _.mouseY < ps + springHeight) {
       over = true;
     } else {
       over = false;
     }
 
-    if(!move){
+    if (!move) {
       f = -K * (ps - R);//力
-      as = f/M;//加速度
-      vs = D*(vs+as);//速度
-      ps = ps+vs;
+      as = f / M;//加速度
+      vs = D * (vs + as);//速度
+      ps = ps + vs;
     }
     if (_.abs(vs) < 0.1) {
       vs = 0.0;
@@ -1891,17 +1891,52 @@ export const spring = (_: any) => {
     if (move) {
       ps = _.mouseY - springHeight / 2;
       ps = _.constrain(ps, minHeight, maxHeight);
-    } 
+    }
   }
 
-  _.mousePressed = ()=>{
-    if(over){
+  _.mousePressed = () => {
+    if (over) {
       move = true
     }
   }
 
-  _.mouseReleased = ()=>{
+  _.mouseReleased = () => {
     move = false
+  }
+}
+
+
+export const delaySound = (_: any) => {
+
+  let osc: any;
+  let p5 = window["p5"];
+
+  _.setup = () => {
+    let cnv = _.createCanvas(100, 100);
+    _.background(220);
+    _.textAlign(_.CENTER);
+    _.text('点击播放', _.width / 2, _.height / 2);
+    osc = new p5.Oscillator('sin');
+    osc.amp(0.5);
+    let delay = new p5.Delay();
+    delay.process(osc, 0.12, .7, 2300);
+
+    cnv.mousePressed(oscStart);
+  }
+
+  function oscStart() {
+    osc.start();
+  }
+
+  _.mouseReleased = () => {
+    osc.stop();
+  }
+
+
+  _.draw = () => {
+    if (window && window["p5DrawLoop"] !== "delaySound") {
+      _.noLoop();
+    }
   }
 }
 

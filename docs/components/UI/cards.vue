@@ -45,10 +45,28 @@
                 </card>
             </div>
 
+            <div class="card" @click="goUrl('markdown/notes/leetcode')">
+                <card data-image="/note/images/hutao5.png">
+                    <template v-slot:header>
+                        <h1>algorithm</h1>
+                    </template>
+                    <template v-slot:content>
+                        <p>简单算法试炼场</p>
+                    </template>
+                </card>
+            </div>
 
+            <div class="card" @click="goUrl('markdown/fantastic/p5')">
+                <card data-image="/note/images/hutao6.jpg">
+                    <template v-slot:header>
+                        <h1>p5</h1>
+                    </template>
+                    <template v-slot:content>
+                        <p>p5.js搬运场</p>
+                    </template>
+                </card>
+            </div>
 
-            <card data-image="/note/images/hutao5.png"></card>
-            <card data-image="/note/images/hutao6.jpg"></card>
             <card data-image="/note/images/hutao7.png"></card>
             <card data-image="/note/images/hutao8.jpg"></card>
         </div>

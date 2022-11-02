@@ -97,14 +97,29 @@
 </script>
 
 <style lang="scss" scoped>
+$multi:4;
+@media screen and (max-width: 900px) {
+  $multi:1;
+  .box{
+    width: 236.4px * $multi!important;
+    height:184.5px * $multi!important;
+
+}
+
+h3{
+	font-size: 1em!important;
+}
+}
+
 .box{
-    width: 236.4px * 4;
-    height:184.5px * 4;
+    width: 236.4px * $multi;
+    height:184.5px * $multi;
     margin: 0 auto;
     background-image: url("/note/images/hutao1.png");
     background-size: cover;
 
 }
+
 
 h3 {
 	display: flex;
