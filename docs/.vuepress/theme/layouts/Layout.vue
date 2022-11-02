@@ -164,8 +164,7 @@ const toggle = (item:HTMLElement)=>{
 }
 
 const playMusic =()=>{
-    console.log(this,window);
-    
+    //todo    
 }
 
 </script>
