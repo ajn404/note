@@ -128,7 +128,40 @@ iconClass.value= [
     "icon-swap",
     "icon-remove",
     "icon-selected",
-    "icon-question"
+    "icon-question",
+    "icon-jia",
+"icon-gonggao",
+"icon-gongce",
+"icon-shequ",
+"icon-xinju",
+"icon-rili",
+"icon-toupiao",
+"icon-xiaoche",
+"icon-tousujianyi",
+"icon-guhuakuandai",
+"icon-xiaoqu",
+"icon-yibaoka",
+"icon-saoma",
+"icon-shujutongji",
+"icon-tongxunlu",
+"icon-tingchechang",
+"icon-yinshui",
+"icon-xiaoxi",
+"icon-sannongzhengce",
+"icon-shebao",
+"icon-cunweixinxiang",
+"icon-liangzheng",
+"icon-yiliao",
+"icon-yuyue",
+"icon-goufang",
+"icon-shoujichongzhi",
+"icon-falvfuwu",
+"icon-jiaofeichaxun",
+"icon-guahao",
+"icon-dianshizhibo",
+"icon-musicfill",
+"icon-d",
+"icon-java-script",
 ]
 
 const copy = (item)=>{
@@ -154,7 +187,7 @@ const copy = (item)=>{
     .iconfont {
         line-height: 3;
         font-size: 1.5em;
-        color: var(--c-text);
+        // color: var(--c-text);
         text-align: center;
         cursor: context-menu;
 
