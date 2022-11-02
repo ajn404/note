@@ -8,7 +8,7 @@ import { path } from '@vuepress/utils';
 
 export default defineUserConfig({
     title: 'note',
-    description: 'note',
+    description: 'note for ecma , glsl , typescript , rust , leetcode , p5 , vtk , kaboom , three , hutao',
     base: '/note/',
     open: true,
     host: '0.0.0.0',

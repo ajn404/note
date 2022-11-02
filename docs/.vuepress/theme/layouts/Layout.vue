@@ -26,6 +26,7 @@
                         <div class="iconfont icon-arrow_down reverse" @click.stop="toggleTop"></div>
                         <div class="iconfont icon-arrow_down" @click.stop="toggleBottom"></div>
                         <div class="iconfont icon-face_happy" @click.stop="changeStyle"></div>
+                        <div class="iconfont icon-musicfill" @click.stop="playMusic"></div>
                     </div>
                 </div>
             </template>
@@ -160,6 +161,11 @@ const toggle = (item:HTMLElement)=>{
     if(window&&top){
         window.scrollBy({top:top,behavior:'smooth'});
     }
+}
+
+const playMusic =()=>{
+    console.log(this,window);
+    
 }
 
 </script>
