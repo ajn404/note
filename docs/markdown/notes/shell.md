@@ -1,6 +1,7 @@
 ---
 title : 命令行注释（macos）
 ---
+[[toc]]
 
 ### cal
 ```shell 日历
