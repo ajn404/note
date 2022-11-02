@@ -1,8 +1,7 @@
 import "@/public/styles/index.scss"
 import "@styles/index.scss"
 import "element-plus/dist/index.css"
-import "../public/js/p5.min.js"
-import "../public/js/p5.sound.min.js"
+
 
 
 
