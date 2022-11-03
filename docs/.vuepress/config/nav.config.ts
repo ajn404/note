@@ -225,6 +225,10 @@ const fantastic: NavbarGroup[] = [
                     {
                         text: 'pdr reader',
                         link: `${fantasticUrl}vtkDemo`
+                    },
+                    {
+                        text: 'vtk loadModel',
+                        link: `${fantasticUrl}vtkLoadModel`
                     }
                 ]
             },

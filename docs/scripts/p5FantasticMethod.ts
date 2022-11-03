@@ -131,7 +131,8 @@ export const allMethods = [
         },
         {
           value:'delaySound',
-          label:'p5 sound delay'
+          label:'p5 sound delay',
+          sound:true,
         }
       ],
     },

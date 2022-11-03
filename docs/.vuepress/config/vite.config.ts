@@ -1,6 +1,8 @@
 //@ts-ignore
 import glsl from 'rollup-plugin-glsl';
 import Components from 'unplugin-vue-components/vite';
+import commonjs from "rollup-plugin-commonjs";
+
 const { path } = require('@vuepress/utils');
 const resolve = (dir:any) => {
     return path.resolve(__dirname, dir)
@@ -17,6 +19,10 @@ const viteConfig = {
     },
     build: {
         rollupOptions: {
+            external: ['p5'],
+            plugins: [
+                commonjs(),
+              ],
         },
         dynamicImportVarsOptions: {
         },

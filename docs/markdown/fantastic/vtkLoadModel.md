@@ -1,0 +1,3 @@
+<ClientOnly>
+<vtkLoadModel></vtkLoadModel>
+</ClientOnly>
