@@ -79,6 +79,7 @@ if (isClient) {
     p5 = window['p5'];
     if (!p5) {
       import("https://p5js.org/assets/js/p5.min.js?v=9299cb").then(() => {
+        nex
         loadInstance.close();
         load();
       })
@@ -98,9 +99,13 @@ onUnmounted(() => {
 const handleChange = (arr) => {
   try {
   loadInstance = loading()
-    import("https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/addons/p5.sound.min.js").then(()=>{
+    if(!p5.Oscillator)
+    import("https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/addons/p5.sound.min.js").then((r)=>{
       loadInstance.close();
-      if (p5 && typeof p5 === "function") {
+      if(!p5.Oscillator){
+        throw new Error("p5 sound加载错误")
+      }      
+      else if (p5 && typeof p5 === "function") {
       let funcName = arr[arr.length - 1];
       window["p5DrawLoop"] = singlePage.value || funcName;
       //清除之前的
@@ -116,7 +121,29 @@ const handleChange = (arr) => {
         new p5(singlePage.value || funcs[funcName] || p5MainFunc.defaultFunc, "p5-start");
     }
     })
+    else{
+      loadInstance.close();
+      if(!p5.Oscillator){
+        throw new Error("p5 sound加载错误")
+      }      
+      else if (p5 && typeof p5 === "function") {
+      let funcName = arr[arr.length - 1];
+      window["p5DrawLoop"] = singlePage.value || funcName;
+      //清除之前的
+      clearFunc();
+      //新建计算和canvas 
+      dom = document.querySelector("#p5-start");
+
+      if (fullList.includes(funcName) && dom) {
+        dom.requestFullscreen().then(() => {
+          new p5(funcs[funcName] || p5MainFunc.defaultFunc, "p5-start");
+        });
+      } else
+        new p5(singlePage.value || funcs[funcName] || p5MainFunc.defaultFunc, "p5-start");
+    }
+    }
   } catch (e) {
+    loadInstance.close();
     ElMessage.warning("cdn加载失败");
     throw new Error(e)
   }
