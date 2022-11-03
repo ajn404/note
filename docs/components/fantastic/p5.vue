@@ -77,9 +77,6 @@ if (isClient) {
   nextTick(() => {
     clearFunc();
     p5 = window['p5'];
-
-
-
     if (!p5) {
       import("https://p5js.org/assets/js/p5.min.js?v=9299cb").then(() => {
         loadInstance.close();
