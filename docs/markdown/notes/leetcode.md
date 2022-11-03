@@ -24,3 +24,14 @@ time 86.76% memory 32.67%
 :::tip
 js sort方法默认按字母顺序排，排序数字需要传递方法
 :::
+### 26.删除有序数组中的重复项
+@[code](../../codeReference/leetcode/26.删除有序数组中的重复项.js)
+
+### 27.移除元素
+@[code](../../codeReference/leetcode/27.移除元素.js)
+:::tip
+数组的splice操作会改变原数组;另外使用oldArr.splice(0,0,...newArr)可以合并数组
+:::
+
+### 35.搜索插入位置
+@[code](../../codeReference/leetcode/35.搜索插入位置.js)
