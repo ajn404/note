@@ -97,7 +97,10 @@ onUnmounted(() => {
 });
 const handleChange = (arr) => {
   try {
-    if (p5 && typeof p5 === "function") {
+  loadInstance = loading()
+    import("https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/addons/p5.sound.min.js").then(()=>{
+      loadInstance.close();
+      if (p5 && typeof p5 === "function") {
       let funcName = arr[arr.length - 1];
       window["p5DrawLoop"] = singlePage.value || funcName;
       //清除之前的
@@ -112,6 +115,7 @@ const handleChange = (arr) => {
       } else
         new p5(singlePage.value || funcs[funcName] || p5MainFunc.defaultFunc, "p5-start");
     }
+    })
   } catch (e) {
     ElMessage.warning("cdn加载失败");
     throw new Error(e)
