@@ -37,6 +37,7 @@
     <codemirror class="fixed-dialog" v-show="showCodeMirror" />
     <iconCollection class="fixed-dialog" v-show="showIconCollection" />
     <div class="fixed-dialog" id="hutao" v-show="backImg"></div>
+    <music-player class="fixed-dialog" v-show="music"></music-player>
 
 </template>
 <script setup lang="ts">
@@ -47,6 +48,7 @@ const showIconCollection = ref(false);
 const menuClass = ref(["tool-menu"]);
 const audiuClass = ref("icon-audio")
 const parentLayout = ref(null);
+const music = ref(false)
 
 const showMenu = ()=>{
     menuClass.value.push("active")
@@ -71,6 +73,7 @@ const closeAll = () => {
     showCodeMirror.value = false;
     showIconCollection.value = false;
     backImg.value = ''
+    music.value = false
     clearSearch()
 }
 const showMirror = () => {
@@ -165,6 +168,8 @@ const toggle = (item:HTMLElement)=>{
 
 const playMusic =()=>{
     //todo    
+    closeAll()
+    music.value = true;
 }
 
 </script>

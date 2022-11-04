@@ -47,7 +47,7 @@ const loadModel = () => {
         if (!context.value) {
             const fullScreenRenderer = vtkFullScreenRenderWindow.newInstance({
                 rootContainer: vtkContainer.value,
-                background: [0.5, 0.5, 0.5],
+                background: [1,192/255,203/255],
             });
             const renderer = fullScreenRenderer.getRenderer();
             const renderWindow = fullScreenRenderer.getRenderWindow();
