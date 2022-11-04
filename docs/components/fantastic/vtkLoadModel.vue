@@ -134,7 +134,7 @@ materialsReader
 
         // Build control ui
         const htmlBuffer = [
-          '<style>.visible { font-weight: bold; } .click { cursor: pointer; min-width: 150px;}</style>',
+          '<style>.visible { font-weight: bold; font-size:1.5em;color:pink} .click { cursor: pointer; min-width: 150px;}</style>',
         ];
         scene.forEach((item, idx) => {
           htmlBuffer.push(
