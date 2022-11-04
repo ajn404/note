@@ -50,7 +50,7 @@ let dom;
 const clearFunc = () => {
   dom = document.querySelector("#p5-start")
   if (dom) dom.innerHTML = "";
-};
+}; 
 let p5;
 
 const load = () => {

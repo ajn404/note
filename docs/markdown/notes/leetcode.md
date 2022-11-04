@@ -35,3 +35,14 @@ js sort方法默认按字母顺序排，排序数字需要传递方法
 
 ### 35.搜索插入位置
 @[code](../../codeReference/leetcode/35.搜索插入位置.js)
+
+### 58.最后一个单词的长度
+@[code](../../codeReference/leetcode/58.最后一个单词的长度.js)
+:::tip
+time:93.82% memory 38.49%
+:::
+### 66.加一
+@[code](../../codeReference/leetcode/66.加一.js)
+:::tip
+time:87.06% memory 38.01%
+:::
