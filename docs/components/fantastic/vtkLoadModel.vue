@@ -13,6 +13,9 @@ let vtkFullScreenRenderWindow,
     vtkPDBReader,
     vtkSphereMapper,
     vtkStickMapper,
+    vtkMapper,
+    vtkMTLReader,
+    vtkOBJReader,
     vtkMoleculeToRepresentation;
 const vtkContainer = ref(null);
 const context = ref(null);
@@ -30,7 +33,11 @@ const loadModel = () => {
     loadInstance.close()    
     vtkFullScreenRenderWindow = vtk.Rendering.Misc.vtkFullScreenRenderWindow;
     vtkActor = vtk.Rendering.Core.vtkActor;
+    vtkMapper = vtk.Rendering.Core.vtkMapper
     vtkPDBReader = vtk.IO.Misc.vtkPDBReader;
+    vtkMTLReader = vtk.IO.Misc.vtkMTLReader;
+    vtkOBJReader = vtk.IO.Misc.vtkOBJReader;
+
     vtkSphereMapper = vtk.Rendering.Core.vtkSphereMapper;
     vtkMoleculeToRepresentation =
         vtk.Filters.General.vtkMoleculeToRepresentation;
@@ -40,40 +47,110 @@ const loadModel = () => {
         if (!context.value) {
             const fullScreenRenderer = vtkFullScreenRenderWindow.newInstance({
                 rootContainer: vtkContainer.value,
+                background: [0.5, 0.5, 0.5],
             });
             const renderer = fullScreenRenderer.getRenderer();
             const renderWindow = fullScreenRenderer.getRenderWindow();
 
-            const reader = vtkPDBReader.newInstance();
+            
+            
+            const reader = vtkOBJReader.newInstance({ splitMode: 'usemtl' });
+            const materialsReader = vtkMTLReader.newInstance();
+            const scene = [];
+
+
             const filter = vtkMoleculeToRepresentation.newInstance();
             const sphereMapper = vtkSphereMapper.newInstance();
             const stickMapper = vtkStickMapper.newInstance();
             const sphereActor = vtkActor.newInstance();
             const stickActor = vtkActor.newInstance();
 
-            filter.setInputConnection(reader.getOutputPort());
-            filter.setHideElements(["H"]);
+            const resetCamera = renderer.resetCamera;
+            const render = renderWindow.render;
 
-            // render sphere
-            sphereMapper.setInputConnection(filter.getOutputPort(0));
-            sphereMapper.setScaleArray(filter.getSphereScaleArrayName());
-            sphereActor.setMapper(sphereMapper);
+            // filter.setInputConnection(reader.getOutputPort());
+            // filter.setHideElements(["H"]);
 
-            // render sticks
-            stickMapper.setInputConnection(filter.getOutputPort(1));
-            stickMapper.setScaleArray("stickScales");
-            stickMapper.setOrientationArray("orientation");
-            stickActor.setMapper(stickMapper);
+            // // render sphere
+            // sphereMapper.setInputConnection(filter.getOutputPort(0));
+            // sphereMapper.setScaleArray(filter.getSphereScaleArrayName());
+            // sphereActor.setMapper(sphereMapper);
 
-            reader.setUrl(`/note/data/2LYZ.pdb`).then(() => {
-                renderer.resetCamera();
-                renderWindow.render();
-            });
+            // // render sticks
+            // stickMapper.setInputConnection(filter.getOutputPort(1));
+            // stickMapper.setScaleArray("stickScales");
+            // stickMapper.setOrientationArray("orientation");
+            // stickActor.setMapper(stickMapper);
 
-            renderer.addActor(sphereActor);
-            renderer.addActor(stickActor);
-            renderer.resetCamera();
-            renderWindow.render();
+            // reader.setUrl(`/note/data/2LYZ.pdb`).then(() => {
+            //     renderer.resetCamera();
+            //     renderWindow.render();
+            // });
+
+            // renderer.addActor(sphereActor);
+            // renderer.addActor(stickActor);
+            // renderer.resetCamera();
+            // renderWindow.render();
+
+
+function onClick(event) {
+  const el = event.target;
+  const index = Number(el.dataset.index);
+  const actor = scene[index].actor;
+  const visibility = actor.getVisibility();
+
+  actor.setVisibility(!visibility);
+  if (visibility) {
+    el.classList.remove('visible');
+  } else {
+    el.classList.add('visible');
+  }
+  render();
+}
+
+materialsReader
+  .setUrl(`/note/model/diaona.mtl`)
+  .then(() => {
+    reader
+      .setUrl(`/note/model/diaona.obj`)
+      .then(() => {
+        const size = reader.getNumberOfOutputPorts();
+        for (let i = 0; i < size; i++) {
+          const polydata = reader.getOutputData(i);
+          const name = polydata.get('name').name;
+          const mapper = vtkMapper.newInstance();
+          const actor = vtkActor.newInstance();
+
+          actor.setMapper(mapper);
+          mapper.setInputData(polydata);
+
+          materialsReader.applyMaterialToActor(name, actor);
+          renderer.addActor(actor);
+
+          scene.push({ name, polydata, mapper, actor });
+        }
+        resetCamera();
+        render();
+
+        // Build control ui
+        const htmlBuffer = [
+          '<style>.visible { font-weight: bold; } .click { cursor: pointer; min-width: 150px;}</style>',
+        ];
+        scene.forEach((item, idx) => {
+          htmlBuffer.push(
+            `<div class="click visible" data-index="${idx}">${item.name}</div>`
+          );
+        });
+
+        fullScreenRenderer.addController(htmlBuffer.join('\n'));
+        const nodes = document.querySelectorAll('.click');
+        for (let i = 0; i < nodes.length; i++) {
+          const el = nodes[i];
+          el.onclick = onClick;
+        }
+      });
+  });
+
 
             context.value = {
                 fullScreenRenderer,
