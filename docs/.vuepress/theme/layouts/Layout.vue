@@ -119,6 +119,7 @@ const toggleTop = () => {
 }
 const backImg = ref("")
 const changeStyle = () => {
+    closeAll()
     const styleImages = [
         "/note/images/hutao1.png",
         "/note/images/hutao2.jpg",
