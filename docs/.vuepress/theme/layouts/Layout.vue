@@ -77,11 +77,13 @@ const closeAll = () => {
     clearSearch()
 }
 const showMirror = () => {
+    closeAll()
     showCodeMirror.value = !showCodeMirror.value;
     showIconCollection.value = false;
     backImg.value = '';
 }
 const showIcon = () => {
+    closeAll()
     showIconCollection.value = !showIconCollection.value;
     showCodeMirror.value = false;
     backImg.value = ''

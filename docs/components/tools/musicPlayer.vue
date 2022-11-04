@@ -282,8 +282,9 @@ export default defineComponent({
 <style lang="scss" scoped>
   .box{
   // background: #e1e7ec;
-  background: #dfe7ef;
+  background: #dfe7ef!important;
   font-family: "Bitter", serif;
+  overflow-y: auto !important;;
 }
 
 // * {
