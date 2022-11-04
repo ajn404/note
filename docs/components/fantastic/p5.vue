@@ -10,7 +10,7 @@
     <div id="p5-start" :class="[singlePage?'singlepage':'container']"></div>
   </div>
 </template>
-<script lang="ts" setup>
+<script setup>
 import { ref, onUnmounted, nextTick, readonly } from "vue";
 import { ElMessage, ElLoading } from "element-plus";
 import { isClient } from "@vueuse/core";
@@ -28,7 +28,7 @@ for (let p5MainFuncItem in p5MainFunc) {
 
 const singlePage = ref(props.type && funcs[props.type]);
 const selectMethhod = ref([]);
-let defaultMethod = "defaultFunc";
+let defaultMethod =  props.type ||"defaultFunc";
 
 const methods = readonly(allMethods);
 const fullList = ["quickSort", "bubbleSort", "rayCast", "lorenzSystem", "chenShiSystem"];
@@ -45,21 +45,36 @@ const loading = () => {
 let loadInstance;
 
 
-let dom: HTMLElement | null;
+let dom;
 const clearFunc = () => {
   dom = document.querySelector("#p5-start")
   if (dom) dom.innerHTML = "";
 };
+const loadP5Func = ()=>{
+  clearFunc();
+    p5 = window['p5'];
+    new p5(p5MainFunc[defaultMethod], "p5-start");
+    window["p5DrawLoop"] = defaultMethod;
+}
+
 let p5;
 if (isClient)
   nextTick(() => {
-    clearFunc();
-    p5 = window['p5'];
-    nextTick(() => {
-      defaultMethod = props.type || "defaultFunc";
-      new p5(p5MainFunc[defaultMethod], "p5-start");
-      window["p5DrawLoop"] = defaultMethod;
-    });
+    if(soundList.includes(defaultMethod)){
+    if(p5?.Oscillator)
+    loadP5Func()
+    else{
+      loadInstance = loading()
+      import("https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/addons/p5.sound.min.js").then(()=>{
+        loadInstance.close()
+        loadP5Func()
+      })
+    }
+    }else
+    loadP5Func()
+
+  
+   
   });
 onUnmounted(() => {
   window["p5DrawLoop"] = "";
@@ -82,7 +97,7 @@ const loadMethod = arr=>{
     }
 }
 
-const handleChange = (arr: any) => {
+const handleChange = (arr) => {
   try {
     loadMethod(arr)
   } catch (e) {
