@@ -74,12 +74,10 @@ const load = () => {
 if (isClient) {
   loadInstance = loading()
 
-  nextTick(() => {
     clearFunc();
     p5 = window['p5'];
     if (!p5) {
       import("https://p5js.org/assets/js/p5.min.js?v=9299cb").then(() => {
-        nex
         loadInstance.close();
         load();
       })
@@ -88,7 +86,6 @@ if (isClient) {
       load();
     }
 
-  });
 }
 
 
@@ -101,11 +98,9 @@ const handleChange = (arr) => {
   loadInstance = loading()
     if(!p5.Oscillator)
     import("https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/addons/p5.sound.min.js").then((r)=>{
-      loadInstance.close();
-      if(!p5.Oscillator){
-        throw new Error("p5 sound加载错误")
-      }      
-      else if (p5 && typeof p5 === "function") {
+      setTimeout(()=>{
+        loadInstance.close();
+      if (p5 && typeof p5 === "function") {
       let funcName = arr[arr.length - 1];
       window["p5DrawLoop"] = singlePage.value || funcName;
       //清除之前的
@@ -120,6 +115,8 @@ const handleChange = (arr) => {
       } else
         new p5(singlePage.value || funcs[funcName] || p5MainFunc.defaultFunc, "p5-start");
     }
+      },1000)
+     
     })
     else{
       loadInstance.close();
