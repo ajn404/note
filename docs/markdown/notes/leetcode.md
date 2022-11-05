@@ -50,5 +50,18 @@ time:87.06% memory 38.01%
 @[code](../../codeReference/leetcode/67.二进制求和.js)
 
 :::tip
-好复杂
+好复杂<br/>
+Accepted
+294/294 cases passed (64 ms)
+Your runtime beats 77.13 % of javascript submissions
+Your memory usage beats 21.52 % of javascript submissions (43.2 MB)
 :::
+
+### 67 x-的平方根
+@[code](../../codeReference/leetcode/69.x-的平方根.js)
+
+:::tip
+不如调用Math的方法
+:::
+
+
