@@ -64,4 +64,7 @@ Your memory usage beats 21.52 % of javascript submissions (43.2 MB)
 不如调用Math的方法
 :::
 
+### 70.爬楼梯
+@[code](../../codeReference/leetcode/70.爬楼梯.js)
+
 
