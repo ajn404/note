@@ -67,4 +67,5 @@ Your memory usage beats 21.52 % of javascript submissions (43.2 MB)
 ### 70.爬楼梯
 @[code](../../codeReference/leetcode/70.爬楼梯.js)
 
-
+### 83.删除排序链表中的重复元素
+@[code](../../codeReference/leetcode/83.删除排序链表中的重复元素.js)
