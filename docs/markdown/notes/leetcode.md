@@ -74,3 +74,28 @@ Your memory usage beats 21.52 % of javascript submissions (43.2 MB)
 
 @[code](../../codeReference/leetcode/88.合并两个有序数组.js)
 
+
+#### 二叉树
+递归
+```js
+//前中后序排序
+const preOrder =root=>{
+    if(!root) return
+    console.log(root.val);
+    preOrder(root.left);
+    preOrder(root.right);
+}
+const inOrder =root=>{
+    if(!root) return
+    preOrder(root.left);
+    console.log(root.val);
+    preOrder(root.right);
+}
+
+const postOrder =root=>{
+    if(!root) return
+    preOrder(root.left);
+    preOrder(root.right);
+    console.log(root.val);
+}
+```
