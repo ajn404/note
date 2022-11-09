@@ -252,6 +252,7 @@ const fantastic: NavbarGroup[] = [
                     }
                 ]
             },
+            ...examples[0].children
         ]
     }
 ]
@@ -259,7 +260,6 @@ const fantastic: NavbarGroup[] = [
 const navbar: NavbarConfig =
     [
         ...note,
-        ...examples,
         ...fantastic
     ]
 
