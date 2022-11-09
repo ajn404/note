@@ -1,11 +1,15 @@
 <template>
-    <cards></cards>   
 
-    <div class="box">
+    <!-- <div class="box">
         <h3>太阳出来我晒太阳<br/>月亮出来我晒月亮喽！<br/>
             白天你尽管到处跑 <br/>晚上可得小心点<br/> 我不在的时候,<br/>务必谨慎行动<br/>
         </h3>
-    </div>
+    </div> -->
+
+    <objectification></objectification>
+
+    <cards></cards>  
+
 </template>
 
 
