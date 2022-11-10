@@ -1,6 +1,6 @@
 <template>
     <div class="playground" ref="playground">
-        <codemirror v-model="props.code" placeholder="rust" :style="{ padding: '10px 0', margin: '20px 0 0' }"
+        <codemirror ref="editor" v-model="props.code" placeholder="rust" class="editor"
             :autofocus="true" :indent-with-tab="true" :tab-size="2" :extensions="extensions" disabled />
             <el-button class="button" v-if="props.async" @click="getRes">
                 <objectification  :text="buttonText"></objectification>
@@ -21,6 +21,8 @@ import { oneDark } from '@codemirror/theme-one-dark'
 import { Codemirror } from 'vue-codemirror'
 import { ElLoading } from "element-plus";
 const playground:any = ref(null)
+const editor:any = ref(null)
+
 const buttonText = ref('运行')
 
 const extensions = [rust(), oneDark];
@@ -68,6 +70,13 @@ const getRes = ()=>{
     }
 }).then(res => res.json()).then(response => {
     loadInstance.close()
+    let height= editor.value?.$el.clientHeight;
+    //待优化    
+    window.scrollBy({
+        top:height,
+        behavior:'smooth'
+
+    })
     buttonText.value = '全屏'
     stderr.value = response?.stderr.replaceAll('\n', '<br/>');
     stdout.value = response?.stdout.replaceAll('\n', '<br/>');
@@ -104,6 +113,10 @@ if(!props.async) getRes()
     h4 {
         text-align: center;
     }
+}
+
+.editor{
+    display: block!important;
 }
 
 .button{

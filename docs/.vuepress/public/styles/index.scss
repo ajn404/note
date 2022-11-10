@@ -81,11 +81,11 @@ h4.navbar-dropdown-subtitle {
     max-width: 20em;
     max-height: 50vh;
     overflow-y: scroll;
-    right: 1em;
+    right: 3.6em;
     z-index: 1;
     font-size: .9em;
     bottom: 3.6rem;
-    background-color: rgba(0,0,0,.1);
-    opacity: .8;
+    background-color: var(--c-bg);
+    opacity: .9;
   }
 }
