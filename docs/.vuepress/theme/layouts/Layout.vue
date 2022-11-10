@@ -19,7 +19,7 @@
             <template #navbar-after>
                 <div class="navbar-after">
                     <div :class="menuClass">
-                        <div class="iconfont icon-nav_drawer" @click="slideDown" @mouseover.native="showMenu()" ref="parentLayout"></div>
+                        <div class="iconfont icon-nav_drawer" @click="slideDown"  ref="parentLayout"></div>
                         <div class="iconfont icon-game" @click.stop="showMirror"></div>
                         <div class="iconfont icon-hints" @click.stop="showIcon"></div>
                         <div :class="`iconfont ${audiuClass}`" @click.stop="speak"></div>

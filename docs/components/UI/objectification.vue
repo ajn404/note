@@ -11,7 +11,9 @@
 <script lang="ts" setup>
 import {ref } from 'vue'
 const txt :any = ref([])
-let s = "note for ecma , glsl , typescript , rust , leetcode , p5 , vtk , kaboom , three , hutao"
+const props = defineProps({text:String});
+
+let s = props.text||"note for ecma , glsl , typescript , rust , leetcode , p5 , vtk , kaboom , three , hutao"
 txt.value = s.split("")
 </script>
 

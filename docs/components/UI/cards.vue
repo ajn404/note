@@ -100,6 +100,9 @@ export default {
             this.router.push(url)
         }
     },
+    unmounted(){
+        this.showContainer = false;
+    },
     components: { Card }
 };
 </script>

@@ -7,9 +7,9 @@
     </div> -->
 
     <objectification></objectification>
-    <h2>cards</h2>
+    <objectification text="cards"></objectification>
     <cards></cards>
-    <h2>rust code demo</h2>
+    <objectification text="rust code demo"></objectification>
     <RustPlayground code='fn main(){
     first_name();
     last_name();
@@ -21,7 +21,7 @@ fn first_name(){
 fn last_name(){
     println!("n-graymoon");
 }'></RustPlayground>
-    <h2>music player</h2>
+    <objectification text="music player"></objectification>
     <music-player></music-player>
 
 </template>
