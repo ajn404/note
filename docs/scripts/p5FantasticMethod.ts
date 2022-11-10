@@ -129,11 +129,11 @@ export const allMethods = [
           value: 'easing',
           label: 'easing'
         },
-        {
-          value:'delaySound',
-          label:'p5 sound delay',
-          sound:true,
-        }
+        // {
+        //   value:'delaySound',
+        //   label:'p5 sound delay',
+        //   sound:true,
+        // }
       ],
     },
     {

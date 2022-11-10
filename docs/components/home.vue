@@ -7,8 +7,22 @@
     </div> -->
 
     <objectification></objectification>
+    <h2>cards</h2>
+    <cards></cards>
+    <h2>rust code demo</h2>
+    <RustPlayground code='fn main(){
+    first_name();
+    last_name();
+}
+fn first_name(){
+    println!("ajn404");
+}
 
-    <cards></cards>  
+fn last_name(){
+    println!("n-graymoon");
+}'></RustPlayground>
+    <h2>music player</h2>
+    <music-player></music-player>
 
 </template>
 
@@ -103,45 +117,28 @@
 </script>
 
 <style lang="scss" scoped>
-$multi:4;
+$multi: 4;
+
 @media screen and (max-width: 900px) {
-  $multi:1;
-  .box{
-    width: 236.4px * $multi!important;
-    height:184.5px * $multi!important;
+    $multi: 1;
 
+    .box {
+        width: 236.4px * $multi !important;
+        height: 184.5px * $multi !important;
+
+    }
+
+    h3 {
+        font-size: 1em !important;
+    }
 }
 
-h3{
-	font-size: 1em!important;
-}
-}
-
-.box{
+.box {
     width: 236.4px * $multi;
-    height:184.5px * $multi;
+    height: 184.5px * $multi;
     margin: 0 auto;
     background-image: url("/note/images/hutao1.png");
     background-size: cover;
 
-}
-
-
-h3 {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	align-content: center;
-	height: 100%;
-	width: 100%;
-    padding: 0;
-	margin: 0;
-	font-size: 5em;
-	font-family: 'Luckiest Guy', cursive;
-    background-color: #111;
-	color: white;
-	letter-spacing: 0.625rem;
-	mix-blend-mode: multiply;
-	text-shadow: 3px 3px 3px rgba(0, 0, 0, 1), 2px 2px 40px rgba(255, 255, 255, 0.7);
 }
 </style>
