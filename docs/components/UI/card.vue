@@ -59,8 +59,8 @@ export default ({
     },
     methods: {
         handleMouseMove(e) {
-            this.mouseX = e.pageX - this.$refs.card.offsetLeft - this.width / 2;
-            this.mouseY = e.pageY - this.$refs.card.offsetTop - this.height / 2;
+            this.mouseX = e.pageX - this.$refs?.card?.offsetLeft - this.width / 2;
+            this.mouseY = e.pageY - this.$refs?.card?.offsetTop - this.height / 2;
         },
         handleMouseEnter() {
             clearTimeout(this.mouseLeaveDelay);

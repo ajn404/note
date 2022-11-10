@@ -6,11 +6,11 @@
         </h3>
     </div> -->
 
-    <objectification></objectification>
+    <objectification text="note for ecma , glsl , typescript , rust , leetcode , p5 , vtk , kaboom , three , hutao"></objectification>
     <objectification text="cards"></objectification>
     <cards></cards>
     <objectification text="rust code demo"></objectification>
-    <RustPlayground code='fn main(){
+    <RustPlayground async code='fn main(){
     first_name();
     last_name();
 }

@@ -156,6 +156,10 @@ const note: NavbarGroup[] = [
                 text: 'leetcode',
                 link: `${noteBaseUrl}leetcode`
             },
+            {
+                text: 'rust',
+                link: `${noteBaseUrl}rust`
+            },
 
         ]
     }

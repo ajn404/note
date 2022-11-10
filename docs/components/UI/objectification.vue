@@ -2,19 +2,16 @@
     <div>
         <div class="container">
             <span class="txt anim-text-flow">
-                <span  v-for="item in txt">{{item}}</span>
+                <span  v-for="item,index in props.text" :key="index">{{item}}</span>
             </span>
         </div>
     </div>
 </template>
 
 <script lang="ts" setup>
-import {ref } from 'vue'
-const txt :any = ref([])
-const props = defineProps({text:String});
-
-let s = props.text||"note for ecma , glsl , typescript , rust , leetcode , p5 , vtk , kaboom , three , hutao"
-txt.value = s.split("")
+const props = defineProps({text:{
+  type:String,
+}});
 </script>
 
 <style lang="scss" scoped>
