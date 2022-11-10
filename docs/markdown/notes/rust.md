@@ -86,6 +86,44 @@ fn main(){
 ></RustPlayground>
 </ClientOnly>
 
+<ClientOnly>
+     <RustPlayground 
+     async
+     code='fn match_fn(val:i32){
+    match val{
+        1=>println!("one"),
+        2=>println!("two"),
+        3=>println!("three"),
+        _=>println!("{:?}",val)
+    }
+}
+fn main(){
+    let val =  4;
+    match_fn(val);
+    match_fn(1);
+}'
+></RustPlayground>
+</ClientOnly>
+
+### loop
+
+<ClientOnly>
+     <RustPlayground 
+     async
+     code='fn main(){
+    let mut i = 4;
+    loop{
+        println!("{:?}",i);
+        i = i -1;
+        if i < 1 {
+            break;
+        }
+    }
+    println!("done")
+}'
+></RustPlayground>
+</ClientOnly>
+
 /*copy
 ### 
 
@@ -107,6 +145,6 @@ fn main(){
 
 ## 申明
 
-本页面的编译来源为[rust playground](https://play.rust-lang.org/)
+本页面的编译结果来源为[rust playground](https://play.rust-lang.org/),感谢开源，thanks ©MIT
 
 

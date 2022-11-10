@@ -45,8 +45,8 @@ const props = defineProps({text:{
    */
   @keyframes anim-text-flow-keys {
     @for $i from 0 through $animationSteps {
-      #{percentage($i * (1 / $animationSteps))} {
-        color: hsla(random(365), 60, 60, 1);
+      #{percentage($i * calc(1 / $animationSteps))} {
+        color: hsla(random(365), 60%, 60%, 1);
       }
     }
   }
