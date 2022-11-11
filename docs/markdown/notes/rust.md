@@ -5,6 +5,7 @@
 
 <ClientOnly>
      <RustPlayground 
+     async
      code='fn main(){
     println!("hello Rust")
 }'
