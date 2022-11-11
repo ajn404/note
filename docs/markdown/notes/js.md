@@ -209,6 +209,7 @@ the Symbol type is the set of all non-String values that may be used as the key 
 | @@iterator |  Symbo.iterator |  a method that returns the default [Iterator](#iterator遍历器和for-of-循环) for an object.|
 
 </div>
+
 ##### Iterator遍历器和for of 循环
 - 为各种数据提供一个统一的、简便的访问接口
 - 使得数据结构的成员能按照某种次序排列

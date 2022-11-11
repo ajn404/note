@@ -42,7 +42,7 @@
 </template>
 <script setup lang="ts">
 import ParentLayout from "@vuepress/theme-default/lib/client/layouts/Layout.vue";
-import { ref } from 'vue';
+import { ref,inject } from 'vue';
 const showCodeMirror = ref(false);
 const showIconCollection = ref(false);
 const menuClass = ref(["tool-menu"]);
@@ -53,6 +53,11 @@ const music = ref(false)
 const showMenu = ()=>{
     menuClass.value.push("active")
 }
+
+
+const darkMode = Symbol('darkMode')
+ const d = inject(darkMode);
+
 
 const hideMenu =()=>{
     menuClass.value = menuClass.value.filter((item, index) => {
