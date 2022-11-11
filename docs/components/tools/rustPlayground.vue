@@ -126,5 +126,6 @@ if(!props.async) getRes()
 
 .playground{
     background-color: var(--c-bg);
+    overflow-y: scroll;
 }
 </style>

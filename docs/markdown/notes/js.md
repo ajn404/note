@@ -154,7 +154,8 @@ primitive value that represents a unique, non-String Object property key
 ...
 ## 6. ECMAScript Data Types and Values ECMA 数据类型和值
 ### 6.1 ECMAScript language types
-Undefined,Null,Boolean,String,Symbol,Number,BigInt,Object
+Undefined,Null,Boolean,String,
+Symbol,Number,BigInt,Object
 #### 6.1.1 the Undefined type
 ::: tip 原文
 Any variable that has not been assigned a value has the value undefined.
@@ -199,10 +200,15 @@ b. If candidate is the same sequence of code units as searchValue, return i.<br/
 the Symbol type is the set of all non-String values that may be used as the key of Object property.
 :::
 ##### 6.1.5.1 well-know symbol
+
+<div style="display:flex;max-width:100%;overflow:scroll">
+
 | name | description  | value and purpose |
 | --- | --- | --- |
 |  @@asyncIterator     |       Symbol.asyncIterator        |        a method that returns the default [AsyncIterator](#async-iteration异步遍历) for an object . Called by the semantics of the for-await-of statement          |
 | @@iterator |  Symbo.iterator |  a method that returns the default [Iterator](#iterator遍历器和for-of-循环) for an object.|
+
+</div>
 ##### Iterator遍历器和for of 循环
 - 为各种数据提供一个统一的、简便的访问接口
 - 使得数据结构的成员能按照某种次序排列
@@ -275,9 +281,13 @@ async function * createAsyncIterable(asyncIterable){
   }
 }
 ```
+<div style="display:flex;max-width:100%;overflow:scroll">
+
 | name | description  | value and purpose |
 | --- | --- | --- |
 | @@hasInstance | Symbol.hasInstance| A method that determines if a constructor object recognizes an object as one of the constructor's instances.Called by the semantics of the instanceof operator. |
+
+</div>
 
 ##### InstanceofOperator(V,target)
 The abstract Operation InstanceofOperator takes arguments V and target.It implements the generic algorithn for detemining if V is an instance of target either by consulting target's @@hasInstance method or,if absebt,determining whether the value of target's "prototype" property is present in V's prototype chain.
@@ -286,16 +296,27 @@ The abstract Operation InstanceofOperator takes arguments V and target.It implem
 - If instOfHandler is not undefined , then a. Return !ToBoolean(?Call(instOfHandler,target,《V》))
 - If IsCallable(target) is false , 报TyoeError exception
 - Return ? OrdinaryHasInstance(target,V)
+
+<div style="display:flex;max-width:100%;overflow:scroll">
+
 | name | description  | value and purpose |
 | --- | --- | --- |
 | @@isConcatSpreadable | Symbol.isConcatSpreadable| 一个用于标识是否可以通过Array.prototype.concat进行扁平化处理的boolean值 ｜
 
+</div>
+
 ##### Array.prototype.concat
+
+<div style="display:flex;max-width:100%;overflow:scroll">
+
 | name | description  | value and purpose |
 | --- | --- | --- |
 | @@search | Symbol.search | String.protype.search |
 | @@match | Symbol.match |  String.prototype.match |
 | @@matchAll | Symbol.matchAll |  String.prototype.matchAll |
+
+</div>
+
 ```js 
 class caseInsensitiveSearch {
   constructor(value) {
@@ -785,12 +806,16 @@ for(let item in obj){
 
 ##### 6.1.7.4 Well-Known Intrinsic Objects
 
+<div style="display:flex;max-width:100%;overflow:scroll">
+
 |  Intristic name |  Global name | ECMASript Language Association | 
 |  --- | --- | --- |
 | [%AggregateError%](#aggregateerror) | AggregateError | The AggregateError Constructor |
 | %Array% | Array | The Array Constructor |
 | [%ArrayBuffer%](#arraybuffer) | ArrayBuffer | The ArrayBuffer Constructor |
 | [%ArrayIteratorPrototype%] | | The prototype of Array Iterator objects |
+
+</div>
 
 ###### AggregateError
 
