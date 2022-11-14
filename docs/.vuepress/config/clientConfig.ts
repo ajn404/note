@@ -11,6 +11,8 @@ export default defineClientConfig({
     enhance({ app, router, siteData }){
         app.use(createPinia());
         app.use(ElementPlus);
+        console.log(app.config.globalProperties);
+        
         // router.beforeEach(()=>{
         // })
     },

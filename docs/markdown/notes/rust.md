@@ -141,6 +141,51 @@ fn main(){
 ></RustPlayground>
 </ClientOnly>
 
+### enum 枚举
+
+<ClientOnly>
+     <RustPlayground 
+     async
+     code='enum Direction{
+    Up,Down,Left,Right
+}
+fn which_way(go: Direction){
+    match go{
+        Direction::Up=>println!("Up"),
+        Direction::Down=>println!("down"),
+        Direction::Left=>println!("Left"),
+        Direction::Right=>println!("right"),
+    }
+}
+fn main(){
+    which_way(Direction::Left);
+    which_way(Direction::Right);
+    which_way(Direction::Up);
+    which_way(Direction::Down);
+}'
+></RustPlayground>
+</ClientOnly>
+
+### struct 结构体
+
+<ClientOnly>
+     <RustPlayground 
+     async
+     code='struct GroceryItem {
+        stock:i32,
+        price:f64,            
+} 
+fn main(){
+    let cereal = GroceryItem {
+        stock:10,
+        price:1.22,
+    };
+    println!("stock:{:?}",cereal.stock);
+    println!("price:{:?}",cereal.price);
+}'
+></RustPlayground>
+</ClientOnly>
+
 /*copy
 ### 
 
