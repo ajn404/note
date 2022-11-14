@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Ref, ref } from 'vue'
-const buttons: any = ref([]);
+const linkObj: any = ref({});
 const link: Ref<HTMLAudioElement | null> = ref(null)
 const hover: Ref<HTMLAudioElement | null> = ref(null)
 
@@ -22,14 +22,10 @@ const music = () => {
         linkMusicOn.value = false;
     }
 }
-buttons.value = [
-    {
-        text: linkMusicOn?'turn off link music':'turn on link music',
+linkObj.value = {
         title:'此功能用于给当前页面的所有链接添加点击声音',
         click: music
     }
-]
-
 
 
 
@@ -37,8 +33,8 @@ buttons.value = [
 
 <template>
     <div class="container">
-        <el-button v-for="item in buttons" @click="item.click" :title="item.title">
-            {{ item.text }}
+        <el-button @click="linkObj.click" :title="linkObj.title">
+            {{ linkMusicOn?'turn off link music':'turn on link music' }}
         </el-button>
         <audio id="link" src="/note/music/link.mp3" preload="auto" ref="link"></audio>
         <audio id="hover-audio" src="/note/music/hover.mp3" preload="auto" ref="hover"></audio>
