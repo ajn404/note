@@ -72,6 +72,27 @@ fn main(){
 ></RustPlayground>
 </ClientOnly>
 
+<ClientOnly>
+     <RustPlayground 
+     async
+     code='fn main() {
+    println!("test println!");
+    println!("{}", 1);//默认用法
+    println!("{:o}", 8);//8进制
+    println!("256的16进制小写为 {:x}", 256);//16进制小写
+    println!("{:X}", 256);//16进制大写
+    println!("0的指针{:p}", &0);//指针
+    println!("18二进制 {:b}", 18);//二进制
+    println!("10000科学计数 {:e}", 10000f32);//科学计数
+    println!("10000科学计数 (大写){:E}", 10000f32);//科学计数
+    println!("{:?}","test"); //打印debug
+    println!("{:#?}",("test1","test2"));//带换行和缩进的debug
+    println!("{a}{b}",a=19,b="xx");//命名参数
+}'
+></RustPlayground>
+</ClientOnly>
+
+
 ### 1.6match
 
 <ClientOnly>
@@ -322,6 +343,41 @@ fn main(){
 ></RustPlayground>
 </ClientOnly>
 
+guess game最终版
+
+<ClientOnly>
+     <RustPlayground 
+     async
+     code='use std::io;
+use std::cmp::Ordering;
+use rand::Rng;
+fn main(){
+    println!("guess the number");
+    let secret_number = rand::thread_rng().gen_range(1,101);
+    println!("the secret number is {}",secret_number);
+    loop{
+        println!("please input your guess :");
+        let mut guess = String::new();
+        io::stdin().read_line(&mut guess).expect("failed to read line");
+        println!("Your guess is :{}",guess);
+        //将输入的字符串转成数字
+        //u32 32位无符号整数
+        let guess:u32=  match guess.trim().parse(){
+          Ok(num)=>num,
+            Err(_)=>continue,
+        };
+        match guess.cmp(&secret_number){
+            Ordering::Less=>println!("Too small!"),
+            Ordering::Greater=>println!("Too big"),
+            Ordering::Equal=>{
+                println!("you win!");
+                break;
+            }
+        }
+    }
+}'
+></RustPlayground>
+</ClientOnly>
 
 /*copy
 ### 
@@ -341,6 +397,7 @@ fn main(){
 [rust example](https://doc.rust-lang.org/rust-by-example/hello.html)<br/>
 [rust book](https://doc.rust-lang.org/book/title-page.html)<br/>
 [rust api](https://docs.rs/)<br/>
+[rust crate register](https://crates.io/)<br/>
 
 ## 申明
 
