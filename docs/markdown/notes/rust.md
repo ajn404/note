@@ -234,8 +234,7 @@ fn main(){
     // * / 
     let five = sub(8,3);
     let zero = 6 % 3;
-    println!("{:?}",five);   
-    
+    println!("{:?}",five);
 }'
 ></RustPlayground>
 </ClientOnly>
@@ -251,6 +250,73 @@ fn main(){
         "A" => println!("true"),
         "B" => println!("false"),
         _ => println!("else"),
+    }
+}'
+></RustPlayground>
+</ClientOnly>
+
+### guess game (可恶的是，https://play.rust-lang.org/ playground不能使用控制台)
+输入你猜测的数字
+<ClientOnly>
+     <RustPlayground 
+     async
+     code='use std::io;
+fn main(){
+    println!("guess your number!");
+    println!("Please inpput your guess number:");
+    let mut guess = String::new();
+    io::stdin().read_line(&mut guess).expect("Falied to read line");
+    println!("your guess:{}",guess);
+    //生成保密数字
+}'
+></RustPlayground>
+</ClientOnly>
+
+显示“秘密数字”
+<ClientOnly>
+     <RustPlayground 
+     async
+     code='use std::io;
+use rand::Rng;
+fn main(){
+    println!("guess the number");
+    let secret_number = rand::thread_rng().gen_range(1,101);
+    println!("the secret number is {}",secret_number);
+    println!("please input your guess :");
+    let mut guess = String::new();
+    io::stdin().read_line(&mut guess).expect("failed to read line");
+    println!("Your guess is :{}",guess);
+}'
+></RustPlayground>
+</ClientOnly>
+
+Ordering是两值之间比较的结果
+<ClientOnly>
+     <RustPlayground 
+     async
+     code='use std::io;
+use std::cmp::Ordering;
+use rand::Rng;
+fn main(){
+    println!("guess the number");
+    let secret_number = rand::thread_rng().gen_range(1,101);
+    println!("the secret number is {}",secret_number);
+    loop{
+        println!("please input your guess :");
+        let mut guess = String::new();
+        io::stdin().read_line(&mut guess).expect("failed to read line");
+        println!("Your guess is :{}",guess);
+        //将输入的字符串转成数字
+        //u32 32位无符号整数
+        let guess:u32=guess.trim().parse().expect("please type a number");
+        match guess.cmp(&secret_number){
+            Ordering::Less=>println!("Too small!"),
+            Ordering::Greater=>println!("Too big"),
+            Ordering::Equal=>{
+                println!("you win!");
+                break;
+            }
+        }
     }
 }'
 ></RustPlayground>
