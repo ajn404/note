@@ -186,6 +186,77 @@ fn main(){
 ></RustPlayground>
 </ClientOnly>
 
+### struct enum 应用
+
+<ClientOnly>
+     <RustPlayground 
+     async
+     code='enum Flavor {
+    Spark,
+    Sweet,
+    Fruity,
+}
+struct drink {
+    flavor:Flavor,
+    fluid_oz:f64,
+}
+fn print_fn(dr:drink){
+    match dr.flavor{
+        Flavor::Spark=>println!("spark"),
+        Flavor::Fruity=>println!("fruity"),
+        Flavor::Sweet=>println!("Sweet"),
+    }
+    println!("{:?}",dr.fluid_oz);
+}
+fn main(){
+    let dr = drink{
+        flavor:Flavor::Spark,
+        fluid_oz:1.5,
+    };
+    let cl = dr.fluid_oz.clone();
+    print_fn(dr);
+    println!("{:?}",cl); 
+}'
+></RustPlayground>
+</ClientOnly>
+
+### number calculate
+
+<ClientOnly>
+     <RustPlayground 
+     async
+     code='fn sub(a:i32,b:i32)->i32{
+    a-b
+}
+fn main(){
+    let sum = 2+2;
+    let value = 10 -5;
+    // * / 
+    let five = sub(8,3);
+    let zero = 6 % 3;
+    println!("{:?}",five);   
+    
+}'
+></RustPlayground>
+</ClientOnly>
+
+### match default
+
+<ClientOnly>
+     <RustPlayground 
+     async
+     code='fn main(){
+    let some_bool = "C";
+    match some_bool {
+        "A" => println!("true"),
+        "B" => println!("false"),
+        _ => println!("else"),
+    }
+}'
+></RustPlayground>
+</ClientOnly>
+
+
 /*copy
 ### 
 
