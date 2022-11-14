@@ -27,6 +27,7 @@
                         <div class="iconfont icon-arrow_down" @click.stop="toggleBottom"></div>
                         <div class="iconfont icon-face_happy" @click.stop="changeStyle"></div>
                         <div class="iconfont icon-musicfill" @click.stop="playMusic"></div>
+                        <div class="iconfont icon-java-script" @click.stop="jsTool"></div>
                     </div>
                 </div>
             </template>
@@ -38,6 +39,7 @@
     <iconCollection class="fixed-dialog" v-show="showIconCollection" />
     <div class="fixed-dialog" id="hutao" v-show="backImg"></div>
     <music-player class="fixed-dialog" v-show="music"></music-player>
+    <tool-play-use-js  class="fixed-dialog" v-show="jstool"></tool-play-use-js>
 
 </template>
 <script setup lang="ts">
@@ -49,6 +51,7 @@ const menuClass = ref(["tool-menu"]);
 const audiuClass = ref("icon-audio")
 const parentLayout = ref(null);
 const music = ref(false)
+const jstool = ref(false)
 
 const showMenu = ()=>{
     menuClass.value.push("active")
@@ -79,6 +82,7 @@ const closeAll = () => {
     showIconCollection.value = false;
     backImg.value = ''
     music.value = false
+    jstool.value = false;
     clearSearch()
 }
 const showMirror = () => {
@@ -178,6 +182,11 @@ const playMusic =()=>{
     //todo    
     closeAll()
     music.value = true;
+}
+
+const jsTool = ()=>{
+    closeAll()
+    jstool.value = true;
 }
 
 </script>
