@@ -18,7 +18,7 @@
             </template>
             <template #navbar-after>
                 <div class="navbar-after">
-                    <div :class="menuClass">
+                    <div :class="menuClass" >
                         <div class="iconfont icon-nav_drawer" @click="slideDown"  ref="parentLayout"></div>
                         <div class="iconfont icon-game" @click.stop="showMirror"></div>
                         <div class="iconfont icon-hints" @click.stop="showIcon"></div>
@@ -35,11 +35,11 @@
             <template #page-top></template>
         </ParentLayout>
     </transition>
-    <codemirror class="fixed-dialog" v-show="showCodeMirror" />
-    <iconCollection class="fixed-dialog" v-show="showIconCollection" />
-    <div class="fixed-dialog" id="hutao" v-show="backImg"></div>
-    <music-player class="fixed-dialog" v-show="music"></music-player>
-    <tool-play-use-js  class="fixed-dialog" v-show="jstool"></tool-play-use-js>
+    <codemirror class="xyz-in" xyz="fade small stagger ease-out-back" v-show="showCodeMirror" />
+    <iconCollection class="xyz-in" xyz="fade flip-down stagger duration-10 delay-1 ease-out-back" v-show="showIconCollection" />
+    <div id="hutao" v-show="backImg"></div>
+    <music-player class="xyz-in" xyz="fade big delay-1" v-show="music"></music-player>
+    <tool-play-use-js  xyz="fade up big"  class="xyz-in" v-show="jstool"></tool-play-use-js>
 
 </template>
 <script setup lang="ts">
@@ -203,7 +203,7 @@ const jsTool = ()=>{
 //         transform: scale(0.5) translate(-50%,-100%) !important;
 //     }
 // }
-.fixed-dialog {
+.xyz-in {
     min-width: 90vw;
     width: 90vw;
     position: fixed;
