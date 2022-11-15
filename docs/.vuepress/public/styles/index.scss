@@ -64,6 +64,13 @@ h4.navbar-dropdown-subtitle {
 }
 
 @media screen and (max-width: 900px) {
+  .pc-views {
+      display: none !important;
+      ;
+  }
+}
+
+@media screen and (max-width: 900px) {
   .page .theme-default-content {
     padding: 2em;
   }

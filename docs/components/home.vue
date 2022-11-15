@@ -21,7 +21,7 @@ fn first_name(){
 fn last_name(){
     println!("n-graymoon");
 }'></RustPlayground>
-    <objectification text="music player"></objectification>
+    <objectification class="pc-views" text="music player"></objectification>
     <music-player></music-player>
 
 </template>
