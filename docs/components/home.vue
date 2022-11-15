@@ -111,7 +111,7 @@ fn last_name(){
     println!("n-graymoon");
 }'></RustPlayground>
     <objectification class="pc-views" text="music player"></objectification>
-    <music-player></music-player>
+    <music-player class="pc-views" ></music-player>
 
 </template>
 
