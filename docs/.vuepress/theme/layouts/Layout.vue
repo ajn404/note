@@ -37,7 +37,7 @@
     </transition>
     <codemirror class="xyz-in" xyz="fade small stagger ease-out-back" v-show="showCodeMirror" />
     <iconCollection class="xyz-in" xyz="fade flip-down stagger duration-10 delay-1 ease-out-back" v-show="showIconCollection" />
-    <div id="hutao" v-show="backImg"></div>
+    <div class="xyz-in" id="hutao" v-show="backImg"></div>
     <music-player class="xyz-in" xyz="fade big delay-1" v-show="music"></music-player>
     <tool-play-use-js  xyz="fade up big"  class="xyz-in" v-show="jstool"></tool-play-use-js>
 
