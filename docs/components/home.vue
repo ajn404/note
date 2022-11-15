@@ -1,32 +1,3 @@
-<template>
-
-    <!-- <div class="box">
-        <h3>太阳出来我晒太阳<br/>月亮出来我晒月亮喽！<br/>
-            白天你尽管到处跑 <br/>晚上可得小心点<br/> 我不在的时候,<br/>务必谨慎行动<br/>
-        </h3>
-    </div> -->
-
-    <objectification text="note for ecma , glsl , typescript , rust , leetcode , p5 , vtk , kaboom , three , hutao"></objectification>
-    <objectification text="cards"></objectification>
-    <cards></cards>
-    <objectification text="rust code demo"></objectification>
-    <RustPlayground async code='fn main(){
-    first_name();
-    last_name();
-}
-fn first_name(){
-    println!("ajn404");
-}
-
-fn last_name(){
-    println!("n-graymoon");
-}'></RustPlayground>
-    <objectification class="pc-views" text="music player"></objectification>
-    <music-player></music-player>
-
-</template>
-
-
 <script lang="ts" setup>
 // //setup 执行时dom还不存在
 // import {
@@ -115,6 +86,34 @@ fn last_name(){
 // console.log('setup')
 
 </script>
+
+<template>
+
+    <!-- <div class="box">
+        <h3>太阳出来我晒太阳<br/>月亮出来我晒月亮喽！<br/>
+            白天你尽管到处跑 <br/>晚上可得小心点<br/> 我不在的时候,<br/>务必谨慎行动<br/>
+        </h3>
+    </div> -->
+
+    <objectification text="note for ecma , glsl , typescript , rust , leetcode , p5 , vtk , kaboom , three , hutao"></objectification>
+    <objectification text="cards"></objectification>
+    <cards></cards>
+    <objectification text="rust code demo"></objectification>
+    <RustPlayground async code='fn main(){
+    first_name();
+    last_name();
+}
+fn first_name(){
+    println!("ajn404");
+}
+
+fn last_name(){
+    println!("n-graymoon");
+}'></RustPlayground>
+    <objectification class="pc-views" text="music player"></objectification>
+    <music-player></music-player>
+
+</template>
 
 <style lang="scss" scoped>
 $multi: 4;
