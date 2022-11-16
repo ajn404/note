@@ -451,19 +451,6 @@ fn main() {
 <ClientOnly>
      <RustPlayground 
      async
-     code=''
-></RustPlayground>
-</ClientOnly>
-
-
-
-
-/*copy
-### 
-
-<ClientOnly>
-     <RustPlayground 
-     async
      code='fn main() {
     let penguin_data = "\
     common name,length (cm)
@@ -504,6 +491,16 @@ fn main() {
     }
   }
  '
+></RustPlayground>
+</ClientOnly>
+
+/*copy
+### 
+
+<ClientOnly>
+     <RustPlayground 
+     async
+     code=''
 ></RustPlayground>
 </ClientOnly>
 
