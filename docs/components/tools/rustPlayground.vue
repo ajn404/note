@@ -4,11 +4,9 @@ import { rust } from "@codemirror/lang-rust"
 import { oneDark } from '@codemirror/theme-one-dark'
 import { Codemirror } from 'vue-codemirror'
 import { ElLoading } from "element-plus";
-const playground:any = ref(null)
-const editor:any = ref(null)
-
+const playground: any = ref(null)
+const editor: any = ref(null)
 const buttonText = ref('运行')
-
 const extensions = [rust(), oneDark];
 const loading = () => {
     return ElLoading.service({
@@ -18,81 +16,79 @@ const loading = () => {
         background: "rgba(0, 0, 0, 0.1)",
     });
 };
-
-let loadInstance;   
-
+let loadInstance;
 const props = defineProps({
     code: String,
-    async:Boolean
+    async: Boolean
 })
 const stderr = ref("");
 const stdout = ref("");
 
-document.onkeydown = e=>{
-    if(e?.keyCode===27){
+document.onkeydown = e => {
+    if (e?.keyCode === 27) {
         buttonText.value = '全屏'
     }
-    
+
 }
 
-const getRes = ()=>{
-    if(!stderr.value){
+const getRes = () => {
+    if (!stderr.value) {
         loadInstance = loading();
-    fetch("https://play.rust-lang.org/execute", {
-    method: "post",
-    body: JSON.stringify({
-        channel: "stable",
-        mode: "debug",
-        edition: "2021",
-        crateType: "bin",
-        tests: false,
-        code: props.code || "",
-        backtrace: false
-    }),
-    headers: {
-        'Content-Type': 'application/json'
-    }
-}).then(res => res.json()).then(response => {
-    loadInstance.close()
-    let height= editor.value?.$el.clientHeight;
-    //待优化    
-    window.scrollBy({
-        top:height,
-        behavior:'smooth'
+        fetch("https://play.rust-lang.org/execute", {
+            method: "post",
+            body: JSON.stringify({
+                channel: "stable",
+                mode: "debug",
+                edition: "2021",
+                crateType: "bin",
+                tests: false,
+                code: props.code || "",
+                backtrace: false
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then(res => res.json()).then(response => {
+            loadInstance.close()
+            let height = editor.value?.$el.clientHeight;
+            //待优化    
+            window.scrollBy({
+                top: height,
+                behavior: 'smooth'
 
-    })
-    buttonText.value = '全屏'
-    stderr.value = response?.stderr.replaceAll('\n', '<br/>');
-    stdout.value = response?.stdout.replaceAll('\n', '<br/>');
-})
-    }else{
-
-        
-       if(document.fullscreenEnabled&&!document.fullscreenElement){
-        playground?.value?.requestFullscreen()
-        buttonText.value = '退出全屏'
-       }
-       else{
-        
-        document.exitFullscreen().then(_=>{
+            })
             buttonText.value = '全屏'
+            stderr.value = response?.stderr.replaceAll('\n', '<br/>');
+            stdout.value = response?.stdout.replaceAll('\n', '<br/>');
         })
-       }
-        
+    } else {
+
+
+        if (document.fullscreenEnabled && !document.fullscreenElement) {
+            playground?.value?.requestFullscreen()
+            buttonText.value = '退出全屏/全屏'
+        }
+        else {
+
+            document.exitFullscreen().then(_ => {
+                buttonText.value = '全屏'
+            })
+        }
+
     }
 }
-if(!props.async) getRes()
+if (!props.async) getRes()
 
 </script>
 
 <template>
     <div class="playground" ref="playground">
-        <codemirror ref="editor" v-model="props.code" placeholder="rust" class="editor"
-            :autofocus="true" :indent-with-tab="true" :tab-size="2" :extensions="extensions" disabled />
-            <el-button class="button" v-if="props.async" @click="getRes">
-                <objectification  :text="buttonText"></objectification>
-            </el-button>
-        <div class="res" v-show="stderr||stdout">
+        <codemirror ref="editor" v-model="props.code" placeholder="rust" class="editor" :autofocus="true"
+            :indent-with-tab="true" :tab-size="2" :extensions="extensions" disabled />
+        <el-button class="button" v-if="props.async" @click="getRes">
+            <objectification :text="buttonText"></objectification>
+        </el-button>
+        <div class="res" v-show="stderr || stdout">
             <h4>Standard Error</h4>
             <div v-html="stderr"></div>
             <h4>Standard Output</h4>
@@ -106,7 +102,7 @@ if(!props.async) getRes()
     div {
         // text-indent:2em;
         margin-left: 2em;
-        background-image: linear-gradient(to left,var(--c-bg-lighter),var(--c-bg));
+        background-image: linear-gradient(to left, var(--c-bg-lighter), var(--c-bg));
         padding: 1em;
     }
 
@@ -115,16 +111,16 @@ if(!props.async) getRes()
     }
 }
 
-.editor{
-    display: block!important;
+.editor {
+    display: block !important;
 }
 
-.button{
+.button {
     margin: 1em;
     font-size: .6em;
 }
 
-.playground{
+.playground {
     background-color: var(--c-bg);
     overflow-y: scroll;
 }
