@@ -12,7 +12,7 @@
 ></RustPlayground>
 </ClientOnly>
 
-## 1.basic
+## basic
 
 ### 1.3variables
 :::tip
@@ -379,6 +379,77 @@ fn main(){
 ></RustPlayground>
 </ClientOnly>
 
+## [rust语言圣洁练习](https://course.rs/about-book.html)
+
+### 1.1安装环境
+<CodeGroup>
+  <CodeGroupItem title="卸载rust">
+
+```bash:no-line-numbers
+rustup self uninstall
+```
+  </CodeGroupItem>
+  <CodeGroupItem title="安装rust" active>
+
+```bash:no-line-numbers
+curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
+```
+
+  </CodeGroupItem>
+
+<CodeGroupItem title="查看版本号" active>
+
+```shell:no-line-numbers
+ajn404@ajn404deMacBook-Air sit-pad % cargo -V
+cargo 1.65.0 (4bc8f24d3 2022-10-20)
+ajn404@ajn404deMacBook-Air sit-pad % rustc -V
+rustc 1.65.0 (897e37553 2022-11-02)
+```
+
+  </CodeGroupItem>
+
+<CodeGroupItem title="cargo命令" active>
+
+```bash:no-line-numbers
+cargo new hello_world
+cd hello_world
+cargo run 
+cargo build
+cargo check
+cargo run --release
+cargo build --release
+```
+
+cargo.toml是cargo 特有的项目描述文件,cargo.lock是<strong>项目依赖详细清单</strong>
+:::tip
+.lock在可运行项目中需上传git,在包/库项目中写在gitignore中
+:::
+</CodeGroupItem>
+
+</CodeGroup>
+
+### 1.4
+
+<ClientOnly>
+     <RustPlayground 
+     async
+     code='fn greet_world(){
+    let southern_germany = "Grüß Gott!";
+    let chinese = "世界，你好";
+    let english = "World, hello";
+    let regions = [southern_germany, chinese, english];
+    for region in regions.iter() {
+        println!("{}", &region);
+    }
+}
+fn main() {
+    greet_world();
+}'
+></RustPlayground>
+</ClientOnly>
+
+
+
 /*copy
 ### 
 
@@ -398,6 +469,9 @@ fn main(){
 [rust book](https://doc.rust-lang.org/book/title-page.html)<br/>
 [rust api](https://docs.rs/)<br/>
 [rust crate register](https://crates.io/)<br/>
+
+## 实践项目
+[tauri](https://tauri.app/zh/)<br/>
 
 ## 申明
 

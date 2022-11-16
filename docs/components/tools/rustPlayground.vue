@@ -1,19 +1,3 @@
-<template>
-    <div class="playground" ref="playground">
-        <codemirror ref="editor" v-model="props.code" placeholder="rust" class="editor"
-            :autofocus="true" :indent-with-tab="true" :tab-size="2" :extensions="extensions" disabled />
-            <el-button class="button" v-if="props.async" @click="getRes">
-                <objectification  :text="buttonText"></objectification>
-            </el-button>
-        <div class="res" v-if="stderr||stdout">
-            <h4>Standard Error</h4>
-            <div v-html="stderr"></div>
-            <h4>Standard Output</h4>
-            <div v-html="stdout" style="color:green"></div>
-        </div>
-    </div>
-</template>
-
 <script lang="ts" setup>
 import { ref } from "vue";
 import { rust } from "@codemirror/lang-rust"
@@ -100,6 +84,22 @@ const getRes = ()=>{
 if(!props.async) getRes()
 
 </script>
+
+<template>
+    <div class="playground" ref="playground">
+        <codemirror ref="editor" v-model="props.code" placeholder="rust" class="editor"
+            :autofocus="true" :indent-with-tab="true" :tab-size="2" :extensions="extensions" disabled />
+            <el-button class="button" v-if="props.async" @click="getRes">
+                <objectification  :text="buttonText"></objectification>
+            </el-button>
+        <div class="res" v-show="stderr||stdout">
+            <h4>Standard Error</h4>
+            <div v-html="stderr"></div>
+            <h4>Standard Output</h4>
+            <div v-html="stdout" class="xyz-in" xyz="fade up big" style="color:green"></div>
+        </div>
+    </div>
+</template>
 
 <style lang="scss" scoped>
 .res {

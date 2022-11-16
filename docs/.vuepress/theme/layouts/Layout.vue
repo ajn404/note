@@ -235,6 +235,7 @@ const jsTool = ()=>{
 
 .tool-menu {
     max-width: 30vw;
+    width: 20px;
     position: fixed;
     display: flex;
     flex-direction: column;
