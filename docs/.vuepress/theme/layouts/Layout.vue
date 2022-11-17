@@ -35,7 +35,7 @@
     <iconCollection class="xyz-in dialog-content" xyz="fade flip-down stagger duration-10 delay-1 ease-out-back"
         v-show="showIconCollection" />
     <div class="xyz-in dialog-content" id="hutao" v-show="backImg"></div>
-    <music-player class="xyz-in dialog-content" xyz="fade big delay-1" v-show="music"></music-player>
+    <music-player class="xyz-in dialog-content" xyz="fade big delay-1" v-if="music"></music-player>
     <tool-play-use-js xyz="fade up big" class="xyz-in dialog-content" v-show="jstool"></tool-play-use-js>
 
 </template>

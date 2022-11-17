@@ -110,8 +110,8 @@ fn first_name(){
 fn last_name(){
     println!("n-graymoon");
 }'></RustPlayground>
-    <objectification class="pc-views" text="music player"></objectification>
-    <music-player class="pc-views" ></music-player>
+    <!-- <objectification class="pc-views" text="music player"></objectification>
+    <music-player class="pc-views" ></music-player> -->
 
 </template>
 
