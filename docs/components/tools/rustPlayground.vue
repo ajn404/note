@@ -4,16 +4,17 @@ import { rust } from "@codemirror/lang-rust"
 import { oneDark } from '@codemirror/theme-one-dark'
 import { Codemirror } from 'vue-codemirror'
 import { ElLoading } from "element-plus";
+import { fa, tr } from "element-plus/es/locale";
 const playground: any = ref(null)
 const editor: any = ref(null)
 const buttonText = ref('运行')
 const extensions = [rust(), oneDark];
 const loading = () => {
     return ElLoading.service({
-        lock: true,
+        lock: false,
         text: "运行中",
         fullscreen: true,
-        background: "rgba(0, 0, 0, 0.1)",
+        background: "rgba(100, 100, 0,.1)",
     });
 };
 let loadInstance;

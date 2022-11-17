@@ -74,7 +74,7 @@
     </div>
 </template>
 
-<script>
+<script lang="ts">
 import Card from './card.vue';
 import { useRouter } from 'vue-router'
 
