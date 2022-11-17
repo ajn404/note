@@ -1,4 +1,3 @@
-import "@/public/styles/index.scss"
 import "@styles/index.scss"
 import "element-plus/dist/index.css"
 
