@@ -546,16 +546,52 @@ fn main() {
 fn main() {
 const MAX_POINTS: u32 = 100_000;
 println!("{}",MAX_POINTS)
-}
-'
+}'
 ></RustPlayground>
 </ClientOnly>
+
+<ClientOnly>
+     <RustPlayground 
+     async
+     code='fn main() {
+    let x = 5;
+    // 在main函数的作用域内对之前的x进行遮蔽
+    let x = x + 1;
+    {
+        // 在当前的花括号作用域内，对之前的x进行遮蔽
+        let x = x * 2;
+        println!("The value of x in the inner scope is: {}", x);
+    }
+    println!("The value of x is: {}", x);
+}'
+></RustPlayground>
+</ClientOnly>
+
+### [习题](https://zh.practice.rs/variables.html)
+
+
+<ClientOnly>
+     <RustPlayground 
+     editable='true'
+     async
+     code='// 修复下面代码的错误并尽可能少的修改
+fn main() {
+    let x: i32; // 未初始化，但被使用
+    let y: i32; // 未初始化，也未被使用
+    println!("x is equal to {}", x); 
+}'
+></RustPlayground>
+</ClientOnly>
+
+
+
 
 /*copy
 ### 
 
 <ClientOnly>
      <RustPlayground 
+     editable='true'
      async
      code=''
 ></RustPlayground>

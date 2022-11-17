@@ -4,7 +4,6 @@ import { rust } from "@codemirror/lang-rust"
 import { oneDark } from '@codemirror/theme-one-dark'
 import { Codemirror } from 'vue-codemirror'
 import { ElLoading } from "element-plus";
-import { fa, tr } from "element-plus/es/locale";
 const playground: any = ref(null)
 const editor: any = ref(null)
 const buttonText = ref('运行')
@@ -20,7 +19,8 @@ const loading = () => {
 let loadInstance;
 const props = defineProps({
     code: String,
-    async: Boolean
+    async: Boolean,
+    editable:String
 })
 const stderr = ref("");
 const stdout = ref("");
@@ -85,7 +85,7 @@ if (!props.async) getRes()
 <template>
     <div class="playground" ref="playground">
         <codemirror ref="editor" v-model="props.code" placeholder="rust" class="editor" :autofocus="true"
-            :indent-with-tab="true" :tab-size="2" :extensions="extensions" disabled />
+            :indent-with-tab="true" :tab-size="2" :extensions="extensions" :disabled="(props.editable==='true'?false:true)" />
         <el-button class="button" v-if="props.async" @click="getRes">
             <objectification :text="buttonText"></objectification>
         </el-button>
