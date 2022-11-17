@@ -50,13 +50,13 @@ const getRes = () => {
             }
         }).then(res => res.json()).then(response => {
             loadInstance.close()
-            let height = editor.value?.$el.clientHeight;
-            //待优化    
-            window.scrollBy({
-                top: height,
-                behavior: 'smooth'
+            // let height = editor.value?.$el.clientHeight;
+            // //待优化    
+            // window.scrollBy({
+            //     top: height,
+            //     behavior: 'smooth'
 
-            })
+            // })
             buttonText.value = '全屏'
             stderr.value = response?.stderr.replaceAll('\n', '<br/>');
             stdout.value = response?.stdout.replaceAll('\n', '<br/>');
@@ -122,6 +122,6 @@ if (!props.async) getRes()
 
 .playground {
     background-color: var(--c-bg);
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 </style>

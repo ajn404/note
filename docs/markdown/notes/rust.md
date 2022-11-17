@@ -494,6 +494,35 @@ fn main() {
 ></RustPlayground>
 </ClientOnly>
 
+### 1.6避免从入门到放弃
+
+<i>链表在 Rust 中简直是地狱一般的难度，我见过太多英雄好汉难过链表关，最终黯然退幕</i>
+
+### 2.1绑定 
+<ClientOnly>
+     <RustPlayground 
+     async
+     code='fn main(){
+    let x = 5;
+    let _y = 10;
+}'
+></RustPlayground>
+</ClientOnly>
+
+<ClientOnly>
+     <RustPlayground 
+     async
+     code='fn main() {
+    //变量结构
+    let (a, mut b): (bool, bool) = (true, false);
+    println!("a = {:?}, b = {:?}", a, b);
+    b = true;
+    assert_eq!(a, b);
+}'
+></RustPlayground>
+</ClientOnly>
+
+
 /*copy
 ### 
 
@@ -508,11 +537,11 @@ fn main() {
 
 ## net about 
 
-[rust cn](https://www.rust-lang.org/zh-CN)<br/>
-[rust example](https://doc.rust-lang.org/rust-by-example/hello.html)<br/>
-[rust book](https://doc.rust-lang.org/book/title-page.html)<br/>
-[rust api](https://docs.rs/)<br/>
-[rust crate register](https://crates.io/)<br/>
+[cn](https://www.rust-lang.org/zh-CN)<br/>
+[example](https://doc.rust-lang.org/rust-by-example/hello.html)<br/>
+[book](https://doc.rust-lang.org/book/title-page.html)<br/>
+[api](https://docs.rs/)<br/>
+[crates ](https://crates.io/)<br/>
 
 ## 实践项目
 [tauri](https://tauri.app/zh/)<br/>
