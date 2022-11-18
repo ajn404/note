@@ -14,12 +14,20 @@ export default defineUserConfig({
     host: '0.0.0.0',
     port: 9999,
     head,
+    
+    shouldPreload:(file,type)=>{
+        if(type==='image'){
+            return file==='hutao6.jpg'
+        }
+    },
+
     clientConfigFile: path.resolve(
         __dirname,
         './config/clientConfig.ts'
     ),
     bundler: viteBundler(
         {
+            //@ts-ignore
             viteOptions: viteConfig
         }
     ),
