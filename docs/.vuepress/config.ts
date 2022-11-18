@@ -17,7 +17,7 @@ export default defineUserConfig({
     
     shouldPreload:(file,type)=>{
         if(type==='image'){
-            return file==='hutao6.jpg'
+            return file.indexOf('hutao')!=-1
         }
     },
 
