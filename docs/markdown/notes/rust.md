@@ -379,7 +379,7 @@ fn main(){
 ></RustPlayground>
 </ClientOnly>
 
-## [rust语言圣洁练习](https://course.rs/about-book.html)
+## [rust语言圣经练习](https://course.rs/about-book.html)
 
 ### 1.1安装环境
 <CodeGroup>
@@ -663,6 +663,7 @@ fn main() {
 
 
 4.🌟🌟
+
 <ClientOnly>
      <RustPlayground 
      editable='true'
@@ -690,10 +691,121 @@ fn main() {
 ></RustPlayground>
 </ClientOnly>
 
+5.shadowing
+
+<ClientOnly>
+     <RustPlayground 
+     editable='true'
+     async
+     code='
+// 只允许修改 `assert_eq!` 来让 `println!` 工作(在终端输出 `42`)
+fn main() {
+    let x: i32 = 5;
+    {
+        let x = 12;
+        assert_eq!(x, 5);
+    }
+    assert_eq!(x, 12);
+    let x = 42;
+    println!("{}", x); // 输出 "42".
+}
+'
+></RustPlayground>
+</ClientOnly>
+
+<ClientOnly>
+     <RustPlayground 
+     async
+     code='
+// 只允许修改 `assert_eq!` 来让 `println!` 工作(在终端输出 `42`)
+fn main() {
+    let x: i32 = 5;
+    {
+        let x = 12;
+        assert_eq!(x, 12);
+    }
+    assert_eq!(x, 5);
+    let x = 42;
+    println!("{}", x); // 输出 "42".
+}
+'
+></RustPlayground>
+</ClientOnly>
+
+6.🌟🌟删除一行
+
+<ClientOnly>
+     <RustPlayground 
+     editable='true'
+     async
+     code='
+fn main() {
+    let mut x: i32 = 1;
+    x = 7;
+    // 遮蔽且再次绑定
+    let x = x; 
+    x += 3;
+    let y = 4;
+    // 遮蔽
+    let y = "I can also be bound to text!"; 
+}
+'
+></RustPlayground>
+</ClientOnly>
+
+<ClientOnly>
+     <RustPlayground 
+     editable='true'
+     async
+     code='fn main() {
+    let mut x: i32 = 1;
+    x = 7;
+    // 遮蔽且再次绑定
+    x += 3;
+    let y = 4;
+    // 遮蔽
+    let y = "I can also be bound to text!"; 
+}'
+></RustPlayground>
+</ClientOnly>
+
+7.使用以下方法来修复编译器输出的 warning :
+🌟 一种方法
+🌟🌟 两种方法
 
 
+<ClientOnly>
+     <RustPlayground 
+     editable='true'
+     async
+     code='fn main() {
+    let x = 1; 
+}'
+></RustPlayground>
+</ClientOnly>
+✨
+<ClientOnly>
+     <RustPlayground 
+     async
+     code='fn main() {
+    let _x = 1; 
+}'
+></RustPlayground>
+</ClientOnly>
+
+<ClientOnly>
+     <RustPlayground 
+     async
+     code='fn main() {
+    let x = 1; 
+    println!("{:?}",x);
+}'
+></RustPlayground>
+</ClientOnly>
 
 
+### 2.2基本类型
+#### 2.2.1 数值类型
 
 /*copy
 ### 

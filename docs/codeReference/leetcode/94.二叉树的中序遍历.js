@@ -18,7 +18,7 @@
  * @return {number[]}
  */
 var inorderTraversal = function(root) {
-
+    
 };
 // @lc code=end
 
