@@ -123,5 +123,11 @@ h4.navbar-dropdown-subtitle {
     bottom: 3.6rem;
     background-color: var(--c-bg);
     opacity: .6;
+    li {
+      a{
+       color: rgba(85,26,239) ;
+       font-weight: bolder;
+      }
+    }
   }
 }
