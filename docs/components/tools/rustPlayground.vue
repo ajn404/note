@@ -90,10 +90,10 @@ if (!props.async) getRes()
             <objectification :text="buttonText"></objectification>
         </el-button>
         <div class="res" v-show="stderr || stdout">
-            <h4>Standard Error</h4>
-            <div v-html="stderr"></div>
-            <h4>Standard Output</h4>
-            <div v-html="stdout" class="xyz-in" xyz="fade up big" style="color:green"></div>
+            <h4 v-show="stderr">Standard Error(编译结果)</h4>
+            <div v-show="stderr" class="xyz-in" xyz="fade up big" v-html="stderr"></div>
+            <h4 v-show="stdout">Standard Output(控制台输出)</h4>
+            <div v-html="stdout" v-show="stdout" class="xyz-in" xyz="fade up big" style="color:green"></div>
         </div>
     </div>
 </template>
