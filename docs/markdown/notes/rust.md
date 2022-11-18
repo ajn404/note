@@ -567,8 +567,9 @@ println!("{}",MAX_POINTS)
 ></RustPlayground>
 </ClientOnly>
 
-### [习题](https://zh.practice.rs/variables.html)
+### [习题](https://zh.practice.rs/variables.html)[答案](https://github.com/sunface/rust-by-practice/blob/master/solutions/variables.md)
 
+1.绑定与可变性
 
 <ClientOnly>
      <RustPlayground 
@@ -595,6 +596,101 @@ fn main() {
 }'
 ></RustPlayground>
 </ClientOnly>
+
+2.
+<ClientOnly>
+     <RustPlayground 
+     editable='true'
+     async
+     code='
+// 完形填空，让代码编译
+fn main() {
+    let __ = 1;
+    __ += 2;  
+    println!("x = {}", x); 
+}'
+></RustPlayground>
+</ClientOnly>
+
+<ClientOnly>
+     <RustPlayground 
+     async
+     code='// 完形填空，让代码编译
+fn main() {
+    let mut x = 1;
+    x += 2;
+    println!("x = {}", x); 
+}'
+></RustPlayground>
+</ClientOnly>
+
+3.变量作用域
+
+<ClientOnly>
+     <RustPlayground 
+     editable='true'
+     async
+     code='
+// 修复下面代码的错误并使用尽可能少的改变
+fn main() {
+    let x: i32 = 10;
+    {
+        let y: i32 = 5;
+        println!("x 的值是 {}, y 的值是 {}", x, y);
+    }
+    println!("x 的值是 {}, y 的值是 {}", x, y); 
+}
+'
+></RustPlayground>
+</ClientOnly>
+
+<ClientOnly>
+     <RustPlayground 
+     async
+     code='// 修复下面代码的错误并使用尽可能少的改变
+fn main() {
+    let x: i32 = 10;
+    let mut z:i32 = 0;
+    {
+        let y: i32 = 5;
+        println!("x 的值是 {}, y 的值是 {}", x, y);
+        z = y;
+    }
+    println!("x 的值是 {}, y 的值是 {}", x, z); 
+}'
+></RustPlayground>
+</ClientOnly>
+
+
+4.🌟🌟
+<ClientOnly>
+     <RustPlayground 
+     editable='true'
+     async
+     code='// 修复错误
+fn main() {
+    println!("{}, world", x); 
+}
+fn define_x() {
+    let x = "hello";
+}
+'
+></RustPlayground>
+</ClientOnly>
+
+<ClientOnly>
+     <RustPlayground 
+     async
+     code='// 修复错误
+fn main() {
+    let mut x = "";
+    x = "hello";
+    println!("{}, world", x); 
+}'
+></RustPlayground>
+</ClientOnly>
+
+
 
 
 
