@@ -16,6 +16,9 @@ export default defineUserConfig({
     head,
     
     shouldPreload:(file,type)=>{
+        if(type==='font'){
+            return file.indexOf('smile')!==-1
+        }
         if(type==='image'){
             return file.indexOf('hutao')!=-1
         }

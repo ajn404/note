@@ -7,13 +7,15 @@
 
 @font-face {
   font-family: "ag";
-  src: url('/fonts/ag.otf') format('woff'),
-  url('/fonts/ag.woff2') format('woff2'),
-       url('/fonts/ag.woff') format('woff');
-  ;
+  src: url('/fonts/ag.woff2') format('woff2'),url('/fonts/smile.ttf') format('truetype'),url('/fonts/ag.woff') format('woff');
 }
 
+@font-face {
+  font-family: "smile";
+  src: url('/fonts/smile.ttf') format('truetype');
+}
 
+  
 .icon-jia:before {
   content: "\e601";
 }
