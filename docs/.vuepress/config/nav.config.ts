@@ -114,19 +114,7 @@ const examples: NavbarGroup[] = [
                     }
                 ]
             },
-            {
-                text: 'example analyze',
-                children: [
-                    {
-                        text: 'example',
-                        link: `${noteBaseUrl}exampleGlslCollect`
-                    },
-                    {
-                        text: 'practice',
-                        link: `${noteBaseUrl}practiceGlslCollect`
-                    }
-                ]
-            }
+           
         ]
     },
 
@@ -160,6 +148,19 @@ const note: NavbarGroup[] = [
                 text: 'rust',
                 link: `${noteBaseUrl}rust`
             },
+            {
+                text: 'glsl demo',
+                children: [
+                    {
+                        text: 'example',
+                        link: `${noteBaseUrl}exampleGlslCollect`
+                    },
+                    {
+                        text: 'practice',
+                        link: `${noteBaseUrl}practiceGlslCollect`
+                    }
+                ]
+            }
 
         ]
     }
