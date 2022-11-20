@@ -1905,7 +1905,7 @@ export const spring = (_: any) => {
   }
 }
 
-
+//webrtc p5.sound
 export const delaySound = (_: any) => {
 
   let osc: any;
@@ -1937,6 +1937,20 @@ export const delaySound = (_: any) => {
     if (window && window["p5DrawLoop"] !== "delaySound") {
       _.noLoop();
     }
+  }
+}
+
+class P4Vector{
+  x:number;
+  y:number;
+  z:number;
+  w:number;
+  constructor(x:number,y:number,z:number,w:number){
+    this.x = x||0;
+    this.y = y||0;
+    this.z = z||0;
+    this.w= w ||0;
+
   }
 }
 
