@@ -47,7 +47,7 @@ export const allMethods = [
       ]
     },
     {
-      label: "交互生成艺术",
+      label: "processing",
       children: [
         {
           value: "main",
@@ -80,7 +80,7 @@ export const allMethods = [
       ],
     },
     {
-      label: "游戏向",
+      label: "game like",
       children: [
         { label: "移动拼图", value: "slidePuzzle", },
         { label: "ikun [true man's game]", value: "minesweeper" },
@@ -105,7 +105,11 @@ export const allMethods = [
   
         {
           label: '陈氏混沌[fullscreen]', value: 'chenShiSystem'
-        }
+        },
+        {
+          label: 'hypercube4D', value: 'hypercube4D'
+        },
+        
       ],
     },
     {
