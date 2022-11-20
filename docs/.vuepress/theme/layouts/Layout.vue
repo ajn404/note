@@ -206,7 +206,7 @@ const jsTool = () => {
     position: fixed;
     left: 0;
     top: 3.6rem;
-    background-color: azure;
+    background-color: rgba(88,55,66,.4);
     padding: 20px;
     z-index: 19;
     overflow-y: scroll;
