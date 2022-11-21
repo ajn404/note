@@ -59,8 +59,8 @@ const getRes = () => {
 
             // })
             buttonText.value = '全屏'
-            stderr.value = response?.stderr.replaceAll('\n', '<br/>');
-            stdout.value = response?.stdout.replaceAll('\n', '<br/>');
+            stderr.value = response?.stderr?.replace(/\n/g, '<br/>');
+            stdout.value = response?.stdout?.replace(/\n/g, '<br/>');
         })
     } else {
 

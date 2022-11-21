@@ -56,7 +56,7 @@ const viteConfig = {
         }),
     ],
     ssr: {
-        noExternal: ['three']
+        noExternal: ['three','p5','kaboom']
     },  
 }
 

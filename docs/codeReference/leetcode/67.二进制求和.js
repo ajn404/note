@@ -55,7 +55,7 @@ var addBinary = function(a, b) {
 
 
 
-   return arrR.toString().replaceAll(",","")
+   return arrR.toString().replace(/,/g,"")
 
 };
 // @lc code=end

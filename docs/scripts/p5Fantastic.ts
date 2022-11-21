@@ -2092,7 +2092,7 @@ export const hypercube4D = (_: any) => {
 
 
   _.draw = () => {
-    _.background(0);
+    _.background(255);
     _.rotateX(-_.PI / 2);
     let projected3d = [];
     for (let i = 0; i < points.length; i++) {

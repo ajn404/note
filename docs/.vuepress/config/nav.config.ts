@@ -26,8 +26,6 @@ for (let i = 0; i < p5SinglePageList.length; i++) {
         link: `${p5SinglePageUrl}${p5SinglePageList[i].value}`
     })
 }
-
-
 const examples: NavbarGroup[] = [
     {
         text: 'glsl',
@@ -119,7 +117,6 @@ const examples: NavbarGroup[] = [
     },
 
 ]
-
 const note: NavbarGroup[] = [
     {
         text: 'note',
@@ -165,7 +162,6 @@ const note: NavbarGroup[] = [
         ]
     }
 ]
-
 const beforeBlog: NavbarGroup[] = [
     {
         text: 'gitpage history',
@@ -207,8 +203,6 @@ const beforeBlog: NavbarGroup[] = [
         ]
     }
 ]
-
-
 const fantastic: NavbarGroup[] = [
     {
         text: 'fantastic',
@@ -261,12 +255,10 @@ const fantastic: NavbarGroup[] = [
         ]
     }
 ]
-
 const navbar: NavbarConfig =
     [
         ...note,
         ...fantastic
     ]
-
 export default navbar
 

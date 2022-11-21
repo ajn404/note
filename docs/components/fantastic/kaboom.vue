@@ -19,7 +19,6 @@ function assertIsNonNullish<T>(
 }
 const start = () => {
 
-    // assertIsNonNullish(kaboomBox?.value, "找不到dom元素")
     assertIsNonNullish(kaboomCanvas?.value, "找不到canvas元素")
     kaboom(
         {

@@ -76,12 +76,12 @@ var romanToInt = function(s) {
         mapObj[item.label] = item.value
     })
 
-    s=s.replaceAll('IV','A');
-    s=s.replaceAll('IX','B');
-    s=s.replaceAll('XL','H');
-    s=s.replaceAll('XC','J');
-    s=s.replaceAll('CD','E');
-    s=s.replaceAll('CM','F');
+    s=s.replace(/IV/g,'A');
+    s=s.replace(/IX/g,'B');
+    s=s.replace(/XL/g,'H');
+    s=s.replace(/XC/g,'J');
+    s=s.replace(/CD/g,'E');
+    s=s.replace(/CM/g,'F');
     console.log(s)
     let res = 0;
 

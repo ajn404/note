@@ -4,6 +4,8 @@ export const useGlobalCode = defineStore('codeStore',{
         globalCode:''
     }),
     getters:{
-        filteredCode:(state:any)=> state.globalCode.replaceAll('console\.log', 'console\.reWriteLog')
+        filteredCode:(state:any)=> {
+            return state.globalCode?.replace(/console\.log/g, 'console\.reWriteLog')
+        }
     }
 })
