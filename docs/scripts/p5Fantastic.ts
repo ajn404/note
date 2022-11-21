@@ -1,12 +1,5 @@
 //所有方法都导出在p5.vue中，需要展示的放在allMethods里
 
-import { ElMessage } from "element-plus";
-const isClickCanvas = (_: any) => {
-  let mx = _.mouseX, my = _.mouseY;
-  let mw = _.width, mh = _.height;
-  return mx > 0 && mx < mw && my > 0 && my < mh
-}
-
 export const main = (_p5: any) => {
   const p5 = _p5;
   let xpos1: any;
@@ -461,151 +454,11 @@ export const slidePuzzle = (_p5: any) => {
   }
 };
 
-export const polarCoordinates = (_p5: any) => {
-  let p5 = _p5;
-  let r = 150;
+export { polarCoordinates } from './p5Funcs/polarCoordinates' //极坐标绘制功夫圆
 
-  let TWO_PI = p5.PI * 2;
+export { geometries } from './p5Funcs/geometries' //基本3D模型
 
-  p5.setup = () => {
-    p5.createCanvas(400, 400);
-  };
-
-  p5.draw = () => {
-    if (window && window["p5DrawLoop"] !== "polarCoordinates") {
-      p5.noLoop();
-    }
-
-    let increment = p5.map(p5.mouseX, 0, 400, p5.PI, 0.01);
-    p5.translate(200, 200);
-
-    p5.background(0, 10);
-    p5.stroke(255);
-    p5.strokeWeight(4);
-    p5.noFill();
-    p5.beginShape();
-
-    if (increment < 0) {
-      increment = -increment;
-    }
-
-    for (let i = 0; i < TWO_PI; i += increment) {
-      let x = r * p5.cos(i);
-      let y = r * p5.sin(i);
-      p5.vertex(x, y);
-    }
-
-    p5.endShape(p5.CLOSE);
-  };
-};
-
-export const geometries = (_p5: any) => {
-  let _ = _p5;
-  _.setup = () => {
-    _.createCanvas(710, 400, _.WEBGL);
-  };
-
-  _.draw = () => {
-    if (window && window["p5DrawLoop"] !== "geometries") {
-      _.noLoop();
-    }
-    _.background(255);
-    _.translate(-200, -100, 0);
-    _.normalMaterial();
-
-    _.push();
-
-    _.rotateZ(_.frameCount * 0.01);
-    _.rotateX(_.frameCount * 0.01);
-    _.rotateY(_.frameCount * 0.01);
-
-    _.plane(70);
-    _.pop();
-
-    _.translate(200, 0, 0);
-    _.push();
-    _.rotateZ(_.frameCount * 0.01);
-    _.rotateX(_.frameCount * 0.01);
-    _.rotateY(_.frameCount * 0.01);
-
-    _.box(70, 70, 70);
-    _.pop();
-
-    _.translate(200, 0, 0);
-    _.push();
-    _.rotateZ(_.frameCount * 0.01);
-    _.rotateX(_.frameCount * 0.01);
-    _.rotateY(_.frameCount * 0.01);
-    _.cylinder(30, 10);
-    _.pop();
-
-    _.translate(-400, 200, 0);
-    _.push();
-    _.rotateZ(_.frameCount * 0.01);
-    _.rotateX(_.frameCount * 0.01);
-    _.rotateY(_.frameCount * 0.01);
-    // 底r和高
-    _.cone(30, 100);
-    _.pop();
-
-    _.translate(200, 0, 0);
-    _.push();
-    _.rotateZ(_.frameCount * 0.02);
-    _.rotateX(_.frameCount * 0.01);
-    _.rotateY(_.frameCount * 0.01);
-    // 圆环 半径和高
-    _.torus(60, 30);
-    _.pop();
-
-    _.translate(200, 0, 0);
-    _.push();
-    _.rotateZ(_.frameCount * 0.01);
-    _.rotateX(_.frameCount * 0.01);
-    _.rotateY(_.frameCount * 0.01);
-    _.sphere(70);
-    _.pop();
-  };
-};
-
-export const sinCos3D = (_p5: any) => {
-  let _ = _p5;
-  _.setup = () => {
-    _.createCanvas(710, 400, _.WEBGL);
-  };
-
-  // let teapot ;
-  // _.preload=()=>{
-  //         teapot = _.loadModel('/model/teapot.obj', true);
-  // }
-
-  _.draw = () => {
-    if (window && window["p5DrawLoop"] !== "sinCos3D") {
-      _.noLoop();
-    }
-
-    _.background(255);
-    _.rotateY(_.frameCount * 0.01);
-
-    for (let j = 0; j < 5; j++) {
-      _.push();
-      for (let i = 0; i < 100; i++) {
-        _.translate(
-          _.sin(_.frameCount * 0.001 + j) * 100,
-          _.sin(_.frameCount * 0.001 + j) * 100,
-          i * 0.1
-        );
-        _.rotateZ(_.frameCount * 0.002);
-
-        _.push();
-        _.sphere(8, 6, 4);
-        // _.model(teapot)
-        _.pop();
-      }
-
-      _.pop();
-    }
-  };
-};
+export  {sinCos3D } from './p5Funcs/sinCos3D' //sin cos 应用
 
 export const boxRef = (_p5: any) => {
   let _ = _p5;
@@ -791,7 +644,6 @@ export const bubbleSort = (_: any) => {
       }
     } else {
       _.noLoop();
-      ElMessage.success("冒泡结束");
     }
     i++;
     for (let m = 0; m < values.length; m++) {
@@ -886,87 +738,7 @@ export const quickSort = (_: any) => {
   }
 };
 
-// 视错觉
-export const stepFeetIIIusion = (_: any) => {
-  class Brick {
-    brickColor: any;
-    yPos: any;
-    xPos: number;
-    xSpeed: number;
-    constructor(bc: any, y: any) {
-      this.brickColor = bc;
-      this.yPos = y;
-      this.xPos = 0;
-    }
-
-    // this function creates the brick
-    createBrick() {
-      _.fill(this.brickColor);
-      _.rect(this.xPos, this.yPos, 100, 50);
-    }
-
-    // this function sets the speed
-    // of movement of the brick to 1
-    setSpeed() {
-      this.xSpeed = 1;
-    }
-
-    // this function sets the bricks in motion
-    moveBrick() {
-      this.xPos += this.xSpeed;
-      if (this.xPos + 100 >= _.width || this.xPos <= 0) {
-        this.xSpeed *= -1;
-      }
-    }
-  }
-
-  let brick1 = new Brick("white", 50);
-  let brick2 = new Brick("black", 150);
-  let brick3 = new Brick("#888888", 250);
-
-  const setText = () => {
-    let p = document.createElement("p");
-    p.innerText = "mouseIsPressed canvas 可以隐藏栅栏";
-    document.querySelector("#p5-start")?.append(p);
-  };
-
-  _.setup = () => {
-    _.createCanvas(500, 300);
-
-    setText();
-  };
-
-  brick1.setSpeed();
-  brick2.setSpeed();
-  brick3.setSpeed();
-  _.draw = () => {
-    if (window && window["p5DrawLoop"] !== "stepFeetIIIusion") {
-      _.noLoop();
-    }
-
-    _.background(0);
-    if (_.mouseIsPressed) {
-      _.background(50);
-    }
-    brick1.createBrick();
-    brick1.moveBrick();
-    if (!_.mouseIsPressed) {
-      createBars();
-    }
-    brick2.createBrick();
-    brick2.moveBrick();
-    brick3.createBrick();
-    brick3.moveBrick();
-  };
-
-  function createBars() {
-    let len = 12;
-    for (let i = 0; i < _.width / len; i++) {
-      _.fill("white");
-      if (i % 2 === 0) _.rect(i * len, _.height, len, -_.height);
-    }
-  }
-};
+export {stepFeetIIIusion} from './p5Funcs/stepFeetIIIusion'// 视错觉
 
 export const gridOutput = (_: any) => {
   _.setup = () => {
@@ -1113,7 +885,7 @@ export const minesweeper = (_: any) => {
         grid[i][j].reveale();
       }
     }
-    ElMessage.warning("你干嘛！😠" + "最终得分为" + count);
+    console.log("你干嘛！😠" + "最终得分为" + count);
     _.noLoop();
   };
 
@@ -1639,15 +1411,6 @@ export const pointHandle = (_: any) => {
       _.noLoop()
     }
   }
-  _.mousePressed = () => {
-    if (isClickCanvas(_)) {
-      window["p5DrawLoop"] = p5DrawLoop
-      if (!(_.isLooping())) {
-        _.redraw()
-        _.loop()
-      }
-    }
-  }
 }
 
 export const textureDemo = (_: any) => {
@@ -1705,15 +1468,6 @@ export const ambientLight = (_: any) => {
       _.noLoop()
     }
   }
-  _.mousePressed = () => {
-    if (isClickCanvas(_)) {
-      window["p5DrawLoop"] = p5DrawLoop
-      if (!(_.isLooping())) {
-        _.redraw()
-        _.loop()
-      }
-    }
-  }
 }
 
 export const directionalLight = (_: any) => {
@@ -1739,15 +1493,7 @@ export const directionalLight = (_: any) => {
       _.noLoop()
     }
   }
-  _.mousePressed = () => {
-    if (isClickCanvas(_)) {
-      window["p5DrawLoop"] = p5DrawLoop
-      if (!(_.isLooping())) {
-        _.redraw()
-        _.loop()
-      }
-    }
-  }
+
 }
 
 export const pointLight = (_: any) => {
@@ -1768,15 +1514,7 @@ export const pointLight = (_: any) => {
       _.noLoop()
     }
   }
-  _.mousePressed = () => {
-    if (isClickCanvas(_)) {
-      window["p5DrawLoop"] = p5DrawLoop
-      if (!(_.isLooping())) {
-        _.redraw()
-        _.loop()
-      }
-    }
-  }
+
 }
 
 export const spotLight = (_: any) => {
@@ -1801,16 +1539,6 @@ export const spotLight = (_: any) => {
 
     if (window && window["p5DrawLoop"] !== p5DrawLoop) {
       _.noLoop()
-    }
-  }
-
-  _.mousePressed = () => {
-    if (isClickCanvas(_)) {
-      window["p5DrawLoop"] = p5DrawLoop
-      if (!(_.isLooping())) {
-        _.redraw()
-        _.loop()
-      }
     }
   }
 }
