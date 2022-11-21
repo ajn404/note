@@ -5,8 +5,10 @@ import { isClient } from "@vueuse/core";
 
 //vue中使用P5的方式
 import * as p5MainFunc from "@scripts/p5Fantastic";
+
 import { allMethods } from "@scripts/p5FantasticMethod";
 
+console.log(p5MainFunc);
 const props = defineProps({ type: String });
 
 const funcs = {};
@@ -19,7 +21,7 @@ const selectMethhod = ref([]);
 let defaultMethod = props.type || "defaultFunc";
 
 const methods = readonly(allMethods);
-const fullList = ["quickSort", "bubbleSort", "rayCast", "lorenzSystem", "chenShiSystem"];
+const fullList = ["quickSort", "bubbleSort", "rayCast", "lorenzSystem", "chenShiSystem","waveFunctionCollapse"];
 const soundList = ["delaySound"];
 
 const loading = () => {

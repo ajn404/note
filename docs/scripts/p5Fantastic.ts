@@ -1603,7 +1603,6 @@ export const renderSteps = (_: any) => {
 }
 
 export const diaona = (_: any) => {
-  let p5DrawLoop = window["p5DrawLoop"];
   _.setup = () => {
     _.createCanvas(_.windowWidth, _.windowHeight, _.WEBGL)
     _.normalMaterial()
@@ -1620,7 +1619,7 @@ export const diaona = (_: any) => {
     _.background(150)
     _.applyMatrix(4, 0, 0, 4, 0, 0);
 
-    _.orbitControl()
+    // _.orbitControl()
     _.rotateZ(_.PI)
 
     _.rotateY(_.frameCount * _.PI * 0.01)
@@ -1940,6 +1939,8 @@ export const delaySound = (_: any) => {
   }
 }
 
+
+// hypercube
 class P4Vector {
   x: number;
   y: number;
@@ -1968,28 +1969,6 @@ export const hypercube4D = (_: any) => {
   const points: any[] = [];
   let angle = 0;
   let p5 = window['p5'];
-
-  _.setup = () => {
-    let size = _.min(_.windowWidth, _.windowHeight);
-    _.createCanvas(size, size, _.WEBGL);
-    points[0] = new P4Vector(-1, -1, -1, 1);
-    points[1] = new P4Vector(1, -1, -1, 1);
-    points[2] = new P4Vector(1, 1, -1, 1);
-    points[3] = new P4Vector(-1, 1, -1, 1);
-    points[4] = new P4Vector(-1, -1, 1, 1);
-    points[5] = new P4Vector(1, -1, 1, 1);
-    points[6] = new P4Vector(1, 1, 1, 1);
-    points[7] = new P4Vector(-1, 1, 1, 1);
-    points[8] = new P4Vector(-1, -1, -1, -1);
-    points[9] = new P4Vector(1, -1, -1, -1);
-    points[10] = new P4Vector(1, 1, -1, -1);
-    points[11] = new P4Vector(-1, 1, -1, -1);
-    points[12] = new P4Vector(-1, -1, 1, -1);
-    points[13] = new P4Vector(1, -1, 1, -1);
-    points[14] = new P4Vector(1, 1, 1, -1);
-    points[15] = new P4Vector(-1, 1, 1, -1);
-
-  }
 
   //@ts-ignore
   const vecToMatrix = (v) => {
@@ -2021,21 +2000,7 @@ export const hypercube4D = (_: any) => {
     }
     return r;
   }
-
-  const logMatrix = (m: any) => {
-    const cols = m[0].length;
-    const rows = m.length;
-    console.log(rows + "x" + cols);
-    console.log("----------------");
-    let s = '';
-    for (let i = 0; i < rows; i++) {
-      for (let j = 0; j < cols; j++) {
-        s += (m[i][j] + " ");
-      }
-      console.log(s);
-    }
-    console.log();
-  }
+  
   //@ts-ignore
   const matmulvec = (a, vec) => {
     let m = vecToMatrix(vec);
@@ -2091,6 +2056,39 @@ export const hypercube4D = (_: any) => {
   }
 
 
+  // let ag :any;
+  // _.preload = ()=>{
+  //   ag = _.loadFont('/note/fonts/ag.woff')
+  // }
+
+  _.setup = () => {
+    let size = _.min(_.windowWidth, _.windowHeight);
+    _.createCanvas(size, size, _.WEBGL);
+    // _.textSize(20);
+    // _.textFont(ag);
+    // _.textAlign(_.CENTER, _.CENTER);
+
+    
+    points[0] = new P4Vector(-1, -1, -1, 1);
+    points[1] = new P4Vector(1, -1, -1, 1);
+    points[2] = new P4Vector(1, 1, -1, 1);
+    points[3] = new P4Vector(-1, 1, -1, 1);
+    points[4] = new P4Vector(-1, -1, 1, 1);
+    points[5] = new P4Vector(1, -1, 1, 1);
+    points[6] = new P4Vector(1, 1, 1, 1);
+    points[7] = new P4Vector(-1, 1, 1, 1);
+    points[8] = new P4Vector(-1, -1, -1, -1);
+    points[9] = new P4Vector(1, -1, -1, -1);
+    points[10] = new P4Vector(1, 1, -1, -1);
+    points[11] = new P4Vector(-1, 1, -1, -1);
+    points[12] = new P4Vector(-1, -1, 1, -1);
+    points[13] = new P4Vector(1, -1, 1, -1);
+    points[14] = new P4Vector(1, 1, 1, -1);
+    points[15] = new P4Vector(-1, 1, 1, -1);
+
+  }
+
+
   _.draw = () => {
     _.background(255);
     _.rotateX(-_.PI / 2);
@@ -2130,8 +2128,9 @@ export const hypercube4D = (_: any) => {
       _.stroke(100, 200);
       _.strokeWeight(32);
       _.noFill();
+      // _.text('note',0, 0);
       _.point(projected.x, projected.y, projected.z);
-    }
+     }
 
 
     // Connecting
@@ -2160,5 +2159,4 @@ export const hypercube4D = (_: any) => {
   }
 }
 
-
-
+export {waveFunctionCollapse} from "./p5Funcs/waveFunctionCollapse";//波函数坍塌

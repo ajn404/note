@@ -84,7 +84,8 @@ export const allMethods = [
       children: [
         { label: "移动拼图", value: "slidePuzzle", },
         { label: "ikun [true man's game]", value: "minesweeper" },
-        { label: '弹簧', value: 'spring' }
+        { label: '弹簧', value: 'spring' },
+        { label: '波函数坍塌生成随机地图', value: 'waveFunctionCollapse' },
       ],
     },
     {
