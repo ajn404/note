@@ -134,7 +134,7 @@ export const hypercube4D = (_: any) => {
     points[15] = new P4Vector(-1, 1, 1, -1);
 
   }
-
+  
 
   _.draw = () => {
     _.background(255);

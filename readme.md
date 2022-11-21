@@ -12,4 +12,7 @@
 
 ### contributors
  
- ajn404
+ <div class="user" style="display: flex;flex-direction: column;justify-content: center;align-items: center;gap:10px;font-size: .9em;"><a class="img" href="https://github.com/ajn404" style="  background-image: url("https://ajn404.gitee.io/note/images%2Fhutao1.png");background-position: center center;background-size: cover;
+background-repeat: no-repeat;width: 100px;height: 100px;border-radius: 50%;display: block;" target="_blank"></a>
+<p style="text-align: center;font-weight: bold;">ajn404</p>
+</div>

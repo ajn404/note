@@ -803,6 +803,87 @@ fn main() {
 ></RustPlayground>
 </ClientOnly>
 
+8.变量解构
+
+<ClientOnly>
+     <RustPlayground 
+     editable='true'
+     async
+     code='
+// 修复下面代码的错误并尽可能少的修改
+fn main() {
+    let (x, y) = (1, 2);
+    x += 2;
+    assert_eq!(x, 3);
+    assert_eq!(y, 2);
+}
+'
+></RustPlayground>
+</ClientOnly>
+
+my own solution
+变量遮蔽
+
+<ClientOnly>
+     <RustPlayground 
+     editable='true'
+     async
+     code='fn main() {
+    let (x, y) = (1, 2);
+    let x = x+2;
+    assert_eq!(x, 3);
+    assert_eq!(y, 2);
+}'
+></RustPlayground>
+</ClientOnly>
+
+可变性
+
+<ClientOnly>
+     <RustPlayground 
+     async
+     code='// 修复下面代码的错误并尽可能少的修
+fn main() {
+    let (mut x, y) = (1, 2);
+    x+=2;
+    assert_eq!(x, 3);
+    assert_eq!(y, 2);
+}'
+></RustPlayground>
+</ClientOnly>
+
+
+9,解构式赋值
+
+<ClientOnly>
+     <RustPlayground 
+     editable='true'
+     async
+     code='fn main() {
+    let (x, y);
+    (x,..) = (3, 4);
+    [.., y] = [1, 2];
+    // 填空，让代码工作
+    assert_eq!([x,y], __);}'
+></RustPlayground>
+</ClientOnly>
+
+my own solution
+
+<ClientOnly>
+     <RustPlayground 
+     editable='true'
+     async
+     code='fn main() {
+    let (x, y);
+    (x,..) = (3, 4);
+    [.., y] = [1, 2];
+    // 填空，让代码工作
+    assert_eq!([x,y], [3,2]);
+}'
+></RustPlayground>
+</ClientOnly>
+
 
 ### 2.2基本类型
 #### 2.2.1 数值类型
