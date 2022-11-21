@@ -2,7 +2,7 @@
     <div class="cards">
         <div class="container" v-if="showContainer">
             <div class="card" @click="goUrl('markdown/notes/js')">
-                <card data-image="/note/images/hutao1.png">
+                <card data-image="/note/images/hutao/hutao1.png">
                     <template v-slot:header>
                         <h1>javascript</h1>
                     </template>
@@ -13,7 +13,7 @@
             </div>
 
             <div class="card" @click="goUrl('markdown/notes/glsl')">
-                <card data-image="/note/images/hutao2.jpg">
+                <card data-image="/note/images/hutao/hutao2.jpg">
                     <template v-slot:header>
                         <h1>glsl</h1>
                     </template>
@@ -24,7 +24,7 @@
             </div>
 
             <div class="card" @click="goUrl('markdown/notes/shell')">
-                <card data-image="/note/images/hutao3.png">
+                <card data-image="/note/images/hutao/hutao3.png">
                     <template v-slot:header>
                         <h1>shell</h1>
                     </template>
@@ -35,7 +35,7 @@
             </div>
 
             <div class="card" @click="goUrl('markdown/notes/ts')">
-                <card data-image="/note/images/hutao4.jpg">
+                <card data-image="/note/images/hutao/hutao4.jpg">
                     <template v-slot:header>
                         <h1>ts</h1>
                     </template>
@@ -46,7 +46,7 @@
             </div>
 
             <div class="card" @click="goUrl('markdown/notes/leetcode')">
-                <card data-image="/note/images/hutao5.png">
+                <card data-image="/note/images/hutao/hutao5.png">
                     <template v-slot:header>
                         <h1>algorithm</h1>
                     </template>
@@ -57,7 +57,7 @@
             </div>
 
             <div class="card" @click="goUrl('markdown/fantastic/p5')">
-                <card data-image="/note/images/hutao6.jpg">
+                <card data-image="/note/images/hutao/hutao6.jpg">
                     <template v-slot:header>
                         <h1>p5</h1>
                     </template>
@@ -67,8 +67,18 @@
                 </card>
             </div>
 
-            <card data-image="/note/images/hutao7.png"></card>
-            <card data-image="/note/images/hutao8.jpg"></card>
+            <div class="card" @click="goUrl('markdown/fantastic/rust')">
+                <card data-image="/note/images/hutao/hutao7.png">
+                    <template v-slot:header>
+                        <h1>rust</h1>
+                    </template>
+                    <template v-slot:content>
+                        <p>rust basic</p>
+                    </template>
+                </card>
+            </div>
+
+            <card data-image="/note/images/hutao/hutao8.jpg"></card>
         </div>
 
     </div>

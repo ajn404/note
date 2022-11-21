@@ -127,13 +127,13 @@ const backImg = ref("")
 const changeStyle = () => {
     closeAll()
     const styleImages = [
-        "/note/images/hutao1.png",
-        "/note/images/hutao2.jpg",
-        "/note/images/hutao3.png",
-        "/note/images/hutao4.jpg",
-        "/note/images/hutao5.png",
-        "/note/images/hutao6.jpg",
-        "/note/images/hutao7.png",
+        "/note/images/hutao/hutao1.png",
+        "/note/images/hutao/hutao2.jpg",
+        "/note/images/hutao/hutao3.png",
+        "/note/images/hutao/hutao4.jpg",
+        "/note/images/hutao/hutao5.png",
+        "/note/images/hutao/hutao6.jpg",
+        "/note/images/hutao/hutao7.png",
     ];
     if (document.body) {
         const app: HTMLElement = document.querySelector('#hutao');

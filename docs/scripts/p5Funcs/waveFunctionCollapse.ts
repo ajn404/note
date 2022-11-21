@@ -155,19 +155,19 @@ export const waveFunctionCollapse = (_p5: any) => {
         for (let i = 0; i < 13; i++) {
             tileImages[i] = _.loadImage(`${path}/${i}.png`);
         }
-        // tileImages[0] = _.loadImage('/note/images/hutao1.png')
-        // tileImages[1] = _.loadImage('/note/images/hutao5.png')
-        // tileImages[2] = _.loadImage('/note/images/hutao3.png')
-        // tileImages[3] = _.loadImage('/note/images/hutao1.png')
-        // tileImages[4] = _.loadImage('/note/images/hutao5.png')
-        // tileImages[5] = _.loadImage('/note/images/hutao1.png')
-        // tileImages[6] = _.loadImage('/note/images/hutao7.png')
-        // tileImages[7] = _.loadImage('/note/images/hutao1.png')
-        // tileImages[8] = _.loadImage('/note/images/hutao7.png')
-        // tileImages[9] = _.loadImage('/note/images/hutao3.png')
-        // tileImages[10] = _.loadImage('/note/images/hutao1.png')
-        // tileImages[11] = _.loadImage('/note/images/hutao5.png')
-        // tileImages[12] = _.loadImage('/note/images/hutao5.png')
+        // tileImages[0] = _.loadImage('/note/images/hutao/hutao1.png')
+        // tileImages[1] = _.loadImage('/note/images/hutao/hutao5.png')
+        // tileImages[2] = _.loadImage('/note/images/hutao/hutao3.png')
+        // tileImages[3] = _.loadImage('/note/images/hutao/hutao1.png')
+        // tileImages[4] = _.loadImage('/note/images/hutao/hutao5.png')
+        // tileImages[5] = _.loadImage('/note/images/hutao/hutao1.png')
+        // tileImages[6] = _.loadImage('/note/images/hutao/hutao7.png')
+        // tileImages[7] = _.loadImage('/note/images/hutao/hutao1.png')
+        // tileImages[8] = _.loadImage('/note/images/hutao/hutao7.png')
+        // tileImages[9] = _.loadImage('/note/images/hutao/hutao3.png')
+        // tileImages[10] = _.loadImage('/note/images/hutao/hutao1.png')
+        // tileImages[11] = _.loadImage('/note/images/hutao/hutao5.png')
+        // tileImages[12] = _.loadImage('/note/images/hutao/hutao5.png')
         
     }
 
