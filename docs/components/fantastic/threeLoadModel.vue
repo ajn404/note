@@ -1,9 +1,3 @@
-<template>
-    <div class="fullscreen" ref="container">
-        <canvas ref="canvasItem"></canvas>
-    </div>
-</template>
-
 <script lang="ts" setup>
 //@ts-ignore
 import { ref, nextTick } from "vue";
@@ -116,3 +110,9 @@ nextTick(() => {
     main();
 })
 </script>
+
+<template>
+  <div class="fullscreen" ref="container">
+      <canvas ref="canvasItem"></canvas>
+  </div>
+</template>

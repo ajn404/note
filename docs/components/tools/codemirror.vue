@@ -1,24 +1,3 @@
-<template>
-  <div class="codemirror-tool-box">
-    <h2>playground</h2>
-    <codemirror v-model="code" placeholder="在这里写代码" :style="{ padding: '10px 0' ,margin:'20px 0 0',maxHeight:'200px'}"
-      :autofocus="true" :indent-with-tab="true" :tab-size="2" :extensions="extensions" @ready="handleReady"
-      @change="handelChange" />
-    <div class="run">
-      <button class="btn" @click="run">运行</button>
-      <button class="btn" @click="clear">清空</button>
-      <button class="btn" @click="refresh">刷新</button>
-      <div class="result">
-        <div contenteditable="true" class="run-result" v-html="codeRes">
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-
-</template>
-  
 <script>
 //简易试炼场
 import { defineComponent } from 'vue'
@@ -119,6 +98,26 @@ export default defineComponent({
   }
 })
 </script>
+
+
+<template>
+  <div class="codemirror-tool-box">
+    <h2>playground</h2>
+    <codemirror v-model="code" placeholder="在这里写代码" :style="{ padding: '10px 0' ,margin:'20px 0 0',maxHeight:'200px'}"
+      :autofocus="true" :indent-with-tab="true" :tab-size="2" :extensions="extensions" @ready="handleReady"
+      @change="handelChange" />
+    <div class="run">
+      <button class="btn" @click="run">运行</button>
+      <button class="btn" @click="clear">清空</button>
+      <button class="btn" @click="refresh">刷新</button>
+      <div class="result">
+        <div contenteditable="true" class="run-result" v-html="codeRes">
+        </div>
+      </div>
+    </div>
+  </div>
+
+</template>
 
 <style scoped lang="scss">
 .codemirror-tool-box {

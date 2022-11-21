@@ -1,15 +1,3 @@
-<template>
-  <div class="p5-start">
-    <el-cascader-panel v-model="selectMethhod" :options="methods" @change="handleChange" v-if="!singlePage"
-      class="cascader" size="large">
-      <template #default="{ node, data }">
-        <span>{{ data.label }}</span>
-        <span v-if="!node.isLeaf">({{ data.children.length }})</span>
-      </template>
-    </el-cascader-panel>
-    <div id="p5-start" :class="[singlePage ? 'singlepage' : 'container']"></div>
-  </div>
-</template>
 <script setup>
 import { ref, onUnmounted, nextTick, readonly } from "vue";
 import { ElMessage, ElLoading } from "element-plus";
@@ -105,6 +93,18 @@ const handleChange = (arr) => {
   }
 };
 </script>
+<template>
+  <div class="p5-start">
+    <el-cascader-panel v-model="selectMethhod" :options="methods" @change="handleChange" v-if="!singlePage"
+      class="cascader" size="large">
+      <template #default="{ node, data }">
+        <span>{{ data.label }}</span>
+        <span v-if="!node.isLeaf">({{ data.children.length }})</span>
+      </template>
+    </el-cascader-panel>
+    <div id="p5-start" :class="[singlePage ? 'singlepage' : 'container']"></div>
+  </div>
+</template>
 <style scoped lang="scss">
 #p5-start {
   overflow: hidden;
