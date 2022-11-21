@@ -7,7 +7,7 @@
         <span v-if="!node.isLeaf">({{ data.children.length }})</span>
       </template>
     </el-cascader-panel>
-    <div id="p5-start" :class="[singlePage?'singlepage':'container']"></div>
+    <div id="p5-start" :class="[singlePage ? 'singlepage' : 'container']"></div>
   </div>
 </template>
 <script setup>
@@ -28,7 +28,7 @@ for (let p5MainFuncItem in p5MainFunc) {
 
 const singlePage = ref(props.type && funcs[props.type]);
 const selectMethhod = ref([]);
-let defaultMethod =  props.type ||"defaultFunc";
+let defaultMethod = props.type || "defaultFunc";
 
 const methods = readonly(allMethods);
 const fullList = ["quickSort", "bubbleSort", "rayCast", "lorenzSystem", "chenShiSystem"];
@@ -50,51 +50,51 @@ const clearFunc = () => {
   dom = document.querySelector("#p5-start")
   if (dom) dom.innerHTML = "";
 };
-const loadP5Func = ()=>{
+const loadP5Func = () => {
   clearFunc();
-    p5 = window['p5'];
-    new p5(p5MainFunc[defaultMethod], "p5-start");
-    window["p5DrawLoop"] = defaultMethod;
+  p5 = window['p5'];
+  new p5(p5MainFunc[defaultMethod], "p5-start");
+  window["p5DrawLoop"] = defaultMethod;
 }
 
 let p5;
 if (isClient)
   nextTick(() => {
-    if(soundList.includes(defaultMethod)){
-    if(p5?.Oscillator)
-    loadP5Func()
-    else{
-      loadInstance = loading()
-      import("https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/addons/p5.sound.min.js").then(()=>{
-        loadInstance.close()
+    if (soundList.includes(defaultMethod)) {
+      if (p5?.Oscillator)
         loadP5Func()
-      })
-    }
-    }else
-    loadP5Func()
+      else {
+        loadInstance = loading()
+        import("https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/addons/p5.sound.min.js").then(() => {
+          loadInstance.close()
+          loadP5Func()
+        })
+      }
+    } else
+      loadP5Func()
 
-  
-   
+
+
   });
 onUnmounted(() => {
   window["p5DrawLoop"] = "";
 });
-const loadMethod = arr=>{
+const loadMethod = arr => {
   if (p5 && typeof p5 === "function") {
-      let funcName = arr[arr.length - 1];
-      window["p5DrawLoop"] = singlePage.value || funcName;
-      //清除之前的
-      clearFunc();
-      //新建计算和canvas 
-      dom = document.querySelector("#p5-start");
+    let funcName = arr[arr.length - 1];
+    window["p5DrawLoop"] = singlePage.value || funcName;
+    //清除之前的
+    clearFunc();
+    //新建计算和canvas 
+    dom = document.querySelector("#p5-start");
 
-      if (fullList.includes(funcName) && dom) {
-        dom.requestFullscreen().then(() => {
-          new p5(funcs[funcName] || p5MainFunc.defaultFunc, "p5-start");
-        });
-      } else
-        new p5(singlePage.value || funcs[funcName] || p5MainFunc.defaultFunc, "p5-start");
-    }
+    if (fullList.includes(funcName) && dom) {
+      dom.requestFullscreen().then(() => {
+        new p5(funcs[funcName] || p5MainFunc.defaultFunc, "p5-start");
+      });
+    } else
+      new p5(singlePage.value || funcs[funcName] || p5MainFunc.defaultFunc, "p5-start");
+  }
 }
 
 const handleChange = (arr) => {
