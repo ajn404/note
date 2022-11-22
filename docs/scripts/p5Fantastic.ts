@@ -458,7 +458,7 @@ export { polarCoordinates } from './p5Funcs/polarCoordinates' //极坐标绘制�
 
 export { geometries } from './p5Funcs/geometries' //基本3D模型
 
-export  {sinCos3D } from './p5Funcs/sinCos3D' //sin cos 应用
+export { sinCos3D } from './p5Funcs/sinCos3D' //sin cos 应用
 
 export const boxRef = (_p5: any) => {
   let _ = _p5;
@@ -738,7 +738,7 @@ export const quickSort = (_: any) => {
   }
 };
 
-export {stepFeetIIIusion} from './p5Funcs/stepFeetIIIusion'// 视错觉
+export { stepFeetIIIusion } from './p5Funcs/stepFeetIIIusion'// 视错觉
 
 export const gridOutput = (_: any) => {
   _.setup = () => {
@@ -1413,136 +1413,12 @@ export const pointHandle = (_: any) => {
   }
 }
 
-export const textureDemo = (_: any) => {
-  _.setup = () => {
-    _.createCanvas(500, 500, _.WEBGL)
-  }
-
-  let img: any, angle;
-  _.preload = () => {
-    img = _.loadImage('/note/images/logo.jpg')
-  }
-
-  _.draw = () => {
-    _.background(255);
-    _.orbitControl();
-    angle = _.PI * _.frameCount * 0.001
-    _.rotateX(angle)
-    _.rotateY(angle)
-    _.rotateZ(angle)
-    _.texture(img)
-    _.box(100)
-    if (window && window["p5DrawLoop"] !== "textureDemo") {
-      _.noLoop()
-    }
-  }
-}
-
-export const ambientLight = (_: any) => {
-  let p5DrawLoop = window["p5DrawLoop"];
-  let angle;
-  let lightColor: any, materialColor: any;
-  _.setup = () => {
-    _.createCanvas(500, 500, _.WEBGL)
-    lightColor = _.createColorPicker('#ffffff')
-    materialColor = _.createColorPicker('#ff00ff')
-    lightColor.style('margin-top', '1em')
-    materialColor.style('margin-top', '1em')
-  }
-
-
-  _.draw = () => {
-    _.background(255)
-    angle = _.PI * _.frameCount * 0.001
-    _.rotateX(angle)
-    _.rotateY(angle)
-    _.rotateZ(angle)
-    _.ambientLight(lightColor.color())
-    _.ambientMaterial(materialColor.color());
-    _.cone(30, 70)
-    _.translate(0, 0, -100)
-    _.box(50)
-
-
-    if (window && window["p5DrawLoop"] !== p5DrawLoop) {
-      _.noLoop()
-    }
-  }
-}
-
-export const directionalLight = (_: any) => {
-  let p5DrawLoop = window["p5DrawLoop"];
-  _.setup = () => {
-    _.createCanvas(500, 500, _.WEBGL)
-  }
-
-  let dirX, dirY;
-  _.draw = () => {
-    _.background(0)
-
-    dirX = (_.mouseX / _.width - 0.5) * 2;
-    dirY = (_.mouseY / _.height - 0.5) * 2
-
-    _.directionalLight(255, 255, 255, -dirX, -dirY, -1)
-    _.noStroke()
-    _.sphere(80)
-
-
-
-    if (window && window["p5DrawLoop"] !== p5DrawLoop) {
-      _.noLoop()
-    }
-  }
-
-}
-
-export const pointLight = (_: any) => {
-  let p5DrawLoop = window["p5DrawLoop"];
-  _.setup = () => {
-    _.createCanvas(500, 500, _.WEBGL)
-  }
-
-
-  _.draw = () => {
-    _.background(0)
-    let locX = _.mouseX - _.width / 2;
-    let locY = _.mouseY - _.height / 2;
-    _.pointLight(250, 250, 250, locX, locY, 100);
-    _.noStroke();
-    _.sphere(80);
-    if (window && window["p5DrawLoop"] !== p5DrawLoop) {
-      _.noLoop()
-    }
-  }
-
-}
-
-export const spotLight = (_: any) => {
-  let p5DrawLoop = window["p5DrawLoop"];
-  let colorPicker: any;
-  _.setup = () => {
-    _.createCanvas(200, 200, _.WEBGL)
-    _.noStroke()
-    colorPicker = _.createColorPicker('#00ff00')
-  }
-
-  let locX, locY;
-  _.draw = () => {
-    _.background(0)
-
-    locX = _.mouseX - _.width / 2;
-    locY = _.mouseY - _.height / 2
-
-    _.ambientLight(50)
-    _.spotLight(colorPicker.color(), locX, locY, 200, 0, 0, -1, Math.PI / 16);
-    _.sphere(80)
-
-    if (window && window["p5DrawLoop"] !== p5DrawLoop) {
-      _.noLoop()
-    }
-  }
-}
-
+export { textureDemo } from './p5Funcs/textureDemo' //坤坤材质
+export { textureGeometries } from './p5Funcs/textureGeometries'//play
+export { ambientLight } from './p5Funcs/ambientLight'//环境光
+export { directionalLight } from './p5Funcs/directionalLight' //平行光
+export { pointLight } from './p5Funcs/pointLight'//点光源
+export { spotLight } from './p5Funcs/spotLight'//聚光灯
 export { spring } from './p5Funcs/spring' //弹簧，简单物理引擎
 export { delaySound } from './p5Funcs/delaySound' //webrtc p5.sound
 export { hypercube4D } from './p5Funcs/hypercube4D'//四维立方

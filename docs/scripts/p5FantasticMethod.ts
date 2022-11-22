@@ -96,6 +96,10 @@ export const allMethods = [
           value: "geometries",
         },
         {
+          label: "3D基本图形添加材质",
+          value: "textureGeometries",
+        },
+        {
           label: "3D sin cos应用",
           value: "sinCos3D",
         },

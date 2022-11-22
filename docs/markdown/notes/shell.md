@@ -15,6 +15,14 @@ cal
 28 29 30 31     
 ```
 
+:::details 实时运行
+<ClientOnly>
+<asciinemaPlayerBox file='cal'></asciinemaPlayerBox>
+</ClientOnly>
+:::
+
+
+
 ### ping 
 ```shell 
 ping 112.80.248.75
@@ -90,8 +98,11 @@ Upgrading /Users/ajn404/Documents/blog/note/package.json
 
 Run yarn install to install new versions.
 ```
-
-
+:::details 实时运行
+<ClientOnly>
+<asciinemaPlayerBox file='ncu'></asciinemaPlayerBox>
+</ClientOnly>
+:::
 
 
 ### asciinema 
@@ -100,9 +111,6 @@ Run yarn install to install new versions.
 播放 asciinema play<br/>
 生成的cast文件示例
 
-<ClientOnly>
-<asciinemaPlayerBox></asciinemaPlayerBox>
-</ClientOnly>
 
 ### curl
 
@@ -110,6 +118,8 @@ Run yarn install to install new versions.
 curl parrot.live
 :::
 
+:::details 实时运行
 <ClientOnly>
 <asciinemaPlayerBox file='curlLive'></asciinemaPlayerBox>
 </ClientOnly>
+:::

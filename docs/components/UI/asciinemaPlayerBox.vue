@@ -5,19 +5,20 @@
 // import 'asciinema-player/dist/bundle/asciinema-player.css'
 import { nextTick, ref } from 'vue'
 const player = ref(null)
-const themeList = ["asciinema","monokai","tango","solarized-dark","solarized-light"]
+const themeList = ["asciinema","monokai","tango","solarized-dark","solarized-light"];//所有的主题
 const theme = themeList[Math.floor(Math.random()*10%themeList.length)]
 const AsciinemaPlayer = window['AsciinemaPlayer'];
 
 const props =defineProps({
-    file:String
+    file:String,
+    loop:Boolean
 })
 
 
 nextTick(() => {
     AsciinemaPlayer.create(`/note/data/cast/${props.file||'ncu'}.cast`, player.value,
         {
-            loop: true,
+            loop: props.loop??false,
             theme: theme
         });
 });
