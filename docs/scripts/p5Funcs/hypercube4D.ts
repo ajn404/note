@@ -196,8 +196,8 @@ export const hypercube4D = (_: any) => {
       connect(0, i, i + 8, projected3d);
     }
 
-    angle = _.map(_.mouseX, 0, _.width, 0, _.TWO_PI);
-    // angle += 0.02;
+    // angle = _.map(_.mouseX, 0, _.width, 0, _.TWO_PI);
+    angle += 0.02;
 
     if (window && window["p5DrawLoop"] !== "hypercube4D") {
       _.noLoop();

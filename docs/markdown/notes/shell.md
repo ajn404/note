@@ -109,3 +109,7 @@ Run yarn install to install new versions.
 :::tip
 curl parrot.live
 :::
+
+<ClientOnly>
+<asciinemaPlayerBox file='curlLive'></asciinemaPlayerBox>
+</ClientOnly>

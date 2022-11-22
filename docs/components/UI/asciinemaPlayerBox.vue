@@ -9,13 +9,18 @@ const themeList = ["asciinema","monokai","tango","solarized-dark","solarized-lig
 const theme = themeList[Math.floor(Math.random()*10%themeList.length)]
 const AsciinemaPlayer = window['AsciinemaPlayer'];
 
+const props =defineProps({
+    file:String
+})
+
+
 nextTick(() => {
-    AsciinemaPlayer.create('/note/data/ncu.cast', player.value,
+    AsciinemaPlayer.create(`/note/data/cast/${props.file||'ncu'}.cast`, player.value,
         {
             loop: true,
             theme: theme
         });
-})
+});
 </script>
 
 <template>
