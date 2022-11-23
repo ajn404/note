@@ -123,3 +123,6 @@ curl parrot.live
 <asciinemaPlayerBox file='curlLive'></asciinemaPlayerBox>
 </ClientOnly>
 :::
+
+
+#### 新写一个asciinema player的vue3 npm组件库 [git仓库](https://github.com/ajn404/vue3-asciinema-player)

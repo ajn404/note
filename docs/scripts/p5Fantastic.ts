@@ -1,5 +1,3 @@
-//所有方法都导出在p5.vue中，需要展示的放在allMethods里
-
 export const main = (_p5: any) => {
   const p5 = _p5;
   let xpos1: any;
@@ -454,12 +452,6 @@ export const slidePuzzle = (_p5: any) => {
   }
 };
 
-export { polarCoordinates } from './p5Funcs/polarCoordinates' //极坐标绘制功夫圆
-
-export { geometries } from './p5Funcs/geometries' //基本3D模型
-
-export { sinCos3D } from './p5Funcs/sinCos3D' //sin cos 应用
-
 export const boxRef = (_p5: any) => {
   let _ = _p5;
   _.setup = () => {
@@ -738,7 +730,6 @@ export const quickSort = (_: any) => {
   }
 };
 
-export { stepFeetIIIusion } from './p5Funcs/stepFeetIIIusion'// 视错觉
 
 export const gridOutput = (_: any) => {
   _.setup = () => {
@@ -1039,387 +1030,27 @@ export const minesweeper = (_: any) => {
   }
 };
 
-//名字与功能未匹配
-export const rose = (_: any) => {
-  let n = 0,
-    d = 0;
-  _.setup = () => {
-    _.createCanvas(400, 400);
-    _.angleMode(_.DEGREES);
-  };
 
-  _.draw = () => {
-    if (window && window["p5DrawLoop"] !== "rose") {
-      _.noLoop();
-    }
-    _.background(0);
-    _.translate(200, 200);
-    _.stroke(255);
+export { ambientLight } from './p5Funcs/ambientLight'; //环境光
+export { chenShiSystem } from './p5Funcs/chenShiSystem'; //陈氏混沌
+export { coordinate } from './p5Funcs/coordinate'; //极坐标使用
+export { delaySound } from './p5Funcs/delaySound'; //webrtc p5.sound
+export { diaona } from './p5Funcs/diaona'; //迪奥娜
+export { directionalLight } from './p5Funcs/directionalLight'; //平行光
+export { geometries } from './p5Funcs/geometries'; //基本3D模型
+export { hypercube4D } from './p5Funcs/hypercube4D'; //四维立方
+export { lorenzSystem } from './p5Funcs/lorenzSystem'; //劳伦滋混沌系统
+export { pointHandle } from './p5Funcs/pointHandle'; //torus圆环
+export { pointLight } from './p5Funcs/pointLight'; //点光源
+export { polarCoordinates } from './p5Funcs/polarCoordinates'; //极坐标绘制功夫圆
+export { rayCast } from './p5Funcs/rayCast'; //光线投射
+export { renderSteps } from './p5Funcs/renderSteps'; //茶壶
+export { rose } from './p5Funcs/rose'; //旋转的浪漫
+export { sinCos3D } from './p5Funcs/sinCos3D'; //sin cos 应用
+export { spotLight } from './p5Funcs/spotLight'; //聚光灯
+export { spring } from './p5Funcs/spring'; //弹簧，简单物理引擎
+export { stepFeetIIIusion } from './p5Funcs/stepFeetIIIusion'; // 视错觉
+export { textureDemo } from './p5Funcs/textureDemo'; //坤坤材质
+export { textureGeometries } from './p5Funcs/textureGeometries'; //play
+export { waveFunctionCollapse } from "./p5Funcs/waveFunctionCollapse"; //波函数坍塌
 
-    _.noFill();
-    _.beginShape();
-    _.strokeWeight(1);
-    for (let i = 0; i < 361; i++) {
-      let k = i * d;
-      let r = 150 * _.sin(n * k);
-      let x = r * _.cos(k);
-      let y = r * _.sin(k);
-      _.vertex(x, y);
-    }
-    _.endShape();
-
-    _.noFill();
-    _.stroke(255, 0, 255, 255);
-    _.strokeWeight(4);
-    _.beginShape();
-
-    for (let i = 0; i < 361; i++) {
-      let k = i;
-      let r = 150 * _.sin(n * k);
-      let x = r * _.cos(k);
-      let y = r * _.sin(k);
-      _.vertex(x, y);
-    }
-    _.endShape();
-
-    n += 0.001;
-    d += 0.003;
-  };
-};
-
-export const rayCast = (_: any) => {
-
-
-  let p5 = window['p5'];
-
-  class Ray {
-    pos: any;
-    dir: any;
-
-    constructor(pos: any, angle: any) {
-      this.pos = pos;
-      this.dir = p5.Vector.fromAngle(angle);
-    }
-
-    lookAt(x: any, y: any) {
-      this.dir.x = x - this.pos.x;
-      this.dir.y = y - this.pos.y;
-      this.dir.normalize();
-    }
-
-    show() {
-      _.stroke(255);
-      _.push();
-      _.translate(this.pos.x, this.pos.y);
-      _.line(0, 0, this.dir.x * 10, this.dir.y * 10);
-      _.pop();
-    }
-
-    cast(wall: any) {
-      const x1 = wall.a.x;
-      const y1 = wall.a.y;
-      const x2 = wall.b.x;
-      const y2 = wall.b.y;
-
-      const x3 = this.pos.x;
-      const y3 = this.pos.y;
-      const x4 = this.pos.x + this.dir.x;
-      const y4 = this.pos.y + this.dir.y;
-
-      const den = (x1 - x2) * (y3 - y4) - (y1 - y2) * (x3 - x4);
-      if (den == 0) {
-        return;
-      }
-
-      const t = ((x1 - x3) * (y3 - y4) - (y1 - y3) * (x3 - x4)) / den;
-      const u = -((x1 - x2) * (y1 - y3) - (y1 - y2) * (x1 - x3)) / den;
-      if (t > 0 && t < 1 && u > 0) {
-        const pt = _.createVector();
-        pt.x = x1 + t * (x2 - x1);
-        pt.y = y1 + t * (y2 - y1);
-        return pt;
-      } else {
-        return;
-      }
-    }
-
-
-  }
-
-  class Particle {
-
-    pos: any;
-    rays: any;
-    constructor() {
-      this.pos = _.createVector(_.width / 2, _.height / 2);
-      this.rays = [];
-      for (let a = 0; a < 360; a += 1) {
-        this.rays.push(new Ray(this.pos, _.radians(a)));
-      }
-    }
-
-    update(x: any, y: any) {
-      this.pos.set(x, y);
-    }
-
-    look(walls: any) {
-      for (let i = 0; i < this.rays.length; i++) {
-        const ray = this.rays[i];
-        let closest: any = null;
-        let record = Infinity;
-        for (let wall of walls) {
-          const pt = ray.cast(wall);
-          if (pt) {
-            const d = p5.Vector.dist(this.pos, pt);
-            if (d < record) {
-              record = d;
-              closest = pt;
-            }
-          }
-        }
-        if (closest) {
-          // colorMode(HSB);
-          // stroke((i + frameCount * 2) % 360, 255, 255, 50);
-          _.stroke(255, 100);
-          _.line(this.pos.x, this.pos.y, closest.x, closest.y);
-        }
-      }
-    }
-
-    show() {
-      _.fill(255);
-      _.ellipse(this.pos.x, this.pos.y, 4);
-      for (let ray of this.rays) {
-        ray.show();
-      }
-    }
-  }
-
-  class Boundary {
-    a: any;
-    b: any;
-    constructor(x1: any, y1: any, x2: any, y2: any) {
-      this.a = _.createVector(x1, y1);
-      this.b = _.createVector(x2, y2);
-    }
-
-    show() {
-      _.stroke(255);
-      _.line(this.a.x, this.a.y, this.b.x, this.b.y);
-    }
-  }
-
-  let walls: any = [];
-  let particle: any;
-  let xoff = 0;
-  let yoff = 10000;
-  _.setup = () => {
-    _.createCanvas(_.windowWidth, _.windowHeight);
-    for (let i = 0; i < 5; i++) {
-      let x1 = _.random(_.width);
-      let x2 = _.random(_.width);
-      let y1 = _.random(_.height);
-      let y2 = _.random(_.height);
-      walls[i] = new Boundary(x1, y1, x2, y2);
-    }
-    walls.push(new Boundary(-1, -1, _.width, -1));
-    walls.push(new Boundary(_.width, -1, _.width, _.height));
-    walls.push(new Boundary(_.width, _.height, -1, _.height));
-    walls.push(new Boundary(-1, _.height, -1, -1));
-    particle = new Particle();
-  };
-
-  _.draw = () => {
-    _.background(0);
-    for (let wall of walls) {
-      wall.show();
-    }
-    //particle.update(noise(xoff) * width, noise(yoff) * height);
-    particle.update(_.mouseX, _.mouseY);
-    particle.show();
-    particle.look(walls);
-
-    xoff += 0.01;
-    yoff += 0.01;
-    if (window && window["p5DrawLoop"] !== "rayCast") {
-      _.noLoop();
-    }
-
-
-  };
-};
-
-//lorenz system
-//劳伦滋混沌系统
-export const lorenzSystem = (_: any) => {
-  let x = 1, y = 1, z = 1;
-  let a = 10;
-  let b = 28;
-  let c = 8 / 3;
-
-  _.setup = () => {
-    _.createCanvas(800, 600, _.P3D);
-    _.background(0);
-    _.strokeWeight(0.2);
-  }
-  _.draw = () => {
-    if (window && window["p5DrawLoop"] !== "lorenzSystem") {
-      _.noLoop();
-    }
-    let dt = 0.01;
-    let dx = dt * (a * (y - x));
-    let dy = dt * (x * (b - z) - y);
-    let dz = dt * (x * y - c * z);
-    x += dx;
-    y += dy;
-    z += dz;
-    _.translate(_.width / 2, _.height / 2, 0);
-    _.stroke((x < 0 ? -x : x) * 10 % 255, (y < 0 ? -y : y) * 10 % 255, (z < 0 ? -z : z) * 10 % 255);
-    _.scale(10);
-    _.point(x, y, z);
-  }
-}
-//陈氏混沌
-export const chenShiSystem = (_: any) => {
-  let x = 1, y = 1, z = 1;
-  let a = 35;
-  let b = 3;
-  let c = 28;
-
-  const colorSize = 8;
-
-  _.setup = () => {
-    _.createCanvas(800, 600, _.P3D);
-    _.background(0);
-    _.strokeWeight(0.2);
-  }
-  _.draw = () => {
-    if (window && window["p5DrawLoop"] !== "chenShiSystem") {
-      _.noLoop();
-    }
-    let dt = 0.001;
-    let dx = dt * (a * (y - x));
-    let dy = dt * (x * (c - a) - x * z + c * y);
-    let dz = dt * (x * y - b * z);
-    x += dx;
-    y += dy;
-    z += dz;
-    _.translate(_.width / 2, _.height / 2, 0);
-    _.stroke((x < 0 ? -x : x) * colorSize % 255, (y < 0 ? -y : y) * colorSize % 255, (z < 0 ? -z : z) * colorSize % 255);
-    _.scale(8);
-    _.point(x, y, z);
-  }
-
-  //   _.keyPressed= ()=> {
-  //     _.saveGif('defaultCanvas0', 20);
-  // }
-}
-
-export const coordinate = (_p5: any) => {
-  let _ = _p5;
-  let p5DrawLoop = window["p5DrawLoop"];
-  _.setup = () => {
-    _.createCanvas(500, 200, _.WEBGL)
-    _.normalMaterial()
-
-  }
-  _.draw = () => {
-    _.background(250)
-
-    _.orbitControl()
-    _.rotateY(0.003 * _.PI * _.frameCount);
-    _.box(100)
-
-    if (window && window["p5DrawLoop"] !== p5DrawLoop) {
-      _.noLoop()
-    }
-  }
-}
-
-export const renderSteps = (_: any) => {
-  let p5DrawLoop = window["p5DrawLoop"];
-  _.setup = () => {
-    _.createCanvas(_.windowWidth, _.windowHeight, _.WEBGL)
-    _.normalMaterial()
-
-  }
-
-  let teaBox: any;
-  _.preload = () => {
-    teaBox = _.loadModel('/note/model/teapot.obj', true)
-  }
-
-  _.draw = () => {
-    _.background(200)
-
-
-    _.orbitControl()
-    _.rotateZ(_.PI)
-
-    _.rotateY(_.frameCount * _.PI * 0.01)
-    _.model(teaBox)
-    if (window && window["p5DrawLoop"] !== "renderSteps") {
-      _.redraw()
-      _.noLoop()
-    }
-  }
-}
-
-export const diaona = (_: any) => {
-  _.setup = () => {
-    _.createCanvas(_.windowWidth, _.windowHeight, _.WEBGL)
-    _.normalMaterial()
-
-  }
-
-
-  let teaBox: any;
-  _.preload = () => {
-    teaBox = _.loadModel('/note/model/diaona.obj', true)
-  }
-
-  _.draw = () => {
-    _.background(150)
-    _.applyMatrix(4, 0, 0, 4, 0, 0);
-
-    // _.orbitControl()
-    _.rotateZ(_.PI)
-
-    _.rotateY(_.frameCount * _.PI * 0.01)
-    _.model(teaBox)
-    if (window && window["p5DrawLoop"] !== "diaona") {
-      _.redraw()
-      _.noLoop()
-    }
-  }
-}
-
-export const pointHandle = (_: any) => {
-  let p5DrawLoop = window["p5DrawLoop"];
-  _.setup = () => {
-    _.createCanvas(500, 200, _.WEBGL)
-  }
-
-  _.draw = () => {
-    _.background(255)
-
-
-    _.camera(0, 0, 160 + _.sin(_.frameCount * 0.01) * 100, 0, 0, 0, 0, 1, 0)
-    _.rotateX(_.PI / 3)
-    _.torus(30, 10)
-    if (window && window["p5DrawLoop"] !== p5DrawLoop) {
-      _.noLoop()
-    }
-  }
-}
-
-export { textureDemo } from './p5Funcs/textureDemo' //坤坤材质
-export { textureGeometries } from './p5Funcs/textureGeometries'//play
-export { ambientLight } from './p5Funcs/ambientLight'//环境光
-export { directionalLight } from './p5Funcs/directionalLight' //平行光
-export { pointLight } from './p5Funcs/pointLight'//点光源
-export { spotLight } from './p5Funcs/spotLight'//聚光灯
-export { spring } from './p5Funcs/spring' //弹簧，简单物理引擎
-export { delaySound } from './p5Funcs/delaySound' //webrtc p5.sound
-export { hypercube4D } from './p5Funcs/hypercube4D'//四维立方
-export { waveFunctionCollapse } from "./p5Funcs/waveFunctionCollapse";//波函数坍塌
