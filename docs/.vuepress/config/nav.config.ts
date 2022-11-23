@@ -1,5 +1,5 @@
 import { NavbarConfig, NavbarGroup } from 'vuepress';
-import { allMethods } from "../../scripts/p5FantasticMethod";
+import { allMethods } from "../../scripts/p5Funcs/p5FantasticMethod";
 
 const practiceBaseUrl: string = '/markdown/practice/'
 const glslBaseUrl: string = '/markdown/example/'

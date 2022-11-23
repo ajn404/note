@@ -7,7 +7,7 @@
 <script lang="ts" setup>
 import kaboom from "kaboom";
 import { ref, nextTick  } from 'vue';
-import * as kaboomFunc from '@scripts/kaboomStartFunc'
+import * as kaboomFunc from '@scripts/kaboomStartFunc/index'
 const props = defineProps({
     func:String
 })
