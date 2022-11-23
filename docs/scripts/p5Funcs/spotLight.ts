@@ -1,5 +1,4 @@
 export const spotLight = (_: any) => {
-    let p5DrawLoop = window["p5DrawLoop"];
     let colorPicker: any;
     _.setup = () => {
       _.createCanvas(200, 200, _.WEBGL)
@@ -18,7 +17,7 @@ export const spotLight = (_: any) => {
       _.spotLight(colorPicker.color(), locX, locY, 200, 0, 0, -1, Math.PI / 16);
       _.sphere(80)
   
-      if (window && window["p5DrawLoop"] !== p5DrawLoop) {
+      if (window && window["p5DrawLoop"] !== 'spotLight') {
         _.noLoop()
       }
     }

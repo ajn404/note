@@ -24,7 +24,7 @@ export const ambientLight = (_: any) => {
       _.box(50)
   
   
-      if (window && window["p5DrawLoop"] !== p5DrawLoop) {
+      if (window && window["p5DrawLoop"] !== 'ambientLight') {
         _.noLoop()
       }
     }

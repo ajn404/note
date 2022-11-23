@@ -125,4 +125,4 @@ curl parrot.live
 :::
 
 
-#### 新写一个asciinema player的vue3 npm组件库 [git仓库](https://github.com/ajn404/vue3-asciinema-player)
+#### 新写一个asciinema player的vue3 npm组件库 [git仓库](https://github.com/ajn404/vue3-asciinema-player) [npm仓库](https://www.npmjs.com/package/vue3-asciinema-player)

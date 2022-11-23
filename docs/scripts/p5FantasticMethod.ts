@@ -22,7 +22,7 @@ export const allMethods = [
       { value: "polarCoordinates", label: "polarCoordinates" },
       { value: "stepFeetIIIusion", label: "视错觉" },
       { value: "rose", label: "旋转玫瑰" },
-      { value: "rayCast", label: "射线投影[fullscreen]" }
+      { value: "rayCast", label: "射线投影" }
     ],
   },
   {

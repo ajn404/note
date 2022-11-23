@@ -12,7 +12,7 @@ export const pointLight = (_: any) => {
       _.pointLight(250, 250, 250, locX, locY, 100);
       _.noStroke();
       _.sphere(80);
-      if (window && window["p5DrawLoop"] !== p5DrawLoop) {
+      if (window && window["p5DrawLoop"] !== 'pointLight') {
         _.noLoop()
       }
     }

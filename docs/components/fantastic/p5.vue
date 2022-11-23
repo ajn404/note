@@ -8,7 +8,7 @@ import * as p5MainFunc from "@scripts/p5Fantastic";
 
 import { allMethods } from "@scripts/p5FantasticMethod";
 
-console.log(p5MainFunc);
+// console.log(p5MainFunc);
 const props = defineProps({ type: String });
 
 const funcs = {};

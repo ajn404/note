@@ -888,6 +888,36 @@ my own solution
 ### 2.2基本类型
 #### 2.2.1 数值类型
 
+#### 整型
+i8,u8...
+::: tip 
+rust整数类型默认使用i32<br/>
+panic:表示程序崩溃退出<br/>
+整型溢出，补码循环溢出
+:::
+
+<ClientOnly>
+     <RustPlayground 
+     async
+     code='fn main() {
+    let a : u8 = 255;
+    let b = a.wrapping_add(20);
+    println!("{}", b);  // 19
+}'
+></RustPlayground>
+</ClientOnly>
+
+#### 浮点类型
+<ClientOnly>
+     <RustPlayground 
+     async
+     code='fn main() {
+    let x = 2.0; // f64
+    let y: f32 = 3.0; // f32}
+'
+></RustPlayground>
+</ClientOnly>
+
 
 
 

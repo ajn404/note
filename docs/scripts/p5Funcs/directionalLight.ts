@@ -17,7 +17,7 @@ export const directionalLight = (_: any) => {
   
   
   
-      if (window && window["p5DrawLoop"] !== p5DrawLoop) {
+      if (window && window["p5DrawLoop"] !== 'directionalLight') {
         _.noLoop()
       }
     }
