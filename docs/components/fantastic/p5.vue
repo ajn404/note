@@ -2,28 +2,20 @@
 import { ref, onUnmounted, nextTick, readonly } from "vue";
 import { ElMessage, ElLoading } from "element-plus";
 import { isClient } from "@vueuse/core";
+import * as p5MainFunc from "@scripts/p5Funcs";
+import { allMethods } from "@scripts/p5Funcs/p5FantasticMethod";
 
-//vue中使用P5的方式
-import * as p5MainFunc from "@scripts/p5Fantastic";
-
-import { allMethods } from "@scripts/p5FantasticMethod";
-
-// console.log(p5MainFunc);
 const props = defineProps({ type: String });
-
 const funcs = {};
 for (let p5MainFuncItem in p5MainFunc) {
   funcs[`${p5MainFuncItem}`] = p5MainFunc[`${p5MainFuncItem}`];
 }
-
 const singlePage = ref(props.type && funcs[props.type]);
 const selectMethhod = ref([]);
 let defaultMethod = props.type || "defaultFunc";
-
 const methods = readonly(allMethods);
 const fullList = ["quickSort", "bubbleSort", "rayCast", "lorenzSystem", "chenShiSystem","waveFunctionCollapse"];
 const soundList = ["delaySound"];
-
 const loading = () => {
   return ElLoading.service({
     lock: true,
@@ -33,8 +25,6 @@ const loading = () => {
   });
 };
 let loadInstance;
-
-
 let dom;
 const clearFunc = () => {
   dom = document.querySelector("#p5-start")
@@ -46,8 +36,8 @@ const loadP5Func = () => {
   new p5(p5MainFunc[defaultMethod], "p5-start");
   window["p5DrawLoop"] = defaultMethod;
 }
-
 let p5;
+
 if (isClient)
   nextTick(() => {
     if (soundList.includes(defaultMethod)) {
@@ -89,7 +79,20 @@ const loadMethod = arr => {
 
 const handleChange = (arr) => {
   try {
-    loadMethod(arr)
+    if (soundList.includes(arr[arr.length - 1])) {
+      if (p5?.Oscillator)
+        loadMethod(arr)
+      else {
+        loadInstance = loading()
+        import("https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/addons/p5.sound.min.js").then(() => {
+          loadInstance.close()
+          loadMethod(arr)
+        })
+      }
+    }else{
+      loadMethod(arr)
+    }
+
   } catch (e) {
     ElMessage.warning("可能cdn的p5还没有加载好");
   }

@@ -3,7 +3,7 @@ title :  kaboom is fantastic
 ---
 
 <ClientOnly>
-<kaboom></kaboom>
+<kaboom func='dialog'></kaboom>
 </ClientOnly>
 
 ::: tip 点击空格切换dialog

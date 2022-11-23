@@ -805,27 +805,27 @@ export const genFuncDemo = (_: any) => {
   };
 };
 
-export {minesweeper} from './p5Funcs/minesweeper' //扫雷
-export { ambientLight } from './p5Funcs/ambientLight'; //环境光
-export { chenShiSystem } from './p5Funcs/chenShiSystem'; //陈氏混沌
-export { coordinate } from './p5Funcs/coordinate'; //极坐标使用
-export { delaySound } from './p5Funcs/delaySound'; //webrtc p5.sound
-export { diaona } from './p5Funcs/diaona'; //迪奥娜
-export { directionalLight } from './p5Funcs/directionalLight'; //平行光
-export { geometries } from './p5Funcs/geometries'; //基本3D模型
-export { hypercube4D } from './p5Funcs/hypercube4D'; //四维立方
-export { lorenzSystem } from './p5Funcs/lorenzSystem'; //劳伦滋混沌系统
-export { pointHandle } from './p5Funcs/pointHandle'; //torus圆环
-export { pointLight } from './p5Funcs/pointLight'; //点光源
-export { polarCoordinates } from './p5Funcs/polarCoordinates'; //极坐标绘制功夫圆
-export { rayCast } from './p5Funcs/rayCast'; //光线投射
-export { renderSteps } from './p5Funcs/renderSteps'; //茶壶
-export { rose } from './p5Funcs/rose'; //旋转的浪漫
-export { sinCos3D } from './p5Funcs/sinCos3D'; //sin cos 应用
-export { spotLight } from './p5Funcs/spotLight'; //聚光灯
-export { spring } from './p5Funcs/spring'; //弹簧，简单物理引擎
-export { stepFeetIIIusion } from './p5Funcs/stepFeetIIIusion'; // 视错觉
-export { textureDemo } from './p5Funcs/textureDemo'; //坤坤材质
-export { textureGeometries } from './p5Funcs/textureGeometries'; //play
-export { waveFunctionCollapse } from "./p5Funcs/waveFunctionCollapse"; //波函数坍塌
+export {minesweeper} from './minesweeper' //扫雷
+export { ambientLight } from './ambientLight'; //环境光
+export { chenShiSystem } from './chenShiSystem'; //陈氏混沌
+export { coordinate } from './coordinate'; //极坐标使用
+export { delaySound } from './delaySound'; //webrtc p5.sound
+export { diaona } from './diaona'; //迪奥娜
+export { directionalLight } from './directionalLight'; //平行光
+export { geometries } from './geometries'; //基本3D模型
+export { hypercube4D } from './hypercube4D'; //四维立方
+export { lorenzSystem } from './lorenzSystem'; //劳伦滋混沌系统
+export { pointHandle } from './pointHandle'; //torus圆环
+export { pointLight } from './pointLight'; //点光源
+export { polarCoordinates } from './polarCoordinates'; //极坐标绘制功夫圆
+export { rayCast } from './rayCast'; //光线投射
+export { renderSteps } from './renderSteps'; //茶壶
+export { rose } from './rose'; //旋转的浪漫
+export { sinCos3D } from './sinCos3D'; //sin cos 应用
+export { spotLight } from './spotLight'; //聚光灯
+export { spring } from './spring'; //弹簧，简单物理引擎
+export { stepFeetIIIusion } from './stepFeetIIIusion'; // 视错觉
+export { textureDemo } from './textureDemo'; //坤坤材质
+export { textureGeometries } from './textureGeometries'; //play
+export { waveFunctionCollapse } from "./waveFunctionCollapse"; //波函数坍塌
 
