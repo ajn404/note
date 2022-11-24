@@ -918,11 +918,104 @@ panic:表示程序崩溃退出<br/>
 ></RustPlayground>
 </ClientOnly>
 
+精度控制
+<ClientOnly>
+     <RustPlayground 
+     editable='true'
+     async
+     code='fn main() {
+    // 断言0.1 + 0.2与0.3相等
+    assert!((0.1_f64+0.2-0.3).abs()<0.00001);
+}'
+></RustPlayground>
+</ClientOnly>
 
+<ClientOnly>
+     <RustPlayground 
+     editable='true'
+     async
+     code='fn main() {
+    let abc: (f32, f32, f32) = (0.1, 0.2, 0.3);
+    let xyz: (f64, f64, f64) = (0.1, 0.2, 0.3);
+    println!("abc (f32)");
+    println!("   0.1 + 0.2: {:x}", (abc.0 + abc.1).to_bits());
+    println!("         0.3: {:x}", (abc.2).to_bits());
+    println!();
+    println!("xyz (f64)");
+    println!("   0.1 + 0.2: {:x}", (xyz.0 + xyz.1).to_bits());
+    println!("         0.3: {:x}", (xyz.2).to_bits());
+    println!();
+    assert!(abc.0 + abc.1 == abc.2);
+    assert!(xyz.0 + xyz.1 == xyz.2);
+}'
+></RustPlayground>
+</ClientOnly>
 
+NaN
+
+<ClientOnly>
+     <RustPlayground 
+     editable='true'
+     async
+     code='fn main() {
+    let x = (-42.0_f32).sqrt();
+    assert_eq!(x, x);}'
+></RustPlayground>
+</ClientOnly>
+
+is_nan
+<ClientOnly>
+     <RustPlayground 
+     editable='true'
+     async
+     code='fn main() {
+    let x = (-42.0_f32).sqrt();
+    if x.is_nan() {
+        println!("未定义的数学行为")
+    }
+}'
+></RustPlayground>
+</ClientOnly>
 
 /*copy
-### 
+
+#### 运算
+综合示例
+<ClientOnly>
+     <RustPlayground 
+     editable='true'
+     async
+     code='fn main() {
+    // 编译器会进行自动推导，给予twenty i32的类型
+    let twenty = 20;
+    // 类型标注
+    let twenty_one: i32 = 21;
+    // 通过类型后缀的方式进行类型标注：22是i32类型
+    let twenty_two = 22i32;
+    // 只有同样类型，才能运算
+    let addition = twenty + twenty_one + twenty_two;
+    println!("{} + {} + {} = {}", twenty, twenty_one, twenty_two, addition);
+    // 对于较长的数字，可以用_进行分割，提升可读性
+    let one_million: i64 = 1_000_000;
+    println!("{}", one_million.pow(2));
+    // 定义一个f32数组，其中42.0会自动被推导为f32类型
+    let forty_twos = [
+      42.0,
+      42f32,
+      42.0_f32,
+    ];
+    // 打印数组中第一个值，并控制小数位为2位
+    println!("{:.2}", forty_twos[0]);
+  }'
+></RustPlayground>
+</ClientOnly>
+
+#### 位运算
+
+<table><thead><tr><th>运算符</th><th>说明</th></tr></thead><tbody><tr><td>&amp; 位与</td><td>相同位置均为1时则为1，否则为0</td></tr><tr><td>| 位或</td><td>相同位置只要有1时则为1，否则为0</td></tr><tr><td>^ 异或</td><td>相同位置不相同则1，相同则为0</td></tr><tr><td>! 位非</td><td>把位中的0和1相互取反，即0置为1，1置为0</td></tr><tr><td>&lt;&lt; 左移</td><td>所有位向左移动指定位数，右位补0</td></tr><tr><td>&gt;&gt; 右移</td><td>所有位向右移动指定位数，带符号移动（正数补0，负数补1</td></tr></tbody></table>
+
+
+### copy demo
 
 <ClientOnly>
      <RustPlayground 

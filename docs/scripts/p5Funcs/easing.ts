@@ -1,16 +1,16 @@
 export const easing = (_: any) => {
     let x = 1;
     let y = 1;
-    let easing = 0.05;
+    let easing = 0.01;
   
     function setup() {
-      _.createCanvas(_.windowWidth, 400);
+      _.createCanvas(_.windowWidth, _.windowHeight);
       _.noStroke();
       _.textSize(20);
     }
   
     function draw() {
-      _.background(189, 233, 189)
+      _.background(255)
       if (window && window["p5DrawLoop"] !== "easing") {
         _.noLoop();
       }
@@ -22,7 +22,8 @@ export const easing = (_: any) => {
       let dy = targetY - y;
       y += dy * easing;
       _.fill(0, 0, 189)
-      _.text('note', x, y, 66, 66);
+      _.ellipse(x,y,66,66)
+      // _.text('note', x, y, 66, 66);
     }
   
     _.setup = setup;

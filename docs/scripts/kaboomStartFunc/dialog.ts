@@ -1,15 +1,15 @@
 // @ts-nocheck
 export const dialog = ()=>{
-    loadSprite("bean", "/note/images/boy.svg")
+    loadSprite("cat", "/note/images/boy.svg")
     loadSprite("mark", "/note/images/girl.svg")
     const dialogs = [
-        ["bean", "hi my butterfly"],
+        ["cat", "hi my butterfly"],
         ["mark", "i love u"],
-        ["bean", "you love me? pretty baby"],
-        ["bean", "mark is a stupid"],
-        ["bean", "he did not know how to take care of you..."],
+        ["cat", "you love me? pretty baby"],
+        ["cat", "mark is a stupid"],
+        ["cat", "he did not know how to take care of you..."],
         ["mark", "you don't know me ..."],
-        ["bean", "what! mark???"],
+        ["cat", "what! mark???"],
         ["mark", "oh...hi "],
     ]
     let curDialog = 0
@@ -32,7 +32,7 @@ export const dialog = ()=>{
     ])
     // Character avatar
     const avatar = add([
-        sprite("bean"),
+        sprite("cat"),
         scale(1),
         origin("center"),
         pos(center().sub(-200, 30))

@@ -1,8 +1,8 @@
 
 import { NavbarGroup } from 'vuepress';
-const kaboomUr:string = '/markdown/kaboom/'
+const kaboomUr: string = '/markdown/kaboom/'
 
-export const kaboom:NavbarGroup = {
+export const kaboom: NavbarGroup = {
     text: 'kaboom',
     children: [
         {
@@ -12,8 +12,13 @@ export const kaboom:NavbarGroup = {
         {
             text: 'bird',
             link: `${kaboomUr}bird`
+        },
+        {
+            text: 'Dinosaur',
+            link: `${kaboomUr}Dinosaur`
         }
     ]
 }
-export {dialog} from './dialog'
-export {bird} from './floppyBird'
+export { Dinosaur } from './Dinosaur'
+export { dialog } from './dialog'
+export { bird } from './floppyBird'

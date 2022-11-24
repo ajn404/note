@@ -2,9 +2,9 @@
 
 export const bird = ()=>{
 
-    loadSprite("bean", "/note/images/jiangjun/jiangjun01.png")
+    loadSprite("cat", "/note/images/cat/cat01.svg")
     loadSound("score", "/note/music/link.mp3")
-    loadSound("wooosh", "/note/music/link.mp3")
+    loadSound("wooosh", "/note/music/hover.mp3")
     loadSound("hit", "/note/music/link.mp3")
     
     scene("game", () => {
@@ -19,9 +19,9 @@ export const bird = ()=>{
         gravity(3200)
     
         // a game object consists of a list of components and tags
-        const bean = add([
-            // sprite() means it's drawn with a sprite of name "bean" (defined above in 'loadSprite')
-            sprite("bean"),
+        const cat = add([
+            // sprite() means it's drawn with a sprite of name "cat" (defined above in 'loadSprite')
+            sprite("cat"),
             // give it a position
             pos(width() / 4, 0),
             // give it a collider
@@ -31,8 +31,8 @@ export const bird = ()=>{
         ])
     
         // check for fall death
-        bean.onUpdate(() => {
-            if (bean.pos.y >= height() || bean.pos.y <= CEILING) {
+        cat.onUpdate(() => {
+            if (cat.pos.y >= height() || cat.pos.y <= CEILING) {
                 // switch to "lose" scene
                 go("lose", score)
             }
@@ -40,13 +40,13 @@ export const bird = ()=>{
     
         // jump
         onKeyPress("space", () => {
-            bean.jump(JUMP_FORCE)
+            cat.jump(JUMP_FORCE)
             play("wooosh")
         })
     
         // mobile
         onClick(() => {
-            bean.jump(JUMP_FORCE)
+            cat.jump(JUMP_FORCE)
             play("wooosh")
         })
     
@@ -71,7 +71,7 @@ export const bird = ()=>{
             add([
                 pos(width(), h1 + PIPE_OPEN),
                 rect(64, h2),
-                color(0, 127, 255),
+                color(20, 127, 255),
                 outline(4),
                 area(),
                 move(LEFT, SPEED),
@@ -84,17 +84,17 @@ export const bird = ()=>{
     
         }
     
-        // callback when bean onCollide with objects with tag "pipe"
-        bean.onCollide("pipe", () => {
+        // callback when cat onCollide with objects with tag "pipe"
+        cat.onCollide("pipe", () => {
             go("lose", score)
             play("hit")
-            addKaboom(bean.pos)
+            addKaboom(cat.pos)
         })
     
         // per frame event for all objects with tag 'pipe'
         onUpdate("pipe", (p) => {
-            // check if bean passed the pipe
-            if (p.pos.x + p.width <= bean.pos.x && p.passed === false) {
+            // check if cat passed the pipe
+            if (p.pos.x + p.width <= cat.pos.x && p.passed === false) {
                 addScore()
                 p.passed = true
             }
@@ -126,7 +126,7 @@ export const bird = ()=>{
     scene("lose", (score) => {
     
         add([
-            sprite("bean"),
+            sprite("cat"),
             pos(width() / 2, height() / 2 - 108),
             scale(3),
             origin("center"),

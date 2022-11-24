@@ -1,8 +1,8 @@
 export const coordinate = (_p5: any) => {
     let _ = _p5;
     _.setup = () => {
-      _.createCanvas(500, 200, _.WEBGL)
-    //   _.normalMaterial()
+      _.createCanvas(_.windowWidth, _.windowHeight, _.WEBGL)
+      _.normalMaterial()
     }
     _.draw = () => {
       _.background(255)
