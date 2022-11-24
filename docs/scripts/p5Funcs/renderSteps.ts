@@ -1,5 +1,4 @@
 export const renderSteps = (_: any) => {
-    let p5DrawLoop = window["p5DrawLoop"];
     _.setup = () => {
       _.createCanvas(_.windowWidth, _.windowHeight, _.WEBGL)
       _.normalMaterial()

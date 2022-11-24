@@ -1,5 +1,4 @@
 export const pointHandle = (_: any) => {
-    let p5DrawLoop = window["p5DrawLoop"];
     _.setup = () => {
       _.createCanvas(500, 200, _.WEBGL)
     }

@@ -1,5 +1,4 @@
 export const directionalLight = (_: any) => {
-    let p5DrawLoop = window["p5DrawLoop"];
     _.setup = () => {
       _.createCanvas(500, 500, _.WEBGL)
     }

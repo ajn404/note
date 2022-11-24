@@ -1,5 +1,4 @@
 export const ambientLight = (_: any) => {
-    let p5DrawLoop = window["p5DrawLoop"];
     let angle;
     let lightColor: any, materialColor: any;
     _.setup = () => {
