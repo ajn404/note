@@ -1014,6 +1014,78 @@ is_nan
 
 <table><thead><tr><th>运算符</th><th>说明</th></tr></thead><tbody><tr><td>&amp; 位与</td><td>相同位置均为1时则为1，否则为0</td></tr><tr><td>| 位或</td><td>相同位置只要有1时则为1，否则为0</td></tr><tr><td>^ 异或</td><td>相同位置不相同则1，相同则为0</td></tr><tr><td>! 位非</td><td>把位中的0和1相互取反，即0置为1，1置为0</td></tr><tr><td>&lt;&lt; 左移</td><td>所有位向左移动指定位数，右位补0</td></tr><tr><td>&gt;&gt; 右移</td><td>所有位向右移动指定位数，带符号移动（正数补0，负数补1</td></tr></tbody></table>
 
+<ClientOnly>
+     <RustPlayground 
+     async
+     code='fn main() {
+  //i为有符号
+  // 二进制为00000010
+  let a:i32 = 2;
+  // 二进制为00000011
+  let b:i32 = 3;
+  println!("(a & b) value is {}", a & b);
+  println!("(a | b) value is {}", a | b);
+  println!("(a ^ b) value is {}", a ^ b);
+  println!("(!b) value is {} ", !b);
+  println!("(a << b) value is {}", a << b);
+  println!("(a >> b) value is {}", a >> b);
+  let mut a = a;
+  // 注意这些计算符除了!之外都可以加上=进行赋值 (因为!=要用来判断不等于)
+  a <<= b;
+  println!("(a << b) value is {}", a);
+}
+'
+></RustPlayground>
+</ClientOnly>
+
+#### 序列
+
+:::tip
+1..5不包函5<br/>
+1..=5包函5
+:::
+
+<ClientOnly>
+     <RustPlayground 
+     editable='true'
+     async
+     code='
+fn main(){
+  for i in 1..5{
+    println!("{}",i);
+  } 
+  for i in 10..=20{
+    println!("{}",i);
+  }   
+}'
+></RustPlayground>
+</ClientOnly>
+
+
+#### 有理数和复数
+
+<ClientOnly>
+     <RustPlayground 
+     editable='true'
+     async
+     code='
+use num::complex::Complex;
+fn main() {
+   let a = Complex { re: 2.1, im: -1.2 };
+   let b = Complex::new(11.1, 22.2);
+   let result = a + b;
+   println!("{} + {}i", result.re, result.im)
+ }
+'
+></RustPlayground>
+</ClientOnly>
+
+
+
+### [习题](https://zh.practice.rs/basic-types/numbers.html) [答案](https://github.com/sunface/rust-by-practice/blob/master/solutions/basic-types/numbers.md)
+
+
+
 
 ### copy demo
 
