@@ -1,16 +1,18 @@
 import { NavbarConfig, NavbarGroup } from 'vuepress';
 import { allMethods } from "../../scripts/p5Funcs/p5FantasticMethod";
+import { kaboom } from "../../scripts/kaboomStartFunc/index"
 
 const practiceBaseUrl: string = '/markdown/practice/'
 const glslBaseUrl: string = '/markdown/example/'
 const noteBaseUrl: string = '/markdown/notes/'
 const fantasticUrl: string = '/markdown/fantastic/'
+
 const p5SinglePageUrl: string = '/markdown/fantasticSinglePage/'
 const p5SinglePageList: any[] = [];
 allMethods.forEach(item => {
     if (item.children) {
         item.children.forEach(child => {
-            if(!child.notSinglePage){
+            if (!child.notSinglePage) {
                 p5SinglePageList.push({
                     text: child.label,
                     value: child.value
@@ -26,7 +28,7 @@ for (let i = 0; i < p5SinglePageList.length; i++) {
         link: `${p5SinglePageUrl}${p5SinglePageList[i].value}`
     })
 }
-const examples: NavbarGroup[] = [
+const examples:   NavbarGroup[] = [
     {
         text: 'glsl',
         children: [
@@ -112,27 +114,27 @@ const examples: NavbarGroup[] = [
                     }
                 ]
             },
-           
+
         ]
     },
 
 ]
-const note: NavbarGroup[] = [
+const note:       NavbarGroup[] = [
     {
         text: 'note',
         children: [
             {
                 text: 'js',
                 link: `${noteBaseUrl}js`
-            }, 
+            },
             {
                 text: 'ts',
                 link: `${noteBaseUrl}ts`
-            }, 
+            },
             {
                 text: 'glsl',
                 link: `${noteBaseUrl}glsl`
-            }, 
+            },
             {
                 text: 'shell',
                 link: `${noteBaseUrl}shell`
@@ -203,7 +205,7 @@ const beforeBlog: NavbarGroup[] = [
         ]
     }
 ]
-const fantastic: NavbarGroup[] = [
+const fantastic:  NavbarGroup[] = [
     {
         text: 'fantastic',
         children: [
@@ -217,7 +219,23 @@ const fantastic: NavbarGroup[] = [
                     ...p5SingleNavPageList
                 ]
             },
-
+            kaboom
+        ]
+    }
+]
+const threeDemo:  NavbarGroup[] = [
+    {
+        text: 'three&glsl',
+        children: [
+            {
+                text: 'three',
+                children: [
+                    {
+                        text: 'threeLoadModel',
+                        link: `${fantasticUrl}threeLoadModel`
+                    }
+                ]
+            },
             {
                 text: 'vtk',
                 children: [
@@ -231,34 +249,16 @@ const fantastic: NavbarGroup[] = [
                     }
                 ]
             },
-
-            {
-                text: 'kaboom',
-                children: [
-                    {
-                        text: 'dialog',
-                        link: `${fantasticUrl}dialog`
-                    }
-                ]
-            },
-
-            {
-                text: 'three',
-                children: [
-                    {
-                        text: 'threeLoadModel',
-                        link: `${fantasticUrl}threeLoadModel`
-                    }
-                ]
-            },
             ...examples[0].children
         ]
     }
 ]
-const navbar: NavbarConfig =
+const navbar:     NavbarConfig =
     [
         ...note,
-        ...fantastic
+        ...fantastic,
+        ...threeDemo,
+        ...beforeBlog
     ]
 export default navbar
 

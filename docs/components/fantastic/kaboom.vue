@@ -1,6 +1,6 @@
 <template>
     <div class="kaboom-box">
-        <canvas ref="kaboomCanvas" height="250"></canvas>
+        <canvas ref="kaboomCanvas" :height="props.height??250"></canvas>
     </div>
 </template>
 
@@ -9,7 +9,8 @@ import kaboom from "kaboom";
 import { ref, nextTick  } from 'vue';
 import * as kaboomFunc from '@scripts/kaboomStartFunc/index'
 const props = defineProps({
-    func:String
+    func:String,
+    height:Number
 })
 
 const kaboomCanvas = ref(null);

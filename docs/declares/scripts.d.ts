@@ -1,3 +1,3 @@
 declare module '@scripts/*';
 declare module '@scripts/practice.setup.ts';
-declare module '@scripts/kaboomStartFunc/index.ts';
+declare module '@scripts/kaboomStartFunc/index';
