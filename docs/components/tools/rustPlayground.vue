@@ -20,20 +20,21 @@ let loadInstance;
 const props = defineProps({
     code: String,
     async: Boolean,
-    editable:String
+    editable: String
 })
 const stderr = ref("");
 const stdout = ref("");
 
 document.onkeydown = e => {
-    if (e?.keyCode === 27) {
+    if (stderr.value && e?.keyCode === 27) {
         buttonText.value = '全屏'
     }
-
 }
+const code = ref(props.code);
 
 const getRes = () => {
-    if (!stderr.value) {
+    const codeText = props.editable ? code.value : props.code;
+    if (!stderr.value || props.editable) {
         loadInstance = loading();
         fetch("https://play.rust-lang.org/execute", {
             method: "post",
@@ -43,7 +44,7 @@ const getRes = () => {
                 edition: "2021",
                 crateType: "bin",
                 tests: false,
-                code: props.code || "",
+                code: codeText,
                 backtrace: false
             }),
             headers: {
@@ -59,6 +60,9 @@ const getRes = () => {
 
             // })
             buttonText.value = '全屏'
+            if (props.editable) {
+                buttonText.value = "运行"
+            }
             stderr.value = response?.stderr?.replace(/\n/g, '<br/>');
             stdout.value = response?.stdout?.replace(/\n/g, '<br/>');
         })
@@ -77,6 +81,8 @@ const getRes = () => {
         }
 
     }
+
+
 }
 if (!props.async) getRes()
 
@@ -84,8 +90,11 @@ if (!props.async) getRes()
 
 <template>
     <div class="playground" ref="playground">
-        <codemirror ref="editor" v-model="props.code" placeholder="rust" class="editor" :autofocus="true"
-            :indent-with-tab="true" :tab-size="2" :extensions="extensions" :disabled="(props.editable==='true'?false:true)" />
+        <codemirror ref="editor" v-if="!props.editable" v-model="props.code" placeholder="rust" class="editor"
+            :autofocus="false" :indent-with-tab="true" :tab-size="2" :extensions="extensions" :disabled="true" />
+
+        <codemirror ref="editor" v-if="props.editable" v-model="code" placeholder="rust" class="editor"
+            :autofocus="false" :indent-with-tab="true" :tab-size="2" :extensions="extensions" :disabled="false" />
         <el-button class="button" v-if="props.async" @click="getRes">
             <objectification :text="buttonText"></objectification>
         </el-button>
@@ -124,7 +133,7 @@ if (!props.async) getRes()
 .playground {
     background-color: var(--c-bg);
 
-    &:fullscreen{
+    &:fullscreen {
         overflow-y: scroll;
     }
 }
