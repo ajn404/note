@@ -1245,17 +1245,74 @@ fn main() {
 ></RustPlayground>
 </ClientOnly>
 
-9.range
+9.range🌟🌟 两个目标: 1. 修改 assert! 让它工作 2. 让 println! 输出: 97 - 122
 
 <ClientOnly>
      <RustPlayground 
      editable='true'
      async
-     code=''
+     code='fn main() {
+    let mut sum = 0;
+    for i in -3..2 {
+        sum += i
+    }
+    assert!(sum == -5);
+    for c in 97..=122 {
+        println!("{}",c);
+    }
+}
+'
 ></RustPlayground>
 </ClientOnly>
 
+10 
+<ClientOnly>
+     <RustPlayground 
+     editable='true'
+     async
+     code='
+// 填空
+use std::ops::{Range, RangeInclusive};
+fn main() {
+    assert_eq!((1..5), Range{ start: 1, end: 5 });
+    assert_eq!((1..=5), RangeInclusive::new(1, 5));
+}
+'
+></RustPlayground>
+</ClientOnly>
 
+11.
+
+<ClientOnly>
+     <RustPlayground 
+     editable='true'
+     async
+     code='
+// 填空，并解决错误
+fn main() {
+    // 整数加法
+    assert!(1u32 + 2 == 3);
+    // 整数减法
+    assert!(1i32 - 2 == -1);
+    assert!(1i8 - 2 == -1);
+    assert!(3 * 50 == 150);
+    assert!(9.6 / 3.2 != 3.0); // error ! 修改它让代码工作
+    println!("{}",9.6/3.2);
+    assert!(24 % 5 == 4);    
+    // 逻辑与或非操作
+    assert!(true && false == false);
+    assert!(true || false ==  true);
+    assert!(!true ==false);
+    // 位操作
+    println!("0011 AND 0101 is {:04b}", 0b0011u32 & 0b0101);
+    println!("0011 OR 0101 is {:04b}", 0b0011u32 | 0b0101);
+    println!("0011 XOR 0101 is {:04b}", 0b0011u32 ^ 0b0101);
+    println!("1 << 5 is {}", 1u32 << 5);
+    println!("0x80 >> 2 is 0x{:x}", 0x80u32 >> 2);
+}
+'
+></RustPlayground>
+</ClientOnly>
 
 ### copy demo
 
