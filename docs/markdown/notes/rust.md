@@ -1084,6 +1084,176 @@ fn main() {
 
 ### [习题](https://zh.practice.rs/basic-types/numbers.html) [答案](https://github.com/sunface/rust-by-practice/blob/master/solutions/basic-types/numbers.md)
 
+1.整数
+
+<ClientOnly>
+     <RustPlayground 
+     editable='true'
+     async
+     code='
+// 移除某个部分让代码工作
+fn main() {
+    let x: i32 = 5;
+    let mut y: u32 = 5;
+    y = x;
+    let z = 10; // 这里 z 的类型是? 
+}
+'
+></RustPlayground>
+</ClientOnly>
+
+my own solution
+
+<ClientOnly>
+     <RustPlayground 
+     editable='true'
+     async
+     code='// 移除某个部分让代码工作
+fn main() {
+    let x: i32 = 5;
+    let mut y= 5;
+    y = x;
+    let z = 10; // 这里 z 的类型是? 
+}'
+></RustPlayground>
+</ClientOnly>
+
+
+2.✨
+
+<ClientOnly>
+     <RustPlayground 
+     editable='true'
+     async
+     code='// 填空
+fn main() {
+    let v: u16 = 38_u8 as u16;
+    println!("{}",v)
+}'
+></RustPlayground>
+</ClientOnly>
+
+3.自动推导类型
+
+<ClientOnly>
+     <RustPlayground 
+     editable='true'
+     async
+     code='
+//  修改 `assert_eq!` 让代码工作
+fn main() {
+    let x = 5;
+    assert_eq!("i32".to_string(), type_of(&x));
+}
+// 以下函数可以获取传入参数的类型，并返回类型的字符串形式，例如  "i8", "u8", "i32", "u32"
+fn type_of<T>(_: &T) -> String {
+    format!("{}", std::any::type_name::<T>())
+}'
+></RustPlayground>
+</ClientOnly>
+
+
+4.i有符号 u无符号
+
+<ClientOnly>
+     <RustPlayground 
+     editable='true'
+     async
+     code='fn main() {
+    assert_eq!(i8::MAX, 127); 
+    assert_eq!(u8::MAX, 255); 
+}
+'
+></RustPlayground>
+</ClientOnly>
+
+
+5. overflow
+<ClientOnly>
+     <RustPlayground 
+     editable='true'
+     async
+     code='
+// 解决代码中的错误和 `panic`
+fn main() {
+    let v1 = 251_u16 + 8;
+    let v2 = i16::checked_add(251, 8).unwrap();
+    println!("{},{}",v1,v2);
+ }'
+></RustPlayground>
+</ClientOnly>
+
+
+6.
+<ClientOnly>
+     <RustPlayground 
+     editable='true'
+     async
+     code='
+// 修改 `assert!` 让代码工作
+fn main() {
+    let v = 1_024 + 0xff + 0o77 + 0b1111_1111;
+    println!("{}",0xff);//255
+    //63
+    // 255
+    assert!(v == 1597);
+}
+'
+></RustPlayground>
+</ClientOnly>
+
+
+7.浮点数
+
+<ClientOnly>
+     <RustPlayground 
+     editable='true'
+     async
+     code='
+// 将 ? 替换成你的答案
+fn main() {
+    let x = 1_000.000_1; // f64
+    let y: f32 = 0.12; // f32
+    let z = 0.01_f64; // f64
+}
+'
+></RustPlayground>
+</ClientOnly>
+
+8.
+<ClientOnly>
+     <RustPlayground 
+     editable='true'
+     async
+     code='
+fn main() {
+    assert!(0.1+0.2>0.3);
+}
+'
+></RustPlayground>
+</ClientOnly>
+
+<ClientOnly>
+     <RustPlayground 
+     editable='true'
+     async
+     code='
+fn main() {
+    assert!((0.1_f64+0.2-0.3).abs()<0.00001);
+}
+'
+></RustPlayground>
+</ClientOnly>
+
+9.range
+
+<ClientOnly>
+     <RustPlayground 
+     editable='true'
+     async
+     code=''
+></RustPlayground>
+</ClientOnly>
 
 
 
@@ -1097,15 +1267,12 @@ fn main() {
 ></RustPlayground>
 </ClientOnly>
 
-*/
-
 ## net about 
-
 [cn](https://www.rust-lang.org/zh-CN)<br/>
 [example](https://doc.rust-lang.org/rust-by-example/hello.html)<br/>
 [book](https://doc.rust-lang.org/book/title-page.html)<br/>
 [api](https://docs.rs/)<br/>
-[crates ](https://crates.io/)<br/>
+[crates(rust lib)](https://crates.io/)<br/>
 
 ## 实践项目
 [tauri](https://tauri.app/zh/)<br/>

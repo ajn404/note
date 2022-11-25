@@ -14,6 +14,7 @@ export default defineComponent({
   components: {
     Codemirror
   },
+  name:' codemirror',
   props: {
     codes: String
   },
@@ -56,7 +57,7 @@ export default defineComponent({
       codeRes.value = "";
       try {
         if (!res.value) {
-          codeRes.value = "不要偷懒哦,帅哥! "
+          codeRes.value = "不要偷懒哦! "
           return;
         }
         //codeRes.value = eval(res.value)
@@ -101,7 +102,7 @@ export default defineComponent({
 
 
 <template>
-  <div class="codemirror-tool-box">
+  <div class="codemirror-tool-box" ref="box">
     <h2>playground</h2>
     <codemirror v-model="code" placeholder="在这里写代码" :style="{ padding: '10px 0' ,margin:'20px 0 0',maxHeight:'200px'}"
       :autofocus="true" :indent-with-tab="true" :tab-size="2" :extensions="extensions" @ready="handleReady"
@@ -109,9 +110,9 @@ export default defineComponent({
     <div class="run">
       <button class="btn" @click="run">运行</button>
       <button class="btn" @click="clear">清空</button>
-      <button class="btn" @click="refresh">刷新</button>
+      <!-- <button class="btn" @click="refresh">刷新</button> -->
       <div class="result">
-        <div contenteditable="true" class="run-result" v-html="codeRes">
+        <div class="run-result" v-html="codeRes" v-show="codeRes">
         </div>
       </div>
     </div>
@@ -123,9 +124,7 @@ export default defineComponent({
 .codemirror-tool-box {
   display: flex;
   flex-direction: column;
-}
-
-.run {
+  .run {
   flex-grow: 1;
   overflow-y: scroll;
 
@@ -162,9 +161,14 @@ export default defineComponent({
     .run-result {
       padding: 5px;
       background-color: #282c34;
+      max-height: 10em;
+      overflow: scroll;
       background-image: linear-gradient(270deg, #999999, #001100);
       color: #98c379;
     }
   }
 }
+}
+
+
 </style>

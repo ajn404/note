@@ -1,18 +1,20 @@
-<template>
-    <div>
-        <div class="container">
-            <span class="txt anim-text-flow">
-                <span  v-for="item,index in props.text" :key="index">{{item}}</span>
-            </span>
-        </div>
-    </div>
-</template>
+
 
 <script lang="ts" setup>
 const props = defineProps({text:{
   type:String,
 }});
 </script>
+
+<template>
+  <div>
+      <div class="container">
+          <span class="txt anim-text-flow">
+              <span  v-for="item,index in props.text" :key="index">{{item}}</span>
+          </span>
+      </div>
+  </div>
+</template>
 
 <style lang="scss" scoped>
 /*

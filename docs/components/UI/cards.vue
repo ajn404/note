@@ -1,3 +1,36 @@
+<script lang="js" >
+import Card from './card.vue';
+import { useRouter } from 'vue-router'
+
+export default {
+    name: "NoteCards",
+    data() {
+        return {
+            showContainer:true
+        };
+    },
+    mounted() {
+    },
+
+    setup() {
+        const router = useRouter();
+        return {
+            router: router
+        }
+    },
+    methods: {
+        goUrl(url) {
+            this.showContainer = false;
+            this.router.push(url)
+        }
+    },
+    unmounted(){
+        this.showContainer = false;
+    },
+    components: { Card }
+};
+</script>
+
 <template>
     <div class="cards">
         <div class="container" v-if="showContainer">
@@ -37,7 +70,7 @@
             <div class="card" @click="goUrl('markdown/notes/ts')">
                 <card data-image="/note/images/hutao/hutao4.jpg">
                     <template v-slot:header>
-                        <h1>ts</h1>
+                        <h1>typescript</h1>
                     </template>
                     <template v-slot:content>
                         <p>typescript基础与技巧</p>
@@ -67,7 +100,7 @@
                 </card>
             </div>
 
-            <div class="card" @click="goUrl('markdown/fantastic/rust')">
+            <div class="card" @click="goUrl('markdown/notes/rust')">
                 <card data-image="/note/images/hutao/hutao7.png">
                     <template v-slot:header>
                         <h1>rust</h1>
@@ -84,38 +117,7 @@
     </div>
 </template>
 
-<script lang="ts">
-import Card from './card.vue';
-import { useRouter } from 'vue-router'
 
-export default {
-    name: "NoteCards",
-    data() {
-        return {
-            showContainer:true
-        };
-    },
-    mounted() {
-    },
-
-    setup() {
-        const router = useRouter();
-        return {
-            router: router
-        }
-    },
-    methods: {
-        goUrl(url) {
-            this.showContainer = false;
-            this.router.push(url)
-        }
-    },
-    unmounted(){
-        this.showContainer = false;
-    },
-    components: { Card }
-};
-</script>
 
 <style lang="scss" scoped>
 .cards {
