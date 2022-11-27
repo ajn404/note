@@ -1,11 +1,14 @@
 
 
 <script lang="js">
-
 export default ({
     mounted() {
         this.width = this.$refs.card.offsetWidth;
         this.height = this.$refs.card.offsetHeight;
+        this.$nextTick(()=>{
+            this.preloadUrl = this.dataImage
+            this.$forceUpdate()
+        })
     },
     props: ['dataImage'],
     data: () => ({
@@ -13,7 +16,10 @@ export default ({
         height: 0,
         mouseX: 0,
         mouseY: 0,
-        mouseLeaveDelay: null
+        mouseLeaveDelay: null,
+        setImageDelay:null,
+        backUrl:'',
+        preloadUrl:''
     }),
     computed: {
         mousePX() {
@@ -38,7 +44,7 @@ export default ({
         },
         cardBgImage() {
             return {
-                backgroundImage: `url(${this.dataImage})`
+                backgroundImage: `url(${this.backUrl})`
             }
         }
     },
@@ -49,12 +55,17 @@ export default ({
         },
         handleMouseEnter() {
             clearTimeout(this.mouseLeaveDelay);
+            this.setImageDelay = setTimeout(()=>{
+                this.backUrl = this.dataImage
+            },100)
         },
         handleMouseLeave() {
+            clearTimeout(this.setImageDelay)
             this.mouseLeaveDelay = setTimeout(() => {
                 this.mouseX = 0;
                 this.mouseY = 0;
-            }, 1000);
+                this.backUrl = ""
+            }, 5000);
         }
     }
 })
@@ -74,13 +85,12 @@ export default ({
             </div>
         </div>
     </div>
+    <img :src="preloadUrl"  v-show="flase">
 </template>
 
 <style lang="scss" scoped>
 $hoverEasing: cubic-bezier(0.23, 1, 0.32, 1);
 $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
-
-
 
 .card-wrap {
     margin: 10px;
@@ -110,9 +120,7 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
         }
 
         .card-bg {
-            transition:
-                0.6s $hoverEasing,
-                opacity 5s $hoverEasing;
+            transition:0.6s $hoverEasing,opacity 5s $hoverEasing;
             opacity: 0.8;
         }
 
@@ -156,9 +164,11 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    background-color: rgb(random(235),random(235),random(235));
     transition:
-        1s $returnEasing,
-        opacity 5s 1s $returnEasing;
+        all 1s $returnEasing,
+        opacity 5s 1s $returnEasing,
+        background-image .1s .1s $returnEasing;
     pointer-events: none;
 }
 
