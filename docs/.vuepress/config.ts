@@ -37,8 +37,10 @@ export default defineUserConfig({
     theme: localTheme({
         navbar: navbar,
         sidebar: false,
-        logo: '',
-        logoDark: ''
+        colorMode:'dark',
+        repo:'https://github.com/ajn404/note',
+        docsRepo:'https://github.com/ajn404/note'
+
     })
 
 });

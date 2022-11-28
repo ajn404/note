@@ -1,5 +1,6 @@
 ---
 title: ecma翻译
+sidebar: true
 ---
 <style>
 .tip-aqua{
@@ -815,7 +816,8 @@ for(let item in obj){
 | %Array% | Array | The Array Constructor |
 | [%ArrayBuffer%](#arraybuffer) | ArrayBuffer | The ArrayBuffer Constructor |
 | [%ArrayIteratorPrototype%] | | The prototype of Array Iterator objects |
-
+| [%DataView%]| DataView | The Dataview Constructor |
+| [%Atomatic%]| Atomatic | The Atomatic object |
 </div>
 
 ###### AggregateError
@@ -869,8 +871,106 @@ for (const letter of arr) {
 }
 ```
 
+##### DataView
+
+DataView ( buffer [ , byteOffset [ , byteLength ] ] )
+```js
+// Creating an ArrayBuffer with a size in bytes 
+var buffer = new ArrayBuffer(16);
+// ArrayBuffer()是一个普通的JavaScript构造函数,可用于在内存中分配特定数量的字节空间
+// Creating views 
+var view1 = new DataView(buffer);
+//creating view from byte 0 for the next 4 bytes 
+var view2 = new DataView(buffer, 0, 4);
+//creating view from byte 12 for the next 2 bytes 
+var view3 = new DataView(buffer, 12, 2);
+// Putting 1 in slot 0 
+view1.setInt8(0, 1);
+// Putting 2 in slot 12 
+view1.setInt8(12, 2);
+//printing the views 
+document.write(view2.getInt8(0) + '<br>');
+document.write(view3.getInt8(0) + '<br>'); 
+```
+##### Atomatic
+
+提供静态方法对SharedArrayBuffer和ArrayBuffer进行原子操作<br/>
+原子操作：多个共享内存的线程能够同时读写同一位置上的数据。原子操作会确保正在读或写的数据的值是符合预期的，即下一个原子操作一定会在上一个原子操作结束后才会开始，其操作过程不会中断。<br/>
+[关于SharedArrayBuffer](https://www.modb.pro/db/417759)<br/>
+```js
+const sab = new ArrayBuffer(1024);
+const ta = new Uint8Array(sab);
+ta[0];// 0
+ta[0] = 5;// 5
+Atomics.add(ta, 0, 12);// 5
+Atomics.load(ta, 0);// 17 ✅// 12 ❌
+Atomics.and(ta, 0, 1);// 17
+Atomics.load(ta, 0);// 1
+Atomics.compareExchange(ta, 0, 5, 12);
+Atomics.load(ta, 0); // 12
+Atomics.exchange(ta, 0, 12);
+Atomics.load(ta, 0); // 12
+Atomics.isLockFree(1); // true
+Atomics.isLockFree(2); // true
+Atomics.isLockFree(3); // false
+Atomics.isLockFree(4); // true
+Atomics.or(ta, 0, 1);
+Atomics.load(ta, 0);  // 5
+Atomics.store(ta, 0, 12); // 12
+Atomics.sub(ta, 0, 2);
+Atomics.load(ta, 0); // 3
+Atomics.xor(ta, 0, 1);
+Atomics.load(ta, 0); // 4
+```
+
+### 6.2EcmaScripts Specification Types
+ECMA规范类型用来描述表达式求值过程的中间结果，是一种内部实现，不对程序员直接开放。
+#### 6.2.1 The List and Record Specification Types
+#### 6.2.2 The Set and Relation Specification Types
+
+[连等赋值问题](https://segmentfault.com/a/1190000004224719)
 
 
 
+:::tip
+Assignment to an undeclared identifier or otherwise unresolvable reference does not create a property in
+the global object. When a simple assignment occurs within strict mode code, its LeftHandSideExpression
+must not evaluate to an unresolvable Reference. If it does a ReferenceError exception is thrown
+(6.2.4.6). The LeftHandSideExpression also may not be a reference to a data property with the attribute
+value { [[Writable]]: false }, to an accessor property with the attribute value { [[Set]]: undefined }, nor to a
+non-existent property of an object whose [[Extensible]] internal slot is false. In these cases a TypeError
+exception is thrown (13.15).
+:::
 
 
+```js
+var a = {n: 1};
+var b = a;
+a.x = a = {n: 2};
+console.log(a.x); // --> undefined
+console.log(b.x); // --> {n: 2}
+console.log(a.n);//2
+console.log(b.n);//1
+```
+⬇️
+```js
+[N1]=>[N:1];
+[N2]=>[N:2];
+[N1].x=(a=[N2]);
+```
+
+#### 6.2.3 The Completion Record Specification Type
+[语句执行涉及的基础类型:Completion](https://blog.csdn.net/liuhua_2323/article/details/102893840)
+##### 6.2.3.1 Await
+##### 6.2.3.2 NormalCompletion
+##### 6.2.3.3 ThrowCompletion
+##### 6,2.3.4 UpdateEmpty
+
+
+
+#### 6.2.4 The Reference Record Specification Type
+......
+
+#### 6.2.5 The Property Descriptor Specification Type
+#### 6.2.6  The Environment Record Specification Type
+#### 6.2.7  The Abstract Closure Specification Type

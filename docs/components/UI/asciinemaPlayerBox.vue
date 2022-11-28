@@ -11,7 +11,8 @@ const AsciinemaPlayer = window['AsciinemaPlayer'];
 
 const props =defineProps({
     file:String,
-    loop:Boolean
+    loop:Boolean,
+    speed:Number
 })
 
 
@@ -19,7 +20,8 @@ nextTick(() => {
     AsciinemaPlayer.create(`/note/data/cast/${props.file||'ncu'}.cast`, player.value,
         {
             loop: props.loop??false,
-            theme: theme
+            theme: theme,
+            speed:props.speed??1,
         });
 });
 </script>
@@ -39,5 +41,4 @@ nextTick(() => {
     }
 }
 }
-
 </style>
