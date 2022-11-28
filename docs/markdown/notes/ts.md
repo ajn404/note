@@ -64,6 +64,7 @@ Found 1 error in ts04.ts:7
 
 
 ::: tip 使用tsc ts04 -t es5
+实现private使用了weakMap
 :::
 
   编译后
@@ -86,3 +87,15 @@ Found 1 error in ts04.ts:7
 @[code](../../codeReference/typescript/ts07.ts)
 编译后
 @[code](../../codeReference/typescript/ts07.js)
+
+
+### as const 
+
+@[code](../../codeReference/typescript/ts08.ts)
+上述运行时不会报错，但下面这种会
+@[code](../../codeReference/typescript/ts09.ts)
+as const用于数组
+@[code](../../codeReference/typescript/ts08.ts)
+
+use const asserts in enum-style obj
+
