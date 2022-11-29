@@ -12,7 +12,6 @@
     "shader",
     "vuepress"
   ],
-  "author": "ajn404",
   "license": "MIT",
   "devDependencies": {
     "@vuepress/bundler-vite": "2.0.0-beta.49",
@@ -32,5 +31,10 @@
     "three": "^0.146.0",
     "unplugin-vue-components": "^0.22.9",
     "vue-codemirror": "^6.1.1"
+  },
+  "author": {
+    "name": "ajn404",
+    "email": "nhy1423238345@163.com",
+    "url": "https://ajn404.gitee.io/note/"
   }
 }

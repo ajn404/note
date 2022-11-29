@@ -53,7 +53,8 @@ export const allMethods = [
       { label: "3d box 旋转", value: "boxRef1", notSinglePage: true },
       { value: "gridOutput", label: "输出为grid" },
       { value: 'easing', label: 'easing' },
-      { value: 'delaySound', label: 'p5 sound delay', sound: true }
+      { value: 'delaySound', label: 'p5 sound delay', sound: true },
+      { value: 'morph', label: 'morph'},
     ],
   },
   {

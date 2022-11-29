@@ -11,10 +11,25 @@ for (let p5MainFuncItem in p5MainFunc) {
   funcs[`${p5MainFuncItem}`] = p5MainFunc[`${p5MainFuncItem}`];
 }
 const singlePage = ref(props.type && funcs[props.type]);
+
+
+
 const selectMethhod = ref([]);
 let defaultMethod = props.type || "defaultFunc";
+
+if (props.type && props.type === 'random') {
+  let namArr = []
+  for (const key in funcs) {
+    if (Object.hasOwnProperty.call(funcs, key)) {
+      namArr.push(key)
+    }
+  } 
+  const randomName = namArr[Math.floor(Math.random() * 100) % namArr.length]
+  defaultMethod = randomName
+  singlePage.value = props.type
+}
 const methods = readonly(allMethods);
-const fullList = ["quickSort", "bubbleSort", "rayCast", "lorenzSystem", "chenShiSystem","waveFunctionCollapse"];
+const fullList = ["quickSort", "bubbleSort", "rayCast", "lorenzSystem", "chenShiSystem", "waveFunctionCollapse"];
 const soundList = ["delaySound"];
 const loading = () => {
   return ElLoading.service({
@@ -89,7 +104,7 @@ const handleChange = (arr) => {
           loadMethod(arr)
         })
       }
-    }else{
+    } else {
       loadMethod(arr)
     }
 
@@ -99,7 +114,7 @@ const handleChange = (arr) => {
 };
 </script>
 <template>
-  <div class="p5-start">
+  <div :class="['p5-start',props.type==='random'?'random-p5':'']">
     <el-cascader-panel v-model="selectMethhod" :options="methods" @change="handleChange" v-if="!singlePage"
       class="cascader" size="large">
       <template #default="{ node, data }">

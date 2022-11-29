@@ -1,6 +1,3 @@
----
----
-
 <ClientOnly>
 <home></home>
 </ClientOnly>

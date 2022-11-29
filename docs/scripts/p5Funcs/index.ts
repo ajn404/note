@@ -33,4 +33,5 @@ export { stepFeetIIIusion } from './stepFeetIIIusion'; // 视错觉
 export { textureDemo } from './textureDemo'; //坤坤材质
 export { textureGeometries } from './textureGeometries'; //play
 export { waveFunctionCollapse } from "./waveFunctionCollapse"; //波函数坍塌
+export {morph} from './morph'; //变形
 

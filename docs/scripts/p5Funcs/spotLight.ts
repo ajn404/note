@@ -8,7 +8,7 @@ export const spotLight = (_: any) => {
   
     let locX, locY;
     _.draw = () => {
-      _.background(0)
+      _.background(255)
   
       locX = _.mouseX - _.width / 2;
       locY = _.mouseY - _.height / 2

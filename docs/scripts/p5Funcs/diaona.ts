@@ -1,6 +1,6 @@
 export const diaona = (_: any) => {
     _.setup = () => {
-        _.createCanvas(_.windowWidth, _.windowHeight, _.WEBGL)
+        _.createCanvas(_.windowWidth-10, _.windowHeight, _.WEBGL)
         _.normalMaterial()
     }
 
@@ -9,13 +9,13 @@ export const diaona = (_: any) => {
         diaona = _.loadModel('/note/model/diaona.obj', true)
     }
     _.draw = () => {
-        _.background(150)
-        _.applyMatrix(4, 0, 0, 4, 0, 0);
+        _.background(255)
+        _.applyMatrix(3, 0, 0, 3, 0, 0);
 
         // _.orbitControl()
         _.rotateZ(_.PI)
 
-        _.rotateY(_.frameCount * _.PI * 0.01)
+        _.rotateY(_.frameCount * _.PI * 0.005)
         _.model(diaona)
         if (window && window["p5DrawLoop"] !== "diaona") {
             _.redraw()

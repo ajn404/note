@@ -110,6 +110,8 @@ fn first_name(){
 fn last_name(){
     println!("n-graymoon");
 }'></RustPlayground>
+    <p5 type="random"></p5>
+
     <!-- <objectification class="pc-views" text="music player"></objectification>
     <music-player class="pc-views" ></music-player> -->
 

@@ -85,7 +85,7 @@ export default ({
             </div>
         </div>
     </div>
-    <img :src="preloadUrl"  v-show="flase">
+    <img :src="preloadUrl"  v-show="false">
 </template>
 
 <style lang="scss" scoped>
