@@ -15,8 +15,7 @@ import squareFs from '@shaders/practice/usingStepDrawSquare/fragment.glsl'
 import squareVs from '@shaders/practice/usingStepDrawSquare/vertex.glsl'
 
 import uTimeFs from '@shaders/practice/usingStepDrawSquare/fragment_utime.glsl'
-
-
+import neoBFs from '@shaders/examples/neoBridge/fr.glsl';
 //@shaders/practice/usingTiling/
 import tilingFs from '@shaders/practice/usingTiling/fragment.glsl'
 import tilingVs from '@shaders/practice/usingTiling/vertex.glsl'
@@ -39,6 +38,12 @@ switch (props.type) {
 
     case 'tiling': {
         fragmentShader = tilingFs;
+        vertexShader = tilingVs;
+        break;
+    }
+
+    case 'neob': {
+        fragmentShader = neoBFs;
         vertexShader = tilingVs;
         break;
     }
@@ -108,7 +113,10 @@ sketch.resize = function () {
     this.render();
 }
 
+
 nextTick(() => {
+    console.log(fragmentShader,typeof fragmentShader);
+    
     const options = {
         container: container.value || document.body
     };

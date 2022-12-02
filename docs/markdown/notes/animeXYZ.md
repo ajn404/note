@@ -6,11 +6,26 @@
 # [docs](https://animxyz.com/docs)
 
 ## demo(click)
-<div class='flex2'>
+<!-- <div class='flex2'>
 <pureColorCard xyz="fade up big" width='50%' ></pureColorCard>
 <pureColorCard xyz="fade duration-5 appear-front-3 small-3 appear-small-0 stagger-2 out-stagger-0" ></pureColorCard>
 <pureColorCard xyz="fade up big" ></pureColorCard>
 <pureColorCard xyz="fade up small" ></pureColorCard>
+</div> -->
+
+<div class='flex2'>
+<pureColorCard xyz="fade duration-5 appear-front-3 small-3 appear-small-0 stagger-2 out-stagger-0" ></pureColorCard>
+<pureColorCard xyz="fade duration-5 appear-front-3 small-3 appear-small-0 stagger-2 out-stagger-0" ></pureColorCard>
+<pureColorCard xyz="fade duration-5 appear-front-3 small-3 appear-small-0 stagger-2 out-stagger-0" ></pureColorCard>
+<pureColorCard xyz="fade duration-5 appear-front-3 small-3 appear-small-0 stagger-2 out-stagger-0" ></pureColorCard>
+<pureColorCard xyz="fade duration-5 appear-front-3 small-3 appear-small-0 stagger-2 out-stagger-0" ></pureColorCard>
+<pureColorCard xyz="fade duration-5 appear-front-3 small-3 appear-small-0 stagger-2 out-stagger-0" ></pureColorCard>
+<pureColorCard xyz="fade duration-5 appear-front-3 small-3 appear-small-0 stagger-2 out-stagger-0" ></pureColorCard>
+<pureColorCard xyz="fade duration-5 appear-front-3 small-3 appear-small-0 stagger-2 out-stagger-0" ></pureColorCard>
+<pureColorCard xyz="fade duration-5 appear-front-3 small-3 appear-small-0 stagger-2 out-stagger-0" ></pureColorCard>
+<pureColorCard xyz="fade duration-5 appear-front-3 small-3 appear-small-0 stagger-2 out-stagger-0" ></pureColorCard>
+<pureColorCard xyz="fade duration-5 appear-front-3 small-3 appear-small-0 stagger-2 out-stagger-0" ></pureColorCard>
+<pureColorCard xyz="fade duration-5 appear-front-3 small-3 appear-small-0 stagger-2 out-stagger-0" ></pureColorCard>
 </div>
 
 ## XyzTransition组件
@@ -26,10 +41,6 @@
 ```
 
 <XyzTransition appear xyz="fade rotate-right ease-out-back">
-    <pureColorCard width='60%'></pureColorCard>
-</XyzTransition>
-
-<XyzTransition appear mode="out-in" xyz="flip-up out-flip-down duration-3 ease-out">
     <pureColorCard width='60%'></pureColorCard>
 </XyzTransition>
 

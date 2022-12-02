@@ -111,6 +111,10 @@ const examples:   NavbarGroup[] = [
                     {
                         text: 'tiling',
                         link: `${practiceBaseUrl}usingTiling`
+                    },
+                    {
+                        text: 'neoB',
+                        link: `${practiceBaseUrl}neoB`
                     }
                 ]
             },
