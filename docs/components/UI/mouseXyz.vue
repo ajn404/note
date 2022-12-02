@@ -20,47 +20,14 @@ import { XyzTransitionGroup } from '@animxyz/vue3'
 export default defineComponent({
 	name: 'XyzModifiersPresets',
 	props: {
+		presets:Array
 	},
 	components: { XyzTransitionGroup },
 	data() {
 		return {
 			hoveredPreset: null,
 			toggled: false,
-			toggleTimeout: null,
-			presets: [
-				{
-					title: "🎓 Drop out",
-					utilities: ["fade", "down-100%", "back-5"]
-				},
-				{
-					title: "🌪 Spinny",
-					utilities: ["fade", "down-5", "rotate-right-50%", "stagger"]
-				},
-				{
-					title: "⤵️ Flippy",
-					utilities: ["fade", "flip-up", "flip-left"]
-				},
-				{
-					title: "💾 Floppy",
-					utilities: ["fade", "front-3", "flip-down-50%", "duration-10", "stagger-5"]
-				},
-				{
-					title: "🎈 Yoink!",
-					utilities: ["stagger-2", "narrow-100%"], "variables": ["translate-y: -350%", "ease: cubic-bezier(0.5,-1.5,0.5,1.5)"]
-				},
-				{
-					title: "📺 Click",
-					utilities: ["duration-6", "short-100%", "wide-25%"]
-				},
-				{
-					title: "🌀 It's gone spiral!",
-					variables: ["rotate-z: 1turn", "origin: center -200%", "duration: 2s", "scale-x: 0", "scale-y: 0"]
-				},
-				{
-					title: "💫 Engage",
-					variables: ["rotate-x: 90deg", "rotate-z: -180deg", "origin: -200%", "stagger: 0.1s", "duration: 0.75s", "perspective: 100px", "translate-z: 100px", "translate-y: 10vh"]
-				}
-			]
+			toggleTimeout: null
 		}
 	},
 	computed: {
@@ -123,6 +90,8 @@ export default defineComponent({
 	padding-right: 0;
 	overflow-x: auto;
 	display: flex;
+	flex-wrap: wrap;
+	row-gap: 20px;
 	list-style: none;
 
 	@include media('<tablet') {

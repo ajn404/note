@@ -1,8 +1,8 @@
 
 
 <script lang="ts" setup name="pureColorCard">
-import { h, ref, nextTick } from 'vue';
-// import { isClient } from "@vueuse/core";
+import { h, ref, nextTick, watchEffect } from 'vue';
+import { isClient } from "@vueuse/core";
 
 const randomColor = `rgba(${Math.random() * 1000 % 255},${Math.random() * 1000 % 255},${Math.random() * 1000 % 255},.5)`
 const props = defineProps({
@@ -13,6 +13,7 @@ const props = defineProps({
 
 const className = { card: true };
 const show = ref(true)
+const classXYZ = ref('xyz-in')
 
 const cardProps = ref({
     class: {
@@ -26,7 +27,10 @@ const cardProps = ref({
     },
     xyz: props.xyz,
     onClick: () => {
-
+        classXYZ.value = 'xyz-out'
+        setTimeout(() => {
+            classXYZ.value = 'xyz-in'
+        })
     }
 })
 
@@ -34,34 +38,37 @@ const pureCard = () => {
     return h('div', cardProps.value)
 }
 
-// const isElementNotInViewport = (el) => {
-//     if (el) {
-//         let rect = el.getBoundingClientRect();
-//         return (
-//             (rect.top) >=(window.innerHeight || document.documentElement.clientHeight) || rect.bottom <= 0
-//         );
-//     }return false
-// }
+const isElementNotInViewport = (el) => {
+    if (el) {
+        let rect = el.getBoundingClientRect();
+        return (
+            (rect.top) >= (window.innerHeight || document.documentElement.clientHeight) || rect.bottom <= 0
+        );
+    } return false
+}
+
+watchEffect(() => {
+    classXYZ.value = show.value ? 'xyz-in' : 'xyz-out'
+})
 
 const card = ref(null);
-// nextTick(() => {
-//     if(isClient){
-//         show.value = !isElementNotInViewport(card.value);
-//         window.addEventListener('scroll',()=>{
-//             if(show.value) return            
-//             show.value = !isElementNotInViewport(card.value);
-//         })
-// }
-// })
+nextTick(() => {
+    if (isClient) {
+        window.addEventListener('scroll', () => {
+            show.value = !isElementNotInViewport(card.value);
 
-const onPresetMouseEnter = ()=>{}
-const onPresetMouseLeave = ()=>{}
+            if (show.value) return
+            show.value = !isElementNotInViewport(card.value);
+        })
+    }
+})
+
+const onPresetMouseEnter = () => { }
+const onPresetMouseLeave = () => { }
 
 </script>
 
 <template>
-        <pureCard ref="card" v-show="show"
-        @mouseenter="onPresetMouseEnter" @mouseleave="onPresetMouseLeave"
-        ></pureCard>
-        
+    <pureCard ref="card" :class="classXYZ" @mouseenter="onPresetMouseEnter" @mouseleave="onPresetMouseLeave"></pureCard>
+
 </template>
