@@ -2,6 +2,19 @@
 # yarn lockfile v1
 
 
+"@animxyz/core@^0.6.6":
+  version "0.6.6"
+  resolved "https://registry.yarnpkg.com/@animxyz/core/-/core-0.6.6.tgz#2c5eae54c7a6b98c3be79ae16fc1ec68991f67cc"
+  integrity sha512-NtAA/G0Gq3hzAiL6yuE/4U8IgHMPUl3MxbWUbhO443T9UCsf9rBY94P5aK79Zd+/529FeoNdDphIOcOZLsI2sA==
+
+"@animxyz/vue3@^0.6.7":
+  version "0.6.7"
+  resolved "https://registry.yarnpkg.com/@animxyz/vue3/-/vue3-0.6.7.tgz#ca51516a3aa35d50170322411d4635a87a756908"
+  integrity sha512-tLx4HfFcoxR5wgIMFDrmjS2mZifFRNMiwn7skPT3as9ViuCW3QdCsBIDYY2tR37GSvSUC1NhNwkkCZ1pt0C+Hg==
+  dependencies:
+    "@animxyz/core" "^0.6.6"
+    clsx "^1.1.1"
+
 "@antfu/utils@^0.6.0":
   version "0.6.3"
   resolved "https://registry.npmmirror.com/@antfu/utils/-/utils-0.6.3.tgz#0bc85e4368c83a18590682276a69fbae61a0f1f3"
@@ -950,6 +963,11 @@ clone@^1.0.2:
   resolved "https://registry.npmmirror.com/clone/-/clone-1.0.4.tgz#da309cc263df15994c688ca902179ca3c7cd7c7e"
   integrity sha512-JQHZ2QMW6l3aH/j6xCqQThY/9OH4D/9ls34cgkUBiEeocRTU04tHfKPBsUK1PqZCUQM7GiA0IIXJSuXHI64Kbg==
 
+clsx@^1.1.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/clsx/-/clsx-1.2.1.tgz#0ddc4a20a549b59c93a4116bb26f5294ca17dc12"
+  integrity sha512-EcR6r5a8bj6pu3ycsa/E/cKVGuTgZJZdsyUYHOksG/UHIiKfjxzRxYJpyVBwYaQeOvghal9fcc4PidlgzugAQg==
+
 codemirror@^6.0.1:
   version "6.0.1"
   resolved "https://registry.npmmirror.com/codemirror/-/codemirror-6.0.1.tgz#62b91142d45904547ee3e0e0e4c1a79158035a29"
@@ -1393,6 +1411,11 @@ immutable@^4.0.0:
   version "4.1.0"
   resolved "https://registry.npmmirror.com/immutable/-/immutable-4.1.0.tgz#f795787f0db780183307b9eb2091fcac1f6fafef"
   integrity sha512-oNkuqVTA8jqG1Q6c+UglTOD1xhC1BtjKI7XkCXRkZHrN5m18/XsnUp8Q89GkQO/z+0WjonSvl0FLhDYftp46nQ==
+
+include-media@^1.4.10:
+  version "1.4.10"
+  resolved "https://registry.yarnpkg.com/include-media/-/include-media-1.4.10.tgz#7a311c92c396c808504ec6a5365115d30571f259"
+  integrity sha512-TymQzKF7oWHbItEcEHOCponZ90lRr1I9QbYeD+qCxXy4Z0/pSpS4Ocz2bq3FMOERlXXrY9Sawsh9GjiObVQA6A==
 
 inherits@^2.0.3, inherits@^2.0.4:
   version "2.0.4"

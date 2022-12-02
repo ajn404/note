@@ -41,7 +41,7 @@
 </template>
 <script setup lang="ts">
 import ParentLayout from "@vuepress/theme-default/lib/client/layouts/Layout.vue";
-import { ref, inject } from 'vue';
+import { ref } from 'vue';
 const showCodeMirror = ref(false);
 const showIconCollection = ref(false);
 const menuClass = ref(["tool-menu"]);

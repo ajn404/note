@@ -1,5 +1,6 @@
 @import "animate.scss";
-
+@import 'include-media/dist/_include-media';
+@import "base.scss";
 @import url('@/public/fonts/iconfont.scss');
 
 .ClockWise {
@@ -130,4 +131,18 @@ h4.navbar-dropdown-subtitle {
       }
     }
   }
+}
+
+
+.tip-aqua{
+  width:100%;
+  color:aqua;
+  line-height: 1.4;
+  font-size:1.5em;
+  margin-bottom: 2em;
+}
+.no-wrap{
+  overflow: hidden;
+  white-space:nowrap;
+  text-overflow: ellipsis;
 }

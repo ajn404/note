@@ -21,7 +21,7 @@ export const lorenzSystem = (_: any) => {
       y += dy;
       z += dz;
       _.translate(_.width / 2, _.height / 2, 0);
-      _.stroke((x < 0 ? -x : x) * 10 % 255, (y < 0 ? -y : y) * 10 % 255, (z < 0 ? -z : z) * 10 % 255);
+      _.stroke((x < 0 ? -x : x) * 10 %255, (y < 0 ? -y : y) * 10 % 255, (z < 0 ? -z : z) * 10 % 255);
       _.scale(10);
       _.point(x, y, z);
     }

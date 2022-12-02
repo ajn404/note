@@ -148,6 +148,14 @@ const note:       NavbarGroup[] = [
                 link: `${noteBaseUrl}rust`
             },
             {
+                text: 'anime XYZ',
+                link: `${noteBaseUrl}animeXYZ`
+            },
+            {
+                text: 'p5',
+                link: `${noteBaseUrl}p5`
+            },
+            {
                 text: 'glsl demo',
                 children: [
                     {

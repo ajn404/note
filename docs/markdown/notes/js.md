@@ -3,18 +3,7 @@ title: ecma翻译
 sidebar: true
 ---
 <style>
-.tip-aqua{
-    width:100%;
-    color:aqua;
-    line-height: 1.4;
-    font-size:1.5em;
-    margin-bottom: 2em;
-}
-.no-wrap{
-    overflow: hidden;
-    white-space:nowrap;
-    text-overflow: ellipsis;
-}
+
 </style>
 [[toc]]
 # javascript
@@ -971,7 +960,11 @@ console.log(b.n);//1
 #### 6.2.4 The Reference Record Specification Type
 ......
 
-#### 6.2.5 The Property Descriptor Specification Type
+#### 6.2.5  The Property Descriptor Specification Type
 #### 6.2.6  The Environment Record Specification Type
 #### 6.2.7  The Abstract Closure Specification Type
-#### 6.2.8 Data Blocks
+#### 6.2.8  Data Blocks
+
+##### 6.2.8.1  CreateByteDataBlock创建抽象数据块
+##### 6.2.8.2  CreateSharedByteDataBlock创建抽象共享数据块
+##### 6.2.8.3  CopyDataBlockBytes
