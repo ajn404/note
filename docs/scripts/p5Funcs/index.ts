@@ -35,4 +35,5 @@ export { textureGeometries } from './textureGeometries'; //play
 export { waveFunctionCollapse } from "./waveFunctionCollapse"; //波函数坍塌
 export {morph} from './morph'; //变形
 export {lerp} from './vector/lerp'
+export {fromAngle} from './vector/fromAngle'
 
