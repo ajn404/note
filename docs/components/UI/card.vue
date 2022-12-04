@@ -170,7 +170,7 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
     left: -20px;
     width: 100%;
     height: 100%;
-    padding: 20px;
+    padding: 1vw;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -183,7 +183,7 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
 
 .card-info {
-    padding: 20px;
+    padding: 2vw;
     position: absolute;
     bottom: 0;
     color: #fff;
@@ -193,6 +193,7 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
     p {
         opacity: 0;
         text-shadow: rgba(black, 1) 0 2px 3px;
+        overflow: hidden;
         transition: 0.6s 1.6s cubic-bezier(0.215, 0.61, 0.355, 1);
     }
 
@@ -219,7 +220,7 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
 
 .card-info h1 {
     font-family: "Playfair Display";
-    font-size: 36px;
+    font-size: 2vw;
     font-weight: 700;
     text-shadow: rgba(black, 0.5) 0 10px 10px;
 }

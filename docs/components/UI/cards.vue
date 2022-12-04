@@ -144,7 +144,7 @@ export default {
 }
 
 .container {
-    padding: 20px 80px;
+    padding: 20px 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -161,12 +161,12 @@ p {
 }
 
 h1 {
-    font-size: 2.0em;
+    font-size: 2.0vw;
 }
 
 h1+p,
 p+p {
-    margin-top: 10px;
+    margin-top: 1vw;
 }
 </style>
 

@@ -95,9 +95,10 @@
         </h3>
     </div> -->
 
-    <objectification text="note for ecma , glsl , typescript , rust , leetcode , p5 , vtk , kaboom , three , hutao"></objectification>
-    <objectification text="cards"></objectification>
-    <cards></cards>
+    <objectification text="note for ecma , glsl , typescript , rust , leetcode , p5 , vtk , kaboom , three , hutao">
+    </objectification>
+    <objectification text="cards" class="pc-views"></objectification>
+    <cards class="pc-views"></cards>
     <objectification text="rust code demo"></objectification>
     <RustPlayground async code='fn main(){
     first_name();
@@ -110,12 +111,8 @@ fn first_name(){
 fn last_name(){
     println!("n-graymoon");
 }'></RustPlayground>
-<objectification text="p5 canvas random"></objectification>
+    <objectification text="p5 canvas random"></objectification>
     <p5 type="random"></p5>
-
-    <!-- <objectification class="pc-views" text="music player"></objectification>
-    <music-player class="pc-views" ></music-player> -->
-
 </template>
 
 <style lang="scss" scoped>

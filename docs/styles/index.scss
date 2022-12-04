@@ -40,6 +40,13 @@
   display: inline-block;
 }
 
+.home {
+  max-width: 90vw;
+  .hero{
+    display: none;
+  }
+}
+
 :root {
   --font-family: 'ag', 'smile', -apple-system, Ubuntu;
 }
