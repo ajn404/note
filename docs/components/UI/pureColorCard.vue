@@ -3,6 +3,7 @@
 <script lang="ts" setup name="pureColorCard">
 import { h, ref, nextTick, watchEffect } from 'vue';
 import { isClient } from "@vueuse/core";
+import {isElementNotInViewport} from '@scripts/utils'
 
 const randomColor = `rgba(${Math.random() * 1000 % 255},${Math.random() * 1000 % 255},${Math.random() * 1000 % 255},.5)`
 const props = defineProps({
@@ -36,15 +37,6 @@ const cardProps = ref({
 
 const pureCard = () => {
     return h('div', cardProps.value)
-}
-
-const isElementNotInViewport = (el) => {
-    if (el) {
-        let rect = el.getBoundingClientRect();
-        return (
-            (rect.top) >= (window.innerHeight || document.documentElement.clientHeight) || rect.bottom <= 0
-        );
-    } return false
 }
 
 watchEffect(() => {

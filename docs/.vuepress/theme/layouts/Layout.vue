@@ -1,7 +1,7 @@
 
 <template>
-    <transition name="fade" mode="in-out" appear>
-        <ParentLayout class="parent-layout" @click="closeAll">
+<XyzTransition appear xyz="fade duration-5 appear-front-3 small-3 appear-small-0 stagger-2 out-stagger-0">
+        <ParentLayout class="parent-layout xyz-in" @click="closeAll">
             <template #navbar-before>
                 <div class="search_content">
                     <input type="text" class="search_input" v-model="searchText" placeholder="search title"
@@ -30,7 +30,7 @@
             <template #page-bottom></template>
             <template #page-top></template>
         </ParentLayout>
-    </transition>
+    </XyzTransition>
     <codemirror class="xyz-in dialog-content" xyz="fade small stagger ease-out-back" v-show="showCodeMirror" />
     <iconCollection class="xyz-in dialog-content" xyz="fade flip-down stagger duration-10 delay-1 ease-out-back"
         v-show="showIconCollection" />

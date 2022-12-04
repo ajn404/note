@@ -1,6 +1,7 @@
 
 
 <script lang="js">
+import { isElementNotInViewport } from '@scripts/utils'
 export default ({
     mounted() {
         this.width = this.$refs.card.offsetWidth;
@@ -8,6 +9,14 @@ export default ({
         this.$nextTick(()=>{
             this.preloadUrl = this.dataImage
             this.$forceUpdate()
+            window.addEventListener('scroll', () => {
+                if(!isElementNotInViewport(this.$refs.card)){
+                    this.cardClass = 'xyz-in'
+                    return
+                }else{
+                    this.cardClass = 'xyz-out'
+                }
+            })
         })
     },
     props: ['dataImage'],
@@ -19,7 +28,8 @@ export default ({
         mouseLeaveDelay: null,
         setImageDelay:null,
         backUrl:'',
-        preloadUrl:''
+        preloadUrl:'',
+        cardClass: 'xyz-in'
     }),
     computed: {
         mousePX() {
@@ -72,7 +82,7 @@ export default ({
 </script>
 
 <template>
-    <div class="card-wrap" 
+    <div :class="['card-wrap',cardClass]" 
         @mousemove="handleMouseMove" 
         @mouseenter="handleMouseEnter" 
         @mouseleave="handleMouseLeave"
@@ -141,8 +151,8 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
 .card {
     position: relative;
     flex: 0 0 240px;
-    width: 240px;
-    height: 320px;
+    width: 18vw;
+    height: 18vw*16/10;
     background-color: #333;
     overflow: hidden;
     border-radius: 10px;
