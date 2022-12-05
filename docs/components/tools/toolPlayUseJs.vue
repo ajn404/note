@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import { Ref, ref } from 'vue'
+import { storeToRefs } from 'pinia'
+import { useGlobal } from '@scripts/store.common.ts'
+
 const link: Ref<HTMLAudioElement | null> = ref(null)
 const hover: Ref<HTMLAudioElement | null> = ref(null)
 
@@ -41,6 +44,17 @@ const hoverMusic =()=>{
     hoverMusicOn.value = !hoverMusicOn.value;
 }
 
+const store = useGlobal();
+const { getShowIframe } = storeToRefs(store);
+
+const showifram = ()=>{
+    console.log(store,!getShowIframe.value);
+    
+    // store.changeIfram(!getShowIframe.value);
+    //这里acticon为啥不起作用呢
+    store.showIframe = !store.getShowIframe
+}
+
 </script>
 <template>
     <div class="container">
@@ -51,6 +65,13 @@ const hoverMusic =()=>{
         <el-button class="xyz-in" xyz="fade up big" type="primary" @click="hoverMusic" title="此功能用于给里列表添加声音">
             {{ hoverMusicOn ? 'turn off hover music' : 'turn on hover music' }}
         </el-button>
+
+        <el-button class="xyz-in" xyz="fade up big" type="primary" @click="showifram" title="使用/不使用iframe">
+            {{ getShowIframe ? '关闭iframe' : '打开' }}
+        </el-button>
+
+
+
 
 
         <!-- do not show -->

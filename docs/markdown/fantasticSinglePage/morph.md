@@ -15,7 +15,13 @@ title :  p5 is fantastic
 lerp(y1,y2,weight)=y1+(y2−y1)∗weight
 ```
 
-<iframe src='/note/markdown/notInPage/fantastic/vector.lerp.html' style='width:100%;height:100vh;border:none'></iframe>
+
+
+<ClientOnly>
+<iframeControl src='/note/markdown/notInPage/fantastic/vector.lerp.html'>
+</iframeControl>
+</CLientOnly>
+
 
 glsl中同样有lerp函数
 
@@ -39,4 +45,7 @@ void main()
 ```
 
 
-<iframe src='/note/markdown/notInPage/fantastic/vector.fromAngle.html' style='width:100%;height:100vh;border:none'></iframe>
+<ClientOnly>
+<iframeControl src='/note/markdown/notInPage/fantastic/vector.fromAngle.html'>
+</iframeControl>
+</CLientOnly>

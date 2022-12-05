@@ -5,7 +5,7 @@ import { Codemirror } from 'vue-codemirror'
 import { javascript } from '@codemirror/lang-javascript'
 import { oneDark } from '@codemirror/theme-one-dark'
 import { ref, shallowRef, nextTick } from 'vue'
-import { useGlobalCode } from '@scripts/store.common.ts'
+import { useGlobal } from '@scripts/store.common.ts'
 import { storeToRefs } from 'pinia'
 import { useRouter } from 'vue-router'
 
@@ -19,7 +19,7 @@ export default defineComponent({
     codes: String
   },
   setup(props) {
-    const store = useGlobalCode();
+    const store = useGlobal();
     const { globalCode, filteredCode } = storeToRefs(store);
     const extensions = [javascript(), oneDark];
     const router = useRouter();
