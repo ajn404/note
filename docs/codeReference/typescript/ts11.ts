@@ -6,9 +6,9 @@ type ValueOf<T> = T[keyof T];
 type HTTPRequestMethodType = ValueOf<typeof HTTPRequestMethod>;
 async function fetchJSON(
     url:string,
-    methods: HTTPRequestMethodType,
+    method: HTTPRequestMethodType,
 ){
-    const response = await fetch(url,{methods});
+    const response = await fetch(url,{method});
     return response.json();
 }
 

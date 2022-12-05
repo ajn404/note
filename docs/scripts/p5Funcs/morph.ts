@@ -26,6 +26,7 @@ export const morph = (_: any) => {
         for (let y = 50; y > -50; y -= 10) {
             square.push(_.createVector(-50, y));
         }
+        
     }
 
     _.draw = () => {
@@ -56,7 +57,9 @@ export const morph = (_: any) => {
         _.beginShape();
         _.noFill();
         _.stroke(0);
+        
         morph.forEach(v => {
+            
             _.vertex(v.x, v.y);
         });
         _.endShape(_.CLOSE);

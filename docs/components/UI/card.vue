@@ -152,7 +152,7 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
     position: relative;
     flex: 0 0 240px;
     width: 18vw;
-    height: 18vw*16/10;
+    height: calc(18vw*16/10);
     background-color: #333;
     overflow: hidden;
     border-radius: 10px;

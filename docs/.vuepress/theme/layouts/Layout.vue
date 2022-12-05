@@ -2,20 +2,6 @@
 <template>
     <XyzTransition appear xyz="fade duration-1 appear-front-3 small-3 appear-small-0 stagger-2 out-stagger-0">
         <ParentLayout class="parent-layout" @click="closeAll">
-            <Page :key="page.path">
-                <template #top>
-                    <slot name="page-top" />
-                </template>
-                <template #content-top>
-                    <slot name="page-content-top" />
-                </template>
-                <template #content-bottom>
-                    <slot name="page-content-bottom" />
-                </template>
-                <template #bottom>
-                    <slot name="page-bottom" />
-                </template>
-            </Page>
             <template #navbar-before>
                 <div class="search_content">
                     <input type="text" class="search_input" v-model="searchText" placeholder="search title"
@@ -55,12 +41,10 @@
 </template>
 <script setup lang="ts">
 import ParentLayout from "@vuepress/theme-default/lib/client/layouts/Layout.vue";
-import Page from '@vuepress/theme-default/lib/client/components/Page.vue'
+// import Page from '@vuepress/theme-default/lib/client/components/Page.vue'
 
 import { ref } from 'vue';
-import { usePageData } from '@vuepress/client'
-
-console.log(Page);
+// import { usePageData } from '@vuepress/client'
 
 const showCodeMirror = ref(false);
 const showIconCollection = ref(false);
@@ -70,8 +54,7 @@ const parentLayout = ref(null);
 const music = ref(false)
 const jstool = ref(false)
 
-const page = usePageData()
-console.log(page);
+// const page = usePageData()
 
 const showMenu = () => {
     menuClass.value.push("active")

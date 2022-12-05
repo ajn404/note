@@ -6,16 +6,11 @@ title :  p5 is fantastic
 <p5 type="morph"></p5>
 </ClientOnly>
 
-
 ### morph 表情/变形
-
-
 #### vector lerp
 ```math
 lerp(y1,y2,weight)=y1+(y2−y1)∗weight
 ```
-
-
 
 <ClientOnly>
 <iframeControl src='/note/markdown/notInPage/fantastic/vector.lerp.html'>
@@ -44,8 +39,14 @@ void main()
 }
 ```
 
-
+#### vector fromAngle
 <ClientOnly>
 <iframeControl src='/note/markdown/notInPage/fantastic/vector.fromAngle.html'>
 </iframeControl>
 </CLientOnly>
+
+通过角度创建一个新的二维向量
+
+#### vector dist
+计算两向量间的欧式距离
+
