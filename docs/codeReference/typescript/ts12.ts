@@ -1,0 +1,1 @@
+type ReturnString = ReturnType<()=> string>

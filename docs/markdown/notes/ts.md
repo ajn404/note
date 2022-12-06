@@ -136,3 +136,19 @@ type NonNullableEmailRecipient = NonNullable<EmailRecipient>;
 ```
 
 
+### 所谓ReturnType
+```ts
+type ReturnType<T extends (...args: any) => any> = T extends (...args: any) => infer R ? R : any;
+```
+name type parameters
+
+```ts
+type ReturnType<TFunctions extends (...args:any)=> any> = TFunctions extends (...args:any)  => infer TReturnType?TReturnType :any;
+```
+
+
+### template in ts
+比如css类型
+@[code](../../codeReference/typescript/ts14.ts)
+
+
