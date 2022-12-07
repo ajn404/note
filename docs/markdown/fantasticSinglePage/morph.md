@@ -50,3 +50,7 @@ void main()
 #### vector dist
 计算两向量间的欧式距离
 
+<ClientOnly>
+<iframeControl src='/note/markdown/notInPage/fantastic/vector.dist.html'>
+</iframeControl>
+</CLientOnly>

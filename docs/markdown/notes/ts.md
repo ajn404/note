@@ -1,3 +1,7 @@
+---
+title: typescript
+---
+
 
 # typescript 零散的
 ## typescript in vue

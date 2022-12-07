@@ -212,7 +212,7 @@ const jsTool = () => {
     position: fixed;
     left: 0;
     top: 3.6rem;
-    background-color: rgba(88, 55, 66, .4);
+    background-color: rgba(124, 225, 231, .9);
     padding: 20px;
     z-index: 19;
     overflow-y: scroll;
@@ -248,7 +248,7 @@ const jsTool = () => {
     flex-direction: column;
     align-items: center;
     background-color: transparent;
-    right: 2rem;
+    right: 1rem;
     top: 3.6rem;
     z-index: -1;
     overflow: hidden;

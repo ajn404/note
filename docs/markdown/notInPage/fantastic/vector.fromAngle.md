@@ -1,6 +1,7 @@
 ---
 title :  p5 is fantastic
 navbar: false
+sidebar: false
 ---
 
 <ClientOnly>

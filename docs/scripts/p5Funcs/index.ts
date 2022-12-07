@@ -36,4 +36,6 @@ export { waveFunctionCollapse } from "./codingChalenge/waveFunctionCollapse"; //
 export { morph } from './codingChalenge/morph'; //变形
 export { lerp } from './vector/lerp'
 export { fromAngle } from './vector/fromAngle'
+export { dist } from './vector/dist'
+
 

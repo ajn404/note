@@ -2,7 +2,7 @@ import {defineStore} from 'pinia';
 export const useGlobal = defineStore('codeStore',{
     state:()=>({
         globalCode:'',
-        showIframe:true,   
+        showIframe:false,   
     }),
     getters:{
         filteredCode:(state:any)=> {
