@@ -103,3 +103,9 @@
 			]'
 ></mouseXyz>
 </ClientOnly>
+
+<objectification text="cards" class="pc-views"></objectification>
+
+<ClientOnly>
+<cards class="pc-views"></cards>
+</CLientOnly>

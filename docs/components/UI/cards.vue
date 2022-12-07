@@ -8,12 +8,6 @@ export default {
             showContainer: true,
         };
     },
-    mounted() {
-        this.$nextTick(() => {
-
-        })
-    },
-
     setup() {
         const router = useRouter();
         return {
@@ -129,7 +123,7 @@ export default {
             </XyzTransition>
 
 
-                <card data-image="/note/images/hutao/hutao8.jpg"></card>
+                <!-- <card data-image="/note/images/hutao/hutao8.jpg"></card> -->
         </div>
 
     </div>

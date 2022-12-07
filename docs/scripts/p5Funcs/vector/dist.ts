@@ -3,21 +3,23 @@ import {drawArrow} from '../common'
 
 export const dist = (_:any)=>{
     _.setup = ()=>{
-        _.createCanvas(_.windowWidth-200,_.windowHeight-200);
+        _.createCanvas(_.windowHeight-200,_.windowHeight-200);
     }
 
     _.draw = ()=>{
         if (window && window["p5DrawLoop"] !== "dist") _.noLoop()
 
-        _.background(230);
+        _.background(250);
         let v0 = _.createVector(0,0);
         let v1 = _.createVector(_.mouseX,_.mouseY);
         let v2 = _.createVector(_.mouseY,_.mouseX);
 
         _.stroke('purple'); // Change the color
-        _.strokeWeight(10);
+        _.strokeWeight(20);
         _.point(v0.x,v0.y);
         _.point(v1.x,v1.y);
+        _.stroke('pink');
+        _.point(v2.x,v2.y);
         _.stroke(0);
         _.strokeWeight(1);
         _.text('v1',v1.x+20,v1.y+20)
