@@ -1,7 +1,7 @@
 
 
 
-[[toc]]
+
 
 # [docs](https://animxyz.com/docs)
 

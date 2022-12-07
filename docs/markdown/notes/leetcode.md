@@ -1,4 +1,4 @@
-[[toc]]
+
 ## easy
 ### 两数之和
 @[code](../../codeReference/leetcode/1.两数之和.js)

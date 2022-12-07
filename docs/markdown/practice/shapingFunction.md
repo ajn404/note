@@ -1,4 +1,5 @@
 ---
+sidebar: false
 title : 旋转和缩放
 ---
 

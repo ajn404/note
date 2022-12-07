@@ -1,4 +1,5 @@
 ---
+sidebar: false
 title: 使用step函数画正方形
 ---
 

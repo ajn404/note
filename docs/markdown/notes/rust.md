@@ -1,4 +1,4 @@
-[[toc]]
+
 
 ## [github](https://github.com/ajn404/rust_practice)
 ## hello rust

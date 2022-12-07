@@ -1,4 +1,4 @@
-[[toc]]
+
 # typescript 零散的
 ## typescript in vue
 props type

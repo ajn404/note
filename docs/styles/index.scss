@@ -82,7 +82,7 @@ h4.navbar-dropdown-subtitle {
 
 .page .theme-default-content {
   max-width: 90vw;
-  padding: 0;
+  // padding: 0;
 
   table {
     display: table;
@@ -113,17 +113,17 @@ h4.navbar-dropdown-subtitle {
   }
 }
 
-@media screen and (max-width: 900px) {
-  .page .theme-default-content {
-    padding: 2em;
-  }
-}
+// @media screen and (max-width: 900px) {
+//   .page .theme-default-content {
+//     padding: 2em;
+//   }
+// }
 
-@media (max-width: 959px) {
-  .sidebar {
-    width: 100%;
-  }
-}
+// @media (max-width: 959px) {
+//   .sidebar {
+//     width: 100%;
+//   }
+// }
 
 @media (min-width:900px) {
   .table-of-contents {

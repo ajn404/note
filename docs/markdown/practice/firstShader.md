@@ -1,4 +1,5 @@
 ---
+sidebar: false
 title : 第一个shader
 ---
 

@@ -1,4 +1,5 @@
 ---
+sidebar: false
 title : 颜色随鼠标位置
 ---
 

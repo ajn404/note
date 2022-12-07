@@ -1,4 +1,5 @@
 ---
+sidebar: false
 title : 混合颜色-varying
 ---
 <ClientOnly>
