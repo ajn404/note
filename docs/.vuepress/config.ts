@@ -15,12 +15,13 @@ export default defineUserConfig({
     port: 9999,
     head,
     
-    shouldPreload:(file,type)=>{
+    shouldPreload:(file,type)=>{ 
+               
         if(type==='font'){
-            return file.indexOf('smile')!==-1
+            return file.indexOf('smile')===-1
         }
         if(type==='image'){
-            return file.indexOf('hutao')!=-1
+            return file.indexOf('hutao')===-1
         }
     },
 

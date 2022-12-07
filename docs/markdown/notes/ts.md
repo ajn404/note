@@ -1,5 +1,5 @@
 [[toc]]
-# typescript
+# typescript 零散的
 ## typescript in vue
 props type
 ```vue
@@ -153,4 +153,6 @@ type ReturnType<TFunctions extends (...args:any)=> any> = TFunctions extends (..
 相对复杂的案例
 @[code](../../codeReference/typescript/scattered/ts15.ts)
 
+
+##### [开始ts系统性学习](./systs.md)
 
