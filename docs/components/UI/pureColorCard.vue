@@ -3,7 +3,7 @@
 <script lang="ts" setup name="pureColorCard">
 import { h, ref, nextTick, watchEffect } from 'vue';
 import { isClient } from "@vueuse/core";
-import {isElementNotInViewport} from '@scripts/utils'
+import {isElementNotInViewport,throttle} from '@scripts/utils'
 
 const randomColor = `rgba(${Math.random() * 1000 % 255},${Math.random() * 1000 % 255},${Math.random() * 1000 % 255},.5)`
 const props = defineProps({
@@ -46,12 +46,14 @@ watchEffect(() => {
 const card = ref(null);
 nextTick(() => {
     if (isClient) {
-        window.addEventListener('scroll', () => {
+        window.addEventListener('scroll', throttle(() => {
+            
             show.value = !isElementNotInViewport(card.value);
 
             if (show.value) return
+            
             show.value = !isElementNotInViewport(card.value);
-        })
+        },100))
     }
 })
 

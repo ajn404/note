@@ -116,7 +116,7 @@ export default defineComponent({
 	flex-shrink: 0;
 	align-items: stretch;
 	height: 9rem;
-	width: 14rem;
+	width: 12rem;
 	box-shadow: inset 0 0 0 2px primary-color(800);
 	border-radius: $br-xl;
 	transition: box-shadow 0.2s $ease-in-out;

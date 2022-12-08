@@ -1,7 +1,7 @@
 
 
 <script lang="js">
-import { isElementNotInViewport } from '@scripts/utils'
+import { isElementNotInViewport,throttle } from '@scripts/utils'
 export default ({
     mounted() {
         this.width = this.$refs.card.offsetWidth;
@@ -9,14 +9,14 @@ export default ({
         this.$nextTick(()=>{
             this.preloadUrl = this.dataImage
             this.$forceUpdate()
-            window.addEventListener('scroll', () => {
+            window.addEventListener('scroll', throttle(() => {
                 if(!isElementNotInViewport(this.$refs.card)){
                     this.cardClass = 'xyz-in'
                     return
                 }else{
                     this.cardClass = 'xyz-out'
                 }
-            })
+            },100))
         })
     },
     props: ['dataImage'],
