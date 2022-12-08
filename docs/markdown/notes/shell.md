@@ -1,8 +1,6 @@
 ---
 title : 命令行注释（macos）
 ---
-
-
 ### cal
 ```shell 日历
 cal
@@ -66,7 +64,7 @@ Request timeout for icmp_seq 2
 round-trip min/avg/max/stddev = 12.005/19.854/26.769/3.785 ms
 ```
 
-### [ncv](https://github.com/raineorshine/npm-check-updates)
+### [ncv](https://github.com/raineorshine/npm-check-updates): npm-check-updates upgrades your package.json dependencies
 :::tip
 npm install -g npm-check-updates
 ncu
@@ -105,14 +103,14 @@ Run yarn install to install new versions.
 :::
 
 
-### asciinema 
+### asciinema: Record and share your terminal sessions, the simple way.
 
 录制 asciinema rec<br/>
 播放 asciinema play<br/>
 生成的cast文件示例
 
 
-### curl
+### curl: Client URL 工具
 
 :::tip
 curl parrot.live
@@ -128,3 +126,143 @@ curl parrot.live
 #### 新写一个asciinema player的vue3 npm组件库 
 [git仓库](https://github.com/ajn404/vue3-asciinema-player) <br/>
 [npm仓库](https://www.npmjs.com/package/vue3-asciinema-player)
+
+
+### whois: 查询域名ip及所有者信息
+
+:::details shell
+
+```shell
+whois github.com
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.verisign-grs.com
+
+domain:       COM
+
+organisation: VeriSign Global Registry Services
+address:      12061 Bluemont Way
+address:      Reston Virginia 20190
+address:      United States
+
+contact:      administrative
+name:         Registry Customer Service
+organisation: VeriSign Global Registry Services
+address:      12061 Bluemont Way
+address:      Reston Virginia 20190
+address:      United States
+phone:        +1 703 925-6999
+fax-no:       +1 703 948 3978
+e-mail:       info@verisign-grs.com
+
+contact:      technical
+name:         Registry Customer Service
+organisation: VeriSign Global Registry Services
+address:      12061 Bluemont Way
+address:      Reston Virginia 20190
+address:      United States
+phone:        +1 703 925-6999
+fax-no:       +1 703 948 3978
+e-mail:       info@verisign-grs.com
+
+nserver:      A.GTLD-SERVERS.NET 192.5.6.30 2001:503:a83e:0:0:0:2:30
+nserver:      B.GTLD-SERVERS.NET 192.33.14.30 2001:503:231d:0:0:0:2:30
+nserver:      C.GTLD-SERVERS.NET 192.26.92.30 2001:503:83eb:0:0:0:0:30
+nserver:      D.GTLD-SERVERS.NET 192.31.80.30 2001:500:856e:0:0:0:0:30
+nserver:      E.GTLD-SERVERS.NET 192.12.94.30 2001:502:1ca1:0:0:0:0:30
+nserver:      F.GTLD-SERVERS.NET 192.35.51.30 2001:503:d414:0:0:0:0:30
+nserver:      G.GTLD-SERVERS.NET 192.42.93.30 2001:503:eea3:0:0:0:0:30
+nserver:      H.GTLD-SERVERS.NET 192.54.112.30 2001:502:8cc:0:0:0:0:30
+nserver:      I.GTLD-SERVERS.NET 192.43.172.30 2001:503:39c1:0:0:0:0:30
+nserver:      J.GTLD-SERVERS.NET 192.48.79.30 2001:502:7094:0:0:0:0:30
+nserver:      K.GTLD-SERVERS.NET 192.52.178.30 2001:503:d2d:0:0:0:0:30
+nserver:      L.GTLD-SERVERS.NET 192.41.162.30 2001:500:d937:0:0:0:0:30
+nserver:      M.GTLD-SERVERS.NET 192.55.83.30 2001:501:b1f9:0:0:0:0:30
+ds-rdata:     30909 8 2 E2D3C916F6DEEAC73294E8268FB5885044A833FC5459588F4A9184CFC41A5766
+
+whois:        whois.verisign-grs.com
+
+status:       ACTIVE
+remarks:      Registration information: http://www.verisigninc.com
+
+created:      1985-01-01
+changed:      2017-10-05
+source:       IANA
+
+# whois.verisign-grs.com
+
+   Domain Name: GITHUB.COM
+   Registry Domain ID: 1264983250_DOMAIN_COM-VRSN
+   Registrar WHOIS Server: whois.markmonitor.com
+   Registrar URL: http://www.markmonitor.com
+   Updated Date: 2022-09-07T09:10:44Z
+   Creation Date: 2007-10-09T18:20:50Z
+   Registry Expiry Date: 2024-10-09T18:20:50Z
+   Registrar: MarkMonitor Inc.
+   Registrar IANA ID: 292
+   Registrar Abuse Contact Email: abusecomplaints@markmonitor.com
+   Registrar Abuse Contact Phone: +1.2086851750
+   Domain Status: clientDeleteProhibited https://icann.org/epp#clientDeleteProhibited
+   Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+   Domain Status: clientUpdateProhibited https://icann.org/epp#clientUpdateProhibited
+   Name Server: DNS1.P08.NSONE.NET
+   Name Server: DNS2.P08.NSONE.NET
+   Name Server: DNS3.P08.NSONE.NET
+   Name Server: DNS4.P08.NSONE.NET
+   Name Server: NS-1283.AWSDNS-32.ORG
+   Name Server: NS-1707.AWSDNS-21.CO.UK
+   Name Server: NS-421.AWSDNS-52.COM
+   Name Server: NS-520.AWSDNS-01.NET
+   DNSSEC: unsigned
+   URL of the ICANN Whois Inaccuracy Complaint Form: https://www.icann.org/wicf/
+>>> Last update of whois database: 2022-12-08T03:47:21Z <<<
+
+# whois.markmonitor.com
+
+Domain Name: github.com
+Registry Domain ID: 1264983250_DOMAIN_COM-VRSN
+Registrar WHOIS Server: whois.markmonitor.com
+Registrar URL: http://www.markmonitor.com
+Updated Date: 2022-09-07T09:10:44+0000
+Creation Date: 2007-10-09T18:20:50+0000
+Registrar Registration Expiration Date: 2024-10-09T00:00:00+0000
+Registrar: MarkMonitor, Inc.
+Registrar IANA ID: 292
+Registrar Abuse Contact Email: abusecomplaints@markmonitor.com
+Registrar Abuse Contact Phone: +1.2083895770
+Domain Status: clientUpdateProhibited (https://www.icann.org/epp#clientUpdateProhibited)
+Domain Status: clientTransferProhibited (https://www.icann.org/epp#clientTransferProhibited)
+Domain Status: clientDeleteProhibited (https://www.icann.org/epp#clientDeleteProhibited)
+Registrant Organization: GitHub, Inc.
+Registrant State/Province: CA
+Registrant Country: US
+Registrant Email: Select Request Email Form at https://domains.markmonitor.com/whois/github.com
+Admin Organization: GitHub, Inc.
+Admin State/Province: CA
+Admin Country: US
+Admin Email: Select Request Email Form at https://domains.markmonitor.com/whois/github.com
+Tech Organization: GitHub, Inc.
+Tech State/Province: CA
+Tech Country: US
+Tech Email: Select Request Email Form at https://domains.markmonitor.com/whois/github.com
+Name Server: ns-520.awsdns-01.net
+Name Server: dns1.p08.nsone.net
+Name Server: dns4.p08.nsone.net
+Name Server: ns-1707.awsdns-21.co.uk
+Name Server: dns2.p08.nsone.net
+Name Server: ns-421.awsdns-52.com
+Name Server: ns-1283.awsdns-32.org
+Name Server: dns3.p08.nsone.net
+DNSSEC: unsigned
+URL of the ICANN WHOIS Data Problem Reporting System: http://wdprs.internic.net/
+>>> Last update of WHOIS database: 2022-12-08T03:46:35+0000 <<<
+```
+:::
+
+:::details 实时运行
+<ClientOnly>
+<asciinemaPlayerBox file='whois'></asciinemaPlayerBox>
+</ClientOnly>
+:::

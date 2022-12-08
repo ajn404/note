@@ -1,4 +1,4 @@
-//防抖
+//防抖 强制函数在某段时间内只执行一次
 export const debounce = (fn: () => {}, delay: number) => {
     let inDebounce: string | number | NodeJS.Timeout;
     return function (...args: any[]) {
@@ -10,7 +10,7 @@ export const debounce = (fn: () => {}, delay: number) => {
     };
 };
 
-//节流
+//节流：强制函数以固定频率执行
 export const throttle = (fn: () => {}, threshold: number) => {
     // 记录上次执行的时间
     let last: any
