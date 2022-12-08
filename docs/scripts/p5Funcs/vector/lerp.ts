@@ -7,7 +7,7 @@ export const lerp = (_: any) => {
     let p5 = window['p5'];
 
     _.setup = () => {
-        _.createCanvas(_.windowWidth-200, _.windowHeight-200);
+        _.createCanvas(_.windowWidth, _.windowHeight);
     }
 
     let step = 0.01;

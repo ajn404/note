@@ -67,7 +67,7 @@ const showifram = ()=>{
         </el-button>
 
         <el-button class="xyz-in" xyz="fade up big" type="primary" @click="showifram" title="使用/不使用iframe">
-            {{ getShowIframe ? '关闭iframe' : '打开iframe' }}
+            {{ getShowIframe ? '关闭iframe' : '打开iframe(性能)' }}
         </el-button>
 
 

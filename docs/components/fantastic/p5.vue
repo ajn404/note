@@ -23,7 +23,7 @@ if (props.type && props.type === 'random') {
     if (Object.hasOwnProperty.call(funcs, key)) {
       namArr.push(key)
     }
-  } 
+  }
   const randomName = namArr[Math.floor(Math.random() * 100) % namArr.length]
   defaultMethod = randomName
   singlePage.value = props.type
@@ -114,7 +114,7 @@ const handleChange = (arr) => {
 };
 </script>
 <template>
-  <div :class="['p5-start',props.type==='random'?'random-p5':'']">
+  <div :class="['p5-start', props.type === 'random' ? 'random-p5' : '']">
     <el-cascader-panel v-model="selectMethhod" :options="methods" @change="handleChange" v-if="!singlePage"
       class="cascader" size="large">
       <template #default="{ node, data }">
@@ -134,6 +134,18 @@ const handleChange = (arr) => {
   justify-content: center;
   align-items: center;
   flex: 1;
+
+  &.singlepage {
+    :deep(canvas) {
+      position:absolute;
+      width: 100vw;
+      height: 100vh;
+      left: 0;
+      top: 0;
+
+    }
+  }
+
 }
 
 .p5-start {

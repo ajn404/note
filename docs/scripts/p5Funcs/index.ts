@@ -1,3 +1,5 @@
+
+//codingChalenge
 export { ambientLight } from './codingChalenge/ambientLight'; //环境光
 export { angularMotion } from './codingChalenge/angularMotion'; //angularMotion
 export { boxRef } from './codingChalenge/boxRef'; //3d box cube
@@ -34,8 +36,12 @@ export { textureDemo } from './codingChalenge/textureDemo'; //坤坤材质
 export { textureGeometries } from './codingChalenge/textureGeometries'; //play
 export { waveFunctionCollapse } from "./codingChalenge/waveFunctionCollapse"; //波函数坍塌
 export { morph } from './codingChalenge/morph'; //变形
+
+//lerp
 export { lerp } from './vector/lerp'
 export { fromAngle } from './vector/fromAngle'
 export { dist } from './vector/dist'
+export { limit } from './vector/limit'
 
-
+//material
+export { shader } from './material/shader'

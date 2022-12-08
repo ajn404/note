@@ -3,7 +3,7 @@ import {drawArrow} from '../common'
 
 export const dist = (_:any)=>{
     _.setup = ()=>{
-        _.createCanvas(_.windowHeight-200,_.windowHeight-200);
+        _.createCanvas(_.windowWidth,_.windowHeight);
     }
 
     _.draw = ()=>{
