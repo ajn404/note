@@ -45,3 +45,4 @@ export { limit } from './vector/limit'
 
 //material
 export { shader } from './material/shader'
+export { createShader } from './material/createShader'

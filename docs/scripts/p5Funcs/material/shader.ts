@@ -18,16 +18,15 @@ export const shader = (_: any) => {
 
         _.shader(orangeBlue);
         orangeBlue.setUniform('colorCenter', [1.0, 0.5, 0.0]);
-        orangeBlue.setUniform('colorBackground', [0.226, 0.0, 0.615]);
+        orangeBlue.setUniform('colorBackground', [0.22, 0.0, 0.615]);
         _.noStroke();
     }
 
     _.draw = () => {
         if (window && window["p5DrawLoop"] !== "shader") _.noLoop()
-        _.background(250);
 
-        orangeBlue.setUniform('offset', [0, _.sin(_.millis() / 2000) + 1]);
-        redGreen.setUniform('offset', [_.sin(_.millis() / 2000), 1]);
+        orangeBlue.setUniform('offset', [0, _.sin(_.millis() / 1000) + 1]);
+        redGreen.setUniform('offset', [_.sin(_.millis() / 1000), 1]);
 
         if (showRedGreen === true) {
             _.shader(redGreen);
@@ -35,6 +34,9 @@ export const shader = (_: any) => {
             _.shader(orangeBlue);
         }
         _.quad(-1, -1, 1, -1, 1, 1, -1, 1);
+        _.fill(255)
+        _.rect(0,0,10,10)
+
     }
 
     _.mouseClicked = () => {
