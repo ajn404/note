@@ -5,5 +5,5 @@ sidebar: false
 ---
 
 <ClientOnly>
-<p5 type="createShader"></p5>
+<p5 type="createShader" outpage></p5>
 </ClientOnly>

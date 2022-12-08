@@ -5,5 +5,5 @@ sidebar: false
 ---
 
 <ClientOnly>
-<p5 type="lerp"></p5>
+<p5 type="lerp" outpage></p5>
 </ClientOnly>

@@ -5,7 +5,7 @@ import { isClient } from "@vueuse/core";
 import * as p5MainFunc from "@scripts/p5Funcs";
 import { allMethods } from "@scripts/p5Funcs/p5FantasticMethod";
 
-const props = defineProps({ type: String });
+const props = defineProps({ type: String ,outpage:Boolean});
 const funcs = {};
 for (let p5MainFuncItem in p5MainFunc) {
   funcs[`${p5MainFuncItem}`] = p5MainFunc[`${p5MainFuncItem}`];
@@ -122,7 +122,7 @@ const handleChange = (arr) => {
         <span v-if="!node.isLeaf">({{ data.children.length }})</span>
       </template>
     </el-cascader-panel>
-    <div id="p5-start" :class="[singlePage ? 'singlepage' : 'container']"></div>
+    <div id="p5-start" :class="[props.outpage ? 'singlepage' : 'container']"></div>
   </div>
 </template>
 <style scoped lang="scss">

@@ -5,5 +5,5 @@ sidebar: false
 ---
 
 <ClientOnly>
-<p5 type="dist"></p5>
+<p5 type="dist" outpage></p5>
 </ClientOnly>

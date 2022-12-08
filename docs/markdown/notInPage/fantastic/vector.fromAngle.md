@@ -5,5 +5,5 @@ sidebar: false
 ---
 
 <ClientOnly>
-<p5 type="fromAngle"></p5>
+<p5 type="fromAngle" outpage></p5>
 </ClientOnly>

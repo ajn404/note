@@ -5,5 +5,5 @@ sidebar: false
 ---
 
 <ClientOnly>
-<p5 type="limit"></p5>
+<p5 type="limit" outpage></p5>
 </ClientOnly>
