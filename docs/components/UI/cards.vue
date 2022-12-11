@@ -17,7 +17,7 @@ export default {
     methods: {
         goUrl(url) {
             this.showContainer = false;
-            this.router.push(url)
+            this.router.replace(url)
         }
     },
     unmounted() {
@@ -33,7 +33,7 @@ export default {
 
 
             <XyzTransition appear xyz="fade duration-5 appear-front-3 small-3 appear-small-0 stagger-2 out-stagger-0">
-                <div class="card" @click="goUrl('markdown/notes/js')">
+                <div class="card" @click="goUrl('/note/markdown/notes/js')">
                     <card data-image="/note/images/hutao/hutao1.png">
                         <template v-slot:header>
                             <h1>javascript</h1>
@@ -46,7 +46,7 @@ export default {
             </XyzTransition>
 
             <XyzTransition appear xyz="fade duration-5 appear-front-3 small-3 appear-small-0 stagger-2 out-stagger-0">
-                <div class="card" @click="goUrl('markdown/notes/glsl')">
+                <div class="card" @click="goUrl('/note/markdown/notes/glsl')">
                     <card data-image="/note/images/hutao/hutao2.jpg">
                         <template v-slot:header>
                             <h1>glsl</h1>
@@ -58,7 +58,7 @@ export default {
                 </div>
             </XyzTransition>
             <XyzTransition appear xyz="fade duration-5 appear-front-3 small-3 appear-small-0 stagger-2 out-stagger-0">
-                <div class="card" @click="goUrl('markdown/notes/shell')">
+                <div class="card" @click="goUrl('/note/markdown/notes/shell')">
                     <card data-image="/note/images/hutao/hutao3.png">
                         <template v-slot:header>
                             <h1>shell</h1>
@@ -71,7 +71,7 @@ export default {
 
             </XyzTransition>
             <XyzTransition appear xyz="fade duration-5 appear-front-3 small-3 appear-small-0 stagger-2 out-stagger-0">
-                <div class="card" @click="goUrl('markdown/notes/ts')">
+                <div class="card" @click="goUrl('/note/markdown/notes/ts')">
                     <card data-image="/note/images/hutao/hutao4.jpg">
                         <template v-slot:header>
                             <h1>typescript</h1>
@@ -84,7 +84,7 @@ export default {
 
             </XyzTransition>
             <XyzTransition appear xyz="fade duration-5 appear-front-3 small-3 appear-small-0 stagger-2 out-stagger-0">
-                <div class="card" @click="goUrl('markdown/notes/leetcode')">
+                <div class="card" @click="goUrl('/note/markdown/notes/leetcode')">
                     <card data-image="/note/images/hutao/hutao5.png">
                         <template v-slot:header>
                             <h1>algorithm</h1>
@@ -97,7 +97,7 @@ export default {
 
             </XyzTransition>
             <XyzTransition appear xyz="fade duration-5 appear-front-3 small-3 appear-small-0 stagger-2 out-stagger-0">
-                <div class="card" @click="goUrl('markdown/fantastic/p5')">
+                <div class="card" @click="goUrl('/note/markdown/fantastic/p5')">
                     <card data-image="/note/images/hutao/hutao6.jpg">
                         <template v-slot:header>
                             <h1>p5</h1>
@@ -110,7 +110,7 @@ export default {
 
             </XyzTransition>
             <XyzTransition appear xyz="fade duration-5 appear-front-3 small-3 appear-small-0 stagger-2 out-stagger-0">
-                <div class="card" @click="goUrl('markdown/notes/rust')">
+                <div class="card" @click="goUrl('/note/markdown/notes/rust')">
                     <card data-image="/note/images/hutao/hutao7.png">
                         <template v-slot:header>
                             <h1>rust</h1>

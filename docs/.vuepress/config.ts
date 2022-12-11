@@ -14,14 +14,19 @@ export default defineUserConfig({
     host: '0.0.0.0',
     port: 9999,
     head,
-    
-    shouldPreload:(file,type)=>{ 
-               
-        if(type==='font'){
-            return file.indexOf('smile')===-1
+    markdown: {
+        headers: {
+            level: [1, 2, 3, 4, 5, 6],
+
         }
-        if(type==='image'){
-            return file.indexOf('hutao')===-1
+    },
+    shouldPreload: (file, type) => {
+
+        if (type === 'font') {
+            return file.indexOf('smile') === -1
+        }
+        if (type === 'image') {
+            return file.indexOf('hutao') === -1
         }
     },
 
@@ -37,9 +42,10 @@ export default defineUserConfig({
     ),
     theme: localTheme({
         navbar: navbar,
-        colorMode:'dark',
-        repo:'https://github.com/ajn404/note',
-        docsRepo:'https://github.com/ajn404/note'
+        colorMode: 'dark',
+        repo: 'https://github.com/ajn404/note',
+        docsRepo: 'https://github.com/ajn404/note',
+        sidebarDepth: 6
 
     })
 
