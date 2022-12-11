@@ -1,7 +1,17 @@
 <template>
-    <objectification text="note for ecma , glsl , typescript , rust , leetcode , p5 , vtk , kaboom , three , hutao"></objectification>
+    <objectification text="note for ecma , glsl , typescript , rust , leetcode , p5 , vtk , kaboom , three , animeXYZ ,
+    use vue3 , element-plus , codemirror ,pug ,vuepress , pinia...,i love coding,because coding does not lie">
+    </objectification>
     <objectification text="rust code demo"></objectification>
-    <RustPlayground async code='fn main(){
+    <RustPlayground async :code='code' editable="true"></RustPlayground>
+    <objectification text="p5 canvas random"></objectification>
+    <p5 type="random"></p5>
+</template>
+
+<script lang="ts" setup>
+import { ref } from 'vue'
+const code = ref(`
+fn main(){
     first_name();
     last_name();
 }
@@ -11,10 +21,9 @@ fn first_name(){
 
 fn last_name(){
     println!("n-graymoon");
-}'></RustPlayground>
-    <objectification text="p5 canvas random"></objectification>
-    <p5 type="random"></p5>
-</template>
+}
+`)
+</script>
 
 <style lang="scss" scoped>
 $multi: 4;

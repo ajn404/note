@@ -66,7 +66,7 @@ const showifram = ()=>{
             {{ hoverMusicOn ? 'turn off hover music' : 'turn on hover music' }}
         </el-button>
 
-        <el-button class="xyz-in" xyz="fade up big" type="primary" @click="showifram" title="使用/不使用iframe">
+        <el-button class="xyz-in" xyz="fade up big" type="primary" @click="showifram" title="显示当前页面的iframe而非链接">
             {{ getShowIframe ? '关闭iframe' : '打开iframe(性能)' }}
         </el-button>
 

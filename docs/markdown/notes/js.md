@@ -1,5 +1,5 @@
 ---
-title: ecma翻译
+title: ecma通读
 ---
 <style>
 

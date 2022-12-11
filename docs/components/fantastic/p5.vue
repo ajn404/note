@@ -156,6 +156,10 @@ const handleChange = (arr) => {
   max-height: 90vh;
 }
 
+.random-p5{
+  max-height: 100vh;
+}
+
 @media screen and (max-width: 900px) {
   .p5-start {
     flex-direction: column;
