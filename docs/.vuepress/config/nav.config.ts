@@ -6,6 +6,7 @@ const practiceBaseUrl: string = '/markdown/practice/'
 const glslBaseUrl: string = '/markdown/example/'
 const noteBaseUrl: string = '/markdown/notes/'
 const fantasticUrl: string = '/markdown/fantastic/'
+const vtkBasiceUrl = '/markdown/vtk/'
 
 const p5SinglePageUrl: string = '/markdown/fantasticSinglePage/'
 const p5SinglePageList: any[] = [];
@@ -28,7 +29,7 @@ for (let i = 0; i < p5SinglePageList.length; i++) {
         link: `${p5SinglePageUrl}${p5SinglePageList[i].value}`
     })
 }
-const examples:   NavbarGroup[] = [
+const examples: NavbarGroup[] = [
     {
         text: 'glsl',
         children: [
@@ -123,7 +124,7 @@ const examples:   NavbarGroup[] = [
     },
 
 ]
-const note:       NavbarGroup[] = [
+const note: NavbarGroup[] = [
     {
         text: 'note',
         children: [
@@ -156,7 +157,7 @@ const note:       NavbarGroup[] = [
                 link: `${noteBaseUrl}animeXYZ`
             },
             {
-                text: 'p5',
+                text: 'p5 api and basic math',
                 link: `${noteBaseUrl}p5`
             },
             {
@@ -217,12 +218,12 @@ const beforeBlog: NavbarGroup[] = [
         ]
     }
 ]
-const fantastic:  NavbarGroup[] = [
+const fantastic: NavbarGroup[] = [
     {
         text: 'fantastic',
         children: [
             {
-                text: 'p5',
+                text: 'p5 select',
                 link: `${fantasticUrl}p5`
             },
             {
@@ -235,7 +236,7 @@ const fantastic:  NavbarGroup[] = [
         ]
     }
 ]
-const threeDemo:  NavbarGroup[] = [
+const threeDemo: NavbarGroup[] = [
     {
         text: 'three&glsl',
         children: [
@@ -248,24 +249,28 @@ const threeDemo:  NavbarGroup[] = [
                     }
                 ]
             },
-            {
-                text: 'vtk',
-                children: [
-                    {
-                        text: 'pdr reader',
-                        link: `${fantasticUrl}vtkDemo`
-                    },
-                    {
-                        text: 'vtk loadModel',
-                        link: `${fantasticUrl}vtkLoadModel`
-                    }
-                ]
-            },
+
             ...examples[0].children
         ]
-    }
+    }, {
+        text: 'vtk',
+        children: [
+            {
+                text: 'pdr reader',
+                link: `${fantasticUrl}vtkDemo`
+            },
+            {
+                text: 'vtk loadModel',
+                link: `${fantasticUrl}vtkLoadModel`
+            },
+            {
+                text:'vtk viewer',
+                link:`${vtkBasiceUrl}geometryViewer`
+            }
+        ]
+    },
 ]
-const navbar:     NavbarConfig =
+const navbar: NavbarConfig =
     [
         ...note,
         ...fantastic,

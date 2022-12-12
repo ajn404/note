@@ -19,7 +19,7 @@ const viteConfig = {
     },
     build: {
         rollupOptions: {
-            external: ['p5'],
+            external: ['p5','@kitware'],
             plugins: [
                 commonjs(),
               ],
@@ -56,7 +56,7 @@ const viteConfig = {
         }),
     ],
     ssr: {
-        noExternal: ['three','p5','kaboom']
+        noExternal: ['three','p5','kaboom','@kitware']
     },  
 }
 

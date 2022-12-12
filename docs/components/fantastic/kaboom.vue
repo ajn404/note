@@ -1,16 +1,17 @@
 <template>
     <div class="kaboom-box">
-        <canvas ref="kaboomCanvas" :height="props.height??250"></canvas>
+        <canvas ref="kaboomCanvas" :height="props.height                                                                                                                                                                                                                                                                         ??                                                                                                                                                                                                                                                                         250"></canvas>
     </div>
 </template>
 
 <script lang="ts" setup>
 import kaboom from "kaboom";
-import { ref, nextTick  } from 'vue';
+import { ref, nextTick } from 'vue';
 import * as kaboomFunc from '@scripts/kaboomStartFunc/index'
 const props = defineProps({
-    func:String,
-    height:Number
+    func: String,
+    height: Number,
+    random: Boolean,
 })
 
 const kaboomCanvas = ref(null);
@@ -26,12 +27,24 @@ const start = () => {
     assertIsNonNullish(kaboomCanvas?.value, "找不到canvas元素")
     kaboom(
         {
-            canvas:kaboomCanvas.value
+            canvas: kaboomCanvas.value
         }
     )
-    if(props.func) kaboomFunc[props.func]()
+    if (props.random) {
+        let list: any[] = []
+        for (let fun in kaboomFunc) {
+            if (typeof kaboomFunc[fun] === 'function') {
+                list.push(kaboomFunc[fun])
+            }
+        }
+
+        let randomIndex = Math.floor(Math.random() * 100 % list.length)
+        list[randomIndex]()
+    }
+
+    else if (props.func) kaboomFunc[props.func]()
 }
-nextTick(()=>{
+nextTick(() => {
     start()
 })
 
@@ -44,7 +57,8 @@ nextTick(()=>{
     align-items: center;
     gap: 2em;
     margin-top: 2em;
-    canvas{
+
+    canvas {
         width: 100%;
         height: 100%;
     }

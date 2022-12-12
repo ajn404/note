@@ -6,6 +6,8 @@
     <RustPlayground async :code='code' editable="true"></RustPlayground>
     <objectification text="p5 canvas random"></objectification>
     <p5 type="random"></p5>
+    <objectification text="kaboom canvas random"></objectification>
+    <kaboom :random="true" :height="500"></kaboom>
 </template>
 
 <script lang="ts" setup>
