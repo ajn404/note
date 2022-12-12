@@ -1,7 +1,7 @@
 import { NavbarConfig, NavbarGroup } from 'vuepress';
 import { allMethods } from "../../scripts/p5Funcs/p5FantasticMethod";
 import { kaboom } from "../../scripts/kaboomStartFunc/index"
-
+// console.log(process.env.NODE_ENV);
 const practiceBaseUrl: string = '/markdown/practice/'
 const glslBaseUrl: string = '/markdown/example/'
 const noteBaseUrl: string = '/markdown/notes/'
@@ -264,8 +264,12 @@ const threeDemo: NavbarGroup[] = [
                 link: `${fantasticUrl}vtkLoadModel`
             },
             {
-                text:'vtk viewer',
-                link:`${vtkBasiceUrl}geometryViewer`
+                text: 'vtk viewer',
+                link: `${vtkBasiceUrl}geometryViewer`
+            },
+            {
+                text: 'vtk viewer diskout',
+                link: `${vtkBasiceUrl}viewerUrl`
             }
         ]
     },

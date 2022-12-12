@@ -1,13 +1,10 @@
 <template>
     <div class="geometry-viewer">
-        <div class="vtk-container" ref="vtkContainer" />
-        <objectification class="fixed" ref="txtRef" v-show="txt" text="点击图片上传vtp文件,点击本文字下载示例文件" @click.prevent="downloadVtp"></objectification>
+        <div class="vtk-container" ref="vtkContainerUrl" />
     </div>
 </template>
 
 <script setup>
-
-
 import { ref, onMounted, onBeforeUnmount, nextTick } from "vue";
 import { isClient } from "@vueuse/core";
 import { ElLoading } from "element-plus";
@@ -19,17 +16,7 @@ import '@kitware/vtk.js/IO/Core/DataAccessHelper/HtmlDataAccessHelper';
 import '@kitware/vtk.js/IO/Core/DataAccessHelper/JSZipDataAccessHelper';
 
 import style from './geometryViewer.module.css'
-
-const downloadVtp = e=>{
-    console.log(isClient);
-    e.preventDefault()
-    if(isClient){
-
-        window.location.href='/note/data/diskout-stream-binary-zlib.vtp'
-    }
-}
-
-const vtkContainer = ref(null);
+const vtkContainerUrl = ref(null);
 const context = ref(null);
 const txt = ref(true)
 const loading = () => {
@@ -88,7 +75,7 @@ const loadViewer = () => {
                 background.length === 3 && background.reduce((a, b) => a + b, 0) < 1.5
                     ? style.dark
                     : style.light;
-
+            console.log(selectorClass);
             // lut
             const lutName = userParams.lut || 'erdc_rainbow_bright';
 
@@ -145,7 +132,7 @@ const loadViewer = () => {
             const createViewer = container => {
                 fullScreenRenderWindow = vtkFullScreenRenderWindow.newInstance({
                     background,
-                    rootContainer: vtkContainer.value,
+                    rootContainer: vtkContainerUrl.value,
                 });
                 renderer = fullScreenRenderWindow.getRenderer();
                 renderWindow = fullScreenRenderWindow.getRenderWindow();
@@ -450,74 +437,55 @@ const loadViewer = () => {
                 // Update stats
                 fpsMonitor.update();
             }
-
-            function loadFile(file) {
-                const reader = new FileReader();
-                reader.onload = function onLoad(e) {
-                    createPipeline(file.name, reader.result);
-                };
-                reader.readAsArrayBuffer(file);
-            }
-
             function load(container, options) {
                 autoInit = false;
                 emptyContainer(container);
 
-                if (options.files) {
-                    createViewer(container);
-                    let count = options.files.length;
-                    while (count--) {
-                        loadFile(options.files[count]);
-                    }
-                    updateCamera(renderer.getActiveCamera());
-                } else if (options.fileURL) {
-                    const urls = [].concat(options.fileURL);
-                    const progressContainer = document.createElement('div');
-                    progressContainer.setAttribute('class', style.progress);
-                    container.appendChild(progressContainer);
+                const urls = [].concat(options.fileURL);
+                const progressContainer = document.createElement('div');
+                progressContainer.setAttribute('class', style.progress);
+                container.appendChild(progressContainer);
 
-                    const progressCallback = (progressEvent) => {
-                        if (progressEvent.lengthComputable) {
-                            const percent = Math.floor(
-                                (100 * progressEvent.loaded) / progressEvent.total
-                            );
-                            progressContainer.innerHTML = `Loading ${percent}%`;
-                        } else {
-                            progressContainer.innerHTML = formatBytesToProperUnit(
-                                progressEvent.loaded
-                            );
+                const progressCallback = (progressEvent) => {
+                    if (progressEvent.lengthComputable) {
+                        const percent = Math.floor(
+                            (100 * progressEvent.loaded) / progressEvent.total
+                        );
+                        progressContainer.innerHTML = `Loading ${percent}%`;
+                    } else {
+                        progressContainer.innerHTML = formatBytesToProperUnit(
+                            progressEvent.loaded
+                        );
+                    }
+                };
+
+                createViewer(container);
+                const nbURLs = urls.length;
+                let nbLoadedData = 0;
+
+                /* eslint-disable no-loop-func */
+                while (urls.length) {
+                    const url = urls.pop();
+                    const name = Array.isArray(userParams.name)
+                        ? userParams.name[urls.length]
+                        : `Data ${urls.length + 1}`;
+                    HttpDataAccessHelper.fetchBinary(url, {
+                        progressCallback,
+                    }).then((binary) => {
+                        nbLoadedData++;
+                        if (nbLoadedData === nbURLs) {
+                            container.removeChild(progressContainer);
                         }
-                    };
-
-                    createViewer(container);
-                    const nbURLs = urls.length;
-                    let nbLoadedData = 0;
-
-                    /* eslint-disable no-loop-func */
-                    while (urls.length) {
-                        const url = urls.pop();
-                        const name = Array.isArray(userParams.name)
-                            ? userParams.name[urls.length]
-                            : `Data ${urls.length + 1}`;
-
-                        HttpDataAccessHelper.fetchBinary(url, {
-                            progressCallback,
-                        }).then((binary) => {
-                            nbLoadedData++;
-                            if (nbLoadedData === nbURLs) {
-                                container.removeChild(progressContainer);
-                            }
-                            createPipeline(name, binary);
-                            updateCamera(renderer.getActiveCamera());
-                        });
-                    }
+                        createPipeline(name, binary);
+                        updateCamera(renderer.getActiveCamera());
+                    });
                 }
             }
 
             const initLocalFileLoader = container => {
-                const exampleContainer = vtkContainer.value;
+                const exampleContainer = vtkContainerUrl.value;
                 const rootBody = document.querySelector('body');
-                const myContainer = vtkContainer.value || container || exampleContainer || rootBody;
+                const myContainer = vtkContainerUrl.value || container || exampleContainer || rootBody;
 
                 if (myContainer !== container) {
                     myContainer.classList.add(style.fullScreen);
@@ -545,8 +513,16 @@ const loadViewer = () => {
                 fileContainer.addEventListener('dragover', preventDefaults);
             }
 
+
+            let baseUrl = 'http://localhost:9999/note/'
+            if (process.env.NODE_ENV !== 'development') {
+                baseUrl = 'https://ajn404.gitee.io/note/'
+            }
+
+            userParams.fileURL = `${baseUrl}data/diskout-stream-binary-zlib.vtp`
+
             if (userParams.url || userParams.fileURL) {
-                const exampleContainer = vtkContainer.value;
+                const exampleContainer = vtkContainerUrl.value;
                 const myContainer = exampleContainer;
 
                 if (myContainer) {
@@ -558,7 +534,7 @@ const loadViewer = () => {
 
             setTimeout(() => {
                 if (autoInit) {
-                    initLocalFileLoader(vtkContainer.value);
+                    initLocalFileLoader(vtkContainerUrl.value);
                 }
             }, 100);
 
@@ -604,13 +580,6 @@ onBeforeUnmount(() => {
 <style lang="scss" scoped>
 .geometry-viewer {
     min-width: 100%;
-}
-
-.fixed{
-    position: absolute;
-    bottom: 0;
-    z-index: 9999;
-    cursor: pointer;
 }
 </style>
   
