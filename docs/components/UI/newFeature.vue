@@ -15,8 +15,10 @@ const load = () => {
 
 }
 
-watch(() => count, (val) => {
-    if (Number(val) % 20 === 0) {
+watch(count, (val) => {
+    console.log(val);
+
+    if (Number(val) % 18 === 0) {
         getJokeSData()
     }
 })
@@ -73,7 +75,7 @@ onMounted(async () => {
 <style lang="scss" scoped>
 .skicky {
     .infinite-list {
-        height: 300px;
+        height: 50vh;
         width: 100%;
         padding: 0;
         margin: 0;
@@ -88,6 +90,12 @@ onMounted(async () => {
             background: var(--el-color-primary-light-9);
             margin: 10px;
             color: var(--el-color-primary);
+            height: 2em;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
 
             &.header {
                 position: sticky;
