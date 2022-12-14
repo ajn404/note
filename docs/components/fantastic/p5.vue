@@ -3,7 +3,7 @@ import { ref, onUnmounted, nextTick, readonly } from "vue";
 import { ElMessage, ElLoading } from "element-plus";
 import { isClient } from "@vueuse/core";
 import * as p5MainFunc from "@scripts/p5Funcs";
-import { allMethods } from "@scripts/p5Funcs/p5FantasticMethod";
+import { allMethods,singleList } from "@scripts/p5Funcs/p5FantasticMethod";
 
 const props = defineProps({ type: String ,outpage:Boolean});
 const funcs = {};
@@ -29,7 +29,7 @@ if (props.type && props.type === 'random') {
   singlePage.value = props.type
 }
 const methods = readonly(allMethods);
-const fullList = ["quickSort", "bubbleSort", "rayCast", "lorenzSystem", "chenShiSystem", "waveFunctionCollapse"];
+const fullList = ["quickSort", "bubbleSort", "rayCast", "lorenzSystem", "chenShiSystem", "waveFunctionCollapse",...singleList];
 const soundList = ["delaySound"];
 const loading = () => {
   return ElLoading.service({

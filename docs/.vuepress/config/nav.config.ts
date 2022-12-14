@@ -1,7 +1,6 @@
 import { NavbarConfig, NavbarGroup } from 'vuepress';
 import { allMethods } from "../../scripts/p5Funcs/p5FantasticMethod";
 import { kaboom } from "../../scripts/kaboomStartFunc/index"
-// console.log(process.env.NODE_ENV);
 const practiceBaseUrl: string = '/markdown/practice/'
 const glslBaseUrl: string = '/markdown/example/'
 const noteBaseUrl: string = '/markdown/notes/'
@@ -252,7 +251,11 @@ const threeDemo: NavbarGroup[] = [
 
             ...examples[0].children
         ]
-    }, {
+    }
+]
+
+const vtkDemo :NavbarGroup[] = [
+    {
         text: 'vtk',
         children: [
             {
@@ -260,7 +263,7 @@ const threeDemo: NavbarGroup[] = [
                 link: `${fantasticUrl}vtkDemo`
             },
             {
-                text: 'vtk loadModel',
+                text: 'vtk load obj model',
                 link: `${fantasticUrl}vtkLoadModel`
             },
             {
@@ -274,11 +277,13 @@ const threeDemo: NavbarGroup[] = [
         ]
     },
 ]
+
 const navbar: NavbarConfig =
     [
         ...note,
         ...fantastic,
         ...threeDemo,
+        ...vtkDemo,
         ...beforeBlog
     ]
 export default navbar

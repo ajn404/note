@@ -49,12 +49,19 @@ export const allMethods = [
   {
     label: "熟悉api",
     children: [
-      { label: "3d box", value: "boxRef", notSinglePage: true },
-      { label: "3d box 旋转", value: "boxRef1", notSinglePage: true },
       { value: "gridOutput", label: "输出为grid" },
       { value: 'easing', label: 'easing' },
       { value: 'delaySound', label: 'p5 sound delay', sound: true },
-      { value: 'morph', label: 'morph'},
+      { value: 'morph', label: 'morph' },
+      { label: "3d box", value: "boxRef", notSinglePage: true },
+      { label: "3d box 旋转", value: "boxRef1", notSinglePage: true },
+      { label: "lerp", value: "lerp", notSinglePage: true },
+      { label: "fromAngle", value: "fromAngle", notSinglePage: true },
+      { label: "dist", value: "dist", notSinglePage: true },
+      { label: "limit", value: "limit", notSinglePage: true },
+      { label: "shader", value: "shader", notSinglePage: true },
+      { label: "resetShader", value: "resetShader", notSinglePage: true },
+      { label: "createShader", value: "createShader", notSinglePage: true }
     ],
   },
   {
@@ -65,3 +72,18 @@ export const allMethods = [
     ],
   },
 ];
+
+
+const getSingleList = (objList: any[]) => {
+  const res: any[] = [];
+  objList.forEach(item => {
+    if (item.children) {
+      item.children.forEach((child: any) => {
+        if (child.fullscreen||child.notSinglePage) res.push(child.value);
+      })
+    }
+  })
+  return res;
+}
+
+export const singleList: any[] = getSingleList(allMethods)
