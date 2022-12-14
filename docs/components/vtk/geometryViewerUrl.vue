@@ -158,7 +158,6 @@ const loadViewer = () => {
             }
 
             const createPipeline = (fileName, fileContents) => {
-                // Create UI
                 const presetSelector = document.createElement('select');
                 presetSelector.setAttribute('class', selectorClass);
                 presetSelector.innerHTML = vtkColorMaps.rgbPresetNames
@@ -172,11 +171,11 @@ const loadViewer = () => {
                 const representationSelector = document.createElement('select');
                 representationSelector.setAttribute('class', selectorClass);
                 representationSelector.innerHTML = [
-                    '隐藏',
-                    'Points',
-                    'Wireframe',
-                    'Surface',
-                    'Surface with Edge',
+                    '隐藏:0:-1:0',
+                    'Points:1:0:0',
+                    'Wireframe:1:1:0',
+                    'Surface1:2:0',
+                    'Surface with Edge:1:2:1',
                 ]
                     .map(
                         (name, idx) =>
@@ -270,7 +269,6 @@ const loadViewer = () => {
                     renderWindow.render();
                 }
                 representationSelector.addEventListener('change', updateRepresentation);
-
                 // --------------------------------------------------------------------
                 // Opacity handling
                 // --------------------------------------------------------------------

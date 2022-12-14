@@ -1,6 +1,6 @@
 <template>
     <iframe :src="src" frameborder="0" v-if="showIfram"></iframe>
-    <a :href="src" target="_blank">{{src}}</a>
+    <a :href="src" target="_blank">{{src.split('/').pop()}}</a>
 </template>
 
 <script>

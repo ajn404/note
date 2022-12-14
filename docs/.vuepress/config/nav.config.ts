@@ -157,10 +157,6 @@ const note: NavbarGroup[] = [
                 link: `${noteBaseUrl}animeXYZ`
             },
             {
-                text: 'p5 api and basic math',
-                link: `${noteBaseUrl}p5`
-            },
-            {
                 text: 'glsl demo',
                 children: [
                     {
@@ -222,6 +218,10 @@ const fantastic: NavbarGroup[] = [
     {
         text: 'fantastic',
         children: [
+            {
+                text: 'p5 api and basic math',
+                link: `${noteBaseUrl}p5`
+            },
             {
                 text: 'p5 select',
                 link: `${fantasticUrl}p5`
