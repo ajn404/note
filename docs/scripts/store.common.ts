@@ -3,6 +3,7 @@ export const useGlobal = defineStore('codeStore',{
     state:()=>({
         globalCode:'',
         showIframe:false,   
+        userSelect:true,
     }),
     getters:{
         filteredCode:(state:any)=> {

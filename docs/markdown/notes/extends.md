@@ -28,8 +28,6 @@ for (let i = 0; i < view.length; i++) {
 ```
 在这个示例中，我们首先创建了一个 8 字节长的 ArrayBuffer 对象，然后使用 Uint8Array 对象来访问该缓冲区中的数据。然后，我们使用循环将一些数据存储到缓冲区中，最后再使用循环来访问缓冲区中的数据。
 
-### css
-
 #### skicky position&element plus无限滚动 无限获取冷笑话【笑】
 
 ```scss

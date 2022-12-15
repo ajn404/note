@@ -15,6 +15,9 @@
             "@/*": [
                 "docs/*"
             ],
+            "@/scripts": [
+                "docs/scripts"
+            ],
             "public": [
                 "docs/public/"
             ],
@@ -38,6 +41,7 @@
         "docs/.vuepress/**/*.tsx",
         "docs/.vuepress/**/*.vue",
         "docs/.vuepress/**/*.glsl",
-        "docs/scripts"
+        "docs/scripts",
+        "**/*.ts"
     ]
 }
