@@ -10,21 +10,7 @@ const count = ref(0)
 const countText: any = ref([])
 const load = () => {
     count.value += 2
-    console.log(count.value);
-
-
 }
-
-watch(count, (val) => {
-    console.log(val);
-
-    if (Number(val) % 18 === 0) {
-        getJokeSData()
-    }
-})
-
-
-
 
 const getJokeSData = async () => {
     const jokes = await getJoke(20)
@@ -49,9 +35,13 @@ onMounted(async () => {
     }
 })
 
-
-
-
+if (p.type === 'skicky') {
+    watch(count, (val) => {
+        if (Number(val) % 18 === 0) {
+            getJokeSData()
+        }
+    })
+}
 
 </script>
 
@@ -64,8 +54,12 @@ onMounted(async () => {
             }}</li>
         </ul>
     </div>
+    <div v-if="p.type === 'empty'" class="empty">
+    </div>
+    <div v-if="p.type === 'clip'" class="clip">
+    ajn404 tests background-clip👀感受到了么，坤坤的注视
+    </div>
     <div v-else class="else">
-
     </div>
 
 
@@ -92,6 +86,8 @@ onMounted(async () => {
             color: var(--el-color-primary);
             height: 2em;
             text-overflow: ellipsis;
+            border-radius: 5px;
+            box-shadow: 1px 1px 1px 1px rgba(0, 0, 255, .1);;
             overflow: hidden;
             display: -webkit-box;
             -webkit-box-orient: vertical;
@@ -100,7 +96,7 @@ onMounted(async () => {
             &.header {
                 position: sticky;
                 top: 0;
-                background: var(--el-color-success);
+                background: rgba(0,1,1,.6);
                 color: bisque;
                 margin: 0 10px 10px 10px;
             }
@@ -112,5 +108,26 @@ onMounted(async () => {
         }
     }
 
+}
+
+.empty{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    &:empty::after{
+        content: '暂无数据';
+        font-size: 1.5em;
+    }
+}
+
+.clip{
+    font-size: 2em;
+    letter-spacing: .01em;
+    font-weight: bold;
+    line-height: 1;
+    background-image: url('/note/images/logo.jpg');
+    color: transparent;
+    background-size: contain;
+    background-clip: text;
 }
 </style>

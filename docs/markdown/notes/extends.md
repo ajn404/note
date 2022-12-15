@@ -32,6 +32,76 @@ for (let i = 0; i < view.length; i++) {
 
 #### skicky position&element plus无限滚动 无限获取冷笑话【笑】
 
+```scss
+ .infinite-list-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1em;
+            background: var(--el-color-primary-light-9);
+            margin: 10px;
+            color: var(--el-color-primary);
+            height: 2em;
+            text-overflow: ellipsis;
+            border-radius: 5px;
+            box-shadow: 1px 1px 1px 1px rgba(0, 0, 255, .1);;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+
+            &.header {
+                position: sticky;
+                top: 0;
+                background: rgba(0,1,1,.6);
+                color: bisque;
+                margin: 0 10px 10px 10px;
+            }
+
+            &+& {
+                margin-top: 10px;
+
+            }
+        }
+```
+
 <ClientOnly>
 <newFeature type='skicky'></newFeature>
+</ClientOnly>
+
+#### empty选择器
+
+```scss
+.empty{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    &:empty::after{
+        content: '暂无数据';
+        font-size: 1.5em;
+    }
+}
+```
+
+<ClientOnly>
+<newFeature type='empty'></newFeature>
+</ClientOnly>
+
+### backdround-clip
+
+```css
+.clip{
+    font-size: 2em;
+    letter-spacing: .4em;
+    font-weight: bold;
+    line-height: 1;
+    background-image: url('/note/images/logo.jpg');
+    color: transparent;
+    background-size: contain;
+    background-clip: text;
+}
+```
+
+<ClientOnly>
+<newFeature type='clip'></newFeature>
 </ClientOnly>
