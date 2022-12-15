@@ -21,10 +21,8 @@ import '@kitware/vtk.js/IO/Core/DataAccessHelper/JSZipDataAccessHelper';
 import style from './geometryViewer.module.css'
 
 const downloadVtp = e=>{
-    console.log(isClient);
     e.preventDefault()
     if(isClient){
-
         window.location.href='/note/data/diskout-stream-binary-zlib.vtp'
     }
 }

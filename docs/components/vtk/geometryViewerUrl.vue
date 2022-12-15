@@ -579,6 +579,7 @@ onBeforeUnmount(() => {
 .geometry-viewer {
     min-width: 100%;
 }
+
 </style>
   
     

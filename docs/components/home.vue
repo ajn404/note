@@ -1,5 +1,5 @@
 <template>
-    <objectification text="note for ecma , glsl , typescript , rust , leetcode , p5 , vtk , kaboom , three , animeXYZ ,
+    <objectification text="note on ecma , glsl , typescript , rust , leetcode , p5 , vtk , kaboom , three , animeXYZ ,
     use vue3 , element-plus , codemirror ,pug ,vuepress , pinia...,i love coding,because coding does not lie">
     </objectification>
     <objectification text="rust code demo"></objectification>
