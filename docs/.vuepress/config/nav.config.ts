@@ -58,7 +58,11 @@ const examples: NavbarGroup[] = [
                     {
                         text: 'ed209',
                         link: `${glslBaseUrl}ed209`
-                    }
+                    },
+                    // {
+                    //     text: 'indecial',
+                    //     link: `${glslBaseUrl}indecial`
+                    // },
                 ]
             },
             {

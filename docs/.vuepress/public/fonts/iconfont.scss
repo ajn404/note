@@ -1,5 +1,6 @@
 @font-face {
   font-family: "iconfont"; /* Project id 3616492 */
+  font-display: swap;
   src: url('/fonts/iconfont.woff2') format('woff2'),
        url('/fonts/iconfont.woff') format('woff'),
        url('/fonts/iconfont.ttf') format('truetype');
@@ -7,11 +8,13 @@
 
 @font-face {
   font-family: "ag";
+  font-display: swap;
   src: url('/fonts/ag.woff2') format('woff2'),url('/fonts/smile.ttf') format('truetype'),url('/fonts/ag.woff') format('woff');
 }
 
 @font-face {
   font-family: "smile";
+  font-display: swap;
   src: url('/fonts/smile.ttf') format('truetype');
 }
 
