@@ -266,3 +266,8 @@ URL of the ICANN WHOIS Data Problem Reporting System: http://wdprs.internic.net/
 <asciinemaPlayerBox file='whois'></asciinemaPlayerBox>
 </ClientOnly>
 :::
+
+
+<ClientOnly>
+<shoot></shoot>
+</ClientOnly>

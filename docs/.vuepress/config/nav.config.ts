@@ -164,6 +164,11 @@ const note: NavbarGroup[] = [
                 text: 'extends',
                 link: `${noteBaseUrl}extends`
             },
+
+            {
+                text: 'capture',
+                link: `${noteBaseUrl}capture`
+            },
             
 
             {
