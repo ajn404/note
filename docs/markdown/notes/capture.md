@@ -4,6 +4,8 @@ title: 关于前端贴图
 
 ## 前端需求心路(一股子翻译腔)
 
+:::details 其他
+
 遇到弄不懂的需求，程序员靠搜索引擎检索和实践，现在多了人工智能，确实也是非常大的助力
 
 ### 前期，ya哥问我：前端有方法可以 把环检打过标签的图片 合成新的图片上传吗？
@@ -30,7 +32,6 @@ title: 关于前端贴图
         console.log(mergeImg);
         };
 ```
-
 
 #### 我的第二个解决方案
 ```js
@@ -188,4 +189,38 @@ fetch(url, {
 ```
 
 这里可以尝试把script的type改成模块(module)，因为用到[html2canvas](https://html2canvas.hertzen.com/)需要es6 Promise支持或者esllint包装的npm包（我的说法）
+
+#### 然后ya哥说下个月的需求是改成图片和标签一起合成，坐标是随机的，还要做到合成一张图片上传给后端
+
+我写的时候，就是现在，突然意识到还有一种方法，就是前端实现标签定位和显示，把标签和坐标和图片传给后端，后端处理合成也不失为一种方案。
+
+
+:::
+
+#### 我的第三个解决方案
+
+然后当时我的反应是，去保存html标签为图片，通过chatGPT检索找到了html2canvas这个库，于是在本vue3的博客试了试。
+
+控制查看打印
+<clientOnly>
+<shoot></shoot>
+</clientOnly>
+
+如果改成图片，变成下载
+<clientOnly>
+<shoot type='hutao'></shoot>
+</clientOnly>
+
+vue3实现贴标签，并点击按钮下载图片
+<clientOnly>
+<shoot type='d3'></shoot>
+</clientOnly>
+
+
+
+
+
+
+
+
 

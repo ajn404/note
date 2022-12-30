@@ -17,5 +17,4 @@ background-repeat: no-repeat;width: 100px;height: 100px;border-radius: 50%;displ
 <p style="text-align: center;font-weight: bold;">ajn404</p>
 </div>
 
-####
-阳的全部阳康，没阳的永远阴性
+#### 愿阳的全部阳康，没阳的永远阴
