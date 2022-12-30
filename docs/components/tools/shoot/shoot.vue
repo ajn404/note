@@ -25,12 +25,7 @@
 import html2canvas from 'html2canvas';
 import { ref } from 'vue'
 import { isClient } from "@vueuse/core";
-
-
-
-
 const capture = ref(null)
-
 const downloadBase64File = (base64Data, filename) => {
     const link = document.createElement('a');
     link.download = filename;
@@ -39,26 +34,23 @@ const downloadBase64File = (base64Data, filename) => {
     link.click();
     link.remove();
 }
-
 const filename = 'html标签.png';
-
 const translate = () => {
     html2canvas(capture.value).then(function (canvas) {
         console.log(canvas.toDataURL());
     });
 }
-
-
 const download = () => {
     html2canvas(capture.value).then(function (canvas) {
         downloadBase64File(canvas.toDataURL(), filename);
+    }).catch(e=>{
+        console.log(e);
+
     });
 }
-
 const props = defineProps({
     type: String
 })
-
 let method = translate;
 const methods = {
     translate: translate,
@@ -68,15 +60,11 @@ const methods = {
 if (props.type) {
     method = methods[props.type]
 }
-
-
-const imageUrl = ref('/note/images/hutao/hutao1.png');
+const imageUrl = ref('/images/logo.jpg');
 const tags = ref([]);
 const tagsRef = ref('');
 const imageRef = ref('');
 const tagsHtml = ref('')
-
-
 const addTag = (event) => {
     // Calculate the position of the click relative to the image
     const imageRect = imageRef.value.getBoundingClientRect();
@@ -84,12 +72,9 @@ const addTag = (event) => {
     const y = event.clientY - imageRect.top;
     // Add a new tag to the data
     tags.value.push({ x, y });
-    // Use D3 to draw the new tag on the image
     
     tagsHtml.value = `${tagsHtml.value}<div style='position:absolute;left:${x}px;top:${y}px'>tags内容可自定义</div>`
-
-    console.log(tagsHtml.value,x,y);
-
+    // console.log(tagsHtml.value,x,y);
     // d3.select(tagsRef.value)
     //     .selectAll('div')
     //     .data(tags.value)
@@ -101,8 +86,6 @@ const addTag = (event) => {
     //     .html('New Tag');
 }
 </script>
-
-
 <style lang="scss" scoped>
 .capture {
     padding: 10px;
@@ -112,10 +95,10 @@ const addTag = (event) => {
 }
 
 .image{
-    background-image: url('/note/images/hutao/hutao1.png');
+    background-image: url('/images/logo.jpg');
     width:100%;
-    height: 20vh;
-    background-size: 100%;
+    height: 50vh;
+    background-size: contain;
 }
 
 .tags{
