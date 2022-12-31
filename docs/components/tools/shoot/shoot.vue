@@ -77,7 +77,7 @@ const methods = {
 if (props.type) {
     method = methods[props.type]
 }
-const imageUrl = ref('/images/logo.jpg');
+const imageUrl = ref('/note/images/logo.jpg');
 const tags = ref([]);
 const tagsRef = ref('');
 const imageRef = ref('');
