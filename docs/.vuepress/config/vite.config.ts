@@ -18,8 +18,9 @@ const viteConfig = {
         }
     },
     build: {
+        sourcemap:true,
         rollupOptions: {
-            external: ['p5','@kitware'],
+            external: ['p5','@kitware','animxyz','vtk'],
             plugins: [
                 commonjs(),
               ],
@@ -29,6 +30,7 @@ const viteConfig = {
         chunkSizeWarningLimit: 10000
     },
     css: {
+        devSourcemap:true,
         postcss: {
             plugins: [
                 {

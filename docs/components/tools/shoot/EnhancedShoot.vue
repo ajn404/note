@@ -5,16 +5,6 @@
             <h4 style="color: #000; ">Hello world!</h4>
         </div>
 
-        <div class="capture" ref="capture" v-if="props.type === 'hutao'">
-            <img :src="imageUrl" alt="">
-        </div>
-
-        <div class="capture" ref="capture" v-if="props.type === 'd3'">
-            <div ref="imageRef" class="image" @click="addTag"></div>
-            <div ref="tagsRef" class="tags" v-html="tagsHtml">
-            </div>
-        </div>
-
         <div class="capture" ref="capture" v-if="props.type === 'tag'">
             <div ref="imageRef" class="image linear" @click="addRadioTag"></div>
             <div ref="tagsRef" class="tags" v-html="tagsHtml">
@@ -22,30 +12,26 @@
         </div>
 
         <el-radio-group v-model="radio1" class="radio" v-if="props.type === 'tag'">
-            <el-radio size="large" v-for="item in selectSunShang" :label="item">{{ item }}</el-radio>
+            <h5>损伤标签：</h5>
+            <el-radio size="large" v-for="item in selectSunShang" :label="item">{{ item ? item : '取消选择' }}</el-radio>
         </el-radio-group>
 
         <el-radio-group v-model="radio2" class="radio" v-if="props.type === 'tag'">
+            <h5>部位标签:</h5>
             <el-radio size="large" v-for="item in selectBuWei" :label="item">{{ item }}</el-radio>
         </el-radio-group>
-
         <el-button class="el-button" @click="method">转换为图像</el-button>
     </div>
 
 </template>
 
-<script setup name="shoot">
+<script setup name="EnhancedShoot" >
 
 import html2canvas from 'html2canvas';
 import { ref } from 'vue'
-import { isClient } from "@vueuse/core";
-
 import { downloadBase64File } from './index'
-
 const capture = ref(null)
-
 const filename = 'html标签.png';
-
 const translate = () => {
     html2canvas(capture.value).then(function (canvas) {
         console.log(canvas.toDataURL());
@@ -64,43 +50,13 @@ const props = defineProps({
 })
 let method = translate;
 const methods = {
-    translate: translate,
-    hutao: download,
-    d3: download,
     tag: download
 }
 if (props.type) {
     method = methods[props.type]
 }
-const imageUrl = ref('/note/images/logo.jpg');
-const tags = ref([]);
-const tagsRef = ref('');
-const imageRef = ref('');
-const tagsHtml = ref('')
-const addTag = (event) => {
-    // Calculate the position of the click relative to the image
-    const imageRect = imageRef.value.getBoundingClientRect();
-    const x = event.clientX - imageRect.left;
-    const y = event.clientY - imageRect.top;
-    // Add a new tag to the data
-    tags.value.push({ x, y });
-
-    tagsHtml.value = `${tagsHtml.value}<div style='position:absolute;left:${x}px;top:${y}px'>tags内容可自定义</div>`
-    // console.log(tagsHtml.value,x,y);
-    // d3.select(tagsRef.value)
-    //     .selectAll('div')
-    //     .data(tags.value)
-    //     .enter()
-    //     .append('div')
-    //     .style('position', 'absolute')
-    //     .style('left', d => `${d.x}px`)
-    //     .style('top', d => `${d.y}px`)
-    //     .html('New Tag');
-}
-
-const selectSunShang = ref(['凹陷', '掉漆', '划痕', '破损', '锈蚀']);
-const selectBuWei = ref(['前机盖', '左前门', '右前门', '前保杠']);
-
+const selectSunShang = ref(['凹陷', '掉漆', '划痕', '破损', '锈蚀', '']);
+const selectBuWei = ref(['前机盖', '左前门', '右前门', '前保杠', '']);
 const radio1 = ref(selectSunShang.value[0])
 const radio2 = ref(selectBuWei.value[0])
 
@@ -109,8 +65,8 @@ color: white;
     position: absolute;
     padding: 0.1em;
     background: red;
+    text-align:center;
 `
-
 const spanStyle = `
 position: absolute;
     bottom: -1em;
@@ -120,19 +76,26 @@ position: absolute;
     border-radius: 50%;
     background: red;
 `
+const tags = ref([]);
+const tagsRef = ref('');
+const imageRef = ref('');
+const tagsHtml = ref('')
 const addRadioTag = (event) => {
     const imageRect = imageRef.value.getBoundingClientRect();
     const x = event.clientX - imageRect.left;
     const y = event.clientY - imageRect.top;
-
-
+    let maxRadio = radio1.value.length > radio2.value.length ? radio1.value.length : radio2.value.length;
+    const divLength = maxRadio + 0.2;
+    //padding+text
+    const xx = `calc(${x}px - ${divLength / 2}em)`
+    const yy = `calc(${y}px - ${3.2}em)`
     tags.value.push({ x, y });
-    tagsHtml.value = `${tagsHtml.value}<div style='${tagStyle}left:${x}px;top:${y}px'>${radio1.value}<br/>${radio2.value}<span style='${spanStyle}'></span></div>`
+    tagsHtml.value = `${tagsHtml.value}<div style='${tagStyle}left:${xx};top:${yy}'>
+        ${radio1.value}
+        <br/>
+        ${radio2.value}
+        <span style='${spanStyle}'></span></div>`
 }
-
-
-
-
 </script>
 <style lang="scss" scoped>
 .capture {
@@ -140,7 +103,6 @@ const addRadioTag = (event) => {
     background-color: #f5da55;
     position: relative;
     box-sizing: border-box;
-
 }
 
 .image {

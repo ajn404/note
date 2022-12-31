@@ -253,8 +253,17 @@ export default {
 - 点（操作）的实际位置在标签的左上角
 - 图片太大的话性能很差
 - 需要浏览器的支持,cordova做出来的还真没试过，待会试试
-  
 
+#### 改进点击位置为底部中间
+
+
+<clientOnly>
+<EnhancedShoot type='tag'></EnhancedShoot>
+</clientOnly>
+
+::: details 查看代码
+
+:::
 
 
 
