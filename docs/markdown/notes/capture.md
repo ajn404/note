@@ -222,6 +222,32 @@ fetch(url, {
 <shoot type='tag'></shoot>
 </clientOnly>
 
+#### 看起来实现了
+
+但是本博客用的是vue3,vue2我需要看看支不支持,我问了chatGPT,确实也是可以的
+::: details 查看代码
+```vue2
+<template>
+  <div>
+    <button @click="capture">Capture</button>
+  </div>
+</template>
+
+<script>
+import html2canvas from 'html2canvas'
+
+export default {
+  methods: {
+    async capture () {
+      const canvas = await html2canvas(document.body)
+      document.body.appendChild(canvas)
+    }
+  }
+}
+</script>
+
+```
+:::
 
 
 
