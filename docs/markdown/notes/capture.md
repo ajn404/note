@@ -201,21 +201,26 @@ fetch(url, {
 
 然后当时我的反应是，去保存html标签为图片，通过chatGPT检索找到了html2canvas这个库，于是在本vue3的博客试了试。
 
-控制查看打印
+##### 控制查看打印
 <clientOnly>
 <shoot></shoot>
 </clientOnly>
 
-如果改成图片，变成下载
+##### 如果改成图片，变成下载
 <clientOnly>
 <shoot type='hutao'></shoot>
 </clientOnly>
 
-vue3实现贴标签，并点击按钮下载图片
+##### vue3实现贴固定文字，并点击按钮下载图片
 <clientOnly>
 <shoot type='d3'></shoot>
 </clientOnly>
 
+##### vue3实现贴标签，并点击按钮下载图片
+
+<clientOnly>
+<shoot type='tag'></shoot>
+</clientOnly>
 
 
 
