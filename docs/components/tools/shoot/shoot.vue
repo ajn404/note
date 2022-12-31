@@ -144,7 +144,7 @@ const addRadioTag = (event) => {
 }
 
 .image {
-    background-image: url('/images/logo.jpg');
+    background-image: url('/note/images/logo.jpg');
     width: 100%;
     height: 50vh;
     background-size: contain;
@@ -152,7 +152,7 @@ const addRadioTag = (event) => {
     &.linear{
         background-image: linear-gradient();
         background-image: linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5)),
-                  url("/images/logo.jpg");
+                  url("/note/images/logo.jpg");
     }
 }
 
