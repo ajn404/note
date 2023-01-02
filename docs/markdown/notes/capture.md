@@ -268,6 +268,9 @@ export default {
 
 #### 最终改进版
 - 改进文字非选择为空且带来的点的高度位响应等问题
+- border-radius
+- 增加padding距离计算
+- 
 
 
 

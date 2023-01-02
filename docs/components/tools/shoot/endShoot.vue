@@ -94,9 +94,10 @@ const addRadioTag = (event) => {
     let maxRadio = radio1.value.length > radio2.value.length ? radio1.value.length : radio2.value.length;
     const divLength = maxRadio + 0.2;
     //padding+text
-    const xx = `calc(${x}px - ${divLength / 2}em)`
+    const paddingTop = 3;
+    const paddingLeft = 3;
 
-    let moveY = 3.2;
+    let moveY = 3.2-paddingTop;
     if (!radio1.value) {
         moveY -= 1;
     }
@@ -104,6 +105,7 @@ const addRadioTag = (event) => {
     if (!radio2.value) {
         moveY -= 1;
     }
+    const xx = `calc(${x}px - ${divLength / 2 - paddingLeft}em)`
     const yy = `calc(${y}px - ${moveY}em)`
 
     tags.value.push({ x, y });
@@ -115,11 +117,12 @@ const addRadioTag = (event) => {
 </script>
 <style lang="scss" scoped>
 .capture {
-    padding: 0 10px 10px 0;
+    padding: 3em;
     background-color: #f5da55;
     position: relative;
     box-sizing: border-box;
     // margin: 0 auto;
+    overflow: hidden;
 }
 
 .image {
@@ -128,11 +131,10 @@ const addRadioTag = (event) => {
     height: 50vh;
     background-size: contain;
 
-    &.linear {
-        background-image: linear-gradient();
-        background-image: linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5)),
-            url("/note/images/logo.jpg");
-    }
+    // &.linear {
+    //     background-image: linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5)),
+    //         url("/note/images/logo.jpg");
+    // }
 }
 
 .tags {
