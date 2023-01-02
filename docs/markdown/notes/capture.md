@@ -262,10 +262,18 @@ export default {
 </clientOnly>
 
 ::: details 查看代码
-
+@[code](../../components/tools/shoot/EnhancedShoot.vue)
 :::
 
 
+#### 最终改进版
+- 改进文字非选择为空且带来的点的高度位响应等问题
+
+
+
+<clientOnly>
+<endShoot type='tag'></endShoot>
+</clientOnly>
 
 
 
