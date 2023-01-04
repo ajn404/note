@@ -1340,4 +1340,6 @@ fn main() {
 
 本页面的编译结果来源为[rust playground](https://play.rust-lang.org/),感谢开源，thanks ©MIT
 
+### 本页面全是组件，性能变差，组件写得不好
+
 

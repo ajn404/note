@@ -6,7 +6,6 @@ import { Codemirror } from 'vue-codemirror'
 import { ElLoading } from "element-plus";
 const playground: any = ref(null)
 const editor: any = ref(null)
-const buttonText = ref('运行')
 const extensions = [rust(), oneDark];
 const loading = () => {
     return ElLoading.service({
@@ -24,12 +23,6 @@ const props = defineProps({
 })
 const stderr = ref("");
 const stdout = ref("");
-
-document.onkeydown = e => {
-    if (stderr.value && e?.keyCode === 27) {
-        buttonText.value = '全屏'
-    }
-}
 const code = ref(props.code);
 
 const getRes = () => {
@@ -52,37 +45,10 @@ const getRes = () => {
             }
         }).then(res => res.json()).then(response => {
             loadInstance.close()
-            // let height = editor.value?.$el.clientHeight;
-            // //待优化    
-            // window.scrollBy({
-            //     top: height,
-            //     behavior: 'smooth'
-
-            // })
-            buttonText.value = '全屏'
-            if (props.editable) {
-                buttonText.value = "运行"
-            }
             stderr.value = response?.stderr?.replace(/\n/g, '<br/>');
             stdout.value = response?.stdout?.replace(/\n/g, '<br/>');
         })
-    } else {
-
-
-        if (document.fullscreenEnabled && !document.fullscreenElement) {
-            playground?.value?.requestFullscreen()
-            buttonText.value = '退出全屏/全屏'
-        }
-        else {
-
-            document.exitFullscreen().then(_ => {
-                buttonText.value = '全屏'
-            })
-        }
-
-    }
-
-
+    } 
 }
 if (!props.async) getRes()
 
@@ -95,8 +61,8 @@ if (!props.async) getRes()
 
         <codemirror ref="editor" v-if="props.editable" v-model="code" placeholder="rust" class="editor"
             :autofocus="false" :indent-with-tab="true" :tab-size="2" :extensions="extensions" :disabled="false" />
-        <el-button class="button" v-if="props.async" @click="getRes">
-            <objectification :text="buttonText"></objectification>
+        <el-button class="button" v-if="props.async" @click="getRes" v-show='!stderr || props.editable'>
+            运行
         </el-button>
         <div class="res" v-show="stderr || stdout">
             <h4 v-show="stderr">Standard Error(编译结果)</h4>
