@@ -16,9 +16,9 @@ title: 关于前端贴图
     const canvas = document.getElementById('canvas');
     const ctx = canvas.getContext('2d');
     const image1 = new Image();
-    image1.src = '	http://localhost:9999/note/images/hutao/hutao7.png';
+    image1.src = '	http://localhost:9999/note/images/hutao/hutao7.webp';
     const image2 = new Image();
-    image2.src = '	http://localhost:9999/note/images/hutao/hutao1.png';
+    image2.src = '	http://localhost:9999/note/images/hutao/hutao1.webp';
     image1.onload = () => {
         // ctx.drawImage(image1, 0, 0); // 绘制图片1
         // ctx.drawImage(image2, 0, 0); // 绘制图片2

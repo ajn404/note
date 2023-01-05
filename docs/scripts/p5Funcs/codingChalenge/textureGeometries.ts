@@ -6,7 +6,7 @@ export const textureGeometries = (_p5: any) => {
 
     let img: any;
     _.preload = () => {
-      img = _.loadImage('/note/images/hutao/hutao1.png')
+      img = _.loadImage('/note/images/hutao/hutao1.webp')
     }
   
     _.draw = () => {

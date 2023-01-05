@@ -48,7 +48,7 @@ $multi: 4;
     width: 236.4px * $multi;
     height: 184.5px * $multi;
     margin: 0 auto;
-    background-image: url("/note/images/hutao/hutao1.png");
+    background-image: url("/note/images/hutao/hutao1.webp");
     background-size: cover;
 
 }

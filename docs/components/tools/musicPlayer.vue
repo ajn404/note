@@ -126,7 +126,7 @@ export default defineComponent({
         {
           name: "忘记了1",
           artist: "某个男歌手",
-          cover: "/note/images/hutao/hutao1.png",
+          cover: "/note/images/hutao/hutao1.webp",
           source: "/note/music/hei.mp3",
           url: "/note/music/hei.mp3",
           favorited: false
@@ -142,7 +142,7 @@ export default defineComponent({
         {
           name: "忘记3",
           artist: "某个男歌手",
-          cover: "/note/images/hutao/hutao3.png",
+          cover: "/note/images/hutao/hutao3.webp",
           source: "/note/music/yue.mp3",
           url: "/note/music/yue.mp3",
           favorited: false

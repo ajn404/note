@@ -59,7 +59,7 @@ export default {
             </XyzTransition>
             <XyzTransition appear xyz="fade duration-5 appear-front-3 small-3 appear-small-0 stagger-2 out-stagger-0">
                 <div class="card" @click="goUrl('/note/markdown/notes/shell')">
-                    <card data-image="/note/images/hutao/hutao3.png">
+                    <card data-image="/note/images/hutao/hutao3.webp">
                         <template v-slot:header>
                             <h1>shell</h1>
                         </template>
@@ -85,7 +85,7 @@ export default {
             </XyzTransition>
             <XyzTransition appear xyz="fade duration-5 appear-front-3 small-3 appear-small-0 stagger-2 out-stagger-0">
                 <div class="card" @click="goUrl('/note/markdown/notes/leetcode')">
-                    <card data-image="/note/images/hutao/hutao5.png">
+                    <card data-image="/note/images/hutao/hutao5.webp">
                         <template v-slot:header>
                             <h1>algorithm</h1>
                         </template>
@@ -111,7 +111,7 @@ export default {
             </XyzTransition>
             <XyzTransition appear xyz="fade duration-5 appear-front-3 small-3 appear-small-0 stagger-2 out-stagger-0">
                 <div class="card" @click="goUrl('/note/markdown/notes/rust')">
-                    <card data-image="/note/images/hutao/hutao7.png">
+                    <card data-image="/note/images/hutao/hutao7.webp">
                         <template v-slot:header>
                             <h1>rust</h1>
                         </template>
