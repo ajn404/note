@@ -34,7 +34,7 @@ export default {
 
             <XyzTransition appear xyz="fade duration-5 appear-front-3 small-3 appear-small-0 stagger-2 out-stagger-0">
                 <div class="card" @click="goUrl('/note/markdown/notes/js')">
-                    <card data-image="/note/images/hutao/hutao1.png">
+                    <card data-image="/note/images/hutao/hutao1.webp">
                         <template v-slot:header>
                             <h1>javascript</h1>
                         </template>
@@ -47,7 +47,7 @@ export default {
 
             <XyzTransition appear xyz="fade duration-5 appear-front-3 small-3 appear-small-0 stagger-2 out-stagger-0">
                 <div class="card" @click="goUrl('/note/markdown/notes/glsl')">
-                    <card data-image="/note/images/hutao/hutao2.jpg">
+                    <card data-image="/note/images/hutao/hutao2.webp">
                         <template v-slot:header>
                             <h1>glsl</h1>
                         </template>
@@ -72,7 +72,7 @@ export default {
             </XyzTransition>
             <XyzTransition appear xyz="fade duration-5 appear-front-3 small-3 appear-small-0 stagger-2 out-stagger-0">
                 <div class="card" @click="goUrl('/note/markdown/notes/ts')">
-                    <card data-image="/note/images/hutao/hutao4.jpg">
+                    <card data-image="/note/images/hutao/hutao4.webp">
                         <template v-slot:header>
                             <h1>typescript</h1>
                         </template>
@@ -98,7 +98,7 @@ export default {
             </XyzTransition>
             <XyzTransition appear xyz="fade duration-5 appear-front-3 small-3 appear-small-0 stagger-2 out-stagger-0">
                 <div class="card" @click="goUrl('/note/markdown/fantastic/p5')">
-                    <card data-image="/note/images/hutao/hutao6.jpg">
+                    <card data-image="/note/images/hutao/hutao6.webp">
                         <template v-slot:header>
                             <h1>p5</h1>
                         </template>
@@ -123,7 +123,7 @@ export default {
             </XyzTransition>
 
 
-                <!-- <card data-image="/note/images/hutao/hutao8.jpg"></card> -->
+                <!-- <card data-image="/note/images/hutao/hutao8.webp"></card> -->
         </div>
 
     </div>

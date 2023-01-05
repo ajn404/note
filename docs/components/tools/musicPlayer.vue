@@ -134,7 +134,7 @@ export default defineComponent({
         {
           name: "忘记了2",
           artist: "某个男歌手",
-          cover: "/note/images/hutao/hutao2.jpg",
+          cover: "/note/images/hutao/hutao2.webp",
           source: "/note/music/szszl.mp3",
           url: "/note/music/szszl.mp3",
           favorited: false

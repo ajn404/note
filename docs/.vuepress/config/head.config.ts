@@ -2,7 +2,7 @@
 import { HeadConfig } from "vuepress"
 
 const head: HeadConfig []= [
-    ['link', { rel: 'icon', href: '/note/images/logo.jpg' }],
+    ['link', { rel: 'icon', href: '/note/images/logo.webp' }],
     // ['link', { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/@animxyz/core' }],
     ['link',{rel: 'stylesheet', href:'/note/data/asciinema-player.css'}],
     // ['script',{src:'https://p5js.org/assets/js/p5.min.js?v=9299cb',defer:true}],
