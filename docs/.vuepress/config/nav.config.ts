@@ -173,21 +173,6 @@ const note: NavbarGroup[] = [
             {
                 text: 'yuyan',
                 link: `${noteBaseUrl}yuyan`
-            },
-            
-
-            {
-                text: 'glsl demo',
-                children: [
-                    {
-                        text: 'example',
-                        link: `${noteBaseUrl}exampleGlslCollect`
-                    },
-                    {
-                        text: 'practice',
-                        link: `${noteBaseUrl}practiceGlslCollect`
-                    }
-                ]
             }
 
         ]
@@ -236,7 +221,7 @@ const beforeBlog: NavbarGroup[] = [
 ]
 const fantastic: NavbarGroup[] = [
     {
-        text: 'fantastic',
+        text: 'p5&kabooom',
         children: [
             {
                 text: 'p5 api',
@@ -270,7 +255,21 @@ const threeDemo: NavbarGroup[] = [
                 ]
             },
 
-            ...examples[0].children
+            ...examples[0].children,
+
+            {
+                text: 'glsl demo',
+                children: [
+                    {
+                        text: 'example',
+                        link: `${noteBaseUrl}exampleGlslCollect`
+                    },
+                    {
+                        text: 'practice',
+                        link: `${noteBaseUrl}practiceGlslCollect`
+                    }
+                ]
+            }
         ]
     }
 ]
