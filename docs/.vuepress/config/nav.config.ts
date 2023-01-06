@@ -294,7 +294,11 @@ const vtkDemo :NavbarGroup[] = [
             {
                 text: 'vtk viewer diskout',
                 link: `${vtkBasiceUrl}viewerUrl`
-            }
+            },
+            {
+                text: 'vtk viewer lung',
+                link: `${vtkBasiceUrl}viewerLung`
+            },
         ]
     },
 ]

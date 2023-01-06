@@ -19,6 +19,9 @@ import style from './geometryViewer.module.css'
 const vtkContainerUrl = ref(null);
 const context = ref(null);
 const txt = ref(true)
+const props = defineProps({
+    url:Array
+})
 const loading = () => {
     return ElLoading.service({
         lock: true,
@@ -75,7 +78,6 @@ const loadViewer = () => {
                 background.length === 3 && background.reduce((a, b) => a + b, 0) < 1.5
                     ? style.dark
                     : style.light;
-            console.log(selectorClass);
             // lut
             const lutName = userParams.lut || 'erdc_rainbow_bright';
 
@@ -440,6 +442,7 @@ const loadViewer = () => {
                 emptyContainer(container);
 
                 const urls = [].concat(options.fileURL);
+                console.log(urls);
                 const progressContainer = document.createElement('div');
                 progressContainer.setAttribute('class', style.progress);
                 container.appendChild(progressContainer);
@@ -516,8 +519,18 @@ const loadViewer = () => {
             if (process.env.NODE_ENV !== 'development') {
                 baseUrl = 'https://ajn404.gitee.io/note/'
             }
-
+            if(props.url){
+                let url = []
+                baseUrl+='data/vtp/'
+                props.url.forEach(item=>{
+                    url.push(baseUrl+item)
+                })
+                userParams.fileURL = url
+                console.log(userParams.fileURL);
+            }
+            else
             userParams.fileURL = `${baseUrl}data/diskout-stream-binary-zlib.vtp`
+            console.log(userParams);
 
             if (userParams.url || userParams.fileURL) {
                 const exampleContainer = vtkContainerUrl.value;
