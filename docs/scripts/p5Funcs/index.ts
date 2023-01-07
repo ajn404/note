@@ -36,6 +36,7 @@ export { textureDemo } from './codingChalenge/textureDemo'; //坤坤材质
 export { textureGeometries } from './codingChalenge/textureGeometries'; //play
 export { waveFunctionCollapse } from "./codingChalenge/waveFunctionCollapse"; //波函数坍塌
 export { morph } from './codingChalenge/morph'; //变形
+export { brightnessMirror } from './codingChalenge/brightnessMirror'
 
 //lerp
 export { lerp } from './vector/lerp'
@@ -47,3 +48,5 @@ export { limit } from './vector/limit'
 export { shader } from './material/shader'
 export { createShader } from './material/createShader'
 export { resetShader } from './material/resetShader'
+
+

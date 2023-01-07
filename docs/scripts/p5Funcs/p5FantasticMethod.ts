@@ -61,7 +61,9 @@ export const allMethods = [
       { label: "limit", value: "limit", notSinglePage: true },
       { label: "shader", value: "shader", notSinglePage: true },
       { label: "resetShader", value: "resetShader", notSinglePage: true },
-      { label: "createShader", value: "createShader", notSinglePage: true }
+      { label: "createShader", value: "createShader", notSinglePage: true },
+      { label: "brightnessMirror", value: "brightnessMirror" }
+
     ],
   },
   {
