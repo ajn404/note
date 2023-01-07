@@ -268,6 +268,36 @@ URL of the ICANN WHOIS Data Problem Reporting System: http://wdprs.internic.net/
 :::
 
 
-<ClientOnly>
-<shoot></shoot>
-</ClientOnly>
+### [tauri](https://tauri.app/zh-cn/)
+
+
+<CodeGroup>
+
+  <CodeGroupItem title="Cargo">
+  
+```shell
+cargo install create-tauri-app
+cargo create-tauri-app
+```
+
+  </CodeGroupItem>
+
+  <CodeGroupItem title="npm">
+
+```shell
+npm create tauri-app
+```
+
+  </CodeGroupItem>
+
+<CodeGroupItem title="yarn">
+
+```shell
+yarn create tauri-app
+```
+
+</CodeGroupItem>
+
+</CodeGroup>
+
+
