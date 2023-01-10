@@ -1,0 +1,2 @@
+const e=JSON.parse('{"key":"v-581f1997","path":"/markdown/fantasticSinglePage/minesweeper.html","title":"p5 is fantastic","lang":"en-US","frontmatter":{"title":"p5 is fantastic","sidebar":false},"excerpt":"","headers":[],"git":{"updatedTime":1670385555000,"contributors":[{"name":"ajn404","email":"huiyuening00@gmail.com","commits":3}]},"filePathRelative":"markdown/fantasticSinglePage/minesweeper.md"}');export{e as data};
+//# sourceMappingURL=minesweeper.html.603fdc1a.js.map

@@ -1,0 +1,2 @@
+const a=JSON.parse('{"key":"v-31e3a7e8","path":"/markdown/fantasticSinglePage/earthQuake.html","title":"p5 is fantastic","lang":"en-US","frontmatter":{"title":"p5 is fantastic","sidebar":false},"excerpt":"","headers":[],"git":{"updatedTime":1670385555000,"contributors":[{"name":"ajn404","email":"huiyuening00@gmail.com","commits":2}]},"filePathRelative":"markdown/fantasticSinglePage/earthQuake.md"}');export{a as data};
+//# sourceMappingURL=earthQuake.html.2d6efec6.js.map

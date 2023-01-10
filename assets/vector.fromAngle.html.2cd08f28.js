@@ -1,0 +1,2 @@
+import{_ as t}from"./p5.11262bec.js";import{_,o as l,c as r,a as e,w as c,b as a}from"./app.b7df915f.js";const s={};function m(p,f){const n=t,o=a("ClientOnly");return l(),r("div",null,[e(o,null,{default:c(()=>[e(n,{type:"fromAngle",outpage:""})]),_:1})])}var d=_(s,[["render",m],["__file","vector.fromAngle.html.vue"]]);export{d as default};
+//# sourceMappingURL=vector.fromAngle.html.2cd08f28.js.map

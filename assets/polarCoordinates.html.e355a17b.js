@@ -1,0 +1,2 @@
+import{_ as t}from"./p5.11262bec.js";import{_ as a,o as r,c as _,a as o,w as l,b as s}from"./app.b7df915f.js";const c={};function p(i,m){const e=t,n=s("ClientOnly");return r(),_("div",null,[o(n,null,{default:l(()=>[o(e,{type:"polarCoordinates"})]),_:1})])}var u=a(c,[["render",p],["__file","polarCoordinates.html.vue"]]);export{u as default};
+//# sourceMappingURL=polarCoordinates.html.e355a17b.js.map

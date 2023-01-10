@@ -1,0 +1,2 @@
+import{_ as o}from"./geometryViewerUrl.87b3ac5d.js";import{_ as r,o as _,c as l,a as e,w as c,b as a}from"./app.b7df915f.js";import"./geometryViewer.module.05136fcc.js";const s={};function i(m,p){const n=o,t=a("ClientOnly");return _(),l("div",null,[e(t,null,{default:c(()=>[e(n)]),_:1})])}var v=r(s,[["render",i],["__file","viewerUrl.html.vue"]]);export{v as default};
+//# sourceMappingURL=viewerUrl.html.2fb61b53.js.map

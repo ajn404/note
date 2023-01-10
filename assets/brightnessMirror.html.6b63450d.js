@@ -1,0 +1,2 @@
+import{_ as r}from"./p5.11262bec.js";import{_ as o,o as s,c as _,a as e,w as c,b as l}from"./app.b7df915f.js";const a={};function i(m,p){const n=r,t=l("ClientOnly");return s(),_("div",null,[e(t,null,{default:c(()=>[e(n,{type:"brightnessMirror"})]),_:1})])}var h=o(a,[["render",i],["__file","brightnessMirror.html.vue"]]);export{h as default};
+//# sourceMappingURL=brightnessMirror.html.6b63450d.js.map

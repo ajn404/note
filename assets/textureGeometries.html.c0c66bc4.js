@@ -1,0 +1,2 @@
+import{_ as o}from"./p5.11262bec.js";import{_ as r,o as _,c as s,a as e,w as c,b as l}from"./app.b7df915f.js";const a={};function m(i,p){const t=o,n=l("ClientOnly");return _(),s("div",null,[e(n,null,{default:c(()=>[e(t,{type:"textureGeometries"})]),_:1})])}var x=r(a,[["render",m],["__file","textureGeometries.html.vue"]]);export{x as default};
+//# sourceMappingURL=textureGeometries.html.c0c66bc4.js.map

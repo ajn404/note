@@ -1,0 +1,2 @@
+import{_ as o}from"./glslExample.5bc3e89d.js";import{_,o as i,c as l,a as e,w as r,b as s}from"./app.b7df915f.js";import"./practice.setup.802fd3c0.js";import"./OrbitControls.ba261712.js";const c={};function m(a,p){const t=o,n=s("ClientOnly");return i(),l("div",null,[e(n,null,{default:r(()=>[e(t,{type:"primitives"})]),_:1})])}var x=_(c,[["render",m],["__file","primitives.html.vue"]]);export{x as default};
+//# sourceMappingURL=primitives.html.27b0a11d.js.map

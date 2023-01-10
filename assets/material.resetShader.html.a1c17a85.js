@@ -1,0 +1,2 @@
+import{_ as o}from"./p5.11262bec.js";import{_ as a,o as r,c as _,a as e,w as l,b as s}from"./app.b7df915f.js";const c={};function m(p,i){const t=o,n=s("ClientOnly");return r(),_("div",null,[e(n,null,{default:l(()=>[e(t,{type:"resetShader",outpage:""})]),_:1})])}var f=a(c,[["render",m],["__file","material.resetShader.html.vue"]]);export{f as default};
+//# sourceMappingURL=material.resetShader.html.a1c17a85.js.map

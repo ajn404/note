@@ -1,0 +1,2 @@
+const t=JSON.parse('{"key":"v-34825abc","path":"/markdown/notes/systs.html","title":"\u7CFB\u7EDF\u6027\u5B66\u4E60typescript","lang":"en-US","frontmatter":{"title":"\u7CFB\u7EDF\u6027\u5B66\u4E60typescript"},"excerpt":"","headers":[{"level":2,"title":"Classes","slug":"classes","children":[]}],"git":{"updatedTime":1670381195000,"contributors":[{"name":"ajn404","email":"huiyuening00@gmail.com","commits":1}]},"filePathRelative":"markdown/notes/systs.md"}');export{t as data};
+//# sourceMappingURL=systs.html.aed55420.js.map

@@ -1,0 +1,2 @@
+const t=JSON.parse('{"key":"v-2a82e005","path":"/markdown/fantasticSinglePage/brightnessMirror.html","title":"p5 is fantastic","lang":"en-US","frontmatter":{"title":"p5 is fantastic","sidebar":false},"excerpt":"","headers":[],"git":{"updatedTime":1673073278000,"contributors":[{"name":"ajn404","email":"huiyuening00@gmail.com","commits":1}]},"filePathRelative":"markdown/fantasticSinglePage/brightnessMirror.md"}');export{t as data};
+//# sourceMappingURL=brightnessMirror.html.1d7b4224.js.map

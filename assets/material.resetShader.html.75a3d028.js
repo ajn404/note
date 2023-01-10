@@ -1,0 +1,2 @@
+const a=JSON.parse('{"key":"v-32d09529","path":"/markdown/notInPage/fantastic/material.resetShader.html","title":"p5 is fantastic","lang":"en-US","frontmatter":{"title":"p5 is fantastic","navbar":false,"sidebar":false},"excerpt":"","headers":[],"git":{"updatedTime":1670762601000,"contributors":[{"name":"mac_ajn404","email":"huiyuening00@gmail.com","commits":1}]},"filePathRelative":"markdown/notInPage/fantastic/material.resetShader.md"}');export{a as data};
+//# sourceMappingURL=material.resetShader.html.75a3d028.js.map

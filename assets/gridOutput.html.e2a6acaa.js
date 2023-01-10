@@ -1,0 +1,2 @@
+const t=JSON.parse('{"key":"v-f7bc1224","path":"/markdown/fantasticSinglePage/gridOutput.html","title":"p5 is fantastic","lang":"en-US","frontmatter":{"title":"p5 is fantastic","sidebar":false},"excerpt":"","headers":[],"git":{"updatedTime":1670385555000,"contributors":[{"name":"ajn404","email":"huiyuening00@gmail.com","commits":3}]},"filePathRelative":"markdown/fantasticSinglePage/gridOutput.md"}');export{t as data};
+//# sourceMappingURL=gridOutput.html.e2a6acaa.js.map

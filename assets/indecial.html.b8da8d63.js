@@ -1,0 +1,2 @@
+import{_ as o}from"./glslExample.5bc3e89d.js";import{_ as l,o as _,c,a as e,w as a,b as r}from"./app.b7df915f.js";import"./practice.setup.802fd3c0.js";import"./OrbitControls.ba261712.js";const i={};function s(m,p){const n=o,t=r("ClientOnly");return _(),c("div",null,[e(t,null,{default:a(()=>[e(n,{type:"indercial"})]),_:1})])}var h=l(i,[["render",s],["__file","indecial.html.vue"]]);export{h as default};
+//# sourceMappingURL=indecial.html.b8da8d63.js.map

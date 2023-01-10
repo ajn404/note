@@ -1,0 +1,2 @@
+import{_ as o}from"./glslExample.5bc3e89d.js";import{_,o as l,c as a,a as e,w as r,b as c}from"./app.b7df915f.js";import"./practice.setup.802fd3c0.js";import"./OrbitControls.ba261712.js";const s={};function m(i,p){const t=o,n=c("ClientOnly");return l(),a("div",null,[e(n,null,{default:r(()=>[e(t,{type:"wave"})]),_:1})])}var w=_(s,[["render",m],["__file","wavePrint.html.vue"]]);export{w as default};
+//# sourceMappingURL=wavePrint.html.4fbf2ae2.js.map

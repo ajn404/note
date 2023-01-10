@@ -1,0 +1,2 @@
+import{_ as t}from"./practice.blendingColors.4a6a65fb.js";import{_ as l,o as r,c as _,a as n,w as c,b as s}from"./app.b7df915f.js";import"./practice.setup.802fd3c0.js";import"./OrbitControls.ba261712.js";const i={};function a(m,p){const o=t,e=s("ClientOnly");return r(),_("div",null,[n(e,null,{default:c(()=>[n(o)]),_:1})])}var b=l(i,[["render",a],["__file","blendingColorUniforms.html.vue"]]);export{b as default};
+//# sourceMappingURL=blendingColorUniforms.html.723d20a0.js.map

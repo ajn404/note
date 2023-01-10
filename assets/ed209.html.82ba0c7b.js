@@ -1,0 +1,2 @@
+import{_ as o}from"./glslExample.5bc3e89d.js";import{_,o as l,c,a as e,w as r,b as a}from"./app.b7df915f.js";import"./practice.setup.802fd3c0.js";import"./OrbitControls.ba261712.js";const s={};function m(p,i){const t=o,n=a("ClientOnly");return l(),c("div",null,[e(n,null,{default:r(()=>[e(t,{type:"ed209"})]),_:1})])}var h=_(s,[["render",m],["__file","ed209.html.vue"]]);export{h as default};
+//# sourceMappingURL=ed209.html.82ba0c7b.js.map

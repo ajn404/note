@@ -1,0 +1,2 @@
+import{_ as o}from"./glslExample.5bc3e89d.js";import{_ as l,o as r,c as _,a as e,w as c,b as a}from"./app.b7df915f.js";import"./practice.setup.802fd3c0.js";import"./OrbitControls.ba261712.js";const s={};function m(p,i){const t=o,n=a("ClientOnly");return r(),_("div",null,[e(n,null,{default:c(()=>[e(t,{type:"simpleTruchetPattern"})]),_:1})])}var x=l(s,[["render",m],["__file","simpleTruchetPattern.html.vue"]]);export{x as default};
+//# sourceMappingURL=simpleTruchetPattern.html.484464d8.js.map

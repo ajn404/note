@@ -1,0 +1,2 @@
+import{_ as o}from"./practice.step.f2d0f742.js";import{_,o as i,c as l,a as n,w as c,b as r}from"./app.b7df915f.js";import"./practice.setup.802fd3c0.js";import"./OrbitControls.ba261712.js";const s={};function a(p,m){const e=o,t=r("ClientOnly");return i(),l("div",null,[n(t,null,{default:c(()=>[n(e,{type:"tiling"})]),_:1})])}var h=_(s,[["render",a],["__file","usingTiling.html.vue"]]);export{h as default};
+//# sourceMappingURL=usingTiling.html.3817bc68.js.map

@@ -1,0 +1,2 @@
+const a=JSON.parse('{"key":"v-0ea88cae","path":"/markdown/example/fractalCity.html","title":"city","lang":"en-US","frontmatter":{"sidebar":false,"title":"city"},"excerpt":"","headers":[],"git":{"updatedTime":1670385555000,"contributors":[{"name":"mac_ajn404","email":"huiyuening00@gmail.com","commits":2},{"name":"ajn404","email":"huiyuening00@gmail.com","commits":1}]},"filePathRelative":"markdown/example/fractalCity.md"}');export{a as data};
+//# sourceMappingURL=fractalCity.html.d8fa0cf8.js.map

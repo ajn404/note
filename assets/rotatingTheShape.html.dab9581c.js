@@ -1,0 +1,2 @@
+const e=JSON.parse('{"key":"v-b1499238","path":"/markdown/practice/rotatingTheShape.html","title":"\u65CB\u8F6C","lang":"en-US","frontmatter":{"sidebar":false,"title":"\u65CB\u8F6C"},"excerpt":"","headers":[],"git":{"updatedTime":1670385555000,"contributors":[{"name":"ajn404","email":"huiyuening00@gmail.com","commits":1},{"name":"mac_ajn404","email":"huiyuening00@gmail.com","commits":1}]},"filePathRelative":"markdown/practice/rotatingTheShape.md"}');export{e as data};
+//# sourceMappingURL=rotatingTheShape.html.dab9581c.js.map

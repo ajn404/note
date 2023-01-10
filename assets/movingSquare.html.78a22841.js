@@ -1,0 +1,2 @@
+import{_ as o}from"./practice.step.f2d0f742.js";import{_,o as r,c,a as e,w as a,b as l}from"./app.b7df915f.js";import"./practice.setup.802fd3c0.js";import"./OrbitControls.ba261712.js";const m={};function s(i,p){const t=o,n=l("ClientOnly");return r(),c("div",null,[e(n,null,{default:a(()=>[e(t,{type:"utime"})]),_:1})])}var h=_(m,[["render",s],["__file","movingSquare.html.vue"]]);export{h as default};
+//# sourceMappingURL=movingSquare.html.78a22841.js.map

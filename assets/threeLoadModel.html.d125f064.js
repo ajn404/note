@@ -1,0 +1,2 @@
+const e=JSON.parse('{"key":"v-04961119","path":"/markdown/fantastic/threeLoadModel.html","title":"","lang":"en-US","frontmatter":{"sidebar":false},"excerpt":"","headers":[],"git":{"updatedTime":1670385555000,"contributors":[{"name":"ajn404","email":"huiyuening00@gmail.com","commits":2}]},"filePathRelative":"markdown/fantastic/threeLoadModel.md"}');export{e as data};
+//# sourceMappingURL=threeLoadModel.html.d125f064.js.map

@@ -1,0 +1,2 @@
+import{_ as o}from"./glslExample.5bc3e89d.js";import{_ as l,o as _,c as r,a as e,w as a,b as c}from"./app.b7df915f.js";import"./practice.setup.802fd3c0.js";import"./OrbitControls.ba261712.js";const s={};function i(m,p){const t=o,n=c("ClientOnly");return _(),r("div",null,[e(n,null,{default:a(()=>[e(t,{type:"ikun"})]),_:1})])}var x=l(s,[["render",i],["__file","lightSaberDuel.html.vue"]]);export{x as default};
+//# sourceMappingURL=lightSaberDuel.html.0278067d.js.map

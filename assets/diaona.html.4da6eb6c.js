@@ -1,0 +1,2 @@
+const a=JSON.parse('{"key":"v-23bcd062","path":"/markdown/fantasticSinglePage/diaona.html","title":"p5 is fantastic","lang":"en-US","frontmatter":{"title":"p5 is fantastic","sidebar":false},"excerpt":"","headers":[],"git":{"updatedTime":1670385555000,"contributors":[{"name":"ajn404","email":"huiyuening00@gmail.com","commits":2}]},"filePathRelative":"markdown/fantasticSinglePage/diaona.md"}');export{a as data};
+//# sourceMappingURL=diaona.html.4da6eb6c.js.map

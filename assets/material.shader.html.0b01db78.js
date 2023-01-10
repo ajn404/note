@@ -1,0 +1,2 @@
+import{_ as o}from"./p5.11262bec.js";import{_ as a,o as _,c as r,a as e,w as l,b as s}from"./app.b7df915f.js";const c={};function m(p,i){const t=o,n=s("ClientOnly");return _(),r("div",null,[e(n,null,{default:l(()=>[e(t,{type:"shader",outpage:""})]),_:1})])}var f=a(c,[["render",m],["__file","material.shader.html.vue"]]);export{f as default};
+//# sourceMappingURL=material.shader.html.0b01db78.js.map
