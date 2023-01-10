@@ -125,3 +125,4 @@ optional 。与 fallback 的阻塞期一致，但是没有交换期，如果在�
 那么在了解 font-display 之后，那么我们应该不难看出来，对于大部分情况应该把它的值设置为 swap ，这样在加载网络字体期间，使用后备字体进行渲染，加载完成之后在替换为指定的网络字体
 
 ### [three学习](https://www.wenjiangs.com/doc/iqyhrh0n)
+### [时间/日期选择器flatpickr](https://flatpickr.js.org/)
