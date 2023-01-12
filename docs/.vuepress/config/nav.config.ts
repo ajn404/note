@@ -170,10 +170,10 @@ const note: NavbarGroup[] = [
                 link: `${noteBaseUrl}capture`
             },
 
-            {
-                text: 'yuyan',
-                link: `${noteBaseUrl}yuyan`
-            }
+            // {
+            //     text: 'yuyan',
+            //     link: `${noteBaseUrl}yuyan`
+            // }
 
         ]
     }
