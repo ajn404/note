@@ -136,6 +136,11 @@ const note: NavbarGroup[] = [
                 link: `${noteBaseUrl}js`
             },
             {
+                text:'build',
+                link:`${noteBaseUrl}build`
+            },
+
+            {
                 text: 'ts',
                 link: `${noteBaseUrl}ts`
             },
@@ -170,10 +175,10 @@ const note: NavbarGroup[] = [
                 link: `${noteBaseUrl}capture`
             },
 
-            {
-                text: 'yuyan',
-                link: `${noteBaseUrl}yuyan`
-            }
+            // {
+            //     text: 'yuyan',
+            //     link: `${noteBaseUrl}yuyan`
+            // }
 
         ]
     }
