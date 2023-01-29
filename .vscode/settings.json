@@ -1,11 +1,11 @@
 {
     "rust-analyzer.cargo.buildScripts.overrideCommand": null,
     "rust-analyzer.linkedProjects": [
-        "/Users/ajn404/Documents/blog/note/rust/hello_world/Cargo.toml",
-        "/Users/ajn404/Documents/blog/note/rust/hello_cargo/Cargo.toml",
-        "/Users/ajn404/Documents/blog/note/rust/helloRust2_2/Cargo.toml",
-        "/Users/ajn404/Documents/blog/note/rust/helloRust2_3_1/Cargo.toml",
-        "/Users/ajn404/Documents/blog/note/rust/helloRust2_3_2/Cargo.toml",
-        "/Users/ajn404/Documents/blog/note/rust/helloRust2_4_1/Cargo.toml",
+        "/Users/n-graymoon/Documents/note/rust_practice/hello_world/Cargo.toml",
+        "/Users/n-graymoon/Documents/note/rust_practice/hello_cargo/Cargo.toml",
+        "/Users/n-graymoon/Documents/note/rust_practice/helloRust2_2/Cargo.toml",
+        "/Users/n-graymoon/Documents/note/rust_practice/helloRust2_3_1/Cargo.toml",
+        "/Users/n-graymoon/Documents/note/rust_practice/helloRust2_3_2/Cargo.toml",
+        "/Users/n-graymoon/Documents/note/rust_practice/helloRust2_4_1/Cargo.toml",
         ],
 }
