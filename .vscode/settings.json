@@ -7,5 +7,11 @@
         "/Users/n-graymoon/Documents/note/rust_practice/helloRust2_3_1/Cargo.toml",
         "/Users/n-graymoon/Documents/note/rust_practice/helloRust2_3_2/Cargo.toml",
         "/Users/n-graymoon/Documents/note/rust_practice/helloRust2_4_1/Cargo.toml",
+        "/Users/n-graymoon/Documents/note/rust_practice/fromStruct/Cargo.toml",
+        "/Users/n-graymoon/Documents/note/rust_practice/fromVector/Cargo.toml",
+        "/Users/n-graymoon/Documents/note/rust_practice/from_error_handel/Cargo.toml",
+        "/Users/n-graymoon/Documents/note/rust_practice/fromT/Cargo.toml",
+        "/Users/n-graymoon/Documents/note/rust_practice/fromLifetime/Cargo.toml",
+        "/Users/n-graymoon/Documents/note/rust_practice/adder/Cargo.toml",
         ],
 }

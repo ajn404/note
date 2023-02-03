@@ -126,3 +126,22 @@ optional 。与 fallback 的阻塞期一致，但是没有交换期，如果在�
 
 ### [three学习](https://www.wenjiangs.com/doc/iqyhrh0n)
 ### [时间/日期选择器flatpickr](https://flatpickr.js.org/)
+
+
+### 使用structuredClone()进行深拷贝
+```js
+
+// Create an object with a value and a circular reference to itself.
+const original = { name: "MDN" };
+original.itself = original;
+
+// Clone it
+const clone = structuredClone(original);
+
+console.assert(clone !== original); // the objects are not the same (not same identity)
+console.assert(clone.name === "MDN"); // they do have the same values
+console.assert(clone.itself === clone); // and the circular reference is preserved
+
+```
+
+演示了structuredClone支持深度嵌套对象的克隆
