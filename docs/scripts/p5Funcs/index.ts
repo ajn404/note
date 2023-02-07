@@ -4,6 +4,7 @@ export { ambientLight } from './codingChalenge/ambientLight'; //环境光
 export { angularMotion } from './codingChalenge/angularMotion'; //angularMotion
 export { boxRef } from './codingChalenge/boxRef'; //3d box cube
 export { boxRef1 } from './codingChalenge/boxRef1'; //3d box旋转
+export { brightnessMirror } from './codingChalenge/brightnessMirror';
 export { bubbleSort } from './codingChalenge/bubbleSort'; //冒泡排序
 export { chenShiSystem } from './codingChalenge/chenShiSystem'; //陈氏混沌
 export { coordinate } from './codingChalenge/coordinate'; //极坐标使用
@@ -20,6 +21,7 @@ export { lorenzSystem } from './codingChalenge/lorenzSystem'; //劳伦滋混沌�
 export { LSystem } from './codingChalenge/LSystem'; //生成系统
 export { main } from './codingChalenge/main'; //线段
 export { minesweeper } from './codingChalenge/minesweeper'; //扫雷
+export { morph } from './codingChalenge/morph'; //变形
 export { pointHandle } from './codingChalenge/pointHandle'; //torus圆环
 export { pointLight } from './codingChalenge/pointLight'; //点光源
 export { polarCoordinates } from './codingChalenge/polarCoordinates'; //极坐标绘制功夫圆
@@ -35,18 +37,16 @@ export { stepFeetIIIusion } from './codingChalenge/stepFeetIIIusion'; // 视错�
 export { textureDemo } from './codingChalenge/textureDemo'; //坤坤材质
 export { textureGeometries } from './codingChalenge/textureGeometries'; //play
 export { waveFunctionCollapse } from "./codingChalenge/waveFunctionCollapse"; //波函数坍塌
-export { morph } from './codingChalenge/morph'; //变形
-export { brightnessMirror } from './codingChalenge/brightnessMirror'
-
-//lerp
-export { lerp } from './vector/lerp'
-export { fromAngle } from './vector/fromAngle'
-export { dist } from './vector/dist'
-export { limit } from './vector/limit'
-
+export { createShader } from './material/createShader';
+export { resetShader } from './material/resetShader';
 //material
-export { shader } from './material/shader'
-export { createShader } from './material/createShader'
-export { resetShader } from './material/resetShader'
+export { shader } from './material/shader';
+export { dist } from './vector/dist';
+export { fromAngle } from './vector/fromAngle';
+//lerp
+export { lerp } from './vector/lerp';
+export { limit } from './vector/limit';
+
+
 
 
