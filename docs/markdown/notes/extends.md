@@ -145,3 +145,43 @@ console.assert(clone.itself === clone); // and the circular reference is preserv
 ```
 
 演示了structuredClone支持深度嵌套对象的克隆
+
+
+### rust web 多线程项目
+
+#### 第一节：未实现使用线程池改进服务器的吞吐量
+实现的功能包括
+- 在socket上监听TCP连接
+- 解析少量的HTTP请求
+- 创建一个合适的HTTP请求
+```rust
+
+use std::{
+    fs,
+    io::{Read, Write},
+    net::{TcpListener, TcpStream},
+};
+
+fn main() {
+    let listener = TcpListener::bind("127.0.0.1:7878").unwrap();
+    for stream in listener.incoming() {
+        let stream = stream.unwrap();
+        handle_connection(stream);
+    }
+}
+
+fn handle_connection(mut stream: TcpStream) {
+    let mut buffer = [0; 9999];
+    stream.read(&mut buffer).unwrap();
+    let get = b"GET / HTTP/1.1\r\n";
+    let (status_line, filename) = if buffer.starts_with(get) {
+        ("HTTP/1.1 200 OK\r\n\r\n", "index.html")
+    } else {
+        ("HTTP/1.1 404 NOT FOUND\r\n\r\n", "404.html")
+    };
+    let contents = fs::read_to_string(filename).unwrap();
+    let response = format!("{}{}", status_line, contents);
+    stream.write(response.as_bytes()).unwrap();
+    stream.flush().unwrap();
+}
+```

@@ -1343,3 +1343,27 @@ fn main() {
 ### 本页面全是组件，性能变差，组件写得不好
 
 
+### crates
+
+#### [UTF8 Slice](https://crates.io/crates/utf8_slice/1.0.0)
+- A lightweight heapless way to do slicing on unicode strings in Rust.
+
+```rust
+use utf8_slice;
+
+fn main() {
+    let s = "holla中国人नमस्ते";
+    // for item in s.bytes(){
+    //     println!("{}",item);
+    // }
+
+    for item in s.chars() {
+        println!("{}", item);
+    }
+
+    let sub_s = utf8_slice::slice(s, 2, s.len() - 2);
+    println!("{}", sub_s);
+}
+
+```
+

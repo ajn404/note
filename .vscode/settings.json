@@ -16,5 +16,11 @@
         "/Users/n-graymoon/Documents/note/rust_practice/testDemo/Cargo.toml",
         "/Users/n-graymoon/Documents/note/rust_practice/minigrep/Cargo.toml",
         "/Users/n-graymoon/Documents/note/rust_practice/from_iterator/Cargo.toml",
+        "/Users/n-graymoon/Documents/note/rust_practice/fromRc/Cargo.toml",
+        "/Users/n-graymoon/Documents/note/rust_practice/helloRust2_4_2/Cargo.toml",
+        "/Users/n-graymoon/Documents/note/rust_practice/helloRust2_4_3/Cargo.toml",
+        "/Users/n-graymoon/Documents/note/rust_practice/webApp/Cargo.toml",
         ],
+    "editor.fontFamily": "Fira Code",
+    "editor.fontLigatures": true,
 }
