@@ -1116,7 +1116,7 @@ fn main() {
     let z = 10; // 这里 z 的类型是? 
 }'
 ></RustPlayground>
-</ClientOnly>
+</Clientonly>
 
 
 2.✨
@@ -1356,7 +1356,7 @@ fn main() {
     // for item in s.bytes(){
     //     println!("{}",item);
     // }
-
+    
     for item in s.chars() {
         println!("{}", item);
     }
@@ -1366,4 +1366,5 @@ fn main() {
 }
 
 ```
+
 
