@@ -1,27 +1,4 @@
-{
-    "rust-analyzer.cargo.buildScripts.overrideCommand": null,
-    "rust-analyzer.linkedProjects": [
-        "/Users/n-graymoon/Documents/note/rust_practice/hello_world/Cargo.toml",
-        "/Users/n-graymoon/Documents/note/rust_practice/hello_cargo/Cargo.toml",
-        "/Users/n-graymoon/Documents/note/rust_practice/helloRust2_2/Cargo.toml",
-        "/Users/n-graymoon/Documents/note/rust_practice/helloRust2_3_1/Cargo.toml",
-        "/Users/n-graymoon/Documents/note/rust_practice/helloRust2_3_2/Cargo.toml",
-        "/Users/n-graymoon/Documents/note/rust_practice/helloRust2_4_1/Cargo.toml",
-        "/Users/n-graymoon/Documents/note/rust_practice/fromStruct/Cargo.toml",
-        "/Users/n-graymoon/Documents/note/rust_practice/fromVector/Cargo.toml",
-        "/Users/n-graymoon/Documents/note/rust_practice/from_error_handel/Cargo.toml",
-        "/Users/n-graymoon/Documents/note/rust_practice/fromT/Cargo.toml",
-        "/Users/n-graymoon/Documents/note/rust_practice/fromLifetime/Cargo.toml",
-        "/Users/n-graymoon/Documents/note/rust_practice/adder/Cargo.toml",
-        "/Users/n-graymoon/Documents/note/rust_practice/testDemo/Cargo.toml",
-        "/Users/n-graymoon/Documents/note/rust_practice/minigrep/Cargo.toml",
-        "/Users/n-graymoon/Documents/note/rust_practice/from_iterator/Cargo.toml",
-        "/Users/n-graymoon/Documents/note/rust_practice/fromRc/Cargo.toml",
-        "/Users/n-graymoon/Documents/note/rust_practice/helloRust2_4_2/Cargo.toml",
-        "/Users/n-graymoon/Documents/note/rust_practice/helloRust2_4_3/Cargo.toml",
-        "/Users/n-graymoon/Documents/note/rust_practice/webApp/Cargo.toml",
-        "/Users/n-graymoon/Documents/note/digital_garden/Cargo.toml",
-        ],
+{        
     "editor.fontFamily": "Fira Code",
     "editor.fontLigatures": true,
 }

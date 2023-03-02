@@ -153,7 +153,7 @@ const recommendList = ref([]);
 const searchText = ref("");
 
 
-const search = (e: Event) => {
+const search = (e: Event):Event => {
     if (!searchText.value) {
         recommendList.value = []
         return
