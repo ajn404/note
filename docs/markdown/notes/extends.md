@@ -185,3 +185,12 @@ fn handle_connection(mut stream: TcpStream) {
     stream.flush().unwrap();
 }
 ```
+
+### ts开源项目
+[amplication](https://github.com/amplication/amplication)
+
+
+### mac报已损坏
+```shell
+sudo xattr -rd com.apple.quarantine /Applications/ChatGPT.app 
+```
