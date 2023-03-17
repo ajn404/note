@@ -199,4 +199,36 @@ sudo xattr -rd com.apple.quarantine /Applications/ChatGPT.app
 
 ### 工具
 
-(nushell)[https://www.nushell.sh/]
+[nushell](https://www.nushell.sh/)
+
+```
+/Users/n-graymoon> ps | where mem > 300MB
+───┬───────┬────────────────────────┬────────┬────────┬──────────┬──────────
+ # │  pid  │          name          │ status │  cpu   │   mem    │ virtual
+───┼───────┼────────────────────────┼────────┼────────┼──────────┼──────────
+ 0 │ 30788 │ Google Chrome          │ Run    │ 0.0000 │ 374.1 MB │ 453.6 GB
+ 1 │ 63261 │ Code Helper (Plugin)   │ Run    │ 0.0000 │ 701.1 MB │ 458.1 GB
+ 2 │ 63368 │ Code Helper (Plugin)   │ Run    │ 0.0000 │ 578.9 MB │ 458.0 GB
+ 3 │  1629 │ Sourcetree             │ Run    │ 0.0000 │ 405.5 MB │ 426.1 GB
+ 4 │ 63241 │ Code Helper (Renderer) │ Run    │ 0.0000 │ 559.9 MB │ 473.2 GB
+───┴───────┴────────────────────────┴────────┴────────┴──────────┴──────────
+/Users/n-graymoon> date now | date to-table
+───┬──────┬───────┬─────┬──────┬────────┬────────┬──────────
+ # │ year │ month │ day │ hour │ minute │ second │ timezone
+───┼──────┼───────┼─────┼──────┼────────┼────────┼──────────
+ 0 │ 2023 │     3 │  17 │   16 │     57 │     53 │ +08:00
+───┴──────┴───────┴─────┴──────┴────────┴────────┴──────────
+/Users/n-graymoon> sys
+───┬─────────────────────────────────────────────────────┬────────────────┬────────────────┬───────────────────────────────────────┬─────────────────
+ # │                        host                         │      cpu       │     disks      │                  mem                  │       net
+───┼─────────────────────────────────────────────────────┼────────────────┼────────────────┼───────────────────────────────────────┼─────────────────
+ 0 │ [row name os version kernel version hostname uptime │ [table 8 rows] │ [table 3 rows] │ [row total free swap total swap free] │ [table 18 rows]
+   │ sessions]                                           │                │                │                                       │
+───┴─────────────────────────────────────────────────────┴────────────────┴────────────────┴───────────────────────────────────────┴─────────────────
+
+/Users/n-graymoon> sys | get host.sessions.name | each { |it| ^echo $it }
+_mbsetupuser
+n-graymoon
+root
+
+```
