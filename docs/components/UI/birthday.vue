@@ -2,7 +2,7 @@
     <div class="card">
         <div class="imgBox">
             <div class="bark"></div>
-            <img src="/note/images/lou.jpg">
+            <img src="/images/lou.jpg">
         </div>
         <div class="details">
             <h4 class="color1">You're not a Fossil! (YET)</h4>
@@ -26,7 +26,6 @@
 </script>
 
 <style lang="scss" scoped>
-
 ::selection {
     background: transparent;
 }
