@@ -1,47 +1,34 @@
 {
-    "compilerOptions": {
-        "module": "commonjs",
-        "target": "es5",
-        "strict": false,
-        "sourceMap": true,
-        "jsx": "preserve",
-        "allowJs": true,
-        "lib": [
-            "es2015",
-            "dom"
-        ],
-        "baseUrl": "./",
-        "paths": {
-            "@/*": [
-                "docs/*"
-            ],
-            "@/scripts": [
-                "docs/scripts"
-            ],
-            "public": [
-                "docs/public/"
-            ],
-            "components": [
-                "docs/components"
-            ]
-        },
-        "allowSyntheticDefaultImports": true,
-        // Gives error if there are implied "<any>" types.
-        "noImplicitAny": true,
-        // Allows you to access non-constant properties, such as object[keyVar]
-        "suppressImplicitAnyIndexErrors": true
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "strict": false,
+    "sourceMap": true,
+    "jsx": "preserve",
+    "allowJs": true,
+    "lib": ["es2015", "dom"],
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["docs/*"],
+      "@/scripts": ["docs/scripts"],
+      "public": ["docs/public/"],
+      "components": ["docs/components"]
     },
-    "exclude": [
-        "node_modules"
-    ],
-    "include": [
-        "docs/.vuepress/**/*.ts",
-        "docs/.vuepress/**/*.mts",
-        "docs/.vuepress/**/*.d.ts",
-        "docs/.vuepress/**/*.tsx",
-        "docs/.vuepress/**/*.vue",
-        "docs/.vuepress/**/*.glsl",
-        "docs/scripts",
-        "**/*.ts"
-    ]
+    "allowSyntheticDefaultImports": true,
+    // Gives error if there are implied "<any>" types.
+    "noImplicitAny": true
+    // Allows you to access non-constant properties, such as object[keyVar]
+    // "suppressImplicitAnyIndexErrors": true
+  },
+  "exclude": ["node_modules"],
+  "include": [
+    "docs/.vuepress/**/*.ts",
+    "docs/.vuepress/**/*.mts",
+    "docs/.vuepress/**/*.d.ts",
+    "docs/.vuepress/**/*.tsx",
+    "docs/.vuepress/**/*.vue",
+    "docs/.vuepress/**/*.glsl",
+    "docs/scripts",
+    "**/*.ts"
+  ]
 }
