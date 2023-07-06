@@ -374,13 +374,6 @@
   dependencies:
     "@floating-ui/core" "^1.0.1"
 
-"@hufe921/canvas-editor@^0.9.37":
-  version "0.9.37"
-  resolved "https://registry.yarnpkg.com/@hufe921/canvas-editor/-/canvas-editor-0.9.37.tgz#ed1f521f9fc81e3c0eb56917197b2d25425650ba"
-  integrity sha512-bM/BeHWJUbmv8fZO56BF4nOX0JsnRERTk8kfJ5TEtiQu8VX3Z5mokHkk6FyU9BngWNWemIUQzVMgpKUBt9R9bQ==
-  dependencies:
-    prismjs "^1.27.0"
-
 "@jridgewell/gen-mapping@^0.1.0":
   version "0.1.1"
   resolved "https://registry.npmmirror.com/@jridgewell/gen-mapping/-/gen-mapping-0.1.1.tgz#e5d2e450306a9491e3bd77e323e38d7aff315996"
@@ -2774,7 +2767,7 @@ postcss@^8.1.10, postcss@^8.4.13, postcss@^8.4.14:
     picocolors "^1.0.0"
     source-map-js "^1.0.2"
 
-prismjs@^1.27.0, prismjs@^1.28.0:
+prismjs@^1.28.0:
   version "1.29.0"
   resolved "https://registry.npmmirror.com/prismjs/-/prismjs-1.29.0.tgz#f113555a8fa9b57c35e637bba27509dcf802dd12"
   integrity sha512-Kx/1w86q/epKcmte75LNrEoT+lX8pBpavuAbvJWRXar7Hz8jrtF+e3vY751p0R8H9HdArwaCTNDDzHg/ScJK1Q==

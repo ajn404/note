@@ -197,6 +197,10 @@ const daily: NavbarGroup[] = [
             text: "20230704",
             link: `${dailyBaseUrl}20230704`,
           },
+          {
+            text: "20230705",
+            link: `${dailyBaseUrl}20230705`,
+          },
         ],
       },
     ],
