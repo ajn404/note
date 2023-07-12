@@ -1,15 +1,16 @@
-// const existingObject = {
-//   activity: "working",
-//   born: 1925,
-//   name: "ajn404",
-// };
+const existingObject = {
+  activity: "working",
+  born: 1925,
+  name: "ajn404",
+};
 
-// type Poet = {
-//   born: string;
-//   name: string;
-// };
+type Poet = {
+  born: number;
+  name: string;
+};
 
-// const extroPropertyButOk: Poet = existingObject;
+const extroPropertyButOk: Poet = existingObject; //OK
+console.log(extroPropertyButOk);
 
 // type Poet = {
 //   born: number;

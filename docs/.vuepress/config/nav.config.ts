@@ -144,6 +144,10 @@ const note: NavbarGroup[] = [
         link: `${noteBaseUrl}ts`,
       },
       {
+        text: "ts(system)",
+        link: `${noteBaseUrl}systs`,
+      },
+      {
         text: "glsl",
         link: `${noteBaseUrl}glsl`,
       },
@@ -216,6 +220,10 @@ const daily: NavbarGroup[] = [
           {
             text: "20230710",
             link: `${dailyBaseUrl}20230710`,
+          },
+          {
+            text: "20230712",
+            link: `${dailyBaseUrl}20230712`,
           },
         ],
       },
