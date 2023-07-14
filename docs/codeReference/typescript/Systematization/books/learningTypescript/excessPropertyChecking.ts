@@ -28,3 +28,15 @@ console.log(extroPropertyButOk);
 //   born: 1935,
 //   name: "Mary Oliver",
 // };
+interface Balls {
+  diameter: number;
+}
+interface Sphere {
+  diameter: number;
+}
+
+let ball: Balls = { diameter: 10 };
+let sphere: Sphere = { diameter: 20 };
+
+sphere = ball;
+ball = sphere;
