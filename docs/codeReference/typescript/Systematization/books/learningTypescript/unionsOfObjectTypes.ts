@@ -12,5 +12,4 @@ const poem =
 poem.name;
 poem.rhymes;
 poem.age;
-
 console.log(poem);
