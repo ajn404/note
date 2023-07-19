@@ -17,8 +17,22 @@
  * @param {TreeNode} root
  * @return {number[]}
  */
-var inorderTraversal = function(root) {
-    
+var inorderTraversal = function (root) {
+  if (root === null) {
+    return [];
+  }
+  const queue = [root];
+  const result = [];
+  while (queue.length > 0) {
+    const node = queue.pop();
+    result.push(node.val);
+    if (node.left !== null) {
+      queue.push(node.left);
+    }
+    if (node.right !== null) {
+      queue.push(node.right);
+    }
+  }
+  return result;
 };
 // @lc code=end
-
