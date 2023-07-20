@@ -232,3 +232,14 @@ n-graymoon
 root
 
 ```
+
+### 浏览器打印添加背景颜色
+
+如果您想在浏览器中打印时显示背景颜色，可以尝试在设置背景颜色的元素下添加以下代码：
+
+```css
+-webkit-print-color-adjust:exact;
+-moz-print-color-adjust:exact;
+-ms-print-color-adjust:exact;
+print-color-adjust:exact;
+```
