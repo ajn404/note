@@ -174,6 +174,11 @@ const note: NavbarGroup[] = [
       },
 
       {
+        text: "前端工具链总结",
+        link: `${noteBaseUrl}frontendTool`,
+      },
+
+      {
         text: "capture",
         link: `${noteBaseUrl}capture`,
       },

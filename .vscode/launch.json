@@ -1,26 +1,25 @@
 {
-    "version": "0.2.0",
-    "configurations": [
-        
-        {
-            "command": "yarn & yarn dev",
-            "name": "dev",
-            "request": "launch",
-            "type": "node-terminal"
-        },
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "command": "pnpm run & pnpm run dev",
+      "name": "dev",
+      "request": "launch",
+      "type": "node-terminal"
+    },
 
-        {
-            "command": "yarn build",
-            "name": "build",
-            "request": "launch",
-            "type": "node-terminal"
-        },
-        {
-            "type": "chrome",
-            "request": "launch",
-            "name": "Launch Chrome against localhost",
-            "url": "http://localhost:9999",
-            "webRoot": "${workspaceFolder}"
-        }
-    ]
+    {
+      "command": "pnpm run build",
+      "name": "build",
+      "request": "launch",
+      "type": "node-terminal"
+    },
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Launch Chrome against localhost",
+      "url": "http://localhost:9999",
+      "webRoot": "${workspaceFolder}"
+    }
+  ]
 }
