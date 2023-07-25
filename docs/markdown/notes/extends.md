@@ -243,3 +243,10 @@ root
 -ms-print-color-adjust:exact;
 print-color-adjust:exact;
 ```
+
+#### react18相比于 react17
+React 18 相比于 React 17 带来了一些新功能和变化。其中一些主要的变化包括：
+
+- **并发渲染**：React 18 引入了并发渲染，它可以让 React 更好地利用多核 CPU，从而提高渲染性能³。
+- **自动批处理**：React 18 改进了批处理机制，现在可以自动批处理多个状态更新，从而减少不必要的渲染次数³。
+- **新的根 API**：React 18 提供了两个新的根 API，分别是 `createRoot` 和 `createBlockingRoot`。这两个 API 可以用来创建新的并发模式下的根元素⁵。
