@@ -1,0 +1,2 @@
+const a=JSON.parse('{"key":"v-db145820","path":"/markdown/practice/shapingFunction.html","title":"\u65CB\u8F6C\u548C\u7F29\u653E","lang":"en-US","frontmatter":{"sidebar":false,"title":"\u65CB\u8F6C\u548C\u7F29\u653E"},"excerpt":"","headers":[],"git":{"updatedTime":1670385555000,"contributors":[{"name":"ajn404","email":"huiyuening00@gmail.com","commits":1},{"name":"mac_ajn404","email":"huiyuening00@gmail.com","commits":1}]},"filePathRelative":"markdown/practice/shapingFunction.md"}');export{a as data};
+//# sourceMappingURL=shapingFunction.html.eb982009.js.map

@@ -1,0 +1,2 @@
+import{_ as t,b as n,o,c,e,q as s,a as r}from"./app.fcfd37c2.js";const l={},_={id:"classes-basic",tabindex:"-1"},i=e("a",{class:"header-anchor",href:"#classes-basic","aria-hidden":"true"},"#",-1),d={href:"https://www.typescriptlang.org/docs/handbook/2/classes.html",target:"_blank",rel:"noopener noreferrer"};function h(f,p){const a=n("ExternalLinkIcon");return o(),c("div",null,[e("h3",_,[i,s(),e("a",d,[s("classes basic"),r(a)])])])}var x=t(l,[["render",h],["__file","index.html.vue"]]);export{x as default};
+//# sourceMappingURL=index.html.97dc4ea3.js.map

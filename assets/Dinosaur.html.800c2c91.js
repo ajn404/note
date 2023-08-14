@@ -1,0 +1,2 @@
+const a=JSON.parse('{"key":"v-67fa0c61","path":"/markdown/kaboom/Dinosaur.html","title":"kaboom is fantastic","lang":"en-US","frontmatter":{"title":"kaboom is fantastic"},"excerpt":"","headers":[],"git":{"updatedTime":1669280644000,"contributors":[{"name":"ajn404","email":"huiyuening00@gmail.com","commits":1}]},"filePathRelative":"markdown/kaboom/Dinosaur.md"}');export{a as data};
+//# sourceMappingURL=Dinosaur.html.800c2c91.js.map

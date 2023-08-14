@@ -1,0 +1,2 @@
+import{_ as o}from"./practice.step.f6c76502.js";import{_,b as c,o as r,c as l,a as e,w as a}from"./app.fcfd37c2.js";import"./practice.setup.3d60fd6f.js";import"./OrbitControls.4135e4a5.js";const s={};function p(m,i){const n=o,t=c("ClientOnly");return r(),l("div",null,[e(t,null,{default:a(()=>[e(n,{type:"neob"})]),_:1})])}var v=_(s,[["render",p],["__file","neoB.html.vue"]]);export{v as default};
+//# sourceMappingURL=neoB.html.e5f0973d.js.map

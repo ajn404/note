@@ -1,0 +1,2 @@
+const e=JSON.parse('{"key":"v-0c0b7af6","path":"/markdown/example/indecial.html","title":"city","lang":"en-US","frontmatter":{"sidebar":false,"title":"city"},"excerpt":"","headers":[],"git":{"updatedTime":1671177230000,"contributors":[{"name":"ajn404","email":"huiyuening00@gmail.com","commits":1}]},"filePathRelative":"markdown/example/indecial.md"}');export{e as data};
+//# sourceMappingURL=indecial.html.e86cfb0b.js.map

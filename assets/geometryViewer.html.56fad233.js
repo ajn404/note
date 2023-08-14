@@ -1,0 +1,2 @@
+const e=JSON.parse('{"key":"v-70a63728","path":"/markdown/vtk/geometryViewer.html","title":"viewer","lang":"en-US","frontmatter":{"title":"viewer","sidebar":false},"excerpt":"","headers":[],"git":{"updatedTime":1670837168000,"contributors":[{"name":"ajn404","email":"huiyuening00@gmail.com","commits":1}]},"filePathRelative":"markdown/vtk/geometryViewer.md"}');export{e as data};
+//# sourceMappingURL=geometryViewer.html.56fad233.js.map

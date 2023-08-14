@@ -1,0 +1,2 @@
+const t=JSON.parse('{"key":"v-09dd81ee","path":"/markdown/fantasticSinglePage/spotLight.html","title":"p5 is fantastic","lang":"en-US","frontmatter":{"title":"p5 is fantastic","sidebar":false},"excerpt":"","headers":[],"git":{"updatedTime":1670385555000,"contributors":[{"name":"ajn404","email":"huiyuening00@gmail.com","commits":2}]},"filePathRelative":"markdown/fantasticSinglePage/spotLight.md"}');export{t as data};
+//# sourceMappingURL=spotLight.html.52752ab8.js.map

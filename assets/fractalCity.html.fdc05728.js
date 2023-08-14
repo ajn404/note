@@ -1,0 +1,2 @@
+import{_ as o}from"./glslExample.7bb42336.js";import{_ as l,b as a,o as _,c,a as t,w as r}from"./app.fcfd37c2.js";import"./practice.setup.3d60fd6f.js";import"./OrbitControls.4135e4a5.js";const s={};function i(m,p){const e=o,n=a("ClientOnly");return _(),c("div",null,[t(n,null,{default:r(()=>[t(e,{type:"fractalCity"})]),_:1})])}var y=l(s,[["render",i],["__file","fractalCity.html.vue"]]);export{y as default};
+//# sourceMappingURL=fractalCity.html.fdc05728.js.map

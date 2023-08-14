@@ -1,0 +1,2 @@
+import{_ as t}from"./p5.102ccb7b.js";import{_ as l,b as a,o as _,c,a as e,w as s}from"./app.fcfd37c2.js";const r={};function p(i,m){const n=t,o=a("ClientOnly");return _(),c("div",null,[e(o,null,{default:s(()=>[e(n,{type:"waveFunctionCollapse"})]),_:1})])}var v=l(r,[["render",p],["__file","waveFunctionCollapse.html.vue"]]);export{v as default};
+//# sourceMappingURL=waveFunctionCollapse.html.07dbc827.js.map

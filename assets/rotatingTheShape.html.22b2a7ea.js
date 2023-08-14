@@ -1,0 +1,2 @@
+import{_ as o}from"./practice.shapingFunction.884921b2.js";import{_ as a,b as r,o as _,c,a as t,w as l}from"./app.fcfd37c2.js";import"./practice.setup.3d60fd6f.js";import"./OrbitControls.4135e4a5.js";const s={};function i(p,m){const e=o,n=r("ClientOnly");return _(),c("div",null,[t(n,null,{default:l(()=>[t(e,{type:"rts"})]),_:1})])}var g=a(s,[["render",i],["__file","rotatingTheShape.html.vue"]]);export{g as default};
+//# sourceMappingURL=rotatingTheShape.html.22b2a7ea.js.map

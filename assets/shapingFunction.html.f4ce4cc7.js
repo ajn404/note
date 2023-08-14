@@ -1,0 +1,2 @@
+import{_ as o}from"./practice.shapingFunction.884921b2.js";import{_ as c,b as _,o as a,c as i,a as n,w as r}from"./app.fcfd37c2.js";import"./practice.setup.3d60fd6f.js";import"./OrbitControls.4135e4a5.js";const s={};function l(p,m){const t=o,e=_("ClientOnly");return a(),i("div",null,[n(e,null,{default:r(()=>[n(t)]),_:1})])}var g=c(s,[["render",l],["__file","shapingFunction.html.vue"]]);export{g as default};
+//# sourceMappingURL=shapingFunction.html.f4ce4cc7.js.map

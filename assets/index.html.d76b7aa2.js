@@ -1,0 +1,2 @@
+const e=JSON.parse('{"key":"v-135543b6","path":"/codeReference/typescript/Systematization/Classes/","title":"","lang":"en-US","frontmatter":{},"excerpt":"","headers":[{"level":3,"title":"classes basic","slug":"classes-basic","children":[]}],"git":{"updatedTime":1670382286000,"contributors":[{"name":"ajn404","email":"huiyuening00@gmail.com","commits":1}]},"filePathRelative":"codeReference/typescript/Systematization/Classes/readme.md"}');export{e as data};
+//# sourceMappingURL=index.html.d76b7aa2.js.map

@@ -1,0 +1,2 @@
+import{_ as o}from"./practice.step.f6c76502.js";import{_,b as c,o as r,c as s,a as e,w as l}from"./app.fcfd37c2.js";import"./practice.setup.3d60fd6f.js";import"./OrbitControls.4135e4a5.js";const a={};function p(i,m){const t=o,n=c("ClientOnly");return r(),s("div",null,[e(n,null,{default:l(()=>[e(t)]),_:1})])}var v=_(a,[["render",p],["__file","usingStep.html.vue"]]);export{v as default};
+//# sourceMappingURL=usingStep.html.13258303.js.map
