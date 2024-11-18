@@ -1,0 +1,2 @@
+const e=JSON.parse('{"key":"v-1fc485b1","path":"/markdown/practice/practice.html","title":"practice copy page","lang":"en-US","frontmatter":{"sidebar":false,"title":"practice copy page"},"excerpt":"","headers":[],"git":{"updatedTime":1670385555000,"contributors":[{"name":"ajn404","email":"huiyuening00@gmail.com","commits":1},{"name":"mac_ajn404","email":"huiyuening00@gmail.com","commits":1}]},"filePathRelative":"markdown/practice/practice.md"}');export{e as data};
+//# sourceMappingURL=practice.html.ce5798d5.js.map

@@ -1,0 +1,2 @@
+const t=JSON.parse('{"key":"v-b88c8bf8","path":"/markdown/fantasticSinglePage/lorenzSystem.html","title":"p5 is fantastic","lang":"en-US","frontmatter":{"title":"p5 is fantastic","sidebar":false},"excerpt":"","headers":[],"git":{"updatedTime":1670385555000,"contributors":[{"name":"ajn404","email":"huiyuening00@gmail.com","commits":2}]},"filePathRelative":"markdown/fantasticSinglePage/lorenzSystem.md"}');export{t as data};
+//# sourceMappingURL=lorenzSystem.html.fd8c4f35.js.map

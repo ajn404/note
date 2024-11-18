@@ -1,0 +1,2 @@
+import{_ as o}from"./geometryViewerUrl.ecdef4ac.js";import{_ as r,b as _,o as l,c as s,a as e,w as c}from"./app.28a7effe.js";import"./geometryViewer.module.a6d7605a.js";const a={};function i(m,p){const n=o,t=_("ClientOnly");return l(),s("div",null,[e(t,null,{default:c(()=>[e(n,{url:["Bones.vtp","Lungs.vtp","LungVessels.vtp"]})]),_:1})])}var d=r(a,[["render",i],["__file","viewerLung.html.vue"]]);export{d as default};
+//# sourceMappingURL=viewerLung.html.c1ac087a.js.map

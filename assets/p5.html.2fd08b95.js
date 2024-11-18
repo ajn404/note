@@ -1,0 +1,2 @@
+const a=JSON.parse('{"key":"v-57f73e8e","path":"/markdown/fantastic/p5.html","title":"p5 is fantastic","lang":"en-US","frontmatter":{"title":"p5 is fantastic","sidebar":false},"excerpt":"","headers":[],"git":{"updatedTime":1670385555000,"contributors":[{"name":"ajn404","email":"huiyuening00@gmail.com","commits":2},{"name":"mac_ajn404","email":"huiyuening00@gmail.com","commits":1}]},"filePathRelative":"markdown/fantastic/p5.md"}');export{a as data};
+//# sourceMappingURL=p5.html.2fd08b95.js.map

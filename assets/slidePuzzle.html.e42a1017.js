@@ -1,0 +1,2 @@
+const e=JSON.parse('{"key":"v-15d2dace","path":"/markdown/fantasticSinglePage/slidePuzzle.html","title":"p5 is fantastic","lang":"en-US","frontmatter":{"title":"p5 is fantastic","sidebar":false},"excerpt":"","headers":[],"git":{"updatedTime":1670385555000,"contributors":[{"name":"ajn404","email":"huiyuening00@gmail.com","commits":2}]},"filePathRelative":"markdown/fantasticSinglePage/slidePuzzle.md"}');export{e as data};
+//# sourceMappingURL=slidePuzzle.html.e42a1017.js.map

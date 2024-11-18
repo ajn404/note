@@ -1,0 +1,2 @@
+const a=JSON.parse('{"key":"v-7f6d3115","path":"/markdown/practice/usingClamp.html","title":"clamp","lang":"en-US","frontmatter":{"sidebar":false,"title":"clamp"},"excerpt":"","headers":[],"git":{"updatedTime":1670385555000,"contributors":[{"name":"ajn404","email":"huiyuening00@gmail.com","commits":2},{"name":"mac_ajn404","email":"huiyuening00@gmail.com","commits":1}]},"filePathRelative":"markdown/practice/usingClamp.md"}');export{a as data};
+//# sourceMappingURL=usingClamp.html.6b2768b2.js.map

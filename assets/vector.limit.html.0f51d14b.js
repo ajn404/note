@@ -1,0 +1,2 @@
+const t=JSON.parse('{"key":"v-537236f4","path":"/markdown/notInPage/fantastic/vector.limit.html","title":"p5 is fantastic","lang":"en-US","frontmatter":{"title":"p5 is fantastic","navbar":false,"sidebar":false},"excerpt":"","headers":[],"git":{"updatedTime":1670494583000,"contributors":[{"name":"ajn404","email":"huiyuening00@gmail.com","commits":2}]},"filePathRelative":"markdown/notInPage/fantastic/vector.limit.md"}');export{t as data};
+//# sourceMappingURL=vector.limit.html.0f51d14b.js.map

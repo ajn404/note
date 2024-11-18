@@ -1,0 +1,2 @@
+const e=JSON.parse('{"key":"v-6fc3f7e5","path":"/markdown/fantasticSinglePage/geometries.html","title":"p5 is fantastic","lang":"en-US","frontmatter":{"title":"p5 is fantastic","sidebar":false},"excerpt":"","headers":[],"git":{"updatedTime":1673073278000,"contributors":[{"name":"ajn404","email":"huiyuening00@gmail.com","commits":3}]},"filePathRelative":"markdown/fantasticSinglePage/geometries.md"}');export{e as data};
+//# sourceMappingURL=geometries.html.47b9ff12.js.map

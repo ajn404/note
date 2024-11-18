@@ -1,0 +1,2 @@
+const e=JSON.parse('{"key":"v-337eb721","path":"/markdown/example/primitives.html","title":"primitives","lang":"en-US","frontmatter":{"sidebar":false,"title":"primitives"},"excerpt":"","headers":[],"git":{"updatedTime":1670385555000,"contributors":[{"name":"mac_ajn404","email":"huiyuening00@gmail.com","commits":2},{"name":"ajn404","email":"huiyuening00@gmail.com","commits":1}]},"filePathRelative":"markdown/example/primitives.md"}');export{e as data};
+//# sourceMappingURL=primitives.html.030ceae4.js.map

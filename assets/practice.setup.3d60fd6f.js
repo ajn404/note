@@ -1,0 +1,10 @@
+import{d as h,e as o,W as d,O as c,B as l,f as m,S as p,M as n,g,G as w,h as f}from"./OrbitControls.4135e4a5.js";class S{init(i){this.time=10,this.container=i.container,this.width=this.container.clientWidth||window.innerWidth,this.height=this.container.clientHeight||window.innerHeight,this.scene=new h,this.camera=new o(75,this.width/this.height,.01,10),this.camera.position.z=1,this.renderer=new d({antialias:!0,alpha:!0}),this.renderer.setSize(this.width,this.height),this.container.appendChild(this.renderer.domElement),this.control=new c(this.camera,this.renderer.domElement),this.resize(),addEventListener("resize",this.resize.bind(this),!1),this.addObject(),this.animate()}animate(){if(this.mesh.rotation.x+=this.time/1e3,this.mesh.rotation.y+=this.time/1e3,this.render(),this.container.getBoundingClientRect().width>0)requestAnimationFrame(this.animate.bind(this));else return}render(){this.renderer.render(this.scene,this.camera)}resize(){this.camera.aspect=this.container.clientWidth/this.container.clientHeight,this.camera.updateProjectionMatrix(),this.renderer.setSize(this.container.clientWidth,this.container.clientHeight),this.render()}addObject(){this.geometry=new l(.2,.2,.2),this.material=new m,this.material=new p({fragmentShader:`
+                    void main(){
+                        gl_FragColor = vec4(1.0,0.,1,1.);
+                    }
+                `,vertexShader:`
+                void main(){
+                    gl_Position = projectionMatrix * modelViewMatrix * vec4 
+                    (position,1.0);
+                }`}),this.mesh=new n(this.geometry,this.material),this.scene.add(this.mesh)}beforeDestroy(){const i=e=>{var t,r,s,a;e instanceof n&&((t=e.geometry)!=null&&t.dispose&&e.geometry.dispose(),(r=e.material)!=null&&r.dispose&&e.material.dispose(),(a=(s=e.material)==null?void 0:s.texture)!=null&&a.dispose&&e.material.texture.dispose()),e instanceof w&&e.clear(),e instanceof f&&e.clear()};this.scene.traverse(e=>{i(e)}),g.clear(),this.scene.clear(),this.renderer.dispose(),this.renderer.forceContextLoss()}}export{S};
+//# sourceMappingURL=practice.setup.3d60fd6f.js.map

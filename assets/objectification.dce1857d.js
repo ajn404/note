@@ -1,0 +1,2 @@
+import{d as c,o as e,c as t,e as n,F as i,s as r,t as p,_ as l}from"./app.28a7effe.js";const d={class:"container"},u={class:"txt anim-text-flow"},f=c({__name:"objectification",props:{text:{type:String}},setup(s){const o=s;return(m,v)=>(e(),t("div",null,[n("div",d,[n("span",u,[(e(!0),t(i,null,r(o.text,(a,_)=>(e(),t("span",{key:_},p(a),1))),128))])])]))}});var g=l(f,[["__scopeId","data-v-cd4333c2"],["__file","objectification.vue"]]);export{g as _};
+//# sourceMappingURL=objectification.dce1857d.js.map

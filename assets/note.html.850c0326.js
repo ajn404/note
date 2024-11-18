@@ -1,0 +1,2 @@
+const e=JSON.parse('{"key":"v-3a297a74","path":"/codeReference/typescript/Systematization/books/learningTypescript/7_interfaces/note.html","title":"","lang":"en-US","frontmatter":{},"excerpt":"","headers":[],"git":{"updatedTime":1691032737000,"contributors":[{"name":"ajn404","email":"huiyuening00@gmail.com","commits":1}]},"filePathRelative":"codeReference/typescript/Systematization/books/learningTypescript/7_interfaces/note.md"}');export{e as data};
+//# sourceMappingURL=note.html.850c0326.js.map

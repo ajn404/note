@@ -1,0 +1,2 @@
+const a=JSON.parse('{"key":"v-1d641fb0","path":"/markdown/notInPage/fantastic/material.shader.html","title":"p5 is fantastic","lang":"en-US","frontmatter":{"title":"p5 is fantastic","navbar":false,"sidebar":false},"excerpt":"","headers":[],"git":{"updatedTime":1670494583000,"contributors":[{"name":"ajn404","email":"huiyuening00@gmail.com","commits":2}]},"filePathRelative":"markdown/notInPage/fantastic/material.shader.md"}');export{a as data};
+//# sourceMappingURL=material.shader.html.021c015d.js.map

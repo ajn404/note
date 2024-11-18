@@ -1,0 +1,2 @@
+const t=JSON.parse('{"key":"v-94dd6262","path":"/markdown/notInPage/ikun.html","title":"\u{1F924}","lang":"en-US","frontmatter":{"title":"\u{1F924}"},"excerpt":"","headers":[],"git":{"updatedTime":1664865458000,"contributors":[{"name":"mac_ajn404","email":"huiyuening00@gmail.com","commits":1}]},"filePathRelative":"markdown/notInPage/ikun.md"}');export{t as data};
+//# sourceMappingURL=ikun.html.9fdd23bd.js.map

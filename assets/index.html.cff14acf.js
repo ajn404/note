@@ -1,0 +1,2 @@
+const e=JSON.parse('{"key":"v-8daa1a0e","path":"/","title":"","lang":"en-US","frontmatter":{"home":true},"excerpt":"","headers":[],"git":{"updatedTime":1670167059000,"contributors":[{"name":"ajn404","email":"huiyuening00@gmail.com","commits":7},{"name":"mac_ajn404","email":"huiyuening00@gmail.com","commits":1}]},"filePathRelative":"readme.md"}');export{e as data};
+//# sourceMappingURL=index.html.cff14acf.js.map

@@ -1,0 +1,2 @@
+const t=JSON.parse('{"key":"v-3b608a84","path":"/markdown/fantastic/vtkDemo.html","title":"","lang":"en-US","frontmatter":{"sidebar":false},"excerpt":"","headers":[],"git":{"updatedTime":1670385555000,"contributors":[{"name":"ajn404","email":"huiyuening00@gmail.com","commits":2}]},"filePathRelative":"markdown/fantastic/vtkDemo.md"}');export{t as data};
+//# sourceMappingURL=vtkDemo.html.ba071a7b.js.map

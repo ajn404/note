@@ -1,0 +1,2 @@
+const a=JSON.parse('{"key":"v-4ecbae3a","path":"/markdown/notInPage/fantastic/vector.lerp.html","title":"p5 is fantastic","lang":"en-US","frontmatter":{"title":"p5 is fantastic","navbar":false,"sidebar":false},"excerpt":"","headers":[],"git":{"updatedTime":1670494583000,"contributors":[{"name":"ajn404","email":"huiyuening00@gmail.com","commits":3}]},"filePathRelative":"markdown/notInPage/fantastic/vector.lerp.md"}');export{a as data};
+//# sourceMappingURL=vector.lerp.html.fb7913e3.js.map

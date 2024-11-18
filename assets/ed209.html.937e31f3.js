@@ -1,0 +1,2 @@
+const e=JSON.parse('{"key":"v-3e4585e9","path":"/markdown/example/ed209.html","title":"ed209","lang":"en-US","frontmatter":{"sidebar":false,"title":"ed209"},"excerpt":"","headers":[],"git":{"updatedTime":1670385555000,"contributors":[{"name":"mac_ajn404","email":"huiyuening00@gmail.com","commits":2},{"name":"ajn404","email":"huiyuening00@gmail.com","commits":1}]},"filePathRelative":"markdown/example/ed209.md"}');export{e as data};
+//# sourceMappingURL=ed209.html.937e31f3.js.map

@@ -1,0 +1,2 @@
+const a=JSON.parse('{"key":"v-5cc2dbe8","path":"/markdown/fantastic/vtkLoadModel.html","title":"","lang":"en-US","frontmatter":{"sidebar":false},"excerpt":"","headers":[],"git":{"updatedTime":1670385555000,"contributors":[{"name":"ajn404","email":"huiyuening00@gmail.com","commits":2}]},"filePathRelative":"markdown/fantastic/vtkLoadModel.md"}');export{a as data};
+//# sourceMappingURL=vtkLoadModel.html.df16a5db.js.map

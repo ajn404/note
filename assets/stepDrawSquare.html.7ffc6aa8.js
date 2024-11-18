@@ -1,0 +1,2 @@
+import{_ as o}from"./practice.step.68111292.js";import{_ as r,b as a,o as _,c,a as e,w as s}from"./app.28a7effe.js";import"./practice.setup.3d60fd6f.js";import"./OrbitControls.4135e4a5.js";const l={};function p(m,i){const t=o,n=a("ClientOnly");return _(),c("div",null,[e(n,null,{default:s(()=>[e(t,{type:"Square"})]),_:1})])}var v=r(l,[["render",p],["__file","stepDrawSquare.html.vue"]]);export{v as default};
+//# sourceMappingURL=stepDrawSquare.html.7ffc6aa8.js.map

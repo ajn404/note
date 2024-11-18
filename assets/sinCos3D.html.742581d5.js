@@ -1,0 +1,2 @@
+const a=JSON.parse('{"key":"v-2213a535","path":"/markdown/fantasticSinglePage/sinCos3D.html","title":"p5 is fantastic","lang":"en-US","frontmatter":{"title":"p5 is fantastic","sidebar":false},"excerpt":"","headers":[],"git":{"updatedTime":1670385555000,"contributors":[{"name":"ajn404","email":"huiyuening00@gmail.com","commits":2}]},"filePathRelative":"markdown/fantasticSinglePage/sinCos3D.md"}');export{a as data};
+//# sourceMappingURL=sinCos3D.html.742581d5.js.map

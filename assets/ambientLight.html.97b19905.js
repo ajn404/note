@@ -1,0 +1,2 @@
+const t=JSON.parse('{"key":"v-6e3624d7","path":"/markdown/fantasticSinglePage/ambientLight.html","title":"p5 is fantastic","lang":"en-US","frontmatter":{"title":"p5 is fantastic","sidebar":false},"excerpt":"","headers":[],"git":{"updatedTime":1670385555000,"contributors":[{"name":"ajn404","email":"huiyuening00@gmail.com","commits":2}]},"filePathRelative":"markdown/fantasticSinglePage/ambientLight.md"}');export{t as data};
+//# sourceMappingURL=ambientLight.html.97b19905.js.map

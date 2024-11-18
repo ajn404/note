@@ -1,0 +1,72 @@
+import{_ as l,b as i,o as c,c as u,e as s,q as a,a as o,w as t,H as p}from"./app.28a7effe.js";const r={},d={id:"blending-color-uniforms",tabindex:"-1"},k={id:"blending-color-varying",tabindex:"-1"},v={id:"change-color-by-mouse",tabindex:"-1"},m={id:"change-color-by-time",tabindex:"-1"},b={id:"box-shader",tabindex:"-1"},y={id:"moving-square",tabindex:"-1"};function g(w,n){const e=i("RouterLink");return c(),u("div",null,[n[18]||(n[18]=s("h3",{id:"practice",tabindex:"-1"},[s("a",{class:"header-anchor",href:"#practice","aria-hidden":"true"},"#"),a(" practice")],-1)),n[19]||(n[19]=s("div",{class:"custom-container tip"},[s("p",{class:"custom-container-title"},"\u8FD9\u91CC\u53EA\u5C55\u5F00fragment.glsl\u7684\u4EE3\u7801,vertex\u90FD\u5927\u5DEE\u4E0D\u79BB")],-1)),s("h3",d,[n[1]||(n[1]=s("a",{class:"header-anchor",href:"#blending-color-uniforms","aria-hidden":"true"},"#",-1)),n[2]||(n[2]=a()),o(e,{to:"/markdown/practice/blendingColorUniforms.html"},{default:t(()=>n[0]||(n[0]=[a("blending color uniforms")])),_:1})]),n[20]||(n[20]=p(`<div class="language-glsl ext-glsl line-numbers-mode"><pre class="language-glsl"><code><span class="token keyword">uniform</span> <span class="token keyword">vec3</span> u_color<span class="token punctuation">;</span>
+
+<span class="token keyword">uniform</span> <span class="token keyword">vec2</span> u_mouse<span class="token punctuation">;</span>
+<span class="token keyword">uniform</span> <span class="token keyword">vec2</span> u_resolution<span class="token punctuation">;</span>
+<span class="token comment">//\u4F20\u9012\u957F\u548C\u5BBD</span>
+<span class="token keyword">uniform</span> <span class="token keyword">float</span> u_time<span class="token punctuation">;</span>
+
+<span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment">// vec2 v = u_mouse/u_resolution;</span>
+
+    <span class="token comment">// vec3 color = vec3(u_mouse.x/u_resolution.x,0.,u_mouse.y/u_resolution.y);</span>
+    <span class="token comment">// vec3 color = vec3(v.x,0.,v.y);</span>
+
+
+    <span class="token keyword">vec2</span> uv <span class="token operator">=</span> gl_FragCoord<span class="token punctuation">.</span>xy<span class="token operator">/</span>u_resolution<span class="token punctuation">;</span>
+    <span class="token comment">//uv.y:\u7247\u5143\u5782\u76F4\u4F4D\u7F6E\u7684\u6743\u91CD</span>
+    <span class="token comment">//\u81EA\u4E0B\u800C\u4E0A</span>
+    <span class="token keyword">vec3</span> color <span class="token operator">=</span> <span class="token function">mix</span><span class="token punctuation">(</span><span class="token keyword">vec3</span><span class="token punctuation">(</span><span class="token number">228.</span><span class="token operator">/</span><span class="token number">255.</span><span class="token punctuation">,</span><span class="token number">181.</span><span class="token operator">/</span><span class="token number">255.</span><span class="token punctuation">,</span><span class="token number">163.</span><span class="token operator">/</span><span class="token number">255.</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token keyword">vec3</span><span class="token punctuation">(</span><span class="token number">0.</span><span class="token punctuation">,</span><span class="token number">0.</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span>uv<span class="token punctuation">.</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// mix(x,y,a) = x*(1-a)+y*a</span>
+
+    gl_FragColor <span class="token operator">=</span> <span class="token keyword">vec4</span><span class="token punctuation">(</span>color <span class="token punctuation">,</span><span class="token number">1.0</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>`,1)),s("h3",k,[n[4]||(n[4]=s("a",{class:"header-anchor",href:"#blending-color-varying","aria-hidden":"true"},"#",-1)),n[5]||(n[5]=a()),o(e,{to:"/markdown/practice/blendingColorVaryings.html"},{default:t(()=>n[3]||(n[3]=[a("blending color varying")])),_:1})]),n[21]||(n[21]=p(`<div class="language-glsl ext-glsl line-numbers-mode"><pre class="language-glsl"><code><span class="token keyword">uniform</span> <span class="token keyword">vec3</span> u_color<span class="token punctuation">;</span>
+
+<span class="token keyword">uniform</span> <span class="token keyword">vec2</span> u_mouse<span class="token punctuation">;</span>
+<span class="token keyword">uniform</span> <span class="token keyword">vec2</span> u_resolution<span class="token punctuation">;</span>
+<span class="token comment">//\u4F20\u9012\u957F\u548C\u5BBD</span>
+<span class="token keyword">uniform</span> <span class="token keyword">float</span> u_time<span class="token punctuation">;</span>
+
+<span class="token keyword">varying</span> <span class="token keyword">vec2</span> v_uv<span class="token punctuation">;</span>
+
+
+<span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment">// vec2 v = u_mouse/u_resolution;</span>
+
+    <span class="token comment">// vec3 color = vec3(u_mouse.x/u_resolution.x,0.,u_mouse.y/u_resolution.y);</span>
+    <span class="token comment">// vec3 color = vec3(v.x,0.,v.y);</span>
+
+
+    <span class="token keyword">vec3</span> color <span class="token operator">=</span> <span class="token keyword">vec3</span><span class="token punctuation">(</span>v_uv<span class="token punctuation">.</span>x<span class="token punctuation">,</span>v_uv<span class="token punctuation">.</span>y<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
+
+    gl_FragColor <span class="token operator">=</span> <span class="token keyword">vec4</span><span class="token punctuation">(</span>color <span class="token punctuation">,</span><span class="token number">1.0</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>`,1)),s("h3",v,[n[7]||(n[7]=s("a",{class:"header-anchor",href:"#change-color-by-mouse","aria-hidden":"true"},"#",-1)),n[8]||(n[8]=a()),o(e,{to:"/markdown/practice/changeColorMouse.html"},{default:t(()=>n[6]||(n[6]=[a("change color by mouse")])),_:1})]),n[22]||(n[22]=p(`<div class="language-glsl ext-glsl line-numbers-mode"><pre class="language-glsl"><code><span class="token keyword">uniform</span> <span class="token keyword">vec3</span> u_color<span class="token punctuation">;</span>
+
+<span class="token keyword">uniform</span> <span class="token keyword">vec2</span> u_mouse<span class="token punctuation">;</span>
+<span class="token keyword">uniform</span> <span class="token keyword">vec2</span> u_resolution<span class="token punctuation">;</span>
+
+<span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">vec2</span> v <span class="token operator">=</span> u_mouse<span class="token operator">/</span>u_resolution<span class="token punctuation">;</span>
+    <span class="token comment">// vec3 color = vec3(u_mouse.x/u_resolution.x,0.,u_mouse.y/u_resolution.y);</span>
+    <span class="token keyword">vec3</span> color <span class="token operator">=</span> <span class="token keyword">vec3</span><span class="token punctuation">(</span>v<span class="token punctuation">.</span>x<span class="token punctuation">,</span><span class="token number">0.</span><span class="token punctuation">,</span>v<span class="token punctuation">.</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    gl_FragColor <span class="token operator">=</span> <span class="token keyword">vec4</span><span class="token punctuation">(</span>color <span class="token punctuation">,</span><span class="token number">1.0</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>`,1)),s("h3",m,[n[10]||(n[10]=s("a",{class:"header-anchor",href:"#change-color-by-time","aria-hidden":"true"},"#",-1)),n[11]||(n[11]=a()),o(e,{to:"/markdown/practice/changeColorTime.html"},{default:t(()=>n[9]||(n[9]=[a("change color by time")])),_:1})]),n[23]||(n[23]=p(`<div class="language-glsl ext-glsl line-numbers-mode"><pre class="language-glsl"><code><span class="token keyword">uniform</span> <span class="token keyword">vec3</span> u_color<span class="token punctuation">;</span>
+
+<span class="token keyword">uniform</span> <span class="token keyword">vec2</span> u_mouse<span class="token punctuation">;</span>
+<span class="token keyword">uniform</span> <span class="token keyword">vec2</span> u_resolution<span class="token punctuation">;</span>
+<span class="token keyword">uniform</span> <span class="token keyword">float</span> u_time<span class="token punctuation">;</span>
+
+<span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment">// vec2 v = u_mouse/u_resolution;</span>
+
+    <span class="token comment">// vec3 color = vec3(u_mouse.x/u_resolution.x,0.,u_mouse.y/u_resolution.y);</span>
+    <span class="token comment">// vec3 color = vec3(v.x,0.,v.y);</span>
+
+    <span class="token keyword">vec3</span> color <span class="token operator">=</span> <span class="token keyword">vec3</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token function">sin</span><span class="token punctuation">(</span>u_time<span class="token punctuation">)</span><span class="token operator">+</span><span class="token number">1.</span><span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">2.</span><span class="token punctuation">,</span><span class="token number">0.</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token function">cos</span><span class="token punctuation">(</span>u_time<span class="token punctuation">)</span><span class="token operator">+</span><span class="token number">1.</span><span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">2.</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    gl_FragColor <span class="token operator">=</span> <span class="token keyword">vec4</span><span class="token punctuation">(</span>color <span class="token punctuation">,</span><span class="token number">1.0</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>`,1)),s("h3",b,[n[13]||(n[13]=s("a",{class:"header-anchor",href:"#box-shader","aria-hidden":"true"},"#",-1)),n[14]||(n[14]=a()),o(e,{to:"/markdown/practice/firstShader.html"},{default:t(()=>n[12]||(n[12]=[a("box shader")])),_:1})]),s("h3",y,[n[16]||(n[16]=s("a",{class:"header-anchor",href:"#moving-square","aria-hidden":"true"},"#",-1)),n[17]||(n[17]=a()),o(e,{to:"/markdown/practice/movingSquare.html"},{default:t(()=>n[15]||(n[15]=[a("moving square")])),_:1})])])}var x=l(r,[["render",g],["__file","practiceGlslCollect.html.vue"]]);export{x as default};
+//# sourceMappingURL=practiceGlslCollect.html.b807185a.js.map

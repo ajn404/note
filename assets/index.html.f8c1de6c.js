@@ -1,0 +1,2 @@
+const e=JSON.parse('{"key":"v-6f419d08","path":"/codeReference/typescript/Systematization/Conditional_Types/","title":"","lang":"en-US","frontmatter":{},"excerpt":"","headers":[{"level":3,"title":"conditional types","slug":"conditional-types","children":[]}],"git":{"updatedTime":1671011231000,"contributors":[{"name":"ajn404","email":"huiyuening00@gmail.com","commits":1}]},"filePathRelative":"codeReference/typescript/Systematization/Conditional_Types/readme.md"}');export{e as data};
+//# sourceMappingURL=index.html.f8c1de6c.js.map
