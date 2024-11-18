@@ -517,7 +517,7 @@ const loadViewer = () => {
 
             let baseUrl = 'http://localhost:9999/note/'
             if (process.env.NODE_ENV !== 'development') {
-                baseUrl = 'https://ajn404.gitee.io/note/'
+                baseUrl = 'https://ajn404.github.io/note/'
             }
             if(props.url){
                 let url = []
